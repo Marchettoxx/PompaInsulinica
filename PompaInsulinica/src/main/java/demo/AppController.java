@@ -56,7 +56,9 @@ public class AppController {
         return "utente";
     }
 
-    /* Marco */
+    //bella li
+
+    /* Ciaoooooo */
     /*@RequestMapping("/input")
     public String input(){
         return "input";
