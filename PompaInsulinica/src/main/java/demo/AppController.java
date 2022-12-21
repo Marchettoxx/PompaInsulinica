@@ -56,7 +56,7 @@ public class AppController {
         return "utente";
     }
 
-    /* Ho fatto il pull */
+    /* Ciaoooooo */
     /*@RequestMapping("/input")
     public String input(){
         return "input";
