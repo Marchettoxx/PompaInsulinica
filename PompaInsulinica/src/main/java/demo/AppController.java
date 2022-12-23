@@ -56,6 +56,11 @@ public class AppController {
         return "utente";
     }
 
+    @RequestMapping("/riprova")
+    public String input(){
+        return "login";
+    }
+
     //bella li Alessia
 
     /* Ciaoooooo */
