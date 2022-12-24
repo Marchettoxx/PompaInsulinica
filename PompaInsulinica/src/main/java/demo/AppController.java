@@ -6,8 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -23,10 +21,12 @@ public class AppController {
     @RequestMapping("/login")
     public String logIn(
             @RequestParam(name="username", required=true) String username,
-            @RequestParam(name="password", required=true) String password){
+            @RequestParam(name="password", required=true) String password,
+            Model model){
         Optional<Person> result = repository.findByUsername(username);
         if (result.isPresent()) {
             if (result.get().getPassword().equals(password)) {
+                model.addAttribute("person", result.get());
                 return "utente";
             }
             return "notfound";
@@ -45,7 +45,7 @@ public class AppController {
 
     @RequestMapping("/indietro")
     public String indietro(Model model){
-        return "utente";
+        return "login";
     }
 
 
@@ -55,10 +55,12 @@ public class AppController {
             @RequestParam(name="cognome", required=true) String cognome,
             @RequestParam(name="email", required=true) String email,
             @RequestParam(name="username", required=true) String username,
-            @RequestParam(name="password", required=true) String password){
+            @RequestParam(name="password", required=true) String password,
+            Model model){
         Person person = new Person(nome, cognome, email, username, password);
         repository.save(person);
-        return "utente";
+        model.addAttribute("person", person);
+        return "login";
     }
 
     @RequestMapping("/riprova")
@@ -68,11 +70,32 @@ public class AppController {
 
     @RequestMapping("/profilo")
     public String edit(
-            @RequestParam(name="username", required=true) String username,
+            @RequestParam(name="id", required=true) Long id,
             Model model) {
-        Optional<Person> result = repository.findByUsername(username);
+        Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
             Person person = result.get();
+            model.addAttribute("person", person);
+            return "profilo";
+        }
+        else
+            return "notfound";
+    }
+
+    @RequestMapping("/modifica")
+    public String edit(
+            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="nome", required=true) String nome,
+            @RequestParam(name="cognome", required=true) String cognome,
+            @RequestParam(name="email", required=true) String email,
+            @RequestParam(name="username", required=true) String username,
+            @RequestParam(name="password", required=true) String password,
+            Model model) {
+        Optional<Person> result = repository.findById(id);
+        if (result.isPresent()) {
+            repository.delete(result.get());
+            Person person = new Person(nome, cognome, email, username, password);
+            repository.save(person);
             model.addAttribute("person", person);
             return "profilo";
         }

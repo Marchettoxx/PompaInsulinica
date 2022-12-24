@@ -9,6 +9,7 @@
 <h1>Profilo Utente</h1>
 
 <form action="modifica" method="post">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
     Nome:<input type="text" name="nome" value="John" th:value="${person.nome}"><br>
     Cognome:<input type="text" name="cognome" value="Smith" th:value="${person.cognome}"><br>
     Username:<input type="text" name="username" value="JE" th:value="${person.username}"><br>
