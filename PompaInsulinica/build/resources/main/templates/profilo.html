@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<h1>Profilo Utente</h1>
+
+<form action="modifica" method="post">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    Nome:<input type="text" name="nome" value="John" th:value="${person.nome}"><br>
+    Cognome:<input type="text" name="cognome" value="Smith" th:value="${person.cognome}"><br>
+    Username:<input type="text" name="username" value="JE" th:value="${person.username}"><br>
+    Email:<input type="text" name="email" value="John.Smith@gmail.com" th:value="${person.email}"><br>
+    Password:<input type="password" name="password" value="IngSoft" th:value="${person.password}"><br>
+    <input type="submit" value="modifica" />
+</form>
+
+<form action="back" method="post" align=right>
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input type="submit" value="Indietro">
+</form>
+
+</body>
+</html>
