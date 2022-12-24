@@ -20,7 +20,9 @@ public class AppController {
     private PompaInsulinicaRepository repositoryInsulina;
 
     @RequestMapping("/")
-    public String index(){return "login";}
+    public String index(){
+        return "login";
+    }
 
     @RequestMapping("/back")
     public String back(
@@ -51,7 +53,6 @@ public class AppController {
                 model.addAttribute("person", result.get());
                 return "utente";
             }
-            return "notfound";
         }
         return "login";
     }
@@ -69,10 +70,15 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model){
-        Person person = new Person(nome, cognome, email, username, password);
-        repository.save(person);
-        model.addAttribute("person", person);
-        return "login";
+        Optional<Person> result = repository.findByUsername(username);
+        if (result.isPresent()) {
+            return "create";
+        } else {
+            Person person = new Person(nome, cognome, email, username, password);
+            repository.save(person);
+            model.addAttribute("person", person);
+            return "login";
+        }
     }
 
     @RequestMapping("/riprova")
@@ -160,6 +166,7 @@ public class AppController {
             model.addAttribute("insuline", cronologia);
             return "cronologia";
         }
-        return "notfound";
+        else
+            return "notfound";
     }
 }
