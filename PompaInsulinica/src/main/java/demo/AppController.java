@@ -43,6 +43,11 @@ public class AppController {
         return "create";
     }
 
+    @RequestMapping("/indietro")
+    public String indietro(Model model){
+        return "utente";
+    }
+
 
     @RequestMapping("/nuovoutente")
     public String creaUtente(
@@ -59,6 +64,20 @@ public class AppController {
     @RequestMapping("/riprova")
     public String input(){
         return "login";
+    }
+
+    @RequestMapping("/profilo")
+    public String edit(
+            @RequestParam(name="username", required=true) String username,
+            Model model) {
+        Optional<Person> result = repository.findByUsername(username);
+        if (result.isPresent()) {
+            Person person = result.get();
+            model.addAttribute("person", person);
+            return "profilo";
+        }
+        else
+            return "notfound";
     }
 
     //bella li Alessia
