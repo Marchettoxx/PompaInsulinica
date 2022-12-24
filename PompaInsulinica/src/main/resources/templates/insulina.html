@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<h1>Pompa Insulinica</h1>
+
+<form action="calcola" method="post" align=center>
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    Glicemia :<input type="text" name="glicemia" value="150"><br>
+    <input type = "submit" value="calcola"/>  <br>
+</form>
+
+<form action="salva" method="post" align=center>
+    Insulina :<input type="text" name="insulina" value="2" th:value="${insulina.val}"><br>
+    Inserisci un commento: <input type="text" name="commento" value="bho"><br>
+    <input type="submit" value="salva" />
+</form>
+
+
+</body>
+</html>
