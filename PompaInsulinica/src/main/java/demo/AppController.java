@@ -105,28 +105,6 @@ public class AppController {
             return "notfound";
     }
 
-    @RequestMapping("/calcola")
-    public String edit(
-            @RequestParam(name="id", required=true) Long id,
-            @RequestParam(name="nome", required=true) String nome,
-            @RequestParam(name="cognome", required=true) String cognome,
-            @RequestParam(name="email", required=true) String email,
-            @RequestParam(name="username", required=true) String username,
-            @RequestParam(name="password", required=true) String password,
-            Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            repository.delete(result.get());
-            Person person = new Person(nome, cognome, email, username, password);
-            repository.save(person);
-            model.addAttribute("person", person);
-            return "profilo";
-        }
-        else
-            return "notfound";
-    }
-
-
 
 
 
