@@ -105,7 +105,34 @@ public class AppController {
             return "notfound";
     }
 
+    @RequestMapping("/pompainsulinica")
+    public String pompaInsulinica(
+            @RequestParam(name="id", required=true) Long id,
+            Model model) {
+        Optional<Person> result = repository.findById(id);
+        if (result.isPresent()) {
+            model.addAttribute("person", result.get());
+            return "insulina";
+        }
+        else
+            return "notfound";
+    }
 
+    @RequestMapping("/salva")
+    public String calcolaInsulina(
+            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="glicemia", required=true) Integer glicemia,
+            @RequestParam(name="insulina", required=true) Integer insulina,
+            @RequestParam(name="commento", required=true) String commento) {
+        Optional<Person> result = repository.findById(id);
+        if (result.isPresent()) {
+            PompaInsulinica pompaInsulinica = new PompaInsulinica(id, glicemia, insulina, commento);
+            repositoryInsulina.save(pompaInsulinica);
+            return "utente";
+        }
+        else
+            return "notfound";
+    }
 
 
     //bella li Alessia

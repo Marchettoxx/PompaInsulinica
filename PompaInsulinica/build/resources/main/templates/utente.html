@@ -17,8 +17,9 @@
   <input type="submit" value="Cronologia"/>
 </form>
 <br>
-<form action="pompaInsulinica" method="post" align=center>
-  <input type="submit" value="PompaInsulinica"/>
+<form action="pompainsulinica" method="post" align=center>
+  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+  <input type="submit" value="Pompa Insulinica"/>
 </form>
 <br>
 <form action="logout" method="post" align=right>
