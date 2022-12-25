@@ -3,21 +3,45 @@
 <head>
     <title>MVC Web application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        h1 {text-align: center;}
+        h3 {text-align: center;}
+        form {text-align: center;}
+        table, th, td {
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+        }
+    </style>
 </head>
 
-<body>
-<h1 align=center>Benvenuto nell'App che calcola l'insulina</h1>
+<body style="background-color:powderblue;">
 
-<h3 align=center> Login </h3>
+<div class="shape shape2"></div>
 
-<form action="login" method="post" align=center>
-    Username:<input type="text" name="username"><br><br>
-    Password:<input type="password" name="password"><br><br>
-    <input type="submit" value="Accedi"/>
+<h1> Benvenuto nell'App che calcola l'insulina </h1>
+
+<h3> LOGIN </h3>
+
+<form action="login" method="post">
+    <table style="background-color:#8fbc8f">
+        <tbody>
+            <tr>
+                <td> Username: </td> <td> <input type="text" name="username"><br> </td>
+            </tr>
+            <tr>
+                <td> Password: </td> <td> <input type="password" name="password"><br> </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Accedi"/></td>
+            </tr>
+        </tbody>
+    </table>
 </form>
-<br>
-<form action="create" method="post" align=center>
-<input type="submit" value="Crea account"/>
+
+<form action="create" method="post">
+    <br> <input type="submit" value="Crea account"/>
 </form>
 
 </body>

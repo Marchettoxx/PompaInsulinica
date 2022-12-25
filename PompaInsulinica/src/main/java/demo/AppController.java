@@ -81,11 +81,6 @@ public class AppController {
         }
     }
 
-    @RequestMapping("/riprova")
-    public String input(){
-        return "login";
-    }
-
     @RequestMapping("/profilo")
     public String edit(
             @RequestParam(name="id", required=true) Long id,
