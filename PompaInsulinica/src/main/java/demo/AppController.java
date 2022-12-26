@@ -132,16 +132,20 @@ public class AppController {
     @RequestMapping("/salva")
     public String saveIniezione(
             @RequestParam(name="id", required=true) Long id,
-            @RequestParam(name="glicemia", required=true) Integer glicemia,
-            @RequestParam(name="insulina", required=true) Integer insulina,
+            @RequestParam(name="glicemia", required=false) Integer glicemia,
+            @RequestParam(name="insulina", required=false) Integer insulina,
             @RequestParam(name="commento", required=true) String commento,
             Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
-            PompaInsulinica pompaInsulinica = new PompaInsulinica(id, glicemia, insulina, commento);
-            repositoryInsulina.save(pompaInsulinica);
-            model.addAttribute("person", result.get());
-            return "insulina";
+            if (glicemia!= null && insulina!=null) {
+                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, glicemia, insulina, commento);
+                repositoryInsulina.save(pompaInsulinica);
+                model.addAttribute("person", result.get());
+                return "insulina";
+            } else {
+                return "login"; //dovrebbe tornare ad insulina ma da problemi, da sistemare
+            }
         }
         else
             return "notfound";
