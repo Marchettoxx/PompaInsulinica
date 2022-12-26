@@ -144,7 +144,8 @@ public class AppController {
                 model.addAttribute("person", result.get());
                 return "insulina";
             } else {
-                return "login"; //dovrebbe tornare ad insulina ma da problemi, da sistemare
+                model.addAttribute("person", result.get());
+                return "insulina";
             }
         }
         else
