@@ -154,7 +154,7 @@ public class AppController {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
             List<PompaInsulinica> cronologia = new LinkedList<>();
-            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)){
+            for (PompaInsulinica p: repositoryInsulina.findAll()){
                 cronologia.add(p);
             }
             model.addAttribute("person", result.get());

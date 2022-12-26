@@ -3,16 +3,25 @@
 <head>
   <title>MVC Web application</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+        h1 {text-align: center;}
+        table, th, td {
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+        }
+        form {text-align: center;}
+   </style>
 </head>
 
-<body>
+<body style="background-color:powderblue;">
 
-  <h2 align="center"> <b> Creazione di un nuovo utente </b></h2>
+  <h1 > CREAZIONE DI UN NUOVO UTENTE </h1>
 
-  <form action="nuovoutente" method="post" align=center>
-  <table border="0" align="center">
-    <thead>
-    </thead>
+  <form action="nuovoutente" method="post">
+  <table style="background-color:#8fbc8f">
     <tbody>
       <tr>
         <td> Nome: </td> <td> <input type="text" name="nome"> </td>
@@ -30,15 +39,14 @@
         <td> Password: </td> <td> <input type="password" name="password"></td>
       </tr>
       <tr>
-        <td colspan="2" align="center"><input type="submit" value="Crea Nuovo Utente"/></td>
+        <td colspan="2" align="center"> <input type="submit" value="Crea Nuovo Utente"/></td>
       </tr>
     </tbody>
   </table>
-  <br>
   </form>
 
-  <form action="logout" method="post" align=right>
-    <input type="submit" value="Indietro"/>
+  <form action="logout" method="post">
+    <br> <input type="submit" value="Indietro"/>
   </form>
 
 </body>

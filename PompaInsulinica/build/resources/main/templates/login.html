@@ -7,9 +7,11 @@
         h1 {text-align: center;}
         h3 {text-align: center;}
         form {text-align: center;}
-        table {
+        table, th, td {
                 margin-left: auto;
                 margin-right: auto;
+                border: 1px solid black;
+                border-collapse: collapse;
         }
     </style>
 </head>
@@ -32,14 +34,14 @@
                 <td> Password: </td> <td> <input type="password" name="password"><br> </td>
             </tr>
             <tr>
-                <td colspan="2" align="center"> <br> <input type="submit" value="Accedi"/></td>
+                <td colspan="2" align="center"><input type="submit" value="Accedi"/></td>
             </tr>
         </tbody>
     </table>
 </form>
 
 <form action="create" method="post">
-    <input type="submit" value="Crea account"/>
+    <br> <input type="submit" value="Crea account"/>
 </form>
 
 </body>

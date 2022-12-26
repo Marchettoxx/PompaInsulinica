@@ -19,6 +19,8 @@ public class PompaInsulinica {
     private String commento;
     private String time;
 
+    protected PompaInsulinica() {}
+
     public PompaInsulinica(Long idUtente, Integer glicemia, Integer insulina, String commento) {
         this.idUtente = idUtente;
         this.glicemia = glicemia;
