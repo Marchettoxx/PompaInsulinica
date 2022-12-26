@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -13,11 +15,31 @@ public class AppController {
 
     @Autowired
     private PersonRepository repository;
+
     @Autowired
     private PompaInsulinicaRepository repositoryInsulina;
 
     @RequestMapping("/")
-    public String index(){return "login";
+    public String index(){
+        return "login";
+    }
+
+    @RequestMapping("/back")
+    public String back(
+            @RequestParam(name="id", required=true) Long id,
+            Model model) {
+        Optional<Person> result = repository.findById(id);
+        if (result.isPresent()) {
+            model.addAttribute("person", result.get());
+            return "utente";
+        }
+        else
+            return "notfound";
+    }
+
+    @RequestMapping("/logout")
+    public String logOut(Model model){
+        return "login";
     }
 
     @RequestMapping("/login")
@@ -31,25 +53,14 @@ public class AppController {
                 model.addAttribute("person", result.get());
                 return "utente";
             }
-            return "notfound";
         }
         return "login";
     }
 
-    @RequestMapping("/logout")
-    public String logOut(Model model){
-        return "login";
-    }
     @RequestMapping("/create")
     public String create(Model model){
         return "create";
     }
-
-    @RequestMapping("/indietro")
-    public String indietro(Model model){
-        return "login";
-    }
-
 
     @RequestMapping("/nuovoutente")
     public String creaUtente(
@@ -59,15 +70,15 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model){
-        Person person = new Person(nome, cognome, email, username, password);
-        repository.save(person);
-        model.addAttribute("person", person);
-        return "login";
-    }
-
-    @RequestMapping("/riprova")
-    public String input(){
-        return "login";
+        Optional<Person> result = repository.findByUsername(username);
+        if (result.isPresent()) {
+            return "create";
+        } else {
+            Person person = new Person(nome, cognome, email, username, password);
+            repository.save(person);
+            model.addAttribute("person", person);
+            return "login";
+        }
     }
 
     @RequestMapping("/profilo")
@@ -85,7 +96,7 @@ public class AppController {
     }
 
     @RequestMapping("/modifica")
-    public String edit(
+    public String editDatiUtente(
             @RequestParam(name="id", required=true) Long id,
             @RequestParam(name="nome", required=true) String nome,
             @RequestParam(name="cognome", required=true) String cognome,
@@ -119,100 +130,38 @@ public class AppController {
     }
 
     @RequestMapping("/salva")
-    public String calcolaInsulina(
+    public String saveIniezione(
             @RequestParam(name="id", required=true) Long id,
             @RequestParam(name="glicemia", required=true) Integer glicemia,
             @RequestParam(name="insulina", required=true) Integer insulina,
-            @RequestParam(name="commento", required=true) String commento) {
+            @RequestParam(name="commento", required=true) String commento,
+            Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
             PompaInsulinica pompaInsulinica = new PompaInsulinica(id, glicemia, insulina, commento);
             repositoryInsulina.save(pompaInsulinica);
-            return "utente";
+            model.addAttribute("person", result.get());
+            return "insulina";
         }
         else
             return "notfound";
     }
 
-
-    //bella li Alessia
-
-    /* Ciaoooooo */
-    /*@RequestMapping("/input")
-    public String input(){
-        return "input";
-    }
-
-    @RequestMapping("/read")
-    public String read(
-            @RequestParam(name="id", required=true) Long id,
-            Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()){
-            Person person = result.get();
-            model.addAttribute("person", person);
-            return "read";
-        }
-        else
-            return "notfound";
-    }
-
-    @RequestMapping("/edit")
-    public String edit(
+    @RequestMapping("/cronologia")
+    public String getCronologia(
             @RequestParam(name="id", required=true) Long id,
             Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
-            Person person = result.get();
-            model.addAttribute("person", person);
-            return "edit";
+            List<PompaInsulinica> cronologia = new LinkedList<>();
+            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)){
+                cronologia.add(p);
+            }
+            model.addAttribute("person", result.get());
+            model.addAttribute("insuline", cronologia);
+            return "cronologia";
         }
         else
             return "notfound";
     }
-
-    /*@RequestMapping("/update")
-    public String update(
-            @RequestParam(name="id", required=true) Long id,
-            @RequestParam(name="firstname", required=true) String firstname,
-            @RequestParam(name="lastname", required=true) String lastname,
-            Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            repository.delete(result.get());
-            Person person = new Person(firstname,lastname);
-            repository.save(person);
-            return "redirect:/list";
-        }
-        else
-            return "notfound";
-    }
-
-   @RequestMapping("/delete")
-    public String delete(
-            @RequestParam(name="id", required=true) Long id) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()){
-            repository.delete(result.get());
-            return "redirect:/list";
-        }
-        else
-            return "notfound";
-    }
-
-
-    /*@RequestMapping("/show1")
-    public String show1(
-            @RequestParam(name="id", required=true) Long id,
-            Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()){
-            Person person = result.get();
-            model.addAttribute("person", person);
-            return "show1";
-        }
-        else
-            return "notfound";
-    }*/
-
 }

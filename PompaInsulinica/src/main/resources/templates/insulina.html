@@ -3,21 +3,45 @@
 <head>
     <title>MVC Web application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        h1 {text-align: center;}
+        table, th, td {
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+        }
+        form {text-align: center;}
+   </style>
 </head>
 
-<body>
-<h1>Pompa Insulinica</h1>
+<body style="background-color:powderblue;">
 
-<form action="salva" method="post" align=center>
+<h1> REGISTRAZIONE POMPA INSULINICA </h1>
+
+<form action="salva" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-    Glicemia :<input type="text" name="glicemia"><br>
-    Insulina :<input type="text" name="insulina" th:value="${insulina}"><br>
-    Inserisci un commento: <input type="text" name="commento"><br>
-    <input type = "submit" value="salva"/>  <br>
+    <table style="background-color:#8fbc8f">
+        <tbody>
+        <tr>
+            <td> Glicemia: </td> <td> <input type="text" name="glicemia"><br> </td>
+        </tr>
+        <tr>
+            <td> Insulina: </td> <td> <input type="text" name="insulina" th:value="${insulina}"><br> </td>
+        </tr>
+        <tr>
+            <td> Inserisci un commento: </td> <td> <input type="text" name="commento"><br> </td>
+        </tr>
+        <tr>
+            <td colspan="2"> <input type = "submit" value="salva"/> <br> </td>
+        </tr>
+        </tbody>
+    </table>
 </form>
 
-<form action="indietro" method="post" align=right>
-    <input type="submit" value="Indietro"/>
+<form action="back" method="post">
+    <input type="hidden" name="id" value="10" th:value="${person.id}">
+    <br> <input type="submit" value="Indietro">
 </form>
 
 </body>

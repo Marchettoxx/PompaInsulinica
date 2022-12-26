@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>MVC Web application</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+        h1 {text-align: center;}
+        table {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+        }
+        form {text-align: center;}
+   </style>
+</head>
+
+<body style="background-color:powderblue;">
+<h1> CRONOLOGIA INIEZIONI </h1>
+
+<table style="background-color:#8fbc8f">
+  <thead>
+  <tr>
+    <th> GLICEMIA </th>
+    <th> INSULINA </th>
+    <th> ORA </th>
+    <th> COMMENTO </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="insulina: ${insuline}">
+    <td th:text="${insulina.glicemia}"> 120 </td>
+    <td th:text="${insulina.insulina}"> 2 </td>
+    <td th:text="${insulina.time}"> 20:06:17 </td>
+    <td th:text="${insulina.commento}"> blank </td>
+  </tr>
+  </tbody>
+</table>
+
+<form action="back" method="post">
+  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+  <input type="submit" value="Indietro">
+</form>
+
+</body>
+</html>
