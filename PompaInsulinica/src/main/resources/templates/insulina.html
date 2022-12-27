@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style>
         h1 {text-align: center;}
+        h3 {text-align: center;}
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
@@ -18,6 +19,8 @@
 <body style="background-color:powderblue;">
 
 <h1> REGISTRAZIONE POMPA INSULINICA </h1>
+
+<h3 th:text = "${errore}" style="color: red"> </h3>
 
 <form action="salva" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>

@@ -60,6 +60,7 @@ public class AppController {
                 return "utente";
             }
         }
+        model.addAttribute("errore", "CREDENZIALI ERRATE");
         return "login";
     }
 
@@ -78,6 +79,7 @@ public class AppController {
             Model model){
         Optional<Person> result = repository.findByUsername(username);
         if (result.isPresent()) {
+            model.addAttribute("errore", "UTENTE GIA' PRESENTE");
             return "create";
         } else {
             Person person = new Person(nome, cognome, email, username, password);
@@ -112,6 +114,7 @@ public class AppController {
             Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
+
             repository.delete(result.get());
             Person person = new Person(nome, cognome, email, username, password);
             repository.save(person);
@@ -144,23 +147,25 @@ public class AppController {
             Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
+            model.addAttribute("person", result.get());
             if (!Objects.equals(glicemia, "") && !Objects.equals(insulina, "")) {
                 try {
                     int int_glicemia = Integer.parseInt(glicemia);
                     int int_insulina = Integer.parseInt(insulina);
                     if ((int_glicemia < MIN_GLICEMIA || int_glicemia > MAX_GLICEMIA) ||
                             int_insulina < MIN_INSULINA || int_insulina > MAX_INSULINA) {
-                        model.addAttribute("person", result.get());
                         return "insulina";
                     }
                     PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
                     repositoryInsulina.save(pompaInsulinica);
                 } catch (NumberFormatException ex){
-                    model.addAttribute("person", result.get());
+                    model.addAttribute("errore", "INSERISCI VALORI INTERI");
                     return "insulina";
                 }
+            } else {
+                model.addAttribute("errore", "INSERISCI ENTRAMBI I VALORI");
+                return "insulina";
             }
-            model.addAttribute("person", result.get());
             return "insulina";
         }
         else
