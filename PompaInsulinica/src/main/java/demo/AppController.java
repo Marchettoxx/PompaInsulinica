@@ -179,12 +179,53 @@ public class AppController {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
             List<PompaInsulinica> cronologia = new LinkedList<>();
-            for (PompaInsulinica p: repositoryInsulina.findAll()){
+            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)){
                 cronologia.add(p);
             }
             model.addAttribute("person", result.get());
             model.addAttribute("insuline", cronologia);
             return "cronologia";
+        }
+        else
+            return "notfound";
+    }
+
+    @RequestMapping("/cancellacronologia")
+    public String dropCronologia(
+            @RequestParam(name="id", required=true) Long id,
+            Model model) {
+        Optional<Person> result = repository.findById(id);
+        if (result.isPresent()) {
+            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)) {
+                repositoryInsulina.delete(p);
+            }
+            model.addAttribute("person", result.get());
+            return "cronologia";
+        }
+        else
+            return "notfound";
+    }
+
+    @RequestMapping("/cancellariga")
+    public String dropRiga(
+            @RequestParam(name="idUtente", required=true) Long idUtente,
+            @RequestParam(name="id", required=true) Long id,
+            Model model) {
+        Optional<Person> persona = repository.findById(idUtente);
+        if (persona.isPresent()) {
+            model.addAttribute("person", persona.get());
+            Optional<PompaInsulinica> result = repositoryInsulina.findById(id);
+            if (result.isPresent()) {
+                repositoryInsulina.delete(result.get());
+                List<PompaInsulinica> cronologia = new LinkedList<>();
+                for (PompaInsulinica p: repositoryInsulina.findByIdUtente(idUtente)){
+                    cronologia.add(p);
+                }
+                model.addAttribute("insuline", cronologia);
+                return "cronologia";
+            }
+            else
+                return "notfound";
         }
         else
             return "notfound";

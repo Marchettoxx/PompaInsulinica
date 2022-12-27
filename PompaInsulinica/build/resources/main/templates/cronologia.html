@@ -19,6 +19,8 @@
 <body style="background-color:powderblue;">
 <h1> CRONOLOGIA INIEZIONI </h1>
 
+<h3 th:text = "${errore}" style="color: red"> </h3>
+
 <table style="background-color:#8fbc8f">
   <thead>
   <tr>
@@ -26,6 +28,7 @@
     <th> INSULINA </th>
     <th> ORA </th>
     <th> COMMENTO </th>
+    <th> DELETE </th>
   </tr>
   </thead>
   <tbody>
@@ -34,9 +37,19 @@
     <td th:text="${insulina.insulina}"> 2 </td>
     <td th:text="${insulina.time}"> 20:06:17 </td>
     <td th:text="${insulina.commento}"> blank </td>
+    <form action="cancellariga" method="post">
+      <input type="hidden" name="idUtente" value="10" th:value="${person.id}"> <br>
+      <input type="hidden" name="id" value="10" th:value="${insulina.id}"> <br>
+      <td> <input type="submit" value="cancella"> </td>
+    </form>
   </tr>
   </tbody>
 </table>
+
+<form action="cancellacronologia" method="post">
+  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+  <input type="submit" value="cancella tutto">
+</form>
 
 <form action="back" method="post">
   <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>

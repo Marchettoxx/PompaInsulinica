@@ -40,6 +40,7 @@ public class PompaInsulinica {
                 id, idUtente, glicemia, insulina, commento, time);
     }
 
+    public Long getId() { return id;}
     public Long getIdUtente() { return idUtente; }
     public Integer getGlicemia() {return glicemia;}
     public double getInsulina() {return insulina;}
