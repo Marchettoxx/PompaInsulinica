@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Controller
@@ -143,16 +144,21 @@ public class AppController {
             Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
-            if (glicemia != null && insulina != null) {
-                int int_glicemia = Integer.parseInt(glicemia);
-                int int_insulina = Integer.parseInt(insulina);
-                if ((int_glicemia < MIN_GLICEMIA || int_glicemia > MAX_GLICEMIA) ||
-                    int_insulina < MIN_INSULINA || int_insulina > MAX_INSULINA) {
+            if (!Objects.equals(glicemia, "") && !Objects.equals(insulina, "")) {
+                try {
+                    int int_glicemia = Integer.parseInt(glicemia);
+                    int int_insulina = Integer.parseInt(insulina);
+                    if ((int_glicemia < MIN_GLICEMIA || int_glicemia > MAX_GLICEMIA) ||
+                            int_insulina < MIN_INSULINA || int_insulina > MAX_INSULINA) {
+                        model.addAttribute("person", result.get());
+                        return "insulina";
+                    }
+                    PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
+                    repositoryInsulina.save(pompaInsulinica);
+                } catch (NumberFormatException ex){
                     model.addAttribute("person", result.get());
                     return "insulina";
                 }
-                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
-                repositoryInsulina.save(pompaInsulinica);
             }
             model.addAttribute("person", result.get());
             return "insulina";
