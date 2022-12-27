@@ -6,30 +6,47 @@
   <style>
         h1 {text-align: center;}
         form {text-align: center;}
+        form {text-align: center;}
+        table, th, td {
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+        }
   </style>
 </head>
 
 <body style="background-color:powderblue;">
+
 <h1> BENVENUTO NELLA HOME </h1>
 
-<form action="profilo" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input type="submit" value="Profilo"/>
-</form>
-<form action="cronologia" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input type="submit" value="Cronologia"/>
-</form>
-<form action="pompainsulinica" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input type="submit" value="Pompa Insulinica"/>
-</form>
-<br><br>
+<table style="background-color:#8fbc8f">
+  <tbody>
+  <tr>
+    <form action="profilo" method="post">
+      <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+      <td> <input type="submit" value="Profilo"/> <br> </td>
+    </form>
+  </tr>
+  <tr>
+    <form action="pompainsulinica" method="post">
+      <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+      <td>   <input type="submit" value="Pompa insulinica"/> <br> </td>
+    </form>
+  </tr>
+  <tr>
+    <form action="cronologia" method="post">
+      <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+     <td> <input type="submit" value="Cronologia"/> <br> </td>
+    </form>
+  </tr>
+  </tbody>
+</table>
 
 <form action="logout" method="post">
-  <input type="submit" value="Logout"/>
+  <br><input type="submit" value="Logout"/>
 </form>
-<br>
 
 </body>
 </html>

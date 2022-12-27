@@ -41,9 +41,7 @@ public class PompaInsulinica {
     }
 
     public Long getIdUtente() { return idUtente; }
-    public Integer getGlicemia() {
-        return glicemia;
-    }
+    public Integer getGlicemia() {return glicemia;}
     public double getInsulina() {return insulina;}
     public String getCommento() {return commento;}
     public String getTime() {return time;}

@@ -19,6 +19,11 @@ public class AppController {
     @Autowired
     private PompaInsulinicaRepository repositoryInsulina;
 
+    Integer MIN_GLICEMIA = 100;
+    Integer MAX_GLICEMIA = 300;
+    Integer MIN_INSULINA = 2;
+    Integer MAX_INSULINA = 10;
+
     @RequestMapping("/")
     public String index(){
         return "login";
@@ -132,21 +137,25 @@ public class AppController {
     @RequestMapping("/salva")
     public String saveIniezione(
             @RequestParam(name="id", required=true) Long id,
-            @RequestParam(name="glicemia", required=false) Integer glicemia,
-            @RequestParam(name="insulina", required=false) Integer insulina,
+            @RequestParam(name="glicemia", required=false) String glicemia,
+            @RequestParam(name="insulina", required=false) String insulina,
             @RequestParam(name="commento", required=true) String commento,
             Model model) {
         Optional<Person> result = repository.findById(id);
         if (result.isPresent()) {
-            if (glicemia!= null && insulina!=null) {
-                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, glicemia, insulina, commento);
+            if (glicemia != null && insulina != null) {
+                int int_glicemia = Integer.parseInt(glicemia);
+                int int_insulina = Integer.parseInt(insulina);
+                if ((int_glicemia < MIN_GLICEMIA || int_glicemia > MAX_GLICEMIA) ||
+                    int_insulina < MIN_INSULINA || int_insulina > MAX_INSULINA) {
+                    model.addAttribute("person", result.get());
+                    return "insulina";
+                }
+                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
                 repositoryInsulina.save(pompaInsulinica);
-                model.addAttribute("person", result.get());
-                return "insulina";
-            } else {
-                model.addAttribute("person", result.get());
-                return "insulina";
             }
+            model.addAttribute("person", result.get());
+            return "insulina";
         }
         else
             return "notfound";
