@@ -20,6 +20,10 @@ public class AppController {
     @Autowired
     private PompaInsulinicaRepository repositoryInsulina;
 
+    Integer MIN_USERNAME = 6;
+    Integer MAX_USERNAME = 15;
+    Integer MIN_PASSWORD = 8;
+    Integer MAX_PASSWORD = 12;
     Integer MIN_GLICEMIA = 100;
     Integer MAX_GLICEMIA = 300;
     Integer MIN_INSULINA = 2;
@@ -82,11 +86,47 @@ public class AppController {
             model.addAttribute("errore", "UTENTE GIA' PRESENTE");
             return "create";
         } else {
-            Person person = new Person(nome, cognome, email, username, password);
-            repository.save(person);
-            model.addAttribute("person", person);
-            return "login";
+            if ((username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME)
+                    && (password.length() >= MIN_PASSWORD && password.length() <= MAX_PASSWORD)) {
+                if (valid(password)) {
+                    if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
+                        Person person = new Person(nome, cognome, email, username, password);
+                        repository.save(person);
+                        model.addAttribute("person", person);
+                        return "login";
+                    }
+                    else {
+                        model.addAttribute("errore", "INSERISCI EMAIL VALIDA");
+                        return "create";
+                    }
+                }
+                else {
+                    model.addAttribute("errore", "PASSWORD DEVE CONTENERE ALMENO 1 NUMERO E 1 SEGNO DI PUNTEGGIATURA (!,?,-,.)");
+                    return "create";
+                }
+            }
+            else {
+                model.addAttribute("errore", String.format("DIMENSIONI USERNAME (%d/%d) PASSWORD (%d/%d)", MIN_USERNAME, MAX_USERNAME, MIN_PASSWORD, MAX_PASSWORD));
+                return "create";
+            }
         }
+    }
+
+    private Boolean valid (String password) {
+        int digit = 0;
+        int special = 0;
+        String charSpecial = "!?.-";
+        for (char c: password.toCharArray()) {
+            if (Character.isDigit(c)) {
+                digit += 1;
+            } else if (charSpecial.indexOf(c) != -1) {
+                special += 1;
+            }
+        }
+        if (digit >= 1 && special >= 1) {
+            return true;
+        } else
+            return false;
     }
 
     @RequestMapping("/profilo")

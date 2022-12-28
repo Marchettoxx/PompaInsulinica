@@ -18,9 +18,15 @@
 
 <body style="background-color:powderblue;">
 
-<div class="shape shape2"></div>
-
 <h1> HOME POMPAI NSULINICA </h1>
+
+<script>
+// When the user clicks on <div>, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+</script>
 
 <h3> LOGIN </h3>
 
@@ -30,10 +36,13 @@
     <table style="background-color:#8fbc8f">
         <tbody>
             <tr>
-                <td> Username: </td> <td> <input type="text" name="username" placeholder="username"><br> </td>
+                <td> <input type="text" name="username" placeholder="username"><br> </td>
             </tr>
             <tr>
-                <td> Password: </td> <td> <input type="password" name="password" placeholder="password"><br> </td>
+                <td> <input type="password" name="password" placeholder="password" id=""myInput><br> </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="Accedi"/></td>
@@ -41,6 +50,17 @@
         </tbody>
     </table>
 </form>
+
+<script>
+    function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") {
+             x.type = "text";
+          } else {
+            x.type = "password";
+           }
+        }
+  </script>
 
 <form action="create" method="post">
     <br> <input type="submit" value="Crea account"/>
