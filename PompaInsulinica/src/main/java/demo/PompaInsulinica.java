@@ -28,7 +28,7 @@ public class PompaInsulinica {
         this.commento = commento;
 
         long ms = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date resultdate = new Date(ms);
         this.time = sdf.format(resultdate);
     }

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style>
         h1 {text-align: center;}
-        h3 {text-align: center;}
+        h3, p {text-align: center;}
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
@@ -13,6 +13,26 @@
                 border-collapse: collapse;
         }
         form {text-align: center;}
+        .commentato {
+            position:relative;
+            color: black;
+            text-decoration: none;
+          }
+        .commentato div {
+            position:relative;
+            visibility:hidden;
+            background-color: #8fbc8f;
+            border: dotted black 1px;
+            color: black;
+            text-decoration: none;
+            padding:3px;
+            top:20;
+            left:40;
+        }
+        .commentato:hover div {
+            visibility: visible;
+            index-z:100;
+        }
    </style>
 </head>
 
@@ -23,14 +43,16 @@
 <h3 th:text = "${errore}" style="color: red"> </h3>
 
 <form action="salva" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input type="hidden" name="id" value="10" th:value="${person.id}">
     <table style="background-color:#8fbc8f">
         <tbody>
         <tr>
-            <td> <input type="text" name="glicemia" placeholder="inserisci glicemia"><br> </td>
+            <td> <a href="#" class="commentato"><input type="text" name="glicemia" placeholder="inserisci glicemia"><br>
+                <div>I valori di glicemia concessi sono <br>  compresi tra 100 e 300 </div></a></td>
         </tr>
         <tr>
-            <td> <input type="text" name="insulina" placeholder="inserisci insulina"><br> </td>
+            <td> <a href="#" class="commentato"><input type="text" name="insulina" placeholder="inserisci insulina"><br>
+                <div>I valori di insulina concessi sono <br>  compresi tra 2 e 10 </div></a></td>
         </tr>
         <tr>
             <td> <input type="text" name="commento" placeholder="inserisci un commento"><br> </td>
@@ -41,6 +63,8 @@
         </tbody>
     </table>
 </form>
+
+<p th:text = "${lastmisurazione}"> </p>
 
 <form action="back" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}">

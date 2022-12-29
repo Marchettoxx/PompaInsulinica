@@ -32,14 +32,14 @@
   </tr>
   </thead>
   <tbody>
-  <tr th:each="insulina: ${insuline}">
-    <td th:text="${insulina.glicemia}"> 120 </td>
-    <td th:text="${insulina.insulina}"> 2 </td>
-    <td th:text="${insulina.time}"> 20:06:17 </td>
-    <td th:text="${insulina.commento}"> blank </td>
-    <form action="cancellariga" method="post">
-      <input type="hidden" name="idUtente" value="10" th:value="${person.id}"> <br>
-      <input type="hidden" name="id" value="10" th:value="${insulina.id}"> <br>
+  <tr th:each="misurazione: ${cronologia}">
+    <td th:text="${misurazione.glicemia}"> 120 </td>
+    <td th:text="${misurazione.insulina}"> 2 </td>
+    <td th:text="${misurazione.time}"> 20:06:17 </td>
+    <td th:text="${misurazione.commento}"> blank </td>
+    <form action="cancellamisurazione" method="post">
+      <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+      <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
       <td> <input type="submit" value="cancella"> </td>
     </form>
   </tr>

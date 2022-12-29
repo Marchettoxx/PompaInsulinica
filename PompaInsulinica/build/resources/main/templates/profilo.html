@@ -36,7 +36,10 @@
             <td> Email: </td> <td> <input type="email" name="email" value="John.Smith@gmail.com" th:value="${person.email}" placeholder="inserisci email"><br> </td>
         </tr>
         <tr>
-            <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password"><br> </td>
+            <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password" id="myInput"><br> </td>
+        </tr>
+        <tr>
+            <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
         </tr>
         <tr>
             <td colspan="2"> <input type="submit" value="modifica" /> </td>
@@ -44,6 +47,17 @@
         </tbody>
     </table>
 </form>
+
+<script>
+    function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") {
+             x.type = "text";
+          } else {
+            x.type = "password";
+          }
+    }
+</script>
 
 <form action="back" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}">

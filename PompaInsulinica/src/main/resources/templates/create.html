@@ -14,12 +14,12 @@
                 text-align: center;
         }
         form {text-align: center;}
-          .commentato{
+          .commentato {
             position:relative;
             color: black;
             text-decoration: none;
           }
-          .commentato div{
+          .commentato div {
                   position:relative;
                   visibility:hidden;
                   background-color: #8fbc8f;
@@ -30,7 +30,7 @@
                   top:20;
                   left:40;
           }
-          .commentato:hover div{
+          .commentato:hover div {
                   visibility: visible;
                   index-z:100;
           }
@@ -47,22 +47,22 @@
   <table style="background-color:#8fbc8f">
     <tbody>
       <tr>
-        <td> <input type="text" name="nome" placeholder="nome"> </td>
+        <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
       </tr>
       <tr>
-        <td> <input type="text" name="cognome" placeholder="cognome"></td>
+        <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
       </tr>
       <tr>
-        <td> <a href="#" class="commentato"> <input type="email" name="email" placeholder="email">
+        <td> <a href="#" class="commentato"> <input type="email" name="email" th:value="${email}" placeholder="email">
               <div>Le mail concesse sono solo <br> quelle con @gmail.com e @yahoo.it</div></a></td>
       </tr>
       <tr>
-        <td> <a href="#" class="commentato"> <input type="text" name="username" placeholder="username">
+        <td> <a href="#" class="commentato"> <input type="text" name="username" th:value="${username} "placeholder="username">
               <div>L'username deve essere di <br> minimo 6 caratteri e massimo 15</div></a></td>
       </tr>
       <tr>
-        <td> <a href="#" class="commentato"> <input type="password" name="password" placeholder="password" id="myInput">
-          <div>La password deve essere tra gli 8 e i 12 caratteri, <br> contenere almeno un numero e un segno di punteggiatura</div></a></td>
+        <td> <a href="#" class="commentato"> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput">
+          <div>La password deve essere tra gli 8 e i 12 caratteri, <br> contenere almeno un numero e un segno di punteggiatura (!,?,-,.)</div></a></td>
       </tr>
       <tr>
         <td><input type="checkbox" onclick="myFunction()">Show Password</td>

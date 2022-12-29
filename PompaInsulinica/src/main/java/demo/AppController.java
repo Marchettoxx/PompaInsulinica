@@ -6,9 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Controller
@@ -38,9 +36,9 @@ public class AppController {
     public String back(
             @RequestParam(name="id", required=true) Long id,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            model.addAttribute("person", result.get());
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            model.addAttribute("person", person.get());
             return "utente";
         }
         else
@@ -57,21 +55,25 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model){
-        Optional<Person> result = repository.findByUsername(username);
-        if (result.isPresent()) {
-            if (result.get().getPassword().equals(password)) {
-                model.addAttribute("person", result.get());
+        Optional<Person> person = repository.findByUsername(username);
+        if (person.isPresent()) {
+            if (person.get().getUsername().equals(username) && person.get().getPassword().equals(password)) {
+                model.addAttribute("person", person.get());
                 return "utente";
             }
+            else {
+                model.addAttribute("errore", "CREDENZIALI ERRATE");
+                return "login";
+            }
         }
-        model.addAttribute("errore", "CREDENZIALI ERRATE");
-        return "login";
+        else {
+            model.addAttribute("errore", "UTENTE NON ESISTENTE");
+            return "login";
+        }
     }
 
     @RequestMapping("/create")
-    public String create(Model model){
-        return "create";
-    }
+    public String createUtente(Model model){ return "create";}
 
     @RequestMapping("/nuovoutente")
     public String creaUtente(
@@ -81,14 +83,59 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model){
-        Optional<Person> result = repository.findByUsername(username);
-        if (result.isPresent()) {
+        Optional<Person> person = repository.findByUsername(username);
+        if (person.isPresent()) {
             model.addAttribute("errore", "UTENTE GIA' PRESENTE");
             return "create";
-        } else {
-            if ((username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME)
-                    && (password.length() >= MIN_PASSWORD && password.length() <= MAX_PASSWORD)) {
+        }
+        else {
+            if (!nome.isEmpty()) {
+                model.addAttribute("nome", nome);
+                if (!cognome.isEmpty()) {
+                    model.addAttribute("cognome", cognome);
+                    if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
+                        model.addAttribute("email", email);
+                        if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
+                            model.addAttribute("username", username);
+                            if (valid(password)) {
+                                model.addAttribute("password", password);
+                                Person newPerson = new Person(nome, cognome, email, username, password);
+                                repository.save(newPerson);
+                                model.addAttribute("person", newPerson);
+                                return "login";
+                            }
+                            else {
+                                model.addAttribute("errore", "INSERISCI PASSWORD VALIDA");
+                                return "create";
+                            }
+                        }
+                        else {
+                            model.addAttribute("errore", "INSERISCI USERNAME VALIDO");
+                            return "create";
+                        }
+                    }
+                    else {
+                        model.addAttribute("errore", "INSERISCI EMAIL VALIDA");
+                        return "create";
+                    }
+                }
+                else {
+                    model.addAttribute("errore", "INSERISCI COGNOME");
+                    return "create";
+                }
+            }
+            else {
+                model.addAttribute("errore", "INSERISCI NOME");
+                return "create";
+            }
+        }
+
+        /* controllo validità username
+        if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
+            if (password.length() >= MIN_PASSWORD && password.length() <= MAX_PASSWORD) {
+                // controllo validità password
                 if (valid(password)) {
+                    // controllo validità email
                     if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
                         Person person = new Person(nome, cognome, email, username, password);
                         repository.save(person);
@@ -101,15 +148,19 @@ public class AppController {
                     }
                 }
                 else {
-                    model.addAttribute("errore", "PASSWORD DEVE CONTENERE ALMENO 1 NUMERO E 1 SEGNO DI PUNTEGGIATURA (!,?,-,.)");
+                    model.addAttribute("errore", "INSERISCI PASSWORD VALIDA");
                     return "create";
                 }
             }
             else {
-                model.addAttribute("errore", String.format("DIMENSIONI USERNAME (%d/%d) PASSWORD (%d/%d)", MIN_USERNAME, MAX_USERNAME, MIN_PASSWORD, MAX_PASSWORD));
+                model.addAttribute("errore", "INSERISCI PASSWORD VALIDA");
                 return "create";
             }
         }
+        else {
+            model.addAttribute("errore", "INSERISCI USERNAME VALIDO");
+            return "create";
+        }*/
     }
 
     private Boolean valid (String password) {
@@ -123,20 +174,16 @@ public class AppController {
                 special += 1;
             }
         }
-        if (digit >= 1 && special >= 1) {
-            return true;
-        } else
-            return false;
+        return digit >= 1 && special >= 1 && password.length() >= MIN_PASSWORD && password.length() <= MAX_PASSWORD;
     }
 
     @RequestMapping("/profilo")
-    public String edit(
+    public String showDatiUtente(
             @RequestParam(name="id", required=true) Long id,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            Person person = result.get();
-            model.addAttribute("person", person);
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            model.addAttribute("person", person.get());
             return "profilo";
         }
         else
@@ -152,13 +199,12 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-
-            repository.delete(result.get());
-            Person person = new Person(nome, cognome, email, username, password);
-            repository.save(person);
-            model.addAttribute("person", person);
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            repository.delete(person.get());
+            Person newPerson = new Person(nome, cognome, email, username, password);
+            repository.save(newPerson);
+            model.addAttribute("person", newPerson);
             return "profilo";
         }
         else
@@ -169,9 +215,15 @@ public class AppController {
     public String pompaInsulinica(
             @RequestParam(name="id", required=true) Long id,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            model.addAttribute("person", result.get());
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            // metto a schermo ultima iniezione fatta
+            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+            if (!cronologia.isEmpty()) {
+                PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
+                model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+            }
+            model.addAttribute("person", person.get());
             return "insulina";
         }
         else
@@ -179,51 +231,96 @@ public class AppController {
     }
 
     @RequestMapping("/salva")
-    public String saveIniezione(
+    public String saveMisurazione(
             @RequestParam(name="id", required=true) Long id,
             @RequestParam(name="glicemia", required=false) String glicemia,
             @RequestParam(name="insulina", required=false) String insulina,
             @RequestParam(name="commento", required=true) String commento,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            model.addAttribute("person", result.get());
-            if (!Objects.equals(glicemia, "") && !Objects.equals(insulina, "")) {
-                try {
-                    int int_glicemia = Integer.parseInt(glicemia);
-                    int int_insulina = Integer.parseInt(insulina);
-                    if ((int_glicemia < MIN_GLICEMIA || int_glicemia > MAX_GLICEMIA) ||
-                            int_insulina < MIN_INSULINA || int_insulina > MAX_INSULINA) {
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            model.addAttribute("person", person.get());
+            if (!glicemia.isEmpty()) {
+                if (!insulina.isEmpty()) {
+                    try {
+                        int int_glicemia = Integer.parseInt(glicemia);
+                        int int_insulina = Integer.parseInt(insulina);
+                        if (int_glicemia >= MIN_GLICEMIA && int_glicemia <= MAX_GLICEMIA) {
+                            if (int_insulina >= MIN_INSULINA && int_insulina <= MAX_INSULINA) {
+                                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
+                                repositoryInsulina.save(pompaInsulinica);
+                                List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+                                if (!cronologia.isEmpty()) {
+                                    PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
+                                    model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+                                }
+                                model.addAttribute("person", person.get());
+                                return "insulina";
+                            }
+                            else {
+                                model.addAttribute("errore", "INSERISCI INSULINA VALIDA");
+                                return "insulina";
+                            }
+                        }
+                        else {
+                            model.addAttribute("errore", "INSERISCI GLICEMIA VALIDA");
+                            return "insulina";
+                        }
+                    } catch (NumberFormatException ex){
+                        model.addAttribute("errore", "INSERISCI VALORI INTERI");
                         return "insulina";
                     }
-                    PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
-                    repositoryInsulina.save(pompaInsulinica);
-                } catch (NumberFormatException ex){
-                    model.addAttribute("errore", "INSERISCI VALORI INTERI");
+                }
+                else {
+                    model.addAttribute("errore", "INSERISCI INSULINA");
                     return "insulina";
                 }
-            } else {
-                model.addAttribute("errore", "INSERISCI ENTRAMBI I VALORI");
+            }
+            else {
+                model.addAttribute("errore", "INSERISCI GLICEMIA");
                 return "insulina";
             }
-            return "insulina";
         }
         else
             return "notfound";
+
+        /*if (!glicemia.isEmpty() && !insulina.isEmpty()) {
+            try {
+                int int_glicemia = Integer.parseInt(glicemia);
+                int int_insulina = Integer.parseInt(insulina);
+                if ((int_glicemia < MIN_GLICEMIA || int_glicemia > MAX_GLICEMIA) ||
+                        int_insulina < MIN_INSULINA || int_insulina > MAX_INSULINA) {
+                    return "insulina";
+                }
+                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, int_glicemia, int_insulina, commento);
+                repositoryInsulina.save(pompaInsulinica);
+                List<PompaInsulinica> iniezioni = repositoryInsulina.findByIdUtente(id);
+                if (!iniezioni.isEmpty()) {
+                    PompaInsulinica iniezione = iniezioni.get(iniezioni.size() - 1);
+                    model.addAttribute("lastriga", String.format("ULTIMA INIEZIONE:  %d %.1f %s %s", iniezione.getGlicemia(), iniezione.getInsulina(), iniezione.getTime(), iniezione.getCommento()));
+                }
+                model.addAttribute("person", result.get());
+                return "insulina";
+            } catch (NumberFormatException ex){
+                model.addAttribute("errore", "INSERISCI VALORI INTERI");
+                return "insulina";
+            }
+        } else {
+            model.addAttribute("errore", "INSERISCI ENTRAMBI I VALORI");
+            return "insulina";
+        }
+        */
     }
 
     @RequestMapping("/cronologia")
     public String getCronologia(
             @RequestParam(name="id", required=true) Long id,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
-            List<PompaInsulinica> cronologia = new LinkedList<>();
-            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)){
-                cronologia.add(p);
-            }
-            model.addAttribute("person", result.get());
-            model.addAttribute("insuline", cronologia);
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+            model.addAttribute("person", person.get());
+            model.addAttribute("cronologia", cronologia);
             return "cronologia";
         }
         else
@@ -234,34 +331,31 @@ public class AppController {
     public String dropCronologia(
             @RequestParam(name="id", required=true) Long id,
             Model model) {
-        Optional<Person> result = repository.findById(id);
-        if (result.isPresent()) {
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
             for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)) {
                 repositoryInsulina.delete(p);
             }
-            model.addAttribute("person", result.get());
+            model.addAttribute("person", person.get());
             return "cronologia";
         }
         else
             return "notfound";
     }
 
-    @RequestMapping("/cancellariga")
-    public String dropRiga(
-            @RequestParam(name="idUtente", required=true) Long idUtente,
+    @RequestMapping("/cancellamisurazione")
+    public String dropMisurazione(
             @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="idMisurazione", required=true) Long idMisurazione,
             Model model) {
-        Optional<Person> persona = repository.findById(idUtente);
-        if (persona.isPresent()) {
-            model.addAttribute("person", persona.get());
-            Optional<PompaInsulinica> result = repositoryInsulina.findById(id);
-            if (result.isPresent()) {
-                repositoryInsulina.delete(result.get());
-                List<PompaInsulinica> cronologia = new LinkedList<>();
-                for (PompaInsulinica p: repositoryInsulina.findByIdUtente(idUtente)){
-                    cronologia.add(p);
-                }
-                model.addAttribute("insuline", cronologia);
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            Optional<PompaInsulinica> misurazione = repositoryInsulina.findById(id);
+            if (misurazione.isPresent()) {
+                repositoryInsulina.delete(misurazione.get());
+                List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+                model.addAttribute("person", person.get());
+                model.addAttribute("cronologia", cronologia);
                 return "cronologia";
             }
             else
