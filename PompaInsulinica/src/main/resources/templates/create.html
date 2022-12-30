@@ -9,8 +9,6 @@
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
-                border: 1px solid black;
-                border-collapse: collapse;
                 text-align: center;
         }
         form {text-align: center;}
@@ -88,46 +86,17 @@
           color:#000000;
           box-shadow:none;
         }
+        .box {
+            margin-left: auto;
+            margin-right: auto;
+            text-align:center;
+            background-color: #8fbc8f;
+            color: black;
+            border-radius: 40px;
+            height: 500px;
+            width: 600px;
+        }
    </style>
-</head>
-
-<body style="background-color:powderblue;">
-
-  <h1 > CREAZIONE DI UN NUOVO UTENTE </h1>
-
-  <h3 th:text = "${errore}" style="color: red"> </h3>
-
-  <form action="nuovoutente" method="post">
-  <table style="background-color:#8fbc8f">
-    <tbody>
-      <tr>
-        <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
-      </tr>
-      <tr>
-        <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
-      </tr>
-      <tr>
-        <td> <a href="#" class="commentato"> <input type="email" name="email" th:value="${email}" placeholder="email">
-              <div>Le mail concesse sono solo <br> quelle con @gmail.com e @yahoo.it</div></a></td>
-      </tr>
-      <tr>
-        <td> <a href="#" class="commentato"> <input type="text" name="username" th:value="${username} "placeholder="username">
-              <div>L'username deve essere di <br> minimo 6 caratteri e massimo 15</div></a></td>
-      </tr>
-      <tr>
-        <td> <a href="#" class="commentato"> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput">
-          <div>La password deve essere tra gli 8 e i 12 caratteri, <br> contenere almeno un numero e un segno di punteggiatura (!,?,-,.)</div></a></td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" onclick="myFunction()"> Show Password </td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center"> <input class="btn" type="submit" value="Iscriviti"/></td>
-      </tr>
-    </tbody>
-  </table>
-  </form>
-
   <script>
     function myFunction() {
           var x = document.getElementById("myInput");
@@ -138,10 +107,50 @@
            }
         }
   </script>
+</head>
+
+<body style="background-color:powderblue;">
+
+<div class="box">
+  <h1 > CREAZIONE DI UN NUOVO UTENTE </h1>
+  <h3 th:text = "${errore}" style="color: red"> </h3>
+
+  <form action="nuovoutente" method="post">
+    <table style="background-color:#8fbc8f">
+      <tbody>
+        <tr>
+          <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
+        </tr>
+        <tr>
+          <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
+        </tr>
+        <tr>
+          <td> <a href="#" class="commentato"> <input type="email" name="email" th:value="${email}" placeholder="email">
+                <div>Le mail concesse sono solo <br> quelle con @gmail.com e @yahoo.it</div></a></td>
+        </tr>
+        <tr>
+          <td> <a href="#" class="commentato"> <input type="text" name="username" th:value="${username} "placeholder="username">
+                <div>L'username deve essere di <br> minimo 6 caratteri e massimo 15</div></a></td>
+        </tr>
+        <tr>
+          <td> <a href="#" class="commentato"> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput">
+            <div>La password deve essere tra gli 8 e i 12 caratteri, <br> contenere almeno un numero e un segno di punteggiatura (!,?,-,.)</div></a></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" onclick="myFunction()"> Show Password </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"> <input class="btn" type="submit" value="Iscriviti"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
 
   <form action="logout" method="post">
     <br> <input class="btnBack" type="submit" value="Indietro"/>
   </form>
+
+</div>
 
 </body>
 </html>

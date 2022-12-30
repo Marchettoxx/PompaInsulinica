@@ -9,8 +9,6 @@
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
-                border: 1px solid black;
-                border-collapse: collapse;
         }
         form {text-align: center;}
         .commentato {
@@ -89,44 +87,56 @@
           color:#000000;
           box-shadow:none;
         }
+        .box {
+            margin-left: auto;
+            margin-right: auto;
+            text-align:center;
+            background-color: #8fbc8f;
+            color: black;
+            border-radius: 40px;
+            height: 450px;
+            width: 600px;
+        }
    </style>
 </head>
 
 <body style="background-color:powderblue;">
 
-<h1> REGISTRAZIONE POMPA INSULINICA </h1>
+<div class="box">
+    <h1> POMPA INSULINICA </h1>
+    <h3 th:text = "${errore}" style="color: red"> </h3>
 
-<h3 th:text = "${errore}" style="color: red"> </h3>
+    <form action="salva" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <table style="background-color:#8fbc8f">
+            <tbody>
+            <tr>
+                <td> <a href="#" class="commentato"><input type="text" name="glicemia" th:value="${glicemia}" placeholder="inserisci glicemia"><br>
+                    <div>I valori di glicemia concessi sono <br>  compresi tra 100 e 300 </div></a></td>
+            </tr>
+            <tr>
+                <td> <a href="#" class="commentato"><input type="text" name="insulina" th:value="${insulina}" placeholder="inserisci insulina"><br>
+                    <div>I valori di insulina concessi sono <br>  compresi tra 2 e 10 </div></a></td>
+            </tr>
+            <tr>
+                <td> <a href="#" class="commentato"><input type="text" name="commento" th:value="${commento}" placeholder="inserisci un commento"><br>
+                <div>Il commento può essere <br>  lungo massimo 120 caratteri </div></a></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input class="btn" type = "submit" value="salva"/> <br> </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
 
-<form action="salva" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}">
-    <table style="background-color:#8fbc8f">
-        <tbody>
-        <tr>
-            <td> <a href="#" class="commentato"><input type="text" name="glicemia" th:value="${glicemia}" placeholder="inserisci glicemia"><br>
-                <div>I valori di glicemia concessi sono <br>  compresi tra 100 e 300 </div></a></td>
-        </tr>
-        <tr>
-            <td> <a href="#" class="commentato"><input type="text" name="insulina" th:value="${insulina}" placeholder="inserisci insulina"><br>
-                <div>I valori di insulina concessi sono <br>  compresi tra 2 e 10 </div></a></td>
-        </tr>
-        <tr>
-            <td> <a href="#" class="commentato"><input type="text" name="commento" th:value="${commento}" placeholder="inserisci un commento"><br>
-            <div>Il commento può essere <br>  lungo massimo 120 caratteri </div></a></td>
-        </tr>
-        <tr>
-            <td colspan="2"> <input class="btn" type = "submit" value="salva"/> <br> </td>
-        </tr>
-        </tbody>
-    </table>
-</form>
+    <p th:text = "${lastmisurazione}"> </p> <br>
 
-<p th:text = "${lastmisurazione}"> </p>
+    <form action="back" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <br> <input class="btnBack" type="submit" value="Indietro">
+    </form>
 
-<form action="back" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}">
-    <br> <input class="btnBack" type="submit" value="Indietro">
-</form>
+</div>
 
 </body>
 </html>

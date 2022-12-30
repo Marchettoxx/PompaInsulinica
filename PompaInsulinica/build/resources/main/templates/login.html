@@ -10,7 +10,6 @@
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
-                border: 1px solid black;
                 border-collapse: collapse;
         }
         .btnNewAccount{
@@ -68,58 +67,58 @@
           color:#000000;
           box-shadow:none;
         }
+        .box {
+            margin-left: auto;
+            margin-right: auto;
+            text-align:center;
+            background-color: #8fbc8f;
+            color: black;
+            border-radius: 40px;
+            height: 300px;
+            width: 600px;
+        }
     </style>
+    <script>
+        function myFunction() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+                 x.type = "text";
+              } else {
+                x.type = "password";
+              }
+        }
+    </script>
 </head>
 
-<body style="background-color:powderblue;">
+<body style="background-color:powderblue">
 
-<h1> HOME POMPAI NSULINICA </h1>
+<div class="box" >
+    <h1> LOGIN POMPA INSULINICA </h1>
+    <h3 th:text = "${errore}" style="color: red"> </h3>
 
-<script>
-// When the user clicks on <div>, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
+    <form action="login" method="post">
+        <table style="background-color:#8fbc8f">
+            <tbody>
+                <tr>
+                    <td> <input type="text" name="username" placeholder="username"> </td>
+                </tr>
+                <tr>
+                    <td> <input type="password" name="password" placeholder="password" id="myInput"> </td>
+                </tr>
+                <tr>
+                    <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
+                </tr>
+                <tr>
+                    <td> <br> <input class="btn" type="submit" value="Accedi"/> </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
 
-<h3> LOGIN </h3>
-
-<h3 th:text = "${errore}" style="color: red"> </h3>
-
-<form action="login" method="post">
-    <table style="background-color:#8fbc8f">
-        <tbody>
-            <tr>
-                <td> <input type="text" name="username" placeholder="username"><br> </td>
-            </tr>
-            <tr>
-                <td> <input type="password" name="password" placeholder="password" id="myInput"><br> </td>
-            </tr>
-            <tr>
-                <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center"><input class="btn" type="submit" value="Accedi"/></td>
-            </tr>
-        </tbody>
-    </table>
-</form>
-
-<script>
-    function myFunction() {
-          var x = document.getElementById("myInput");
-          if (x.type === "password") {
-             x.type = "text";
-          } else {
-            x.type = "password";
-          }
-    }
-</script>
-
-<form action="create" method="post">
-    <br> <input class="btnNewAccount" type="submit" value="Crea account"/>
-</form>
+    <form action="create" method="post">
+        <br> <input class="btnNewAccount" type="submit" value="Crea nuovo account"/>
+    </form>
+</div>
 
 </body>
 </html>

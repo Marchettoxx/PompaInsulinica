@@ -8,8 +8,6 @@
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
-                border: 1px solid black;
-                border-collapse: collapse;
                 text-align: center;
         }
         form {text-align: center;}
@@ -68,45 +66,18 @@
           color:#000000;
           box-shadow:none;
         }
+        .box {
+            margin-left: auto;
+            margin-right: auto;
+            text-align:center;
+            background-color: #8fbc8f;
+            color: black;
+            border-radius: 40px;
+            height: 400px;
+            width: 600px;
+        }
     </style>
-</head>
-
-<body style="background-color:powderblue;">
-
-<h1> PROFILO </h1>
-
-<h3 th:text = "${errore}" style="color: red"> </h3>
-
-<form action="modifica" method="post">
-<table style="background-color:#8fbc8f">
-    <tbody>
-    <tr>
-        <td> Nome: </td> <td th:text="${person.nome}"><br> John </td>
-    </tr>
-    <tr>
-        <td> Cognome: </td> <td th:text="${person.cognome}"><br> Franco </td>
-    </tr>
-    <tr>
-        <td> Username: </td> <td th:text="${person.username}"><br> Jhonny </td>
-    </tr>
-    <tr>
-        <td> Email: </td> <td th:text="${person.email}"><br> jhonnyfranco@gmail.com </td>
-    </tr>
-    <tr>
-        <td> Password: </td> <td><input type="password" value="IngSoft" th:value="${person.password}" id="myInput"><br> </td>
-    </tr>
-    <tr>
-        <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
-    </tr>
-    <tr>
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-        <td colspan="2"> <input class="btn" type="submit" value="modifica" /> </td>
-    </tr>
-    </tbody>
-</table>
-</form>
-
-<script>
+    <script>
     function myFunction() {
           var x = document.getElementById("myInput");
           if (x.type === "password") {
@@ -116,11 +87,48 @@
           }
     }
 </script>
+</head>
 
-<form action="back" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}">
-    <br> <input class="btnBack" type="submit" value="Indietro">
-</form>
+<body style="background-color:powderblue;">
+
+<div class="box">
+    <h1> PROFILO </h1>
+    <h3 th:text = "${errore}" style="color: red"> </h3>
+
+    <form action="modifica" method="post">
+        <table style="background-color:#8fbc8f">
+            <tbody>
+            <tr>
+                <td> Nome: </td> <td> <input type="text" th:text="${person.nome}"><br> </td>
+            </tr>
+            <tr>
+                <td> Cognome: </td> <td> <input type="text" th:value="${person.cognome}"><br> </td>
+            </tr>
+            <tr>
+                <td> Username: </td> <td> <input type="text" th:value="${person.username}"><br> </td>
+            </tr>
+            <tr>
+                <td> Email: </td> <td> <input type="email" th:value="${person.email}"><br> </td>
+            </tr>
+            <tr>
+                <td> Password: </td> <td><input type="password" th:value="${person.password}" id="myInput"><br> </td>
+            </tr>
+            <tr>
+                <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
+            </tr>
+            <tr>
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td colspan="2"> <input class="btn" type="submit" value="modifica" /> </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <form action="back" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <br> <input class="btnBack" type="submit" value="Indietro">
+    </form>
+</div>
 
 </body>
 </html>
