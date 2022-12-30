@@ -3,92 +3,7 @@
 <head>
     <title>MVC Web application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <style>
-        h1 {
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            color: green;
-        }
-        h3 {text-align: center;}
-        form {text-align: center;}
-        table, th, td {
-                margin-left: auto;
-                margin-right: auto;
-                border-collapse: collapse;
-        }
-        .btnNewAccount{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#48D1CC;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btnNewAccount:hover{
-          background:#40E0D0;
-        }
-        .btnNewAccount:active{
-          background:#90EE90;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-
-        .btn{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#C0C0C0;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btn:hover{
-          background:#E6E6FA;
-        }
-        .btn:active{
-          background:#A9A9A9;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .box {
-            margin-left: auto;
-            margin-right: auto;
-            text-align:center;
-            background-color: #8fbc8f;
-            color: black;
-            border-radius: 40px;
-            height: 300px;
-            width: 600px;
-        }
-        .errore {
-            color: #a31a2c;
-            font-size: 16px;
-        }
-        #my{
-            zoom: 160%;
-        }
-    </style>
+    <link rel="stylesheet" href="mystyle.css">
     <script>
         function myFunction() {
               var x = document.getElementById("myInput");
@@ -100,36 +15,33 @@
         }
     </script>
 </head>
+<body>
+    <div class="box" >
+        <h1> LOGIN POMPA INSULINICA </h1>
+        <h3 class="errore" th:text = "${errore}" > </h3>
 
-<body style="background-color:powderblue">
+        <form action="login" method="post">
+            <table style="background-color:#8fbc8f">
+                <tbody>
+                    <tr>
+                        <td> <input type="text" name="username" placeholder="username"> </td>
+                    </tr>
+                    <tr>
+                        <td> <input type="password" name="password" placeholder="password" id="myInput"> </td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
+                    </tr>
+                    <tr>
+                        <td> <br> <input class="btn" type="submit" value="Accedi"/> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
 
-<div class="box" >
-    <h1> LOGIN POMPA INSULINICA </h1>
-    <h3 class="errore" th:text = "${errore}" > </h3>
-
-    <form action="login" method="post">
-        <table style="background-color:#8fbc8f">
-            <tbody>
-                <tr>
-                    <td> <input type="text" name="username" placeholder="username"> </td>
-                </tr>
-                <tr>
-                    <td> <input type="password" name="password" placeholder="password" id="myInput"> </td>
-                </tr>
-                <tr>
-                    <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
-                </tr>
-                <tr>
-                    <td> <br> <input class="btn" type="submit" value="Accedi"/> </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
-
-    <form action="create" method="post">
-        <br> <input class="btnNewAccount" type="submit" value="Crea nuovo account"/>
-    </form>
-</div>
-
+        <form action="create" method="post">
+            <br> <input class="btnNewAccount" type="submit" value="Crea nuovo account"/>
+        </form>
+    </div>
 </body>
 </html>

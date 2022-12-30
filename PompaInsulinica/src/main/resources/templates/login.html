@@ -15,36 +15,33 @@
         }
     </script>
 </head>
-
 <body>
+    <div class="box" >
+        <h1> LOGIN POMPA INSULINICA </h1>
+        <h3 class="errore" th:text = "${errore}" > </h3>
 
-<div class="box" >
-    <h1> LOGIN POMPA INSULINICA </h1>
-    <h3 class="errore" th:text = "${errore}" > </h3>
+        <form action="login" method="post">
+            <table style="background-color:#8fbc8f">
+                <tbody>
+                    <tr>
+                        <td> <input type="text" name="username" placeholder="username"> </td>
+                    </tr>
+                    <tr>
+                        <td> <input type="password" name="password" placeholder="password" id="myInput"> </td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
+                    </tr>
+                    <tr>
+                        <td> <br> <input class="btn" type="submit" value="Accedi"/> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
 
-    <form action="login" method="post">
-        <table style="background-color:#8fbc8f">
-            <tbody>
-                <tr>
-                    <td> <input type="text" name="username" placeholder="username"> </td>
-                </tr>
-                <tr>
-                    <td> <input type="password" name="password" placeholder="password" id="myInput"> </td>
-                </tr>
-                <tr>
-                    <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
-                </tr>
-                <tr>
-                    <td> <br> <input class="btn" type="submit" value="Accedi"/> </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
-
-    <form action="create" method="post">
-        <br> <input class="btnNewAccount" type="submit" value="Crea nuovo account"/>
-    </form>
-</div>
-
+        <form action="create" method="post">
+            <br> <input class="btnNewAccount" type="submit" value="Crea nuovo account"/>
+        </form>
+    </div>
 </body>
 </html>
