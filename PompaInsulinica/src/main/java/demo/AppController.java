@@ -234,6 +234,19 @@ public class AppController {
     }
 
     @RequestMapping("/modifica")
+    public String modifica(
+            @RequestParam(name="id", required=true) Long id,
+            Model model) {
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            model.addAttribute("person", person.get());
+            return "edit";
+        }
+        else
+            return "notfound";
+    }
+
+    @RequestMapping("/salvamodifica")
     public String editDatiUtente(
             @RequestParam(name="id", required=true) Long id,
             @RequestParam(name="nome", required=true) String nome,
@@ -287,13 +300,13 @@ public class AppController {
                 cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
                 repositoryInsulina.saveAll(cronologia);
                 model.addAttribute("person", newPerson);
+                return "profilo";
             }
             else {
                 model.addAttribute("person", temp);
                 model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
+                return "edit";
             }
-
-            return "profilo";
         }
         else
             return "notfound";
@@ -384,18 +397,18 @@ public class AppController {
             if (flag) {
                 PompaInsulinica pompaInsulinica = new PompaInsulinica(id, Integer.parseInt(glicemia), Integer.parseInt(insulina), commento);
                 repositoryInsulina.save(pompaInsulinica);
-                List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
-                if (!cronologia.isEmpty()) {
-                    PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
-                    model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
-                }
+                model.addAttribute("glicemia", "");
+                model.addAttribute("insulina", "");
+                model.addAttribute("commento", "");
             }
             else
                 model.addAttribute("errore", "INSERISCI VALORI VALIDI");
 
-            model.addAttribute("glicemia", "");
-            model.addAttribute("insulina", "");
-            model.addAttribute("commento", "");
+            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+            if (!cronologia.isEmpty()) {
+                PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
+                model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+            }
             return "insulina";
         }
         else
@@ -506,7 +519,7 @@ public class AppController {
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            Optional<PompaInsulinica> misurazione = repositoryInsulina.findById(id);
+            Optional<PompaInsulinica> misurazione = repositoryInsulina.findById(idMisurazione);
             if (misurazione.isPresent()) {
                 repositoryInsulina.delete(misurazione.get());
                 List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
@@ -515,6 +528,7 @@ public class AppController {
                 return "cronologia";
             }
             else
+                model.addAttribute("errore", "misurazione non presente");
                 return "notfound";
         }
         else

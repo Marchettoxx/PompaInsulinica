@@ -10,6 +10,7 @@
                 margin-right: auto;
                 border: 1px solid black;
                 border-collapse: collapse;
+                text-align: center;
         }
         form {text-align: center;}
     </style>
@@ -22,32 +23,32 @@
 <h3 th:text = "${errore}" style="color: red"> </h3>
 
 <form action="modifica" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-    <table style="background-color:#8fbc8f">
-        <tbody>
-        <tr>
-            <td> Nome: </td> <td> <input type="text" name="nome" value="John" th:value="${person.nome}" placeholder="inserisci nome"><br> </td>
-        </tr>
-        <tr>
-            <td> Cognome: </td> <td> <input type="text" name="cognome" value="Smith" th:value="${person.cognome}" placeholder="inserisci cognome"><br> </td>
-        </tr>
-        <tr>
-            <td> Username: </td> <td> <input type="text" name="username" value="JE" th:value="${person.username}" placeholder="inserisci username"><br> </td>
-        </tr>
-        <tr>
-            <td> Email: </td> <td> <input type="email" name="email" value="John.Smith@gmail.com" th:value="${person.email}" placeholder="inserisci email"><br> </td>
-        </tr>
-        <tr>
-            <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password" id="myInput"><br> </td>
-        </tr>
-        <tr>
-            <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
-        </tr>
-        <tr>
-            <td colspan="2"> <input type="submit" value="modifica" /> </td>
-        </tr>
-        </tbody>
-    </table>
+<table style="background-color:#8fbc8f">
+    <tbody>
+    <tr>
+        <td> Nome: </td> <td th:text="${person.nome}"><br> John </td>
+    </tr>
+    <tr>
+        <td> Cognome: </td> <td th:text="${person.cognome}"><br> Franco </td>
+    </tr>
+    <tr>
+        <td> Username: </td> <td th:text="${person.username}"><br> Jhonny </td>
+    </tr>
+    <tr>
+        <td> Email: </td> <td th:text="${person.email}"><br> jhonnyfranco@gmail.com </td>
+    </tr>
+    <tr>
+        <td> Password: </td> <td><input type="password" value="IngSoft" th:value="${person.password}" id="myInput"><br> </td>
+    </tr>
+    <tr>
+        <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
+    </tr>
+    <tr>
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <td colspan="2"> <input type="submit" value="modifica" /> </td>
+    </tr>
+    </tbody>
+</table>
 </form>
 
 <script>

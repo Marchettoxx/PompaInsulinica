@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>MVC Web application</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+        h1 {text-align: center;}
+        table, th, td {
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+        }
+        form {text-align: center;}
+    </style>
+</head>
+
+<body style="background-color:#abcdef;">
+
+<h1> MODIFICA CREDENZIALI UTENTE </h1>
+
+<h3 th:text = "${errore}" style="color: red"> </h3>
+
+<form action="salvamodifica" method="post">
+  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+  <table style="background-color:#6495ed">
+    <tbody>
+    <tr>
+      <td> Nome: </td> <td> <input type="text" name="nome" value="John" th:value="${person.nome}" placeholder="inserisci nome"><br> </td>
+    </tr>
+    <tr>
+      <td> Cognome: </td> <td> <input type="text" name="cognome" value="Smith" th:value="${person.cognome}" placeholder="inserisci cognome"><br> </td>
+    </tr>
+    <tr>
+      <td> Username: </td> <td> <input type="text" name="username" value="JE" th:value="${person.username}" placeholder="inserisci username"><br> </td>
+    </tr>
+    <tr>
+      <td> Email: </td> <td> <input type="email" name="email" value="John.Smith@gmail.com" th:value="${person.email}" placeholder="inserisci email"><br> </td>
+    </tr>
+    <tr>
+      <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password" id="myInput"><br> </td>
+    </tr>
+    <tr>
+      <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
+    </tr>
+    <tr>
+      <td colspan="2"> <input type="submit" value="salva" /> </td>
+    </tr>
+    </tbody>
+  </table>
+</form>
+
+<script>
+    function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") {
+             x.type = "text";
+          } else {
+            x.type = "password";
+          }
+    }
+</script>
+
+<form action="back" method="post">
+  <input type="hidden" name="id" value="10" th:value="${person.id}">
+  <br> <input type="submit" value="Indietro">
+</form>
+
+</body>
+</html>
