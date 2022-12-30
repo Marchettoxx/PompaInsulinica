@@ -13,6 +13,87 @@
                 text-align: center;
         }
         form {text-align: center;}
+        .btn{
+          display:inline-block;
+          padding:0.7em 1.4em;
+          margin:0 0.3em 0.3em 0;
+          border:none;
+          border-radius:0.5em;
+          box-sizing: border-box;
+          text-decoration:none;
+          font-family:'arial';
+          text-transform:uppercase;
+          font-weight:400;
+          color:#000000;
+          background-color:#C0C0C0;
+          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
+          text-align:center;
+          position:relative;
+          cursor:pointer;
+        }
+        .btn:hover{
+          background:#E6E6FA;
+        }
+        .btn:active{
+          background:#A9A9A9;
+          top:0.15em;
+          color:#000000;
+          box-shadow:none;
+        }
+        .btnBack{
+          display:inline-block;
+          padding:0.7em 1.4em;
+          margin:0 0.3em 0.3em 0;
+          border:none;
+          border-radius:0.5em;
+          box-sizing: border-box;
+          text-decoration:none;
+          font-family:'arial';
+          text-transform:uppercase;
+          font-weight:400;
+          color:#000000;
+          background-color:#FFA07A;
+          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
+          text-align:center;
+          position:relative;
+          cursor:pointer;
+        }
+        .btnBack:hover{
+          background:#F08080;
+        }
+        .btnBack:active{
+          background:#CD5C5C;
+          top:0.15em;
+          color:#000000;
+          box-shadow:none;
+        }
+        .btnDel{
+          display:inline-block;
+          padding:0.7em 1.4em;
+          margin:0 0.3em 0.3em 0;
+          border:none;
+          border-radius:0.5em;
+          box-sizing: border-box;
+          text-decoration:none;
+          font-family:'arial';
+          text-transform:uppercase;
+          font-weight:400;
+          color:#000000;
+          background-color:#DC143C;
+          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
+          text-align:center;
+          position:relative;
+          cursor:pointer;
+        }
+        .btnDel:hover{
+          background:#E64B3E;
+        }
+        .btnDel:active{
+          background:#D7372A;
+          top:0.15em;
+          color:#000000;
+          box-shadow:none;
+        }
    </style>
 </head>
 
@@ -40,7 +121,7 @@
     <form action="cancellamisurazione" method="post">
       <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
       <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
-      <td> <input type="submit" value="cancella"> </td>
+      <td> <input class="btn" type="submit" value="cancella"> </td>
     </form>
   </tr>
   </tbody>
@@ -48,12 +129,12 @@
 
 <form action="cancellacronologia" method="post">
   <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input type="submit" value="cancella tutto">
+  <input class="btnDel" type="submit" value="cancella tutto">
 </form>
 
 <form action="back" method="post">
   <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input type="submit" value="Indietro">
+  <input class="btnBack" type="submit" value="Indietro">
 </form>
 
 </body>
