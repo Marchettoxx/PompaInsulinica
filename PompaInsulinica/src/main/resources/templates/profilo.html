@@ -19,6 +19,8 @@
 
 <h1> PROFILO </h1>
 
+<h3 th:text = "${errore}" style="color: red"> </h3>
+
 <form action="modifica" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
     <table style="background-color:#8fbc8f">

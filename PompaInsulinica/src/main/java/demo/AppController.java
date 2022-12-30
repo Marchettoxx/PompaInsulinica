@@ -92,27 +92,32 @@ public class AppController {
 
             if (!nome.isEmpty()) {
                 model.addAttribute("nome", nome);
-            } else
+            }
+            else
                 flag = false;
 
             if (!cognome.isEmpty()) {
                 model.addAttribute("cognome", cognome);
-            } else
+            }
+            else
                 flag = false;
 
             if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
                 model.addAttribute("email", email);
-            } else
+            }
+            else
                 flag = false;
 
             if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
                 model.addAttribute("username", username);
-            } else
+            }
+            else
                 flag = false;
 
             if (valid(password)) {
                 model.addAttribute("password", password);
-            } else
+            }
+            else
                 flag = false;
 
             if (flag) {
@@ -120,7 +125,8 @@ public class AppController {
                 repository.save(newPerson);
                 model.addAttribute("person", newPerson);
                 return "login";
-            } else {
+            }
+            else {
                 model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
                 return "create";
             }
@@ -238,20 +244,72 @@ public class AppController {
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            repository.delete(person.get());
-            Person newPerson = new Person(nome, cognome, email, username, password);
-            repository.save(newPerson);
-            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
-            for (PompaInsulinica p: cronologia) {
-                repositoryInsulina.delete(p);
+            Person temp = person.get();
+            boolean flag = true;
+
+            if (!nome.isEmpty()) {
+                temp.setNome(nome);
             }
-            cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
-            repositoryInsulina.saveAll(cronologia);
-            model.addAttribute("person", newPerson);
+            else
+                flag = false;
+
+            if (!cognome.isEmpty()) {
+                temp.setCognome(cognome);
+            }
+            else
+                flag = false;
+
+            if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
+                temp.setEmail(email);
+            }
+            else
+                flag = false;
+
+            if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
+                temp.setUsername(username);
+            }
+            else
+                flag = false;
+
+            if (valid(password)) {
+                temp.setPassword(password);
+            }
+            else
+                flag = false;
+
+            if (flag) {
+                Person newPerson = new Person(nome, cognome, email, username, password);
+                repository.save(newPerson);
+                List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+                for (PompaInsulinica p: cronologia) {
+                    repositoryInsulina.delete(p);
+                }
+                cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
+                repositoryInsulina.saveAll(cronologia);
+                model.addAttribute("person", newPerson);
+            }
+            else {
+                model.addAttribute("person", temp);
+                model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
+            }
+
             return "profilo";
         }
         else
             return "notfound";
+
+        /*repository.delete(person.get());
+        Person newPerson = new Person(nome, cognome, email, username, password);
+        repository.save(newPerson);
+        List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+        for (PompaInsulinica p: cronologia) {
+            repositoryInsulina.delete(p);
+        }
+        cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
+        repositoryInsulina.saveAll(cronologia);
+        model.addAttribute("person", newPerson);
+        return "profilo";
+         */
     }
 
     @RequestMapping("/pompainsulinica")
