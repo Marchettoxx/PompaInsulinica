@@ -41,7 +41,11 @@ public class PompaInsulinica {
     }
 
     public Long getId() { return id;}
-    public Long getIdUtente() { return idUtente; }
+    public Long getIdUtente() { return idUtente;}
+    public PompaInsulinica setIdUtente(Long idUtente) {
+        this.idUtente = idUtente;
+        return this;
+    }
     public Integer getGlicemia() {return glicemia;}
     public double getInsulina() {return insulina;}
     public String getCommento() {return commento;}
