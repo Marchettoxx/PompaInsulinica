@@ -3,100 +3,7 @@
 <head>
   <title>MVC Web application</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style>
-        h1 {text-align: center;}
-        h3 {text-align: center;}
-        table, th, td {
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-        }
-        form {text-align: center;}
-          .commentato {
-            position:relative;
-            color: black;
-            text-decoration: none;
-          }
-          .commentato div {
-                  position:relative;
-                  visibility:hidden;
-                  background-color: #8fbc8f;
-                  border: dotted black 1px;
-                  color: black;
-                  text-decoration: none;
-                  padding:3px;
-                  top:20;
-                  left:40;
-          }
-          .commentato:hover div {
-                  visibility: visible;
-                  index-z:100;
-          }
-          .btn{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#C0C0C0;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btn:hover{
-          background:#E6E6FA;
-        }
-        .btn:active{
-          background:#A9A9A9;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .btnBack{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#FFA07A;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btnBack:hover{
-          background:#F08080;
-        }
-        .btnBack:active{
-          background:#CD5C5C;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .box {
-            margin-left: auto;
-            margin-right: auto;
-            text-align:center;
-            background-color: #8fbc8f;
-            color: black;
-            border-radius: 40px;
-            height: 500px;
-            width: 600px;
-        }
-   </style>
+  <link rel="stylesheet" href="mystyle.css">
   <script>
     function myFunction() {
           var x = document.getElementById("myInput");
@@ -109,35 +16,37 @@
   </script>
 </head>
 
-<body style="background-color:powderblue;">
+<body>
 
 <div class="box">
-  <h1 > CREAZIONE DI UN NUOVO UTENTE </h1>
-  <h3 th:text = "${errore}" style="color: red"> </h3>
+  <h1> CREAZIONE DI UN NUOVO UTENTE </h1>
+  <h3 class="errore" th:text = "${errore}" > </h3>
 
   <form action="nuovoutente" method="post">
     <table style="background-color:#8fbc8f">
       <tbody>
         <tr>
           <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
+          <td class="errore" th:text="${errnome}"> </td>
         </tr>
         <tr>
           <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
+          <td class="errore" th:text="${errcognome}"> </td>
         </tr>
         <tr>
-          <td> <a href="#" class="commentato"> <input type="email" name="email" th:value="${email}" placeholder="email">
-                <div>Le mail concesse sono solo <br> quelle con @gmail.com e @yahoo.it</div></a></td>
+          <td> <input type="email" name="email" th:value="${email}" placeholder="email"> </td>
+          <td class="errore" th:text="${erremail}"> </td>
         </tr>
         <tr>
-          <td> <a href="#" class="commentato"> <input type="text" name="username" th:value="${username} "placeholder="username">
-                <div>L'username deve essere di <br> minimo 6 caratteri e massimo 15</div></a></td>
+          <td> <input type="text" name="username" th:value="${username} "placeholder="username"> </td>
+          <td class="errore" th:text="${errusername}"> </td>
         </tr>
         <tr>
-          <td> <a href="#" class="commentato"> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput">
-            <div>La password deve essere tra gli 8 e i 12 caratteri, <br> contenere almeno un numero e un segno di punteggiatura (!,?,-,.)</div></a></td>
+          <td> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput"> </td>
+          <td class="errore" th:text="${errpassword}"> </td>
         </tr>
         <tr>
-          <td><input type="checkbox" onclick="myFunction()"> Show Password </td>
+          <td><input type="checkbox" onclick="myFunction()"> Mostra password </td>
         </tr>
         <tr>
           <td colspan="2" align="center"> <input class="btn" type="submit" value="Iscriviti"/></td>

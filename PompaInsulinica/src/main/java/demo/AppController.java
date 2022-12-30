@@ -73,7 +73,14 @@ public class AppController {
     }
 
     @RequestMapping("/create")
-    public String createUtente(Model model){ return "create";}
+    public String createUtente(Model model){
+        model.addAttribute("errnome", "obbligatorio");
+        model.addAttribute("errcognome", "obbligatorio");
+        model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
+        model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+        model.addAttribute("errpassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.-");
+        return "create";
+    }
 
     @RequestMapping("/nuovoutente")
     public String creaUtente(
@@ -83,7 +90,74 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model) {
-        Optional<Person> person = repository.findByUsername(username);
+        boolean flag = true;
+
+        if (!nome.isEmpty()) {
+            model.addAttribute("nome", nome);
+            model.addAttribute("errnome", "");
+        }
+        else {
+            model.addAttribute("errnome", "obbligatorio");
+            flag = false;
+        }
+
+        if (!cognome.isEmpty()) {
+            model.addAttribute("cognome", cognome);
+            model.addAttribute("errcognome", "");
+        }
+        else {
+            model.addAttribute("errcognome", "obbligatorio");
+            flag = false;
+        }
+
+        if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
+            model.addAttribute("email", email);
+            model.addAttribute("erremail", "");
+        }
+        else {
+            model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
+            flag = false;
+        }
+
+        if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
+            Optional<Person> person = repository.findByUsername(username);
+            if (person.isPresent()) {
+                model.addAttribute("errusername", "username già utilizzato");
+                flag = false;
+            }
+            else {
+                model.addAttribute("username", username);
+                model.addAttribute("errusername", "");
+            }
+        }
+        else {
+            model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+            flag = false;
+        }
+
+        if (valid(password)) {
+            model.addAttribute("password", password);
+            model.addAttribute("errpassword", "");
+        }
+        else {
+            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
+            flag = false;
+        }
+
+        if (flag) {
+            Person newPerson = new Person(nome, cognome, email, username, password);
+            repository.save(newPerson);
+            model.addAttribute("person", newPerson);
+            return "login";
+        }
+        else {
+            model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
+            return "create";
+        }
+    }
+
+    /*
+    Optional<Person> person = repository.findByUsername(username);
         if (person.isPresent()) {
             model.addAttribute("errore", "UTENTE GIA' PRESENTE");
             return "create";
@@ -92,33 +166,48 @@ public class AppController {
 
             if (!nome.isEmpty()) {
                 model.addAttribute("nome", nome);
+                model.addAttribute("errnome", "");
             }
-            else
+            else {
+                model.addAttribute("errnome", "campo vuoto");
                 flag = false;
+            }
 
             if (!cognome.isEmpty()) {
                 model.addAttribute("cognome", cognome);
+                model.addAttribute("errcognome", "");
             }
-            else
+            else {
+                model.addAttribute("errcognome", "obbligatorio");
                 flag = false;
+            }
 
             if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
                 model.addAttribute("email", email);
+                model.addAttribute("erremail", "");
             }
-            else
+            else {
+                model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
                 flag = false;
+            }
 
             if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
                 model.addAttribute("username", username);
+                model.addAttribute("errusername", "");
             }
-            else
+            else {
+                model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
                 flag = false;
+            }
 
             if (valid(password)) {
                 model.addAttribute("password", password);
+                model.addAttribute("errpassword", "");
             }
-            else
+            else {
+                model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
                 flag = false;
+            }
 
             if (flag) {
                 Person newPerson = new Person(nome, cognome, email, username, password);
@@ -131,7 +220,7 @@ public class AppController {
                 return "create";
             }
         }
-    }
+     */
 
         /*if (!nome.isEmpty()) {
             model.addAttribute("nome", nome);
@@ -240,6 +329,9 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             model.addAttribute("person", person.get());
+            model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
+            model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
             return "edit";
         }
         else
@@ -255,54 +347,76 @@ public class AppController {
             @RequestParam(name="username", required=true) String username,
             @RequestParam(name="password", required=true) String password,
             Model model) {
-        Optional<Person> person = repository.findById(id);
-        if (person.isPresent()) {
-            Person temp = person.get();
+        Optional<Person> oldPerson = repository.findById(id);
+        if (oldPerson.isPresent()) {
+            Person temp = oldPerson.get();
             boolean flag = true;
 
             if (!nome.isEmpty()) {
                 temp.setNome(nome);
-            }
-            else
+                model.addAttribute("errnome", "");
+            } else {
+                model.addAttribute("errnome", "obbligatorio");
                 flag = false;
+            }
 
             if (!cognome.isEmpty()) {
                 temp.setCognome(cognome);
-            }
-            else
+                model.addAttribute("errcognome", "");
+            } else {
+                model.addAttribute("errcognome", "obbligatorio");
                 flag = false;
+            }
 
             if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
                 temp.setEmail(email);
-            }
-            else
+                model.addAttribute("erremail", "");
+            } else {
+                model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
                 flag = false;
+            }
 
             if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
-                temp.setUsername(username);
-            }
-            else
+                Optional<Person> personaWithSameUsername = repository.findByUsername(username);
+                if (personaWithSameUsername.isPresent()) {
+                    if (!personaWithSameUsername.get().getId().equals(id)) {
+                        model.addAttribute("errusername", "username già utilizzato");
+                        flag = false;
+                    }
+                    else {
+                        model.addAttribute("errusername", "");
+                    }
+                }
+                else {
+                    temp.setUsername(username);
+                    model.addAttribute("errusername", "");
+                }
+            } else {
+                model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
                 flag = false;
+            }
 
             if (valid(password)) {
                 temp.setPassword(password);
-            }
-            else
+                model.addAttribute("errpassword", "");
+            } else {
+                model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
                 flag = false;
+            }
 
             if (flag) {
+                repository.delete(oldPerson.get());
                 Person newPerson = new Person(nome, cognome, email, username, password);
                 repository.save(newPerson);
                 List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
-                for (PompaInsulinica p: cronologia) {
+                for (PompaInsulinica p : cronologia) {
                     repositoryInsulina.delete(p);
                 }
                 cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
                 repositoryInsulina.saveAll(cronologia);
                 model.addAttribute("person", newPerson);
                 return "profilo";
-            }
-            else {
+            } else {
                 model.addAttribute("person", temp);
                 model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
                 return "edit";
@@ -310,6 +424,74 @@ public class AppController {
         }
         else
             return "notfound";
+
+        /*
+        if (!person.isPresent()) {
+                Person temp = person.get();
+                boolean flag = true;
+
+                if (!nome.isEmpty()) {
+                    temp.setNome(nome);
+                    model.addAttribute("errnome", "");
+                } else {
+                    model.addAttribute("errnome", "campo vuoto");
+                    flag = false;
+                }
+
+                if (!cognome.isEmpty()) {
+                    temp.setCognome(cognome);
+                    model.addAttribute("errcognome", "");
+                } else {
+                    model.addAttribute("errcognome", "obbligatorio");
+                    flag = false;
+                }
+
+                if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
+                    temp.setEmail(email);
+                    model.addAttribute("erremail", "");
+                } else {
+                    model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
+                    flag = false;
+                }
+
+                if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
+                    temp.setUsername(username);
+                    model.addAttribute("errusername", "");
+                } else {
+                    model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+                    flag = false;
+                }
+
+                if (valid(password)) {
+                    temp.setPassword(password);
+                    model.addAttribute("errpassword", "");
+                } else {
+                    model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
+                    flag = false;
+                }
+
+                if (flag) {
+                    Person newPerson = new Person(nome, cognome, email, username, password);
+                    repository.save(newPerson);
+                    List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+                    for (PompaInsulinica p : cronologia) {
+                        repositoryInsulina.delete(p);
+                    }
+                    cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
+                    repositoryInsulina.saveAll(cronologia);
+                    model.addAttribute("person", newPerson);
+                    return "profilo";
+                } else {
+                    model.addAttribute("person", temp);
+                    model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
+                    return "edit";
+                }
+            } else {
+                model.addAttribute("person", oldPerson.get());
+                model.addAttribute("errore", "UTENTE ESISTENTE");
+                return "edit";
+            }
+         */
 
         /*repository.delete(person.get());
         Person newPerson = new Person(nome, cognome, email, username, password);
@@ -338,6 +520,9 @@ public class AppController {
                 model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
             }
             model.addAttribute("person", person.get());
+            model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
+            model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
+            model.addAttribute("errcommento", "lunghezza max 120");
             return "insulina";
         }
         else
@@ -361,38 +546,53 @@ public class AppController {
                     int int_glicemia = Integer.parseInt(glicemia);
                     if (int_glicemia >= MIN_GLICEMIA && int_glicemia <= MAX_GLICEMIA) {
                         model.addAttribute("glicemia", glicemia);
+                        model.addAttribute("errglicemia", "");
                     }
-                    else
+                    else {
+                        model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
                         flag = false;
+                    }
                 }
                 catch (NumberFormatException ex){
+                    model.addAttribute("errglicemia", "inserisci numero intero");
                     flag = false;
                 }
             }
-            else
+            else {
+                model.addAttribute("errglicemia", "obbligatorio");
                 flag = false;
+            }
 
             if (!insulina.isEmpty()) {
                 try {
                     int int_insulina = Integer.parseInt(insulina);
                     if (int_insulina >= MIN_INSULINA && int_insulina <= MAX_INSULINA) {
                         model.addAttribute("insulina", insulina);
+                        model.addAttribute("errinsulina", "");
                     }
-                    else
+                    else {
+                        model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
                         flag = false;
+                    }
                 }
                 catch (NumberFormatException ex){
+                    model.addAttribute("errinsulina", "inserisci numero intero");
                     flag = false;
                 }
             }
-            else
+            else {
+                model.addAttribute("errinsulina", "obbligatorio");
                 flag = false;
+            }
 
             if (commento.length() < 120) {
                 model.addAttribute("commento", commento);
+                model.addAttribute("errcommento", "");
             }
-            else
+            else {
+                model.addAttribute("errcommento", "lunghezza max 120");
                 flag = false;
+            }
 
             if (flag) {
                 PompaInsulinica pompaInsulinica = new PompaInsulinica(id, Integer.parseInt(glicemia), Integer.parseInt(insulina), commento);
@@ -490,9 +690,16 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
-            model.addAttribute("person", person.get());
-            model.addAttribute("cronologia", cronologia);
-            return "cronologia";
+            if (!cronologia.isEmpty()) {
+                model.addAttribute("person", person.get());
+                model.addAttribute("cronologia", cronologia);
+                return "cronologia";
+            }
+            else {
+                model.addAttribute("person", person.get());
+                model.addAttribute("notifica", "cronologia vuota crea nuova misurazione");
+                return "utente";
+            }
         }
         else
             return "notfound";
@@ -527,9 +734,10 @@ public class AppController {
                 model.addAttribute("cronologia", cronologia);
                 return "cronologia";
             }
-            else
+            else {
                 model.addAttribute("errore", "misurazione non presente");
                 return "notfound";
+            }
         }
         else
             return "notfound";

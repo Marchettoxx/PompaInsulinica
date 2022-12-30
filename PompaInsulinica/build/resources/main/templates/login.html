@@ -4,7 +4,11 @@
     <title>MVC Web application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style>
-        h1 {text-align: center;}
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: green;
+        }
         h3 {text-align: center;}
         form {text-align: center;}
         table, th, td {
@@ -77,6 +81,13 @@
             height: 300px;
             width: 600px;
         }
+        .errore {
+            color: #a31a2c;
+            font-size: 16px;
+        }
+        #my{
+            zoom: 160%;
+        }
     </style>
     <script>
         function myFunction() {
@@ -94,7 +105,7 @@
 
 <div class="box" >
     <h1> LOGIN POMPA INSULINICA </h1>
-    <h3 th:text = "${errore}" style="color: red"> </h3>
+    <h3 class="errore" th:text = "${errore}" > </h3>
 
     <form action="login" method="post">
         <table style="background-color:#8fbc8f">
@@ -106,7 +117,7 @@
                     <td> <input type="password" name="password" placeholder="password" id="myInput"> </td>
                 </tr>
                 <tr>
-                    <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
+                    <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
                 </tr>
                 <tr>
                     <td> <br> <input class="btn" type="submit" value="Accedi"/> </td>

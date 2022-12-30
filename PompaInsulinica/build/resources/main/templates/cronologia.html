@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>MVC Web application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style>
-        h1 {text-align: center;}
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: green;
+        }
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
@@ -94,47 +98,54 @@
           color:#000000;
           box-shadow:none;
         }
+        .errore {
+            color: #a31a2c;
+            font-size: 16px;
+        }
+        #my{
+            zoom: 160%;
+        }
    </style>
 </head>
 
 <body style="background-color:powderblue;">
 <h1> CRONOLOGIA INIEZIONI </h1>
 
-<h3 th:text = "${errore}" style="color: red"> </h3>
+<h3 class="errore" th:text = "${errore}" > </h3>
 
 <table style="background-color:#8fbc8f">
-  <thead>
-  <tr>
-    <th> GLICEMIA </th>
-    <th> INSULINA </th>
-    <th> ORA </th>
-    <th> COMMENTO </th>
-    <th> DELETE </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="misurazione: ${cronologia}">
-    <td th:text="${misurazione.glicemia}"> 120 </td>
-    <td th:text="${misurazione.insulina}"> 2 </td>
-    <td th:text="${misurazione.time}"> 20:06:17 </td>
-    <td th:text="${misurazione.commento}"> blank </td>
-    <form action="cancellamisurazione" method="post">
-      <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-      <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
-      <td> <input class="btn" type="submit" value="cancella"> </td>
-    </form>
-  </tr>
-  </tbody>
+    <thead>
+    <tr>
+        <th> GLICEMIA </th>
+        <th> INSULINA </th>
+        <th> ORA </th>
+        <th> COMMENTO </th>
+        <th> DELETE </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="misurazione: ${cronologia}">
+        <td th:text="${misurazione.glicemia}"> 120 </td>
+        <td th:text="${misurazione.insulina}"> 2 </td>
+        <td th:text="${misurazione.time}"> 20:06:17 </td>
+        <td th:text="${misurazione.commento}"> blank </td>
+        <form action="cancellamisurazione" method="post">
+            <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+            <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
+            <td> <input class="btn" type="submit" value="cancella"> </td>
+        </form>
+    </tr>
+    </tbody>
 </table>
 
 <form action="cancellacronologia" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input class="btnDel" type="submit" value="cancella tutto">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input class="btnDel" type="submit" value="cancella tutto">
 </form>
 
 <form action="back" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input class="btnBack" type="submit" value="Indietro">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input class="btnBack" type="submit" value="Indietro">
 </form>
 
 </body>

@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>MVC Web application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style>
-        h1 {text-align: center;}
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+        }
         table, th, td {
                 margin-left: auto;
                 margin-right: auto;
@@ -71,11 +75,38 @@
             background-color: #6495ed;
             color: black;
             border-radius: 40px;
-            height: 350px;
+            height: 500px;
             width: 600px;
         }
+        .commentato {
+            position:relative;
+            color: black;
+            text-decoration: none;
+          }
+          .commentato div {
+                  position:relative;
+                  visibility:hidden;
+                  background-color: #6495ed;
+                  border: dotted black 1px;
+                  color: black;
+                  text-decoration: none;
+                  padding:3px;
+                  top:20;
+                  left:40;
+          }
+          .commentato:hover div {
+                  visibility: visible;
+                  index-z:100;
+          }
+        .errore {
+            color: #a31a2c;
+            font-size: 16px;
+        }
+        #my{
+            zoom: 160%;
+        }
     </style>
-  <script>
+    <script>
         function myFunction() {
               var x = document.getElementById("myInput");
               if (x.type === "password") {
@@ -91,41 +122,46 @@
 
 <div class="box">
     <h1> MODIFICA CREDENZIALI UTENTE </h1>
-    <h3 th:text = "${errore}" style="color: red"> </h3>
+    <h3 class="errore" th:text = "${errore}" > </h3>
 
-  <form action="salvamodifica" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-    <table style="background-color:#6495ed">
-      <tbody>
-      <tr>
-        <td> Nome: </td> <td> <input type="text" name="nome" value="John" th:value="${person.nome}" placeholder="inserisci nome"><br> </td>
-      </tr>
-      <tr>
-        <td> Cognome: </td> <td> <input type="text" name="cognome" value="Smith" th:value="${person.cognome}" placeholder="inserisci cognome"><br> </td>
-      </tr>
-      <tr>
-        <td> Username: </td> <td> <input type="text" name="username" value="JE" th:value="${person.username}" placeholder="inserisci username"><br> </td>
-      </tr>
-      <tr>
-        <td> Email: </td> <td> <input type="email" name="email" value="John.Smith@gmail.com" th:value="${person.email}" placeholder="inserisci email"><br> </td>
-      </tr>
-      <tr>
-        <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password" id="myInput"><br> </td>
-      </tr>
-      <tr>
-        <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
-      </tr>
-      <tr>
-        <td colspan="2"> <input class="btn" type="submit" value="salva" /> </td>
-      </tr>
-      </tbody>
-    </table>
-  </form>
+    <form action="salvamodifica" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+        <table style="background-color:#6495ed">
+            <tbody>
+            <tr>
+                <td> Nome: </td> <td>  <input type="text" name="nome" value="John" th:value="${person.nome}" placeholder="inserisci nome"><br> </td>
+                <td class="errore" th:text="${errnome}"> </td>
+            </tr>
+            <tr>
+                <td> Cognome: </td> <td> <input type="text" name="cognome" value="Smith" th:value="${person.cognome}" placeholder="inserisci cognome"><br> </td>
+                <td class="errore" th:text="${errcognome}"> </td>
+            </tr>
+            <tr>
+                <td> Email: </td> <td> <input type="email" name="email" value="John.Smith@gmail.com" th:value="${person.email}" placeholder="inserisci email"><br> </td>
+                <td class="errore" th:text="${erremail}"> </td>
+            </tr>
+            <tr>
+                <td> Username: </td> <td> <input type="text" name="username" value="JohnEma" th:value="${person.username}" placeholder="inserisci username"><br> </td>
+                <td class="errore" th:text="${errusername}"> </td>
+            </tr>
+            <tr>
+                <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password" id="myInput"><br> </td>
+                <td class="errore" th:text="${errpassword}"> </td>
+            </tr>
+            <tr>
+                <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input class="btn" type="submit" value="salva" /> </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
 
-  <form action="back" method="post">
-    <input type="hidden" name="id" value="10" th:value="${person.id}">
-    <br> <input class="btnBack" type="submit" value="Indietro">
-  </form>
+    <form action="back" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <br> <input class="btnBack" type="submit" value="Indietro">
+    </form>
 
 </div>
 

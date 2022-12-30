@@ -1,140 +1,49 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>MVC Web application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style>
-        h1 {text-align: center;}
-        table, th, td {
-                margin-left: auto;
-                margin-right: auto;
-                border: 1px solid black;
-                border-collapse: collapse;
-                text-align: center;
-        }
-        form {text-align: center;}
-        .btn{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#C0C0C0;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btn:hover{
-          background:#E6E6FA;
-        }
-        .btn:active{
-          background:#A9A9A9;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .btnBack{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#FFA07A;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btnBack:hover{
-          background:#F08080;
-        }
-        .btnBack:active{
-          background:#CD5C5C;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .btnDel{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#DC143C;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btnDel:hover{
-          background:#E64B3E;
-        }
-        .btnDel:active{
-          background:#D7372A;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-   </style>
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="mystyle.css">
 </head>
 
-<body style="background-color:powderblue;">
+<body>
 <h1> CRONOLOGIA INIEZIONI </h1>
 
-<h3 th:text = "${errore}" style="color: red"> </h3>
+<h3 class="errore" th:text = "${errore}" > </h3>
 
-<table style="background-color:#8fbc8f">
-  <thead>
-  <tr>
-    <th> GLICEMIA </th>
-    <th> INSULINA </th>
-    <th> ORA </th>
-    <th> COMMENTO </th>
-    <th> DELETE </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="misurazione: ${cronologia}">
-    <td th:text="${misurazione.glicemia}"> 120 </td>
-    <td th:text="${misurazione.insulina}"> 2 </td>
-    <td th:text="${misurazione.time}"> 20:06:17 </td>
-    <td th:text="${misurazione.commento}"> blank </td>
-    <form action="cancellamisurazione" method="post">
-      <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-      <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
-      <td> <input class="btn" type="submit" value="cancella"> </td>
-    </form>
-  </tr>
-  </tbody>
+<table class="tab">
+    <thead>
+    <tr>
+        <th class="tab"> GLICEMIA </th>
+        <th class="tab"> INSULINA </th>
+        <th class="tab"> ORA </th>
+        <th class="tab"> COMMENTO </th>
+        <th class="tab"> DELETE </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tab" th:each="misurazione: ${cronologia}">
+        <td class="tab" th:text="${misurazione.glicemia}"> 120 </td>
+        <td class="tab" th:text="${misurazione.insulina}"> 2 </td>
+        <td class="tab" th:text="${misurazione.time}"> 20:06:17 </td>
+        <td class="tab" th:text="${misurazione.commento}"> blank </td>
+        <form action="cancellamisurazione" method="post">
+            <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+            <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
+            <td> <input class="btn" type="submit" value="cancella"> </td>
+        </form>
+    </tr>
+    </tbody>
 </table>
 
 <form action="cancellacronologia" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input class="btnDel" type="submit" value="cancella tutto">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input class="btn" type="submit" value="cancella tutto">
 </form>
 
 <form action="back" method="post">
-  <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-  <input class="btnBack" type="submit" value="Indietro">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input class="btnBack" type="submit" value="Indietro">
 </form>
 
 </body>

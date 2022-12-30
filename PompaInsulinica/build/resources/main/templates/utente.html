@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>MVC Web application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style>
-        h1 {text-align: center;}
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: green;
+        }
         form {text-align: center;}
         form {text-align: center;}
         table, th, td {
@@ -78,40 +82,48 @@
             height: 300px;
             width: 600px;
         }
+        .errore {
+            color: #a31a2c;
+            font-size: 16px;
+        }
+        #my{
+            zoom: 160%;
+        }
   </style>
 </head>
 
 <body style="background-color:powderblue">
 
 <div class="box">
-  <h1> BENVENUTO NELLA HOME </h1>
+    <h1> BENVENUTO NELLA HOME </h1>
 
-  <table style="background-color:#8fbc8f">
-    <tbody>
-    <tr>
-      <form action="profilo" method="post">
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-        <td> <input class="btn" type="submit" value="Profilo"/> <br> </td>
-      </form>
-    </tr>
-    <tr>
-      <form action="pompainsulinica" method="post">
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-        <td>   <input class="btn" type="submit" value="Pompa insulinica"/> <br> </td>
-      </form>
-    </tr>
-    <tr>
-      <form action="cronologia" method="post">
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-       <td> <input class="btn" type="submit" value="Cronologia"/> <br> </td>
-      </form>
-    </tr>
-    </tbody>
-  </table>
+    <table style="background-color:#8fbc8f">
+        <tbody>
+        <tr>
+            <form action="profilo" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td> <input class="btn" type="submit" value="Profilo"/> <br> </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="pompainsulinica" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td>  <input class="btn" type="submit" value="Pompa insulinica"/> <br> </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="cronologia" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td> <input class="btn" type="submit" value="Cronologia"/> <br> </td>
+            </form>
+            <td class="errore" th:text="${notifica}"> </td>
+        </tr>
+        </tbody>
+    </table>
 
-  <form action="logout" method="post">
-    <br><input class="btnLogOut" type="submit" value="Logout"/>
-  </form>
+    <form action="logout" method="post">
+        <br><input class="btnLogOut" type="submit" value="Logout"/>
+    </form>
 </div>
 
 </body>

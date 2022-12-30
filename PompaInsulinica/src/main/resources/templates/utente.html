@@ -1,117 +1,43 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>MVC Web application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style>
-        h1 {text-align: center;}
-        form {text-align: center;}
-        form {text-align: center;}
-        table, th, td {
-                margin-left: auto;
-                margin-right: auto;
-
-                border-collapse: collapse;
-                text-align: center;
-        }
-         .btnLogOut{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#DC143C;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btnLogOut:hover{
-          background:#E64B3E;
-        }
-        .btnLogOut:active{
-          background:#D7372A;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .btn{
-          display:inline-block;
-          padding:0.7em 1.4em;
-          margin:0 0.3em 0.3em 0;
-          border:none;
-          border-radius:0.5em;
-          box-sizing: border-box;
-          text-decoration:none;
-          font-family:'arial';
-          text-transform:uppercase;
-          font-weight:400;
-          color:#000000;
-          background-color:#66CDAA;
-          box-shadow:inset 0 -0.6em 0 -0.3em rgba(0,0,0,0.20);
-          text-align:center;
-          position:relative;
-          cursor:pointer;
-        }
-        .btn:hover{
-          background:#90EE90;
-        }
-        .btn:active{
-          background:#90EE90;
-          top:0.15em;
-          color:#000000;
-          box-shadow:none;
-        }
-        .box {
-            margin-left: auto;
-            margin-right: auto;
-            text-align:center;
-            background-color: #8fbc8f;
-            color: black;
-            border-radius: 40px;
-            height: 300px;
-            width: 600px;
-        }
-  </style>
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="mystyle.css">
 </head>
 
-<body style="background-color:powderblue">
+<body>
 
 <div class="box">
-  <h1> BENVENUTO NELLA HOME </h1>
+    <h1> BENVENUTO NELLA HOME </h1>
 
-  <table style="background-color:#8fbc8f">
-    <tbody>
-    <tr>
-      <form action="profilo" method="post">
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-        <td> <input class="btn" type="submit" value="Profilo"/> <br> </td>
-      </form>
-    </tr>
-    <tr>
-      <form action="pompainsulinica" method="post">
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-        <td>   <input class="btn" type="submit" value="Pompa insulinica"/> <br> </td>
-      </form>
-    </tr>
-    <tr>
-      <form action="cronologia" method="post">
-        <input type="hidden" name="id" value="10" th:value="${person.id}">
-       <td> <input class="btn" type="submit" value="Cronologia"/> <br> </td>
-      </form>
-    </tr>
-    </tbody>
-  </table>
+    <table style="background-color:#8fbc8f">
+        <tbody>
+        <tr>
+            <form action="profilo" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td> <input class="btnpretty" type="submit" value="Profilo"/> <br> </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="pompainsulinica" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td>  <input class="btnpretty" type="submit" value="Pompa insulinica"/> <br> </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="cronologia" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td> <input class="btnpretty" type="submit" value="Cronologia"/> <br> </td>
+            </form>
+            <td class="errore" th:text="${notifica}"> </td>
+        </tr>
+        </tbody>
+    </table>
 
-  <form action="logout" method="post">
-    <br><input class="btnLogOut" type="submit" value="Logout"/>
-  </form>
+    <form action="logout" method="post">
+        <br><input class="btnLogOut" type="submit" value="Logout"/>
+    </form>
 </div>
 
 </body>
