@@ -147,6 +147,7 @@ Gli altri use case sono molto simili a questi come dinamiche.
 Il seguente Class Diagram rappresenta le
 classi e le relazioni fra esse che utilizzeremo
 nel nostro progetto Java per rappresentare le informazioni.
+~~inserire~~
 
 ### METODOLOGIA DI SVILUPPO
 Abbiamo utilizzato una metodologia di sviluppo Agile
