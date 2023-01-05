@@ -205,7 +205,7 @@ interazioni alle componenti Modello e Vista
 ### QUALITY ASSURANCE
 ~~inserire~~
 
-### VALIDAZIONE
+### CHECKING
 Il codice è stato costantemente rivisto, si è cercato
 di identificare le componenti di codice incorretto o che
 può essere migliorato. Inoltre sono stati fatti molteplici
