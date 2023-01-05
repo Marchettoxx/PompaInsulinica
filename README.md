@@ -202,10 +202,13 @@ interazioni alle componenti Modello e Vista
 
 ![Modello MVC](MVC.png)
 
-### QUALITY ASSURANCE
+### VERIFICA E VALIDAZIONE
 ~~inserire~~
 
-### CHECKING
+#### QUALITY ASSURANCE
+~~inserire~~
+
+#### CHECKING
 Il codice è stato costantemente rivisto, si è cercato
 di identificare le componenti di codice incorretto o che
 può essere migliorato. Inoltre sono stati fatti molteplici
