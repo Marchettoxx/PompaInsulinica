@@ -54,7 +54,7 @@ public class SystemTest {
     }
 
     @Test
-    public void testCreaNuovoUtente() {
+    public void AtestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
         String titleMessage = title.getText();
@@ -75,6 +75,38 @@ public class SystemTest {
 
         WebElement titleLogin = driver.findElement(By.tagName("h1"));
         assertEquals("LOGIN POMPA INSULINICA", titleLogin.getText());
+    }
+
+    @Test
+    public void BtestLogInErrato() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
+    }
+
+    @Test
+    public void CtestLogInGiusto() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
     }
 
     /*@Test
