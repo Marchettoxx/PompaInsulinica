@@ -51,6 +51,11 @@
         </tbody>
     </table>
 
+    <form action="deleteaccount" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <br> <input class="btnLogOut" type="submit" value="Elimina account">
+    </form>
+
     <form action="back" method="post">
         <input type="hidden" name="id" value="10" th:value="${person.id}">
         <br> <input class="btnBack" type="submit" value="Indietro">
