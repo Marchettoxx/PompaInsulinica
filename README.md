@@ -47,31 +47,54 @@ la cronologia delle sue misurazioni.
 ## SCENARI
 
 ### 1
-~~inserire~~
+Crea account
+Se si crea un nuovo account si apre una pagina  nuovo utente in cui viene richiesto di inserire: nome, cognome,
+email, username e password. Sotto al form sarà presente il tasto crea, che creerà il nuovo utente e reindirizzerà
+alla pagina login.
 
 ### 2
-~~inserire~~
+Login
+La pagina iniziale che verrà visualizzata è la pagina login. In questa pagina è presente un form in cui 
+viene richiesto nome utente e password e due pulsanti, uno per creare un nuovo account e uno per accedere
+alla pagina utente. Quest'ultimo rimanda alla pagina utente solo se sono state inserite le proprie credenziali 
+correttamente.
 
 ### 3
-~~inserire~~
+Dopo aver fatto il login si giunge alla pagina utente. In questa pagina sono presenti tre pulsanti.
+Il primo servirà a visualizzare il proprio profilo, il secondo per visualizzare la cronologia delle misurazioni e
+l’ultimo è quello relativo alla pompa insulinica, che permette di fare le iniezioni di insulina. Alla fine della
+pagina sarà presente anche un tasto logout che permetterà all’utente di uscire dal proprio profilo e tornare alla
+pagina login.
 
 ### 4
-~~inserire~~
+Profilo
+Quando si preme il primo pulsante “profilo” si accede alla pagina delle credenziali dell’utente che ha appena 
+effettuato il login. In questa sezione è possibile modificare i propri dati e applicare le modifiche tramite il
+pulsante “modifica”.
 
 ### 5
-~~inserire~~
+Pompa insulinica
+Quando dalla pagina utente si seleziona il tasto “pompa insulinica” si apre una pagina in cui l'utente può inserire 
+il suo valore attuale della glicemia e tramite il  pulsante calcola verrà calcolato il valore di insulina necessario.
+Inoltre sarà possibile inserire un commento prima di premere il tasto salva, il quale salverà questi dati nella 
+cronologia. Viene visualizzato l'ultima misurazione fatta.
 
 ### 6
-~~inserire~~
+Cronologia
+Quando dalla pagina utente si seleziona il tasto “cronologia” appare la lista di tutte le iniezioni che sono state
+fatte con relativo giorno, orario e quantità di insulina che è stata fatta. Inoltre l’utente deve avere 
+la possibilità di cancellare l’ultima riga della cronologia in caso commettesse un errore oppure è possibile
+cancellare tutta la cronologia.
 
 ### 7
-~~inserire~~
+logout
 
 ### 8
-~~inserire~~
+Indietro
+Alla fine di ogni pagina sarà presente un tasto “indietro” che reindirizzerà l’utente alla pagina utente.
 
 ### 9
-~~inserire~~
+cancella utente
 
 ## ASSUNZIONI
 Per poter svolgere l’elaborato abbiamo dovuto effettuare
@@ -213,7 +236,32 @@ controlli sull'indentazione e sulla nomenclatura del codice
 andando eventualmente a eseguire refactoring.
 
 #### PROGRAM TESTING
-~~inserire~~
+
+##### Test crea utente
+1. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). Verifico che l'account sia stato effetivamente creato.
+2. Viene creato un utente dove è presente una credenziale errata ( una delle credenziali non rispetta i requisiti stabiliti). Verifico che l'account non sia stato creato.
+
+##### Test Login
+1. Eseguo il login con le credenziali corrette. Verifico che il login è avvenuto con successo e sono nella pagina utente.
+2. Eseguo il login con le credenziali errate. Verifico di non aver fatto il login.
+
+##### Test Profilo
+1. Vado a modificare dei valori presenti nella pagina profilo. Verifico che la modifica sia avvenuta con successo.
+2. Se l'username è già in uso oppure se non vengono rispettati i requisini verifico che la modifica non vada a buon fine.
+
+##### Test Pompa Insulinica
+1. Inserisco misurazione e verifico che sia stata salvata.
+2. inserisco una misurazione che non rispetta i requisiti e verifico che la modifica non sia avvenuta.
+
+##### Test Cronologia
+1. Se elimino una riga questa viene eliminata.
+2. Se elimino tutta la cronologia verifico che venga effettivamente elimiata e torno nella home.
+
+#### Test Logout
+1. Premendo logout l'utente viene reinderizzato alla pagina di login
+
+#### Test indietro
+1. Premendo il tasto indietro l'utente deve andare alla pagina precedente
 
 ##### QUALITY ASSURANCE
 ~~inserire~~
