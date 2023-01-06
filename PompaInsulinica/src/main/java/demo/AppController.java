@@ -714,7 +714,9 @@ public class AppController {
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            repositoryInsulina = null;
+            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)) {
+                repositoryInsulina.delete(p);
+            }
             model.addAttribute("person", person.get());
             return "cronologia";
         }
