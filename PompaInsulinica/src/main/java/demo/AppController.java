@@ -609,6 +609,9 @@ public class AppController {
                 PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
                 model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
             }
+            model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
+            model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
+            model.addAttribute("errcommento", "lunghezza max 120");
             return "insulina";
         }
         else

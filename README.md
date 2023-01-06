@@ -47,31 +47,31 @@ la cronologia delle sue misurazioni.
 ## SCENARI
 
 ### 1
-~~inserire~~
+login
 
 ### 2
-~~inserire~~
+crea account
 
 ### 3
-~~inserire~~
+profilo
 
 ### 4
-~~inserire~~
+pompa insulinica
 
 ### 5
-~~inserire~~
+cronologia
 
 ### 6
-~~inserire~~
+logout
 
 ### 7
-~~inserire~~
+cancella cronologia
 
 ### 8
-~~inserire~~
+indietro
 
 ### 9
-~~inserire~~
+ultima misurazione
 
 ## ASSUNZIONI
 Per poter svolgere l’elaborato abbiamo dovuto effettuare
