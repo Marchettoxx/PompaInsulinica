@@ -78,7 +78,7 @@ public class AppController {
         model.addAttribute("errcognome", "obbligatorio");
         model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
         model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
-        model.addAttribute("errpassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.-");
+        model.addAttribute("errpassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.- e numero");
         return "create";
     }
 
@@ -140,7 +140,7 @@ public class AppController {
             model.addAttribute("errpassword", "");
         }
         else {
-            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
+            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
             flag = false;
         }
 
@@ -322,6 +322,18 @@ public class AppController {
             return "notfound";
     }
 
+    @RequestMapping("/deleteaccount")
+    public String deleteAccount(
+            @RequestParam(name="id", required=true) Long id) {
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            repository.delete(person.get());
+            return "login";
+        }
+        else
+            return "notfound";
+    }
+
     @RequestMapping("/modifica")
     public String modifica(
             @RequestParam(name="id", required=true) Long id,
@@ -331,7 +343,7 @@ public class AppController {
             model.addAttribute("person", person.get());
             model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
             model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
-            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
+            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
             return "edit";
         }
         else
@@ -400,7 +412,7 @@ public class AppController {
                 temp.setPassword(password);
                 model.addAttribute("errpassword", "");
             } else {
-                model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.-");
+                model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
                 flag = false;
             }
 
