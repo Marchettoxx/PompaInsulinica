@@ -29,7 +29,7 @@ public class SystemTest {
     @Before
     public void setUp() {
         org.openqa.selenium.chrome.ChromeOptions chrome_options = new ChromeOptions();
-        //chrome_options.addArguments("--headless");
+        chrome_options.addArguments("--headless");
         if(SystemUtils.IS_OS_WINDOWS){
             System.setProperty("webdriver.chrome.driver",
                     Paths.get("src/test/resources/chromedriver_win32_96/chromedriver.exe").toString());
@@ -78,13 +78,45 @@ public class SystemTest {
     }
 
     @Test
-    public void BtestLogInErrato() {
+    public void BAtestLogInErrato() {
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
         String titleMessage = title.getText();
         assertEquals("LOGIN POMPA INSULINICA", titleMessage);
         driver.findElement(By.name("username")).sendKeys("Marco123");
         driver.findElement(By.name("password")).sendKeys("Marco123");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
+    }
+
+    @Test
+    public void BBtestLogInErrato() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco12");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
+    }
+
+    @Test
+    public void BCtestLogInErrato() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco12");
+        driver.findElement(By.name("password")).sendKeys("Marco12");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
 
@@ -107,6 +139,111 @@ public class SystemTest {
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+    }
+
+    /*
+    @Test
+    public void DAtestUtente(){
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+
+        WebElement link2 = driver.findElement(By.xpath("//input[@value='Profilo']"));
+        link2.click();
+        WebElement title2 = driver.findElement(By.tagName("h1"));
+        String titleMessage2 = title2.getText();
+        assertEquals("PROFILO", titleMessage2);
+
+    }
+
+    @Test
+    public void DBtestUtente(){
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+
+        WebElement link2 = driver.findElement(By.xpath("//input[@value='Pompa insulinica']"));
+        link2.click();
+        WebElement title2 = driver.findElement(By.tagName("h1"));
+        String titleMessage2 = title2.getText();
+        assertEquals("POMPA INSULINICA", titleMessage2);
+
+    }
+    @Test
+    public void DCtestUtente(){
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+
+        WebElement link2 = driver.findElement(By.xpath("//input[@value='Cronologia']"));
+        // errore ma non capisco perchè, nel test case sopra funziona e qui no
+        link2.click();
+        WebElement title2 = driver.findElement(By.tagName("h1"));
+        String titleMessage2 = title2.getText();
+        assertEquals("BENVENUTO NELLA HOME", titleMessage2); //questo perchè senza delle iniezioni
+        // la cronologia da errore e rimane nella stessa pagina di benvenuto
+
+    } */
+
+    @Test
+    public void EAtestProfilo(){
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+
+        WebElement link2 = driver.findElement(By.xpath("//input[@value='Profilo']"));
+        link2.click();
+        WebElement title2 = driver.findElement(By.tagName("h1"));
+        String titleMessage2 = title2.getText();
+        assertEquals("PROFILO", titleMessage2);
+
+        WebElement link3 = driver.findElement(By.className("btn"));
+        link3.click();
+        WebElement title3 = driver.findElement(By.tagName("h1"));
+        String titleMessage3 = title3.getText();
+        assertEquals("MODIFICA CREDENZIALI UTENTE", titleMessage3);
+
+        driver.findElement(By.name("cognome")).clear();
+        driver.findElement(By.name("cognome")).sendKeys("Palmieri");
+        driver.findElement(By.className("btn")).submit();
+        WebElement title4 = driver.findElement(By.tagName("h1"));
+        String titleMessage4 = title4.getText();
+        assertEquals("PROFILO", titleMessage4);
+        //WebElement cell2 = driver.findElement(By.xpath("//table//tbody//tr[2]//td[2]"));
+        //assertEquals("Palmieri", cell2.getText());
+
     }
 
     /*@Test
