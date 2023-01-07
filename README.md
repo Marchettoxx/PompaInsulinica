@@ -248,6 +248,7 @@ andando eventualmente a eseguire refactoring.
 ##### Test Profilo
 1. Vado a modificare dei valori presenti nella pagina profilo. Verifico che la modifica sia avvenuta con successo.
 2. Se l'username è già in uso oppure se non vengono rispettati i requisini verifico che la modifica non vada a buon fine.
+3. Cancello l'utente e verifico di essere tornato alla pagina di login, provo ad entrare con le stesse credenziali di prima e verifico che non entri
 
 ##### Test Pompa Insulinica
 1. Inserisco misurazione e verifico che sia stata salvata.
