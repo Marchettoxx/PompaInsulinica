@@ -47,54 +47,98 @@ la cronologia delle sue misurazioni.
 ## SCENARI
 
 ### 1
-Crea account
-Se si crea un nuovo account si apre una pagina  nuovo utente in cui viene richiesto di inserire: nome, cognome,
-email, username e password. Sotto al form sarà presente il tasto crea, che creerà il nuovo utente e reindirizzerà
-alla pagina login.
+Crea account:
+- Iniziato questo scenario ci si aspetta che l'utente riesca a creare il proprio account e che dopo averlo creato venga reindirizzato alla pagina di login
+- Nel momento in cui l'utente schiaccia "crea account" visualizzerà delle caselle di testo nelle quali dovrà inserire: Nome, Cognome, Email, Username e password del proprio account. Una volta inseriti questi dati l'account verrà creato e l'utente verrà reindirizzato al login.
+- In questo caso se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari per la crazione della mail e dell'username non sarà possibile creare l'account e verrà visualizzato un messaggio di errore.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine dello scenario ci si aspetta di essere nella pagina di login e che l'account sia stato correttamente creato.
 
 ### 2
-Login
-La pagina iniziale che verrà visualizzata è la pagina login. In questa pagina è presente un form in cui 
-viene richiesto nome utente e password e due pulsanti, uno per creare un nuovo account e uno per accedere
-alla pagina utente. Quest'ultimo rimanda alla pagina utente solo se sono state inserite le proprie credenziali 
-correttamente.
+Login:
+- La pagina che verrà visualizzata è la pagina login. In questa pagina è presente un form in cui
+  viene richiesto nome utente e password e due pulsanti, uno per creare un nuovo account e uno per accedere
+  alla pagina utente. L'utente si aspetta di inserire le proprie credenziali e accedere alla home.
+- In questo scenario l'utente inserira nelle due apposite caselle di testo il proprio username e password. Se queste sono corrette l'utente entrerà nel proprio account e visualizzerà la home. 
+- Nel caso in cui vengano inserite delle credenziali errate verrà visualizzato un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine dello scenario ci si aspetta di essere nella pagina home.
 
-### 3
-Dopo aver fatto il login si giunge alla pagina utente. In questa pagina sono presenti tre pulsanti.
+
+### NO
+Pagina utente
+- Dopo aver fatto il login si giunge alla pagina utente. In questa pagina sono presenti tre pulsanti.
 Il primo servirà a visualizzare il proprio profilo, il secondo per visualizzare la cronologia delle misurazioni e
 l’ultimo è quello relativo alla pompa insulinica, che permette di fare le iniezioni di insulina. Alla fine della
 pagina sarà presente anche un tasto logout che permetterà all’utente di uscire dal proprio profilo e tornare alla
 pagina login.
 
-### 4
+### 3
 Profilo
-Quando si preme il primo pulsante “profilo” si accede alla pagina delle credenziali dell’utente che ha appena 
-effettuato il login. In questa sezione è possibile modificare i propri dati e applicare le modifiche tramite il
-pulsante “modifica”.
+- Quando si preme il primo pulsante “profilo” si accede alla pagina delle credenziali dell’utente che ha appena
+  effettuato il login. In questa sezione è possibile modificare i propri dati e applicare le modifiche tramite il
+  pulsante “Salva”.
+- Nel momento in cui l'utente accede alla pagina profilo avrà la possibilità di modificare i dati inseriti nel momento della creazione dell'account. Nel momento in cui l'utente schiaccia il pulsante "Salva" le modifiche vengono salvate.
+- Se i dati che vengono modificati (username e password) non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine di questo scenario mi aspetto che le modifiche siano state apportate correttamente e quindi di visualizzare nella pagina profili i dati aggiornati.
+
+### 4
+Pompa insulinica
+- L'utente in questo scenario si aspetta si poter inserire la sua attuale glicemia e l'insulina fatta in modo che vengano poi salvate nella cronologia e possano essere visualizzate in seguito.
+- Quando dalla pagina utente si seleziona il tasto “pompa insulinica” si apre una pagina in cui l'utente può inserire
+  il suo valore attuale della glicemia, l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva", il quale salverà questi dati nella
+  cronologia.
+- Nel momento in cui l'utente va a inserire la glicemia attuale questa deve rientrare in un determinato range di valori.Nel caso in cui non fosse così verrà visualizzato un errore.
+- Contemporaneamente a questo scenario dovrà funzionare quello relativo alla cronologia in quanto i dati inseriti dovranno essere salvati in essa.
+- Alla fine dello scenario ci si aspetta di trovare il valore appena inserito all'interno della cronologia.
 
 ### 5
-Pompa insulinica
-Quando dalla pagina utente si seleziona il tasto “pompa insulinica” si apre una pagina in cui l'utente può inserire 
-il suo valore attuale della glicemia e tramite il  pulsante calcola verrà calcolato il valore di insulina necessario.
-Inoltre sarà possibile inserire un commento prima di premere il tasto salva, il quale salverà questi dati nella 
-cronologia. Viene visualizzato l'ultima misurazione fatta.
+Cronologia: cancella riga
+- Quando dalla pagina utente si seleziona il tasto “cronologia” appare la lista di tutte le iniezioni che sono state
+  fatte con relativo giorno, orario e quantità di insulina che è stata fatta. Inoltre l’utente deve avere
+  la possibilità di cancellare l’ultima riga della cronologia in caso commettesse un errore.
+- Una volta visualizzata la cronologia tramite il pulsante "Cancella" l'utente avrà la possibilità di cancellare l'ultima riga inserita.
+- Nel caso in cui l'utente erroneamente cancelli l'ultima riga,per ripristiarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine di questo scenario ci si aspetta di visualizzare tutta la cronologia meno che l'ultima riga inserita che sarà stata eliminata.
 
-### 6
-Cronologia
-Quando dalla pagina utente si seleziona il tasto “cronologia” appare la lista di tutte le iniezioni che sono state
-fatte con relativo giorno, orario e quantità di insulina che è stata fatta. Inoltre l’utente deve avere 
-la possibilità di cancellare l’ultima riga della cronologia in caso commettesse un errore oppure è possibile
-cancellare tutta la cronologia.
+### 5
+Cronologia: elimina tutto
+- Quando dalla pagina utente si seleziona il tasto “cronologia” appare la lista di tutte le iniezioni che sono state
+  fatte con relativo giorno, orario e quantità di insulina che è stata fatta. Inoltre l’utente, nel caso avesse necessità, deve avere
+  la possibilità di cancellare tutta la cronologia.
+- Una volta visualizzata la cronologia tramite il pulsante "Cancella tutto" l'utente avrà la possibilità di cancellare tutta la cronologia presente.
+- Nel caso in cui l'utente elimina erroneamente tutta la cronologia non sarà possinbile ripristinarla ma sarà necessario ricominciare da capo a inserire i valori.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine di questo scenario ci si aspetta di visualizzare tutta la pagina della cronologia vuota senza nessuna riga.
 
 ### 7
-logout
+Logout
+- L'utente una volta nella pagina home si aspetta di fare il logout e di uscire quindi dal proprio account, vnendo reindirizzato alla pagina di login.
+- Nel momento in cui l'utente, che si trova nella home, schiacia il tasto "Logout", verrà disconnesso dal proprio account, tornando alla pagina di login.
+- Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovaente l'accesso con le sue credenziali attraverso la pagina di login.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine di questo scenario l'utente si aspetta di trovarsi nuovamente alla pagina di login in cui potrà accedere nuovamente al proprio account nel caso lo volesse.
+
 
 ### 8
 Indietro
-Alla fine di ogni pagina sarà presente un tasto “indietro” che reindirizzerà l’utente alla pagina utente.
+
+- L'utente quando si trova nelle pagine "Profilo", "Pompa insulinica" o "Cronologia", si aspetta che schiacciando il tasto "Indietro" venga reindirizzato alla schermata home.
+- Nel momento in cui l'utente schiaccia il pulsante "Indietro" verrà reindirizzato alla pagina precedente a quella in sui si trova. Nel nostro caso sarà la pagina Home.
+- Nel caso in cui l'utente selezioni per sbaglio il tasto "Indietro" potrà tornare alla pagina in cui si trovava selezionandola nuovamnte dalla home.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla finedi questo scenario, dopo cheil tasto "Indietro" è stato selezionato mi aspetto di trovarmi nella Home.
 
 ### 9
-cancella utente
+Cancella utente
+- In questo scenario ci si aspetta che sia possibile eliminare definitivamente un account e tutti i dati in esso contenuti.
+- Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà eliminare l'account etutti i dati presenti in esso definitivamente.
+- Nel caso in cui l'utente eliminasse l'account e poi volesse ripristinarlo non sarebbe possibile. Per poter riavere l'account l'utente dovrà crearne uno nuovo.
+- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
+- Alla fine di questo scenario l'utente si aspetta  di essere reindirizzato alla pagina di login e che l'account non esista più e quindi non sia più possibile accedervi.
+
 
 ## ASSUNZIONI
 Per poter svolgere l’elaborato abbiamo dovuto effettuare
