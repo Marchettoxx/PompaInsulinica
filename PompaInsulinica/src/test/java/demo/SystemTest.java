@@ -53,9 +53,134 @@ public class SystemTest {
         }
     }
 
-    // test sulla creazione di un nuovo utente
+    // non inserisco nome
     @Test
-    public void AtestCreaNuovoUtente() {
+    public void AAtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        WebElement link1 = driver.findElement(By.className("btnNewAccount"));
+        link1.click();
+
+        WebElement titleCreaUtente = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleCreaUtente.getText());
+        driver.findElement(By.name("nome")).sendKeys("");
+        driver.findElement(By.name("cognome")).sendKeys("Massagrande");
+        driver.findElement(By.name("email")).sendKeys("Marco@gmail.com");
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        driver.findElement(By.name("password")).submit();
+        WebElement link2 = driver.findElement(By.className("btn"));
+        link2.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", title1.getText());
+    }
+
+    //non inserisco cognome
+    @Test
+    public void ABtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        WebElement link1 = driver.findElement(By.className("btnNewAccount"));
+        link1.click();
+
+        WebElement titleCreaUtente = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleCreaUtente.getText());
+        driver.findElement(By.name("nome")).sendKeys("Marco");
+        driver.findElement(By.name("cognome")).sendKeys("");
+        driver.findElement(By.name("email")).sendKeys("Marco@gmail.com");
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        driver.findElement(By.name("password")).submit();
+        WebElement link2 = driver.findElement(By.className("btn"));
+        link2.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", title1.getText());
+    }
+
+    //inserisco email errata
+    @Test
+    public void ACtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        WebElement link1 = driver.findElement(By.className("btnNewAccount"));
+        link1.click();
+
+        WebElement titleCreaUtente = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleCreaUtente.getText());
+        driver.findElement(By.name("nome")).sendKeys("Marco");
+        driver.findElement(By.name("cognome")).sendKeys("Massagrande");
+        driver.findElement(By.name("email")).sendKeys("gmail.com");
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        driver.findElement(By.name("password")).submit();
+        WebElement link2 = driver.findElement(By.className("btn"));
+        link2.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", title1.getText());
+    }
+
+    //inserisco username errato
+    @Test
+    public void ADtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        WebElement link1 = driver.findElement(By.className("btnNewAccount"));
+        link1.click();
+
+        WebElement titleCreaUtente = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleCreaUtente.getText());
+        driver.findElement(By.name("nome")).sendKeys("Marco");
+        driver.findElement(By.name("cognome")).sendKeys("Massagrande");
+        driver.findElement(By.name("email")).sendKeys("Marco@gmail.com");
+        driver.findElement(By.name("username")).sendKeys("M3");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        driver.findElement(By.name("password")).submit();
+        WebElement link2 = driver.findElement(By.className("btn"));
+        link2.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", title1.getText());
+    }
+
+    //inserisco password errata
+    @Test
+    public void AEtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        WebElement link1 = driver.findElement(By.className("btnNewAccount"));
+        link1.click();
+
+        WebElement titleCreaUtente = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleCreaUtente.getText());
+        driver.findElement(By.name("nome")).sendKeys("Marco");
+        driver.findElement(By.name("cognome")).sendKeys("Massagrande");
+        driver.findElement(By.name("email")).sendKeys("Marco@gmail.com");
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Marco12");
+        driver.findElement(By.name("password")).submit();
+        WebElement link2 = driver.findElement(By.className("btn"));
+        link2.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", title1.getText());
+    }
+
+    //creazione utente inserendo campi corretti
+    @Test
+    public void AFtestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
         String titleMessage = title.getText();
@@ -78,9 +203,51 @@ public class SystemTest {
         assertEquals("LOGIN POMPA INSULINICA", titleLogin.getText());
     }
 
-    // test login errato
+    //creo utente con username esistente
     @Test
-    public void BAtestLogInErrato() {
+    public void AGtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        WebElement link1 = driver.findElement(By.className("btnNewAccount"));
+        link1.click();
+
+        WebElement titleCreaUtente = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleCreaUtente.getText());
+        driver.findElement(By.name("nome")).sendKeys("Luca");
+        driver.findElement(By.name("cognome")).sendKeys("Santo");
+        driver.findElement(By.name("email")).sendKeys("Marco@gmail.com");
+        driver.findElement(By.name("username")).sendKeys("Marco123");
+        driver.findElement(By.name("password")).sendKeys("Luca123.");
+        driver.findElement(By.name("password")).submit();
+        WebElement link2 = driver.findElement(By.className("btn"));
+        link2.click();
+
+        WebElement titleLogin = driver.findElement(By.tagName("h1"));
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", titleLogin.getText());
+    }
+
+    //inserisco username errato
+    @Test
+    public void BAtestLogIn() {
+        driver.get("http://localhost:8080");
+        WebElement title = driver.findElement(By.tagName("h1"));
+        String titleMessage = title.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
+        driver.findElement(By.name("username")).sendKeys("Marco12");
+        driver.findElement(By.name("password")).sendKeys("Marco123.");
+        WebElement link1 = driver.findElement(By.className("btn"));
+        link1.click();
+
+        WebElement title1 = driver.findElement(By.tagName("h1"));
+        String titleMessage1 = title1.getText();
+        assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
+    }
+
+    // inserisco password errata
+    @Test
+    public void BBtestLogIn() {
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
         String titleMessage = title.getText();
@@ -95,24 +262,9 @@ public class SystemTest {
         assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
     }
 
+    //inserisco username e password errati
     @Test
-    public void BBtestLogInErrato() {
-        driver.get("http://localhost:8080");
-        WebElement title = driver.findElement(By.tagName("h1"));
-        String titleMessage = title.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
-        driver.findElement(By.name("username")).sendKeys("Marco12");
-        driver.findElement(By.name("password")).sendKeys("Marco123.");
-        WebElement link1 = driver.findElement(By.className("btn"));
-        link1.click();
-
-        WebElement title1 = driver.findElement(By.tagName("h1"));
-        String titleMessage1 = title1.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
-    }
-
-    @Test
-    public void BCtestLogInErrato() {
+    public void BCtestLogIn() {
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
         String titleMessage = title.getText();
@@ -127,9 +279,9 @@ public class SystemTest {
         assertEquals("LOGIN POMPA INSULINICA", titleMessage1);
     }
 
-    // test login corretto
+    // test login inserendo credenziali utente corrette
     @Test
-    public void CtestLogInGiusto() {
+    public void BDtestLogIn() {
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
         String titleMessage = title.getText();
@@ -144,7 +296,7 @@ public class SystemTest {
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
     }
 
-    // test bottone profilo
+    //premo bottone profilo
     @Test
     public void DAtestUtente(){
         driver.get("http://localhost:8080");
@@ -155,6 +307,7 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
@@ -164,7 +317,6 @@ public class SystemTest {
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("PROFILO", titleMessage2);
-
     }
 
     // test bottone pompa insulinica
@@ -178,16 +330,16 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-
         WebElement link2 = driver.findElement(By.xpath("//input[@value='Pompa insulinica']"));
         link2.click();
+
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("POMPA INSULINICA", titleMessage2);
-
     }
 
     // test sul bottone della cronologia senza aver fatto delle iniezioni
@@ -201,17 +353,17 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-
         WebElement link2 = driver.findElement(By.xpath("//input[@value='Cronologia']"));
         link2.click();
+
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage2); //questo perchè senza delle iniezioni
         // la cronologia da errore e rimane nella stessa pagina di benvenuto
-
     }
 
     // test in cui modifico le credenziali del mio utente
@@ -225,22 +377,22 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-
         WebElement link2 = driver.findElement(By.xpath("//input[@value='Profilo']"));
         link2.click();
+
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("PROFILO", titleMessage2);
-
         WebElement link3 = driver.findElement(By.className("btn"));
         link3.click();
+
         WebElement title3 = driver.findElement(By.tagName("h1"));
         String titleMessage3 = title3.getText();
         assertEquals("MODIFICA CREDENZIALI UTENTE", titleMessage3);
-
         driver.findElement(By.name("cognome")).clear();
         driver.findElement(By.name("cognome")).sendKeys("Palmieri");
         driver.findElement(By.className("btn")).submit();
@@ -249,7 +401,6 @@ public class SystemTest {
         assertEquals("PROFILO", titleMessage4);
         //WebElement cell2 = driver.findElement(By.xpath("//table//tbody//tr[2]//td[2]"));
         //assertEquals("Palmieri", cell2.getText());
-
     }
 
     @Test
@@ -262,21 +413,22 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-
         WebElement link2 = driver.findElement(By.xpath("//input[@value='Pompa insulinica']"));
         link2.click();
+
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("POMPA INSULINICA", titleMessage2);
-
         driver.findElement(By.name("glicemia")).sendKeys("150");
         driver.findElement(By.name("insulina")).sendKeys("2");
         driver.findElement(By.name("commento")).sendKeys("due unità di insulina");
         WebElement link3 = driver.findElement(By.className("btn"));
         link3.click();
+
         WebElement title3 = driver.findElement(By.tagName("h1"));
         String titleMessage3 = title3.getText();
         assertEquals("POMPA INSULINICA", titleMessage3);
@@ -292,23 +444,23 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-
         WebElement link2 = driver.findElement(By.xpath("//input[@value='Pompa insulinica']"));
         link2.click();
+
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("POMPA INSULINICA", titleMessage2);
-
         WebElement link4 = driver.findElement(By.className("btnBack"));
         link4.click();
+
         WebElement title4 = driver.findElement(By.tagName("h1"));
         String titleMessage4 = title4.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage4);
     }
-
 
     // controllo che l'iniezione sia in cronologia e la cancello con il tasto cancella riga
     @Test
@@ -321,32 +473,30 @@ public class SystemTest {
         driver.findElement(By.name("password")).sendKeys("Marco123.");
         WebElement link1 = driver.findElement(By.className("btn"));
         link1.click();
+
         WebElement title1 = driver.findElement(By.tagName("h1"));
         String titleMessage1 = title1.getText();
         assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-
         WebElement link2 = driver.findElement(By.xpath("//input[@value='Cronologia']"));
         link2.click();
+
         WebElement title2 = driver.findElement(By.tagName("h1"));
         String titleMessage2 = title2.getText();
         assertEquals("CRONOLOGIA INIEZIONI", titleMessage2);
-
         WebElement title3 = driver.findElement(By.xpath("//td[1]"));
         String titleMessage3 = title3.getText();
         assertEquals("150", titleMessage3);
-
         WebElement link3 = driver.findElement(By.xpath("//input[@value='cancella']"));
         link3.click();
+
         assertEquals("CRONOLOGIA INIEZIONI", driver.findElement(By.tagName("h1")).getText());
         assertEquals(driver.findElements(By.name("glicemia")).size(), 0);
         assertEquals(driver.findElements(By.name("insulina")).size(), 0);
         assertEquals(driver.findElements(By.name("commento")).size(), 0);
-
     }
 
-    /*
     // controllo che l'iniezione sia in cronologia e la cancello con il tasto cancella tutto
-    @Test
+    /*@Test
     public void HBtestCronologia (){
         driver.get("http://localhost:8080");
         WebElement title = driver.findElement(By.tagName("h1"));
@@ -375,8 +525,8 @@ public class SystemTest {
         assertEquals("CRONOLOGIA INIEZIONI", driver.findElement(By.tagName("h1")).getText());
         assertEquals(driver.findElements(By.name("id")).size(), 0);
 
-    }
-    */
+    }*/
+
     // test LogOut
     @Test
     public void ItestLogOut(){
