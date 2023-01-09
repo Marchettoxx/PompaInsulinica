@@ -75,15 +75,6 @@ pagina login e potrà reinserire nuovamente le proprie credenziali.
 - Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
 A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio il suo diabete.
 
-
-### NO
-Pagina utente
-- Dopo aver fatto il login si giunge alla pagina utente. In questa pagina sono presenti tre pulsanti.
-Il primo servirà a visualizzare il proprio profilo, il secondo per visualizzare la cronologia delle misurazioni e
-l’ultimo è quello relativo alla pompa insulinica, che permette di fare le iniezioni di insulina. Alla fine della
-pagina sarà presente anche un tasto logout che permetterà all’utente di uscire dal proprio profilo e tornare alla
-pagina login.
-
 ### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
 - L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
 pagina sarà possibile anche modificare i propri dati.
