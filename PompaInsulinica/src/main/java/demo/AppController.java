@@ -45,6 +45,19 @@ public class AppController {
             return "notfound";
     }
 
+    @RequestMapping("/backprofile")
+    public String backProfile(
+            @RequestParam(name="id", required=true) Long id,
+            Model model) {
+        Optional<Person> person = repository.findById(id);
+        if (person.isPresent()) {
+            model.addAttribute("person", person.get());
+            return "profilo";
+        }
+        else
+            return "notfound";
+    }
+
     @RequestMapping("/logout")
     public String logOut(Model model){
         return "login";

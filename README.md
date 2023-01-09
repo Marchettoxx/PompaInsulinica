@@ -56,17 +56,17 @@ la cronologia delle sue misurazioni.
 - Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni di insulina,
 essendo che è il primo suo accesso dovrà crearsi un nuovo account.
 - L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
-verrà indirizzato su una pagina in cui gli verrà rischiesto di inserire il suo nome, cognome, email, username e password,
-ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
+verrà indirizzato su una pagina in cui gli verrà rischiesto di inserire il suo nome, cognome, email, username e password.
+Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
 correttamente.
 - Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
-non sarà possibile creare l'account e verranno visualizzato dei messaggi di errore.
-- Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato sulla pagina di login.
+non sarà possibile creare l'account e verranno visualizzati dei messaggi di errore.
+- Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato alla pagina di login.
 
 ### 2 L'UTENTE EFFETTUA IL LOGIN AL SUO ACCOUNT
 - L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
 - Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
-  viene richiesto nome utente e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
+  viene richiesto username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
   alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
 spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
 - Nel caso in cui l'utente si sia dimenticato le sue crdenziali, o seplicemente le inserisce in modo sbagliato, verrà visualizzato 
@@ -84,15 +84,18 @@ l’ultimo è quello relativo alla pompa insulinica, che permette di fare le ini
 pagina sarà presente anche un tasto logout che permetterà all’utente di uscire dal proprio profilo e tornare alla
 pagina login.
 
-### 3
-Profilo
-- Quando si preme il primo pulsante “profilo” si accede alla pagina delle credenziali dell’utente che ha appena
-  effettuato il login. In questa sezione è possibile modificare i propri dati e applicare le modifiche tramite il
-  pulsante “Salva”.
-- Nel momento in cui l'utente accede alla pagina profilo avrà la possibilità di modificare i dati inseriti nel momento della creazione dell'account. Nel momento in cui l'utente schiaccia il pulsante "Salva" le modifiche vengono salvate.
-- Se i dati che vengono modificati (username e password) non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla fine di questo scenario mi aspetto che le modifiche siano state apportate correttamente e quindi di visualizzare nella pagina profili i dati aggiornati.
+### 3 PROFILO
+- L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
+pagina sarà possibile anche modificare i propri dati.
+- L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
+schiacciare il bottone "Profilo" e verrà indirizzato in una pagina contente tutte le credenziali in modalità solo lettura.
+Schiacciando sul tasto "Modifica", l'utente avrà la possibilità di modificare tutti i campi presenti nella pagina, sempre
+rispettanto gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
+sul bottone "Salva".esso verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere le modifiche appena fatte.
+- Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verrano
+visualizzati dei messaggi di errore.
+- Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
+le modifiche appena fatte.
 
 ### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
 - Nel momento in cui l'utente ha il bisogno di fare un iniezione di inulina si aspetta di poter inserire nel sistema: 
