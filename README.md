@@ -63,7 +63,7 @@ correttamente.
 non sarà possibile creare l'account e verranno visualizzato dei messaggi di errore.
 - Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato sulla pagina di login.
 
-### 2 L'utente effettua il login per accedere al proprio account
+### 2 L'UTENTE EFFETTUA IL LOGIN AL SUO ACCOUNT
 - L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
 - Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
   viene richiesto nome utente e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
@@ -72,7 +72,7 @@ spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
 - Nel caso in cui l'utente si sia dimenticato le sue crdenziali, o seplicemente le inserisce in modo sbagliato, verrà visualizzato 
 un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
 pagina login e potrà reinserire nuovamente le proprie credenziali. 
-- Alla fine dello scenario l'utente si aspetta di essere nella pagina home all'interno del proprio account. 
+- Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
 A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio il suo diabete.
 
 
@@ -94,15 +94,21 @@ Profilo
 - Contemporaneamente a questo scenario non ci sarà nessun altro scenario
 - Alla fine di questo scenario mi aspetto che le modifiche siano state apportate correttamente e quindi di visualizzare nella pagina profili i dati aggiornati.
 
-### 4
-Pompa insulinica
-- L'utente in questo scenario si aspetta si poter inserire la sua attuale glicemia e l'insulina fatta in modo che vengano poi salvate nella cronologia e possano essere visualizzate in seguito.
-- Quando dalla pagina utente si seleziona il tasto “pompa insulinica” si apre una pagina in cui l'utente può inserire
-  il suo valore attuale della glicemia, l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva", il quale salverà questi dati nella
-  cronologia.
-- Nel momento in cui l'utente va a inserire la glicemia attuale questa deve rientrare in un determinato range di valori.Nel caso in cui non fosse così verrà visualizzato un errore.
-- Contemporaneamente a questo scenario dovrà funzionare quello relativo alla cronologia in quanto i dati inseriti dovranno essere salvati in essa.
-- Alla fine dello scenario ci si aspetta di trovare il valore appena inserito all'interno della cronologia.
+### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
+- Nel momento in cui l'utente ha il bisogno di fare un iniezione di inulina si aspetta si poter inserire nel sistema: 
+  - la sua attuale glicemia 
+  - l'insulina fatta 
+  - un eventuale commento 
+
+  Ci si aspetta inoltre che questi dati vengano salvati in modo da poter essere consultati in seguito
+assieme a un medico in caso di necessità.
+- Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
+  il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
+il quale salverà i dati appena inseriti nella cronologia.
+- Nel momento in cui l'utente va a inserire la sua glicemia attuale questa deve rientrare in un determinato range di valori.
+Nel caso in cui non fosse così verrà visualizzato un errore e l'iniezione non verrà salvata in cronologia fino a che il valore della 
+glicemia non viene modificato.
+- Una volta che l'iniezione è stata inserita i valori appena inseriti saranno presenti all'interno della cronologia.
 
 ### 5
 Cronologia: cancella riga
