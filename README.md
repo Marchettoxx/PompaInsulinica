@@ -95,27 +95,27 @@ Profilo
 - Alla fine di questo scenario mi aspetto che le modifiche siano state apportate correttamente e quindi di visualizzare nella pagina profili i dati aggiornati.
 
 ### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
-- Nel momento in cui l'utente ha il bisogno di fare un iniezione di inulina si aspetta si poter inserire nel sistema: 
+- Nel momento in cui l'utente ha il bisogno di fare un iniezione di inulina si aspetta di poter inserire nel sistema: 
   - la sua attuale glicemia 
   - l'insulina fatta 
   - un eventuale commento 
 
-  Ci si aspetta inoltre che questi dati vengano salvati in modo da poter essere consultati in seguito
+  e che successivamente questi dati vengano salvati in modo da poter essere consultati in seguito
 assieme a un medico in caso di necessità.
 - Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
   il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
 il quale salverà i dati appena inseriti nella cronologia.
-- Nel momento in cui l'utente va a inserire la sua glicemia attuale questa deve rientrare in un determinato range di valori.
+- Nel momento in cui l'utente va a inserire la sua glicemia attuale e la quantità di insulina, queste devono rientrare in un determinato range di valori.
 Nel caso in cui non fosse così verrà visualizzato un errore e l'iniezione non verrà salvata in cronologia fino a che il valore della 
 glicemia non viene modificato.
 - Una volta che l'iniezione è stata inserita i valori appena inseriti saranno presenti all'interno della cronologia.
 
-### 5
-Cronologia: cancella riga
-- Quando dalla pagina utente si seleziona il tasto “cronologia” appare la lista di tutte le iniezioni che sono state
-  fatte con relativo giorno, orario e quantità di insulina che è stata fatta. Inoltre l’utente deve avere
-  la possibilità di cancellare l’ultima riga della cronologia in caso commettesse un errore.
-- Una volta visualizzata la cronologia tramite il pulsante "Cancella" l'utente avrà la possibilità di cancellare l'ultima riga inserita.
+### 5 L'UTENTE DOPO AVER INSERITO IN CRONOLOGIA UN'INIEZIONE SBAGLIATA VUOLE CANCELLARLA
+- Nel caso in cui l'utente in precedenza abbia sbagliato ad inserire un'iniezione, ha la necessita di poter eliminare quest'ultima in modo
+da non salvare informazioni sbagliate.
+- Quando dalla pagina Home si seleziona il tasto “Cronologia” appare la lista di tutte le iniezioni che sono state
+  fatte con relativo giorno, orario, glicemia, commento e quantità di insulina che è stata fatta. Selezionando il tasto "Cancella"
+  l'utente ha la possibilità di cancellare l’ultima riga della cronologia.
 - Nel caso in cui l'utente erroneamente cancelli l'ultima riga,per ripristiarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
 - Contemporaneamente a questo scenario non ci sarà nessun altro scenario
 - Alla fine di questo scenario ci si aspetta di visualizzare tutta la cronologia meno che l'ultima riga inserita che sarà stata eliminata.
