@@ -20,7 +20,7 @@ Si vuole progettare un sistema informatico per gestire
 la cronologia delle misurazioni di glicemia e insulina
 che vengono effettuate da una pompa insulinica.
 Per ogni utente si registra: un nome, un cognome,
-un'email, un username, una password.
+un'email, un username e una password.
 Il sistema memorizza misurazioni della pompa insulinica:
 l'id dell'utente che effettua la misurazionele,
 il valore di glicemia, il valore di insulina iniettata,
@@ -46,13 +46,22 @@ la cronologia delle sue misurazioni.
 
 ## SCENARI
 
-### 1
-Crea account:
-- Iniziato questo scenario ci si aspetta che l'utente riesca a creare il proprio account e che dopo averlo creato venga reindirizzato alla pagina di login
-- Nel momento in cui l'utente schiaccia "crea account" visualizzerà delle caselle di testo nelle quali dovrà inserire: Nome, Cognome, Email, Username e password del proprio account. Una volta inseriti questi dati l'account verrà creato e l'utente verrà reindirizzato al login.
-- In questo caso se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari per la crazione della mail e dell'username non sarà possibile creare l'account e verrà visualizzato un messaggio di errore.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla fine dello scenario ci si aspetta di essere nella pagina di login e che l'account sia stato correttamente creato.
+- Descrizione di cosa gli utenti si aspettano quando inizia uno scenario
+- Descrizione normale conseguirsi degli eventi
+- Cosa può andare storto e come possono essere gestiti i vari problemi
+- Attività che si svolgono contemporaneamente
+- Descrizione fine scenario
+
+### 1 L'UTENTE CREA UN NUOVO ACCOUNT
+- Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni di insulina,
+essendo che è il primo suo accesso dovrà crearsi un nuovo account.
+- L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
+verrà indirizzato su una pagina in cui gli verrà rischiesto di inserire il suo nome, cognome, email, username e password,
+ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
+correttamente.
+- Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
+non sarà possibile creare l'account e verranno visualizzato dei messaggi di errore.
+- Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato sulla pagina di login.
 
 ### 2 L'utente effettua il login per accedere al proprio account
 - L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
