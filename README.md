@@ -52,7 +52,7 @@ la cronologia delle sue misurazioni.
 - Attività che si svolgono contemporaneamente
 - Descrizione fine scenario
 
-### 1 L'UTENTE CREA UN NUOVO ACCOUNT
+### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
 - Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni di insulina,
 essendo che è il primo suo accesso dovrà crearsi un nuovo account.
 - L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
