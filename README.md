@@ -54,15 +54,17 @@ Crea account:
 - Contemporaneamente a questo scenario non ci sarà nessun altro scenario
 - Alla fine dello scenario ci si aspetta di essere nella pagina di login e che l'account sia stato correttamente creato.
 
-### 2
-Login:
-- La pagina che verrà visualizzata è la pagina login. In questa pagina è presente un form in cui
-  viene richiesto nome utente e password e due pulsanti, uno per creare un nuovo account e uno per accedere
-  alla pagina utente. L'utente si aspetta di inserire le proprie credenziali e accedere alla home.
-- In questo scenario l'utente inserira nelle due apposite caselle di testo il proprio username e password. Se queste sono corrette l'utente entrerà nel proprio account e visualizzerà la home. 
-- Nel caso in cui vengano inserite delle credenziali errate verrà visualizzato un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla fine dello scenario ci si aspetta di essere nella pagina home.
+### 2 L'utente effettua il login per accedere al proprio account
+- L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
+- Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
+  viene richiesto nome utente e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
+  alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
+spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
+- Nel caso in cui l'utente si sia dimenticato le sue crdenziali, o seplicemente le inserisce in modo sbagliato, verrà visualizzato 
+un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
+pagina login e potrà reinserire nuovamente le proprie credenziali. 
+- Alla fine dello scenario l'utente si aspetta di essere nella pagina home all'interno del proprio account. 
+A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio il suo diabete.
 
 
 ### NO
