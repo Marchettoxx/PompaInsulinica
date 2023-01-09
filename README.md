@@ -84,7 +84,7 @@ l’ultimo è quello relativo alla pompa insulinica, che permette di fare le ini
 pagina sarà presente anche un tasto logout che permetterà all’utente di uscire dal proprio profilo e tornare alla
 pagina login.
 
-### 3 PROFILO
+### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
 - L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
 pagina sarà possibile anche modificare i propri dati.
 - L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
@@ -123,15 +123,12 @@ da non salvare informazioni sbagliate.
 - Contemporaneamente a questo scenario non ci sarà nessun altro scenario
 - Alla fine di questo scenario ci si aspetta di visualizzare tutta la cronologia meno che l'ultima riga inserita che sarà stata eliminata.
 
-### 5
-Cronologia: elimina tutto
-- Quando dalla pagina utente si seleziona il tasto “cronologia” appare la lista di tutte le iniezioni che sono state
-  fatte con relativo giorno, orario e quantità di insulina che è stata fatta. Inoltre l’utente, nel caso avesse necessità, deve avere
-  la possibilità di cancellare tutta la cronologia.
-- Una volta visualizzata la cronologia tramite il pulsante "Cancella tutto" l'utente avrà la possibilità di cancellare tutta la cronologia presente.
-- Nel caso in cui l'utente elimina erroneamente tutta la cronologia non sarà possinbile ripristinarla ma sarà necessario ricominciare da capo a inserire i valori.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla fine di questo scenario ci si aspetta di visualizzare tutta la pagina della cronologia vuota senza nessuna riga.
+### 6 L'UTENTE ELIMINA TUTTA LA CRONOLOGIA
+- Dopo aver fatto un controllo dal medico l'utente vuole cancellare tutta la cronologia per liberare spazio.
+- L'utente ha la possibilità di eliminare l'intera cronologia, per fare questo dovà premere il tasto "cancella tutto",
+dopo di ciò verranno cancellate tutte le righe contenti i dati di insulina, glicemia e commenti vari.
+- Nel caso in cui l'utente dovesse eliminare erroneamente tutta la cronologia non sarà possibile ripristinarla, l'operazione è irreversibile.
+- L'utente dopo aver premuto il pulsante visualizzerà la cronologia vuota
 
 ### 7
 Logout
@@ -142,14 +139,15 @@ Logout
 - Alla fine di questo scenario l'utente si aspetta di trovarsi nuovamente alla pagina di login in cui potrà accedere nuovamente al proprio account nel caso lo volesse.
 
 
-### 8
-Indietro
-
-- L'utente quando si trova nelle pagine "Profilo", "Pompa insulinica" o "Cronologia", si aspetta che schiacciando il tasto "Indietro" venga reindirizzato alla schermata home.
-- Nel momento in cui l'utente schiaccia il pulsante "Indietro" verrà reindirizzato alla pagina precedente a quella in sui si trova. Nel nostro caso sarà la pagina Home.
-- Nel caso in cui l'utente selezioni per sbaglio il tasto "Indietro" potrà tornare alla pagina in cui si trovava selezionandola nuovamnte dalla home.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla finedi questo scenario, dopo cheil tasto "Indietro" è stato selezionato mi aspetto di trovarmi nella Home.
+### 8 L'UTENTE VUOLE RITORNARE ALLA PAGINA PRECEDENTE
+- L'utente quando si trova un tasto "Indietro", può tornare alla schermata precedente.
+- Nelle schermate "Profilo", "Pompa Insulinica", "Cronologia" è presente un tasto "Indietro" che se viene premuto
+reindirizza l'utente alla schermata principale del suo account.
+Nella schermata di modifica del profilo, l'utente può non salvare le modifiche e tornare indietro alla pagina profilo,
+in questo caso si può verificare il fatto che ogni tipo di modifica che si stava facendo non viene salvata.
+- Nel caso in cui l'utente selezioni per sbaglio il tasto "Indietro" potrà tornare alla pagina in cui si trovava 
+ripercorrendo gli stessi passi fatti in precedenza.
+- Dopo aver schiacciato il tasto "Indietro", l'utente ritornerà alla pagina precedente.
 
 ### 9
 Cancella utente
