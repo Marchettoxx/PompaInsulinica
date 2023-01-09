@@ -130,14 +130,14 @@ dopo di ciò verranno cancellate tutte le righe contenti i dati di insulina, gli
 - Nel caso in cui l'utente dovesse eliminare erroneamente tutta la cronologia non sarà possibile ripristinarla, l'operazione è irreversibile.
 - L'utente dopo aver premuto il pulsante visualizzerà la cronologia vuota
 
-### 7
-Logout
-- L'utente una volta nella pagina home si aspetta di fare il logout e di uscire quindi dal proprio account, vnendo reindirizzato alla pagina di login.
-- Nel momento in cui l'utente, che si trova nella home, schiacia il tasto "Logout", verrà disconnesso dal proprio account, tornando alla pagina di login.
+### 7 L'UTENTE DOPO AVER EFFETTUATO LE OPERAZINI NECESSARIE DESIDERA USCIRE DAL PROPRIO PROFILO
+- L'utente dopo aver fatto le operazioni di cui aveva bisogno, desidera effettuare il logout dal proprio profilo
+  in modo che nessun altro possa vedere le sue informazioni personali.
+- Quando l'utente si trova nella pagina Home ha la possibilità di selezionare il pulsante "Logout" e di uscire quindi dal
+  proprio account, venendo indirizzato alla pagina di login.
 - Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovaente l'accesso con le sue credenziali attraverso la pagina di login.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla fine di questo scenario l'utente si aspetta di trovarsi nuovamente alla pagina di login in cui potrà accedere nuovamente al proprio account nel caso lo volesse.
-
+- Una volta che è stato effettuato il logout l'utente si trova nuovamente alla pagina di login in cui potrà accedere nuovamente
+  al proprio account nel caso lo volesse.
 
 ### 8 L'UTENTE VUOLE RITORNARE ALLA PAGINA PRECEDENTE
 - L'utente quando si trova un tasto "Indietro", può tornare alla schermata precedente.
@@ -149,14 +149,16 @@ in questo caso si può verificare il fatto che ogni tipo di modifica che si stav
 ripercorrendo gli stessi passi fatti in precedenza.
 - Dopo aver schiacciato il tasto "Indietro", l'utente ritornerà alla pagina precedente.
 
-### 9
-Cancella utente
-- In questo scenario ci si aspetta che sia possibile eliminare definitivamente un account e tutti i dati in esso contenuti.
-- Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà eliminare l'account etutti i dati presenti in esso definitivamente.
-- Nel caso in cui l'utente eliminasse l'account e poi volesse ripristinarlo non sarebbe possibile. Per poter riavere l'account l'utente dovrà crearne uno nuovo.
-- Contemporaneamente a questo scenario non ci sarà nessun altro scenario
-- Alla fine di questo scenario l'utente si aspetta  di essere reindirizzato alla pagina di login e che l'account non esista più e quindi non sia più possibile accedervi.
-
+### 9 L'UTENTE ELIMINA IL PROPRIO ACCOUNT
+- Nel caso in cui il paziente decida di non utilizzare più questo sito per monitorare il suo diabate, vuole avere
+  la possibilità di eliminare il proprio account con i relativi dati in esso contenuti.
+- Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà
+  eliminare l'account e tutti i dati presenti in esso definitivamente.
+- Nel caso in cui l'utente eliminasse l'account e poi volesse ripristinarlo non sarebbe possibile.
+  Prima della cancellazione definitiva dell'account verrà visualizzato dall'utente un popup che chiederà
+  un ulteriore conferma prima di procedere con la cancellazione. Per poter riavere l'account l'utente dovrà crearne uno nuovo.
+- Dopo aver eliminato l'account l'utente viene indirizzato alla pagina di login. A questo punto l'account non esiste più e
+  quindi è più possibile accedervi.
 
 ## ASSUNZIONI
 Per poter svolgere l’elaborato abbiamo dovuto effettuare
