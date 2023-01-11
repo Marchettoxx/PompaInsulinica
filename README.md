@@ -1,9 +1,9 @@
 # RELAZIONE PROGETTO POMPA INSULINICA
 FONDAMENTI DI INGEGNERIA DEL SOFTWARE 2022/2023
 
-Marco Massagrande \
-Alessio Tonelli \
-Alessia Canelli
+Canelli Alessia \
+Massagrande Marco \
+Tonelli Alessio \
 
 ## INTRODUZIONE
 L'obbiettivo dell'elaborato è quello di creare
@@ -21,36 +21,15 @@ la cronologia delle misurazioni di glicemia e insulina
 che vengono effettuate da una pompa insulinica.
 Per ogni utente si registra: un nome, un cognome,
 un'email, un username e una password.
-Il sistema memorizza misurazioni della pompa insulinica:
-l'id dell'utente che effettua la misurazionele,
-il valore di glicemia, il valore di insulina iniettata,
-un commento che l'utente può rilasciare al momento
-dell'inserimento della misurzione e infine l'orario
-e la data dell'avvenuta misurazione.
-Il sistema mantiene una sola lista con tutte le misurazione
-degli utenti e tramite l'id dell'utente si
-collega una misurazione all'utente.
-
-L'utente se non è registrato nel sistema può crearsi un
-nuovo account.
-L'utente può accedere al sistema inserendo il proprio
-username e la password, se le credenziali risultano
-essere corrette l'utente può accedere alla schermata
-home dell'applicazione.
-Una volta che l'utente si trova nella schermata home
-può decidere se visualizzare le proprie credenziali
-e se vuole modificarle, può decidere se inserire una
-nuova misurazione. Quando l'utente avrà inserito almeno
-una misurazione potrà nella schermata home visualizzare
-la cronologia delle sue misurazioni.
+Il sistema memorizza: 
+- le misurazioni della pompa insulinica;
+- l'id dell'utente che effettua la misurazione;
+- il valore di glicemia;
+- il valore di insulina iniettata;
+- un commento che l'utente può inserire;
+- l'orario e la data dell'avvenuta misurazione.
 
 ## SCENARI
-
-- Descrizione di cosa gli utenti si aspettano quando inizia uno scenario
-- Descrizione normale conseguirsi degli eventi
-- Cosa può andare storto e come possono essere gestiti i vari problemi
-- Attività che si svolgono contemporaneamente
-- Descrizione fine scenario
 
 ### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
 - Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni di insulina,
@@ -92,9 +71,8 @@ le modifiche appena fatte.
 - Nel momento in cui l'utente ha il bisogno di fare un iniezione di inulina si aspetta di poter inserire nel sistema: 
   - la sua attuale glicemia 
   - l'insulina fatta 
-  - un eventuale commento 
-
-  e che successivamente questi dati vengano salvati in modo da poter essere consultati in seguito
+  - un eventuale commento
+e che successivamente questi dati vengano salvati in modo da poter essere consultati in seguito
 assieme a un medico in caso di necessità.
 - Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
   il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
