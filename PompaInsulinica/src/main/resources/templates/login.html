@@ -20,7 +20,13 @@
         <h1> LOGIN POMPA INSULINICA </h1>
         <h3 class="errore" th:text = "${errore}" > </h3>
 
-        <form action="login" method="post">
+        <tr th:each="p: ${person}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.username}"></td>
+            <td th:text="${p.password}"></td>
+        </tr>
+
+            <form action="login" method="post">
             <table style="background-color:#8fbc8f">
                 <tbody>
                     <tr>
