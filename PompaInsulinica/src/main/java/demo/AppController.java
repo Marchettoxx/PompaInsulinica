@@ -26,6 +26,7 @@ public class AppController {
     Integer MAX_GLICEMIA = 300;
     Integer MIN_INSULINA = 2;
     Integer MAX_INSULINA = 10;
+    Integer MAX_COMMENTO = 30;
 
     @RequestMapping("/")
     public String index(Model model){
@@ -391,7 +392,7 @@ public class AppController {
                 flag = false;
             }
 
-            if (commento.length() < 120) {
+            if (commento.length() < MAX_COMMENTO) {
                 model.addAttribute("commento", commento);
                 model.addAttribute("errcommento", "");
             }

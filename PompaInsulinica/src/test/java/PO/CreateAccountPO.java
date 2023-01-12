@@ -10,7 +10,7 @@ public class CreateAccountPO extends PageObject {
     private WebElement title;
 
     @FindBy(name = "nome")
-    private WebElement name;
+    private WebElement nome;
 
     @FindBy(name = "cognome")
     private WebElement cognome;
@@ -40,10 +40,15 @@ public class CreateAccountPO extends PageObject {
     }
 
     public void insertCredential(String nome, String cognome, String email, String username, String password) {
-        this.name.sendKeys(nome);
+        this.nome.clear();
+        this.nome.sendKeys(nome);
+        this.cognome.clear();
         this.cognome.sendKeys(cognome);
+        this.email.clear();
         this.email.sendKeys(email);
+        this.username.clear();
         this.username.sendKeys(username);
+        this.password.clear();
         this.password.sendKeys(password);
     }
 }
