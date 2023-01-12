@@ -14,12 +14,10 @@ public class PompaInsulinica {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private Long idUtente;
-    private Integer glicemia;
-    private Integer insulina;
-    private String commento;
-    private String time;
-
-    protected PompaInsulinica() {}
+    private final Integer glicemia;
+    private final Integer insulina;
+    private final String commento;
+    private final String time;
 
     public PompaInsulinica(Long idUtente, Integer glicemia, Integer insulina, String commento) {
         this.idUtente = idUtente;
@@ -33,15 +31,9 @@ public class PompaInsulinica {
         this.time = sdf.format(resultdate);
     }
 
-    @Override
-    public String toString() {
-        return String.format(
-                "Iniezione[id=%d, idUtente='%d', glicemia= '%d', insulina='%d', commento='%s', time='%s']",
-                id, idUtente, glicemia, insulina, commento, time);
-    }
+    public Long getId() {return id;}
 
-    public Long getId() { return id;}
-    public Long getIdUtente() { return idUtente;}
+    public Long getIdUtente() {return idUtente;}
     public PompaInsulinica setIdUtente(Long idUtente) {
         this.idUtente = idUtente;
         return this;

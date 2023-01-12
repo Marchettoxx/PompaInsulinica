@@ -12,9 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.apache.commons.lang3.SystemUtils;
-
 import org.openqa.selenium.WebDriver;
-
 import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
@@ -745,5 +743,13 @@ public class SystemTest {
         HomePO homePO1 = loginPO1.clickLogin();
 
         assertEquals("LOGIN POMPA INSULINICA", homePO1.getTitle());
+    }
+
+    // testo se change id funziona
+    @Test
+    public void JAtestChangeIdPerson() {
+        PompaInsulinica pompaInsulinica = new PompaInsulinica(1L, 200, 3, "pizza e coca");
+        pompaInsulinica.setIdUtente(2L);
+        assertEquals(Long.valueOf(2), pompaInsulinica.getIdUtente());
     }
 }
