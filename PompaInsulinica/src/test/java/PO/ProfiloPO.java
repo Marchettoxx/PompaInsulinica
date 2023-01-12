@@ -12,6 +12,9 @@ public class ProfiloPO extends PageObject{
     @FindBy(className = "btn")
     private WebElement buttonModificaUtente;
 
+    @FindBy(className = "btnLogOut")
+    private WebElement buttonDeleteAccount;
+
     public ProfiloPO(WebDriver driver) {
         super(driver);
     }
@@ -23,5 +26,10 @@ public class ProfiloPO extends PageObject{
     public ModificaUtentePO clickModificaUtente() {
         this.buttonModificaUtente.click();
         return new ModificaUtentePO(driver);
+    }
+
+    public LoginPO clickDeleteAccount() {
+        this.buttonDeleteAccount.click();
+        return new LoginPO(driver);
     }
 }

@@ -27,6 +27,9 @@ public class ModificaUtentePO extends PageObject {
     @FindBy(className = "btn")
     private WebElement buttonSave;
 
+    @FindBy(className = "btnBack")
+    private WebElement btnBack;
+
     public ModificaUtentePO(WebDriver driver) {
         super(driver);
     }
@@ -62,6 +65,11 @@ public class ModificaUtentePO extends PageObject {
 
     public ProfiloPO clickSaveModifica() {
         this.buttonSave.click();
+        return new ProfiloPO(driver);
+    }
+
+    public ProfiloPO clickBack() {
+        this.btnBack.click();
         return new ProfiloPO(driver);
     }
 }

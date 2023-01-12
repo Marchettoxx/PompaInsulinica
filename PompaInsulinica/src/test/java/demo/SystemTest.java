@@ -7,8 +7,6 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -386,6 +384,27 @@ public class SystemTest {
         assertEquals("PROFILO", profiloPO1.getTitle());
     }
 
+    // da modifica profilo vado indietro a profilo
+    @Test
+    public void EGtestIndietro (){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        ProfiloPO profiloPO = homePO.clickProfilo();
+
+        assertEquals("PROFILO", profiloPO.getTitle());
+        ModificaUtentePO modificaUtentePO = profiloPO.clickModificaUtente();
+
+        assertEquals("MODIFICA CREDENZIALI UTENTE", modificaUtentePO.getTitle());
+        ProfiloPO profiloPO1 = modificaUtentePO.clickBack();
+
+        assertEquals("PROFILO", profiloPO1.getTitle());
+    }
+
     // inserisco glicemia errata
     @Test
     public void FAtestPompaInsulinica (){
@@ -466,37 +485,27 @@ public class SystemTest {
         assertNotEquals("", insulinaPO1.getLastMisurazione());
     }
 
-    /*@Test
-    public void GtestIndietro (){
+    // test da pompa insulinica vado indietro a home
+    @Test
+    public void FEtestIndietro (){
         driver.get("http://localhost:8080");
-        WebElement title = driver.findElement(By.tagName("h1"));
-        String titleMessage = title.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
-        driver.findElement(By.name("username")).sendKeys("Marco123");
-        driver.findElement(By.name("password")).sendKeys("Marco123.");
-        WebElement link1 = driver.findElement(By.className("btn"));
-        link1.click();
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
 
-        WebElement title1 = driver.findElement(By.tagName("h1"));
-        String titleMessage1 = title1.getText();
-        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
-        WebElement link2 = driver.findElement(By.xpath("//input[@value='Pompa insulinica']"));
-        link2.click();
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
 
-        WebElement title2 = driver.findElement(By.tagName("h1"));
-        String titleMessage2 = title2.getText();
-        assertEquals("POMPA INSULINICA", titleMessage2);
-        WebElement link4 = driver.findElement(By.className("btnBack"));
-        link4.click();
+        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
+        HomePO homePO1 = insulinaPO.clickBack();
 
-        WebElement title4 = driver.findElement(By.tagName("h1"));
-        String titleMessage4 = title4.getText();
-        assertEquals("BENVENUTO NELLA HOME", titleMessage4);
+        assertEquals("BENVENUTO NELLA HOME", homePO1.getTitle());
     }
-*/
+
     // controllo che l'iniezione sia in cronologia e la cancello con il tasto cancella riga
     @Test
-    public void HAtestCronologia (){
+    public void GAtestCronologia (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -520,7 +529,7 @@ public class SystemTest {
 
     // controllo che l'iniezione sia in cronologia e la cancello con il tasto cancella tutto
     @Test
-    public void HBtestCronologia (){
+    public void GBtestCronologia (){
         FDtestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
@@ -543,64 +552,59 @@ public class SystemTest {
         assertEquals(0, cronologiaPO1.getCell4());
     }
 
-    /*
+    // test da cronologia vado indietro a home
+    @Test
+    public void GCtestIndietro (){
+        FDtestPompaInsulinica(); //inserisco una misurazione
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        CronologiaPO cronologiaPO = homePO.clickCronologia();
+
+        assertEquals("CRONOLOGIA INIEZIONI", cronologiaPO.getTitle());
+        HomePO homePO1 = cronologiaPO.clickBack();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO1.getTitle());
+    }
+
     // test LogOut
     @Test
-    public void ItestLogOut(){
+    public void HAtestLogOut(){
         driver.get("http://localhost:8080");
-        WebElement title = driver.findElement(By.tagName("h1"));
-        String titleMessage = title.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
-        driver.findElement(By.name("username")).sendKeys("Marco123");
-        driver.findElement(By.name("password")).sendKeys("Marco123.");
-        WebElement link1 = driver.findElement(By.className("btn"));
-        link1.click();
-        WebElement title1 = driver.findElement(By.tagName("h1"));
-        String titleMessage1 = title1.getText();
-        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
 
-        WebElement link2 = driver.findElement(By.className("btnLogOut"));
-        link2.click();
-        WebElement title2 = driver.findElement(By.tagName("h1"));
-        String titleMessage2 = title2.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage2);
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        LoginPO loginPO1 = homePO.clickLogout();
+
+        assertEquals("LOGIN POMPA INSULINICA", loginPO1.getTitle());
     }
 
     // test per eliminare l'utente
     @Test
-    public void ZtestDelete(){
+    public void IAtestDelete(){
         driver.get("http://localhost:8080");
-        WebElement title = driver.findElement(By.tagName("h1"));
-        String titleMessage = title.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage);
-        driver.findElement(By.name("username")).sendKeys("Marco123");
-        driver.findElement(By.name("password")).sendKeys("Marco123.");
-        WebElement link1 = driver.findElement(By.className("btn"));
-        link1.click();
-        WebElement title1 = driver.findElement(By.tagName("h1"));
-        String titleMessage1 = title1.getText();
-        assertEquals("BENVENUTO NELLA HOME", titleMessage1);
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
 
-        WebElement link2 = driver.findElement(By.xpath("//input[@value='Profilo']"));
-        link2.click();
-        WebElement title2 = driver.findElement(By.tagName("h1"));
-        String titleMessage2 = title2.getText();
-        assertEquals("PROFILO", titleMessage2);
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        ProfiloPO profiloPO = homePO.clickProfilo();
 
-        WebElement link3 = driver.findElement(By.className("btnLogOut"));
-        link3.click();
-        WebElement title3 = driver.findElement(By.tagName("h1"));
-        String titleMessage3 = title3.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage3);
+        assertEquals("PROFILO", profiloPO.getTitle());
+        LoginPO loginPO1 = profiloPO.clickDeleteAccount();
 
-        driver.findElement(By.name("username")).sendKeys("Marco123");
-        driver.findElement(By.name("password")).sendKeys("Marco123.");
-        WebElement link4 = driver.findElement(By.className("btn"));
-        link4.click();
-        WebElement title4 = driver.findElement(By.tagName("h1"));
-        String titleMessage4 = title4.getText();
-        assertEquals("LOGIN POMPA INSULINICA", titleMessage4);
+        assertEquals("LOGIN POMPA INSULINICA", loginPO1.getTitle());
+        loginPO1.inserCredential("123marco", "123marco.");
+        HomePO homePO1 = loginPO1.clickLogin();
 
+        assertEquals("LOGIN POMPA INSULINICA", homePO1.getTitle());
     }
-    */
 }

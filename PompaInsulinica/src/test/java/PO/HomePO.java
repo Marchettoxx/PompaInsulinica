@@ -22,6 +22,9 @@ public class HomePO extends PageObject {
     @FindBy(xpath = "//input[@value='Cronologia']")
     private WebElement buttonCronologia;
 
+    @FindBy(className = "btnLogOut")
+    private WebElement buttonLogout;
+
     public String getTitle() {
         return this.title.getText();
     }
@@ -39,5 +42,10 @@ public class HomePO extends PageObject {
     public CronologiaPO clickCronologia() {
         this.buttonCronologia.click();
         return new CronologiaPO(driver);
+    }
+
+    public LoginPO clickLogout() {
+        this.buttonLogout.click();
+        return new LoginPO(driver);
     }
 }

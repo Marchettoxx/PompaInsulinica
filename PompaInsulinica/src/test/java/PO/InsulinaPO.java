@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class InsulinaPO extends PageObject {
 
     @FindBy(tagName = "h1")
@@ -28,6 +26,9 @@ public class InsulinaPO extends PageObject {
 
     @FindBy(className = "btn")
     private WebElement btnSave;
+
+    @FindBy(className = "btnBack")
+    private WebElement btnBack;
 
     public InsulinaPO(WebDriver driver) {
         super(driver);
@@ -57,5 +58,10 @@ public class InsulinaPO extends PageObject {
     public InsulinaPO saveMisurazione() {
         this.btnSave.click();
         return new InsulinaPO(driver);
+    }
+
+    public HomePO clickBack() {
+        this.btnBack.click();
+        return new HomePO(driver);
     }
 }

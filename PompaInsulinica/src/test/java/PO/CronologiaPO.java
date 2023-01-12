@@ -26,6 +26,9 @@ public class CronologiaPO extends PageObject {
     @FindBy(xpath = "//input[@value='cancella tutto']")
     private WebElement buttonCancellaCronologia;
 
+    @FindBy(className = "btnBack")
+    private WebElement btnBack;
+
     public CronologiaPO(WebDriver driver) {
         super(driver);
     }
@@ -65,5 +68,10 @@ public class CronologiaPO extends PageObject {
     public CronologiaPO clickCancellaCronologia() {
         this.buttonCancellaCronologia.click();
         return new CronologiaPO(driver);
+    }
+
+    public HomePO clickBack() {
+        this.btnBack.click();
+        return new HomePO(driver);
     }
 }
