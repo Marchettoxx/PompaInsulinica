@@ -91,7 +91,7 @@ public class SystemTest {
         CreateAccountPO createAccountPO = loginPO.clickNewAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "Massagrande", "il.com", "123marco", "123marco.");
+        createAccountPO.insertCredential("Marco", "Massagrande", "la@hotmal.com", "123marco", "123marco.");
         LoginPO loginPO1 = createAccountPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", loginPO1.getTitle());
@@ -155,6 +155,21 @@ public class SystemTest {
         LoginPO loginPO1 = createAccountPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", loginPO1.getTitle());
+    }
+
+    //creazione utente inserendo campi corretti (per testare la modifica di username)
+    @Test
+    public void AHtestCreaNuovoUtente() {
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
+        createAccountPO.insertCredential("Luca", "Peppino", "luca@gmail.com", "123luca", "123luca.");
+        LoginPO loginPO1 = createAccountPO.saveAccount();
+
+        assertEquals("LOGIN POMPA INSULINICA", loginPO1.getTitle());
     }
 
     //inserisco username errato
@@ -312,7 +327,7 @@ public class SystemTest {
         ModificaUtentePO modificaUtentePO = profiloPO.clickModificaUtente();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", modificaUtentePO.getTitle());
-        modificaUtentePO.insertEmail("nonunaemail");
+        modificaUtentePO.insertEmail("la@hotmal.com");
         ProfiloPO profiloPO1 = modificaUtentePO.clickSaveModifica();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", profiloPO1.getTitle());
@@ -340,9 +355,31 @@ public class SystemTest {
         assertEquals("MODIFICA CREDENZIALI UTENTE", profiloPO1.getTitle());
     }
 
-    // test in cui modifico password in modo errato
+    // test in cui modifico username con username esistente
     @Test
     public void EEtestProfilo(){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123luca", "123luca.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        ProfiloPO profiloPO = homePO.clickProfilo();
+
+        assertEquals("PROFILO", profiloPO.getTitle());
+        ModificaUtentePO modificaUtentePO = profiloPO.clickModificaUtente();
+
+        assertEquals("MODIFICA CREDENZIALI UTENTE", modificaUtentePO.getTitle());
+        modificaUtentePO.insertUsername("123marco");
+        ProfiloPO profiloPO1 = modificaUtentePO.clickSaveModifica();
+
+        assertEquals("MODIFICA CREDENZIALI UTENTE", profiloPO1.getTitle());
+    }
+
+    // test in cui modifico password in modo errato
+    @Test
+    public void EFtestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -364,7 +401,7 @@ public class SystemTest {
 
     // test in cui modifico correttamente le credenziali: modifico la email
     @Test
-    public void EFtestProfilo(){
+    public void EGtestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -384,9 +421,31 @@ public class SystemTest {
         assertEquals("PROFILO", profiloPO1.getTitle());
     }
 
+    // test in cui modifico correttamente le credenziali: modifico username
+    @Test
+    public void EHtestProfilo(){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123luca", "123luca.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        ProfiloPO profiloPO = homePO.clickProfilo();
+
+        assertEquals("PROFILO", profiloPO.getTitle());
+        ModificaUtentePO modificaUtentePO = profiloPO.clickModificaUtente();
+
+        assertEquals("MODIFICA CREDENZIALI UTENTE", modificaUtentePO.getTitle());
+        modificaUtentePO.insertUsername("unbelnome");
+        ProfiloPO profiloPO1 = modificaUtentePO.clickSaveModifica();
+
+        assertEquals("PROFILO", profiloPO1.getTitle());
+    }
+
     // da modifica profilo vado indietro a profilo
     @Test
-    public void EGtestIndietro (){
+    public void EItestIndietro (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -425,9 +484,49 @@ public class SystemTest {
         assertEquals("", insulinaPO1.getLastMisurazione());
     }
 
-    // inserisco insulina errata
+    // inserisco glicemia errata con valore in lettere
     @Test
     public void FBtestPompaInsulinica (){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+
+        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
+        insulinaPO.insertMisurazione("glicemia", "3", "ho pranzato con una pizza");
+        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+
+        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
+        assertEquals("", insulinaPO1.getLastMisurazione());
+    }
+
+    // inserisco glicemia errata con valore vuoto
+    @Test
+    public void FCtestPompaInsulinica (){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+
+        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
+        insulinaPO.insertMisurazione("", "3", "ho pranzato con una pizza");
+        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+
+        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
+        assertEquals("", insulinaPO1.getLastMisurazione());
+    }
+
+    // inserisco insulina errata
+    @Test
+    public void FDtestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -445,9 +544,49 @@ public class SystemTest {
         assertEquals("", insulinaPO1.getLastMisurazione());
     }
 
+    // inserisco insulina errata con valore in lettera
+    @Test
+    public void FEtestPompaInsulinica (){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+
+        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
+        insulinaPO.insertMisurazione("200", "insulina", "ho pranzato con una pizza");
+        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+
+        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
+        assertEquals("", insulinaPO1.getLastMisurazione());
+    }
+
+    // inserisco insulina errata con valore vuoto
+    @Test
+    public void FFtestPompaInsulinica (){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("123marco", "123marco.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+
+        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
+        insulinaPO.insertMisurazione("200", "", "ho pranzato con una pizza");
+        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+
+        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
+        assertEquals("", insulinaPO1.getLastMisurazione());
+    }
+
     // inserisco commento errato
     @Test
-    public void FCtestPompaInsulinica (){
+    public void FGtestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -467,7 +606,7 @@ public class SystemTest {
 
     // inserisco misurazione corretta
     @Test
-    public void FDtestPompaInsulinica (){
+    public void FHtestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -487,7 +626,7 @@ public class SystemTest {
 
     // test da pompa insulinica vado indietro a home
     @Test
-    public void FEtestIndietro (){
+    public void FItestIndietro (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -530,7 +669,7 @@ public class SystemTest {
     // controllo che l'iniezione sia in cronologia e la cancello con il tasto cancella tutto
     @Test
     public void GBtestCronologia (){
-        FDtestPompaInsulinica(); //inserisco una misurazione
+        FHtestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -555,7 +694,7 @@ public class SystemTest {
     // test da cronologia vado indietro a home
     @Test
     public void GCtestIndietro (){
-        FDtestPompaInsulinica(); //inserisco una misurazione
+        FHtestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
