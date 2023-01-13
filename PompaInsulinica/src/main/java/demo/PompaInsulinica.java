@@ -14,10 +14,12 @@ public class PompaInsulinica {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private Long idUtente;
-    private final Integer glicemia;
-    private final Integer insulina;
-    private final String commento;
-    private final String time;
+    private Integer glicemia;
+    private Integer insulina;
+    private String commento;
+    private String time;
+
+    public PompaInsulinica() {}
 
     public PompaInsulinica(Long idUtente, Integer glicemia, Integer insulina, String commento) {
         this.idUtente = idUtente;
@@ -29,6 +31,13 @@ public class PompaInsulinica {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date resultdate = new Date(ms);
         this.time = sdf.format(resultdate);
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Iniezione[id=%d, idUtente='%d', glicemia= '%d', insulina='%d', commento='%s', time='%s']",
+                id, idUtente, glicemia, insulina, commento, time);
     }
 
     public Long getId() {return id;}
