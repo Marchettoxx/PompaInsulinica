@@ -151,59 +151,6 @@ in fase di progettazione e sviluppo.
 #### USE CASE UTENTE
 ~~inserire~~
 
-### ACTIVITY DIAGRAMS
-I seguenti Activity Diagrams illustrano il
-flusso di esecuzione dei più importanti metodi presenti nel
-prototipo.
-
-#### ACTIVITY DIAGRAM CREAZIONE ACCOUNT
-~~inserire~~
-
-#### ACTIVITY DIAGRAM LOGIN
-~~inserire~~
-
-#### ACTIVITY DIAGRAM VISUALIZZA PROFILO
-~~inserire~~
-
-#### ACTIVITY DIAGRAM MODIFICA PROFILO
-~~inserire~~
-
-#### ACTIVITY DIAGRAM INSERIMENTO MISURAZIONE
-~~inserire~~
-
-#### ACTIVITY DIAGRAM VISUALIZZAZIONE MISURAZIONE
-~~inserire~~
-
-### SEQUENCE DIAGRAMS
-I seguenti Sequence Diagrams illustrano gli scambi
-di messaggi negli use case principali.
-Abbiamo ritenuto più interessante rispetto agli
-altri focalizzare l’attenzione sui compiti del magazziniere.
-Gli altri use case sono molto simili a questi come dinamiche.
-
-#### SEQUENCE DIAGRAM CREAZIONE ACCOUNT
-~~inserire~~
-
-#### SEQUENCE DIAGRAM LOGIN
-~~inserire~~
-
-#### SEQUENCE DIAGRAM VISUALIZZA PROFILO
-~~inserire~~
-
-#### SEQUENCE DIAGRAM MODIFICA PROFILO
-~~inserire~~
-
-#### SEQUENCE DIAGRAM INSERIMENTO MISURAZIONE
-~~inserire~~
-
-#### SEQUENCE DIAGRAM VISUALIZZAZIONE MISURAZIONE
-~~inserire~~
-
-### CLASS DIAGRAM
-Il seguente Class Diagram rappresenta le
-classi e le relazioni fra esse che utilizzeremo
-nel nostro progetto Java per rappresentare le informazioni.
-~~inserire~~
 
 ### METODOLOGIA DI SVILUPPO
 Abbiamo utilizzato una metodologia di sviluppo Agile
@@ -271,19 +218,50 @@ andando eventualmente a eseguire refactoring.
 #### PROGRAM TESTING
 
 ##### Test crea utente
-1. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). Verifico che l'account sia stato effetivamente creato.
-2. Viene creato un utente dove è presente una credenziale errata ( una delle credenziali non rispetta i requisiti stabiliti). Verifico che l'account non sia stato creato.
+1. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al nome. 
+Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali.
+2. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al cognome.
+Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali.
+3. Viene creato un nuovo utente in cui viene inserita una mail non valida.
+   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali. 
+4. Viene creato un nuovo utente in cui viene inserito un username errato.
+   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali. 
+5. Viene creato un nuovo utente in cui viene inserita una password che non rispetta i requisiti richiesti.
+   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali. 
+6. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). Verifico che l'account sia stato effetivamente creato. 
+7. Viene creato un  nuovo utente e viene scelto un username già esistente.
+   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali.
+8. Viene creato un nuovo utente diverso da quello creato nel test 6. Verifico che l'account venga effettivamente creato.
+
 
 ##### Test Login
-1. Eseguo il login con le credenziali corrette. Verifico che il login è avvenuto con successo e sono nella pagina utente.
-2. Eseguo il login con le credenziali errate. Verifico di non aver fatto il login.
+1. Eseguo il login inserendo un username errato. Verifico di non aver fatto il login.
+2. Eseguo il login inserendo una password errato. Verifico di non aver fatto il login.
+3. Eseguo il login inserendo sia l'username che la password errati. Verifico di non aver fatto il login. 
+4. Eseguo il login con le credenziali corrette. Verifico che il login è avvenuto con successo e sono nella pagina home.
+
+##### Test pagina Home
+1. Premo il tasto Profilo e verifico di essere entrato effettivamente nella pagina desiderata.
+2. Premo il tasto Pompa Insulinica e verifico di essere entrato effettivamente nella pagina desiderata.
+3. Premo il tasto Cronologia e verifico di rimanere nella pagina Home, in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
 
 ##### Test Profilo
-1. Vado a modificare dei valori presenti nella pagina profilo. Verifico che la modifica sia avvenuta con successo.
-2. Se l'username è già in uso oppure se non vengono rispettati i requisini verifico che la modifica non vada a buon fine.
-3. Cancello l'utente e verifico di essere tornato alla pagina di login, provo ad entrare con le stesse credenziali di prima e verifico che non entri
+1. Modifico il nome in modo errato e verifico che la modifica non sia avvenuta.
+2. Modifico il cognome in modo errato e verifico che la modifica non sia avvenuta.
+3. Modifico il l'email in modo errato e verifico che la modifica non sia avvenuta.
+4. Modifico l'username in modo errato e verifico che la modifica non sia avvenuta.
+5. Modifico l'username utilizzando un userame già esistente. Verifico quindi che la modifica non sia avvenuta.
+6. Modifico la password in modo errato e verifico che la modifica non sia avvenuta.
+7. Modifico la mail in modo corretto. Verifico che la modifica sia avvenuta con successo.
+8. Modifico l'username in modo corretto. Verifico che la modifica sia avvenuta con successo.
+9. Premo il tasto indietro presente nella pagina Profilo e verifico di essere tornato alla pagina Home.
+
 
 ##### Test Pompa Insulinica
+1. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300). 
+Verifico che l'iniezione non sia andata a buon fine.
+2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore in lettere.
+   Verifico che l'iniezione non sia andata a buon fine.
 1. Inserisco misurazione e verifico che sia stata salvata.
 2. inserisco una misurazione che non rispetta i requisiti e verifico che la modifica non sia avvenuta.
 
