@@ -3,12 +3,12 @@ FONDAMENTI DI INGEGNERIA DEL SOFTWARE 2022/2023
 
 Canelli Alessia \
 Massagrande Marco \
-Tonelli Alessio \
+Tonelli Alessio
 
 ## INTRODUZIONE
 L'obbiettivo dell'elaborato è quello di creare
 un sistema che simula l'utilizzo di una pompa insulinica
-sottoforma di applicazione Web.
+sotto forma di applicazione Web.
 Bisogna considerare che la pompa insulinica di
 base è un sistema embedded, per cui sono stati fatti dei
 trade-off sulle funzionalità che la pompa dovesse avere
@@ -25,17 +25,17 @@ Il sistema memorizza:
 - le misurazioni della pompa insulinica;
 - l'id dell'utente che effettua la misurazione;
 - il valore di glicemia;
-- il valore di insulina iniettata;
+- il valore d'insulina iniettata;
 - un commento che l'utente può inserire;
 - l'orario e la data dell'avvenuta misurazione.
 
 ## SCENARI
 
 ### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
-- Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni di insulina,
+- Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni d'insulina,
 essendo che è il primo suo accesso dovrà crearsi un nuovo account.
 - L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
-verrà indirizzato su una pagina in cui gli verrà rischiesto di inserire il suo nome, cognome, email, username e password.
+verrà indirizzato su una pagina in cui gli verrà richiesto d'inserire il suo nome, cognome, email, username e password.
 Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
 correttamente.
 - Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
@@ -48,7 +48,7 @@ non sarà possibile creare l'account e verranno visualizzati dei messaggi di err
   viene richiesto username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
   alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
 spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
-- Nel caso in cui l'utente si sia dimenticato le sue crdenziali, o seplicemente le inserisce in modo sbagliato, verrà visualizzato 
+- Nel caso in cui l'utente si sia dimenticato le sue credenziali, o semplicemente le inserisce in modo sbagliato, verrà visualizzato 
 un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
 pagina login e potrà reinserire nuovamente le proprie credenziali. 
 - Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
@@ -60,15 +60,15 @@ pagina sarà possibile anche modificare i propri dati.
 - L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
 schiacciare il bottone "Profilo" e verrà indirizzato in una pagina contente tutte le credenziali in modalità solo lettura.
 Schiacciando sul tasto "Modifica", l'utente avrà la possibilità di modificare tutti i campi presenti nella pagina, sempre
-rispettanto gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
+rispettando gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
 sul bottone "Salva".esso verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere le modifiche appena fatte.
-- Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verrano
+- Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verranno
 visualizzati dei messaggi di errore.
 - Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
 le modifiche appena fatte.
 
 ### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
-- Nel momento in cui l'utente ha il bisogno di fare un iniezione di inulina si aspetta di poter inserire nel sistema: 
+- Nel momento in cui l'utente ha il bisogno di fare un iniezione d'insulina si aspetta di poter inserire nel sistema: 
   - la sua attuale glicemia 
   - l'insulina fatta 
   - un eventuale commento
@@ -77,25 +77,25 @@ assieme a un medico in caso di necessità.
 - Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
   il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
 il quale salverà i dati appena inseriti nella cronologia.
-- Nel momento in cui l'utente va a inserire la sua glicemia attuale e la quantità di insulina, queste devono rientrare in un determinato range di valori.
+- Nel momento in cui l'utente va a inserire la sua glicemia attuale e la quantità d'insulina, queste devono rientrare in un determinato range di valori.
 Nel caso in cui non fosse così verrà visualizzato un errore e l'iniezione non verrà salvata in cronologia fino a che il valore della 
 glicemia non viene modificato.
 - Una volta che l'iniezione è stata inserita i valori appena inseriti saranno presenti all'interno della cronologia.
 
 ### 5 L'UTENTE DOPO AVER INSERITO IN CRONOLOGIA UN'INIEZIONE SBAGLIATA VUOLE CANCELLARLA
-- Nel caso in cui l'utente in precedenza abbia sbagliato ad inserire un'iniezione, ha la necessita di poter eliminare quest'ultima in modo
+- Nel caso in cui l'utente in precedenza abbia sbagliato a inserire un'iniezione, ha la necessita di poter eliminare quest'ultima in modo
 da non salvare informazioni sbagliate.
 - Quando dalla pagina Home si seleziona il tasto “Cronologia” appare la lista di tutte le iniezioni che sono state
-  fatte con relativo giorno, orario, glicemia, commento e quantità di insulina che è stata fatta. Selezionando il tasto "Cancella"
+  fatte con relativo giorno, orario, glicemia, commento e quantità d'insulina che è stata fatta. Selezionando il tasto "Cancella"
   l'utente ha la possibilità di cancellare l’ultima riga della cronologia.
-- Nel caso in cui l'utente erroneamente cancelli l'ultima riga,per ripristiarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
+- Nel caso in cui l'utente erroneamente cancelli l'ultima riga, per ripristinarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
 - Contemporaneamente a questo scenario non ci sarà nessun altro scenario
 - Alla fine di questo scenario ci si aspetta di visualizzare tutta la cronologia meno che l'ultima riga inserita che sarà stata eliminata.
 
 ### 6 L'UTENTE ELIMINA TUTTA LA CRONOLOGIA
 - Dopo aver fatto un controllo dal medico l'utente vuole cancellare tutta la cronologia per liberare spazio.
-- L'utente ha la possibilità di eliminare l'intera cronologia, per fare questo dovà premere il tasto "cancella tutto",
-dopo di ciò verranno cancellate tutte le righe contenti i dati di insulina, glicemia e commenti vari.
+- L'utente ha la possibilità di eliminare l'intera cronologia, per fare questo dovrà premere il tasto "cancella tutto",
+dopo di ciò verranno cancellate tutte le righe contenti i dati d'insulina, glicemia e commenti vari.
 - Nel caso in cui l'utente dovesse eliminare erroneamente tutta la cronologia non sarà possibile ripristinarla, l'operazione è irreversibile.
 - L'utente dopo aver premuto il pulsante visualizzerà la cronologia vuota
 
@@ -104,7 +104,7 @@ dopo di ciò verranno cancellate tutte le righe contenti i dati di insulina, gli
   in modo che nessun altro possa vedere le sue informazioni personali.
 - Quando l'utente si trova nella pagina Home ha la possibilità di selezionare il pulsante "Logout" e di uscire quindi dal
   proprio account, venendo indirizzato alla pagina di login.
-- Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovaente l'accesso con le sue credenziali attraverso la pagina di login.
+- Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovamente l'accesso con le sue credenziali attraverso la pagina di login.
 - Una volta che è stato effettuato il logout l'utente si trova nuovamente alla pagina di login in cui potrà accedere nuovamente
   al proprio account nel caso lo volesse.
 
@@ -119,7 +119,7 @@ ripercorrendo gli stessi passi fatti in precedenza.
 - Dopo aver schiacciato il tasto "Indietro", l'utente ritornerà alla pagina precedente.
 
 ### 9 L'UTENTE ELIMINA IL PROPRIO ACCOUNT
-- Nel caso in cui il paziente decida di non utilizzare più questo sito per monitorare il suo diabate, vuole avere
+- Nel caso in cui il paziente decida di non utilizzare più questo sito per monitorare il suo diabete, vuole avere
   la possibilità di eliminare il proprio account con i relativi dati in esso contenuti.
 - Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà
   eliminare l'account e tutti i dati presenti in esso definitivamente.
@@ -139,7 +139,7 @@ Le nostre assunzioni sono state:
   di fatto l'username funge da identificativo univoco dell'utente.
 * Un utente non può accedere al sistema senza avere un
   account.
-* E' possibile visualizzare la cronologia delle misurazioni
+* È possibile visualizzare la cronologia delle misurazioni
   solo se si ha effettuato almeno una misurazione.
 
 ## DOCUMENTAZIONE
@@ -156,7 +156,7 @@ in fase di progettazione e sviluppo.
 Abbiamo utilizzato una metodologia di sviluppo Agile
 di tipo incrementale per poter avere una consegna
 del progetto e uno sviluppo rapido del software
-andando ad interfogliare le fasi di progettazione,
+andando a interfogliare le fasi di progettazione,
 specifica e implementazione.
 Abbiamo fatto brevi iterazioni e prodotto diverse versioni
 del progetto in modo tale da avere una continua visione
@@ -171,7 +171,7 @@ che su vari problemi di sviluppo.
 Abbiamo usato Git come sistema di versioning e GitHb come piattaforma
 per la condivisione del codice, di fatto il nostro gruppo ha
 sempre lavorato contemporaneamente al codice
-garantendo una compresione totale da parte dei partecipanti
+garantendo una comprensione totale da parte dei partecipanti
 di ogni modifica che è stata fatta sul codice.
 
 ### PATTERN ARCHITETTURALE
@@ -191,7 +191,7 @@ fosse funzionante, poi in una
 fase finale il layout della componente View è stato
 raffinato e reso semplice e chiaro.
 
-I package solitamente sono :
+I package solitamente sono:
 *Modello: sottoparte del sistema che si occupa di
 gestire i dati del sistema e le
 operazioni associate ai dati
@@ -210,7 +210,7 @@ interazioni alle componenti Modello e Vista
 
 #### CHECKING
 Il codice è stato costantemente rivisto, si è cercato
-di identificare le componenti di codice incorretto o che
+d'identificare le componenti di codice incorretto o che
 può essere migliorato. Inoltre sono stati fatti molteplici
 controlli sull'indentazione e sulla nomenclatura del codice
 andando eventualmente a eseguire refactoring.
@@ -219,18 +219,18 @@ andando eventualmente a eseguire refactoring.
 
 ##### Test crea utente
 1. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al nome. 
-Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali.
+Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
 2. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al cognome.
-Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali.
+Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
 3. Viene creato un nuovo utente in cui viene inserita una mail non valida.
-   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali. 
+   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali. 
 4. Viene creato un nuovo utente in cui viene inserito un username errato.
-   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali. 
+   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali. 
 5. Viene creato un nuovo utente in cui viene inserita una password che non rispetta i requisiti richiesti.
-   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali. 
-6. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). Verifico che l'account sia stato effetivamente creato. 
-7. Viene creato un  nuovo utente e viene scelto un username già esistente.
-   Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamente le credenziali.
+   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali. 
+6. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). Verifico che l'account sia stato effettivamente creato. 
+7. Viene creato un nuovo utente e viene scelto un username già esistente.
+   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
 8. Viene creato un nuovo utente diverso da quello creato nel test 6. Verifico che l'account venga effettivamente creato.
 
 
@@ -250,7 +250,7 @@ Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamen
 2. Modifico il cognome in modo errato e verifico che la modifica non sia avvenuta.
 3. Modifico il l'email in modo errato e verifico che la modifica non sia avvenuta.
 4. Modifico l'username in modo errato e verifico che la modifica non sia avvenuta.
-5. Modifico l'username utilizzando un userame già esistente. Verifico quindi che la modifica non sia avvenuta.
+5. Modifico l'username utilizzando un username già esistente. Verifico quindi che la modifica non sia avvenuta.
 6. Modifico la password in modo errato e verifico che la modifica non sia avvenuta.
 7. Modifico la mail in modo corretto. Verifico che la modifica sia avvenuta con successo.
 8. Modifico l'username in modo corretto. Verifico che la modifica sia avvenuta con successo.
@@ -262,15 +262,15 @@ Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamen
 Verifico che l'iniezione non sia andata a buon fine.
 2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore in lettere.
    Verifico che l'iniezione non sia andata a buon fine.
-1. Inserisco misurazione e verifico che sia stata salvata.
-2. inserisco una misurazione che non rispetta i requisiti e verifico che la modifica non sia avvenuta.
+3. Inserisco misurazione e verifico che sia stata salvata.
+4. Inserisco una misurazione che non rispetta i requisiti e verifico che la modifica non sia avvenuta.
 
 ##### Test Cronologia
 1. Se elimino una riga questa viene eliminata.
-2. Se elimino tutta la cronologia verifico che venga effettivamente elimiata e torno nella home.
+2. Se elimino tutta la cronologia verifico che venga effettivamente eliminata e torno nella home.
 
 #### Test Logout
-1. Premendo logout l'utente viene reinderizzato alla pagina di login
+1. Premendo logout l'utente viene reindirizzato alla pagina di login
 
 #### Test indietro
 1. Premendo il tasto indietro l'utente deve andare alla pagina precedente
