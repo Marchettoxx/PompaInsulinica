@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.SystemTest" tests="39" skipped="0" failures="0" errors="0" timestamp="2023-01-13T10:10:31" hostname="AirdiAlessia3.lan" time="109.028">
+<testsuite name="demo.SystemTest" tests="39" skipped="0" failures="0" errors="0" timestamp="2023-01-14T10:11:03" hostname="MacBook-Pro-di-Alessio-2.local" time="61.917">
   <properties/>
-  <testcase name="AAtestCreaNuovoUtente" classname="demo.SystemTest" time="23.689"/>
-  <testcase name="ABtestCreaNuovoUtente" classname="demo.SystemTest" time="2.554"/>
-  <testcase name="ACtestCreaNuovoUtente" classname="demo.SystemTest" time="2.481"/>
-  <testcase name="ADtestCreaNuovoUtente" classname="demo.SystemTest" time="2.219"/>
-  <testcase name="AEtestCreaNuovoUtente" classname="demo.SystemTest" time="2.178"/>
-  <testcase name="AFtestCreaNuovoUtente" classname="demo.SystemTest" time="2.243"/>
-  <testcase name="AGtestCreaNuovoUtente" classname="demo.SystemTest" time="2.235"/>
-  <testcase name="AHtestCreaNuovoUtente" classname="demo.SystemTest" time="2.261"/>
-  <testcase name="BAtestLogIn" classname="demo.SystemTest" time="1.628"/>
-  <testcase name="BBtestLogIn" classname="demo.SystemTest" time="1.625"/>
-  <testcase name="BCtestLogIn" classname="demo.SystemTest" time="1.595"/>
-  <testcase name="BDtestLogIn" classname="demo.SystemTest" time="1.684"/>
-  <testcase name="DAtestUtente" classname="demo.SystemTest" time="1.975"/>
-  <testcase name="DBtestUtente" classname="demo.SystemTest" time="2.091"/>
-  <testcase name="DCtestUtente" classname="demo.SystemTest" time="2.575"/>
-  <testcase name="EAtestProfilo" classname="demo.SystemTest" time="2.274"/>
-  <testcase name="EBtestProfilo" classname="demo.SystemTest" time="2.197"/>
-  <testcase name="ECtestProfilo" classname="demo.SystemTest" time="2.18"/>
-  <testcase name="EDtestProfilo" classname="demo.SystemTest" time="2.032"/>
-  <testcase name="EEtestProfilo" classname="demo.SystemTest" time="2.019"/>
-  <testcase name="EFtestProfilo" classname="demo.SystemTest" time="2.272"/>
-  <testcase name="EGtestProfilo" classname="demo.SystemTest" time="2.148"/>
-  <testcase name="EHtestProfilo" classname="demo.SystemTest" time="2.243"/>
-  <testcase name="EItestIndietro" classname="demo.SystemTest" time="2.37"/>
-  <testcase name="FAtestPompaInsulinica" classname="demo.SystemTest" time="2.349"/>
-  <testcase name="FBtestPompaInsulinica" classname="demo.SystemTest" time="2.264"/>
-  <testcase name="FCtestPompaInsulinica" classname="demo.SystemTest" time="2.86"/>
-  <testcase name="FDtestPompaInsulinica" classname="demo.SystemTest" time="3.057"/>
-  <testcase name="FEtestPompaInsulinica" classname="demo.SystemTest" time="2.314"/>
-  <testcase name="FFtestPompaInsulinica" classname="demo.SystemTest" time="2.68"/>
-  <testcase name="FGtestPompaInsulinica" classname="demo.SystemTest" time="2.506"/>
-  <testcase name="FHtestPompaInsulinica" classname="demo.SystemTest" time="2.75"/>
-  <testcase name="FItestIndietro" classname="demo.SystemTest" time="1.921"/>
-  <testcase name="GAtestCronologia" classname="demo.SystemTest" time="2.216"/>
-  <testcase name="GBtestCronologia" classname="demo.SystemTest" time="3.191"/>
-  <testcase name="GCtestIndietro" classname="demo.SystemTest" time="3.015"/>
-  <testcase name="HAtestLogOut" classname="demo.SystemTest" time="1.884"/>
-  <testcase name="IAtestDelete" classname="demo.SystemTest" time="2.117"/>
-  <testcase name="JAtestChangeIdPerson" classname="demo.SystemTest" time="1.098"/>
-  <system-out><![CDATA[11:10:13.666 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class demo.SystemTest]
-11:10:13.704 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-11:10:13.744 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-11:10:13.906 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [demo.SystemTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-11:10:14.000 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [demo.SystemTest], using SpringBootContextLoader
-11:10:14.029 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTest-context.xml] does not exist
-11:10:14.032 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTestContext.groovy] does not exist
-11:10:14.034 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [demo.SystemTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-11:10:14.043 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [demo.SystemTest]: SystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:10:14.284 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [demo.SystemTest]
-11:10:14.684 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/cinnalemon/Desktop/uni vr/ING. SOFTWARE/PompaInsulinica1/PompaInsulinica/build/classes/java/main/demo/ServingWebContentApplication.class]
-11:10:14.690 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration demo.ServingWebContentApplication for test class demo.SystemTest
-11:10:15.245 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [demo.SystemTest]: using defaults.
-11:10:15.248 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-11:10:15.346 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@18cdd648, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@443d272, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1c94da69, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47862d3d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@310fdc13, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2b454802, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@11388891, org.springframework.test.context.event.EventPublishingTestExecutionListener@6721b04e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@288117fd, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@29054fb7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7c2c2606, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@16e55a0d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@36fb89d3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3500104c]
-11:10:15.366 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-11:10:15.370 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-11:10:15.409 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-11:10:15.411 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-11:10:15.426 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-11:10:15.427 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-11:10:15.451 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@246317be testClass = SystemTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d0ef626 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3e5d5f68, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@33620788, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e26a2ba, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3f36ab7d, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
-11:10:15.460 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-11:10:15.461 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-11:10:15.483 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@246317be testClass = SystemTest, testInstance = demo.SystemTest@f3cdeb9, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7d0ef626 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3e5d5f68, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@33620788, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e26a2ba, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3f36ab7d, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
-11:10:15.600 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+  <testcase name="AAtestCreaNuovoUtente" classname="demo.SystemTest" time="4.844"/>
+  <testcase name="ABtestCreaNuovoUtente" classname="demo.SystemTest" time="1.563"/>
+  <testcase name="ACtestCreaNuovoUtente" classname="demo.SystemTest" time="1.546"/>
+  <testcase name="ADtestCreaNuovoUtente" classname="demo.SystemTest" time="1.544"/>
+  <testcase name="AEtestCreaNuovoUtente" classname="demo.SystemTest" time="1.56"/>
+  <testcase name="AFtestCreaNuovoUtente" classname="demo.SystemTest" time="1.602"/>
+  <testcase name="AGtestCreaNuovoUtente" classname="demo.SystemTest" time="1.556"/>
+  <testcase name="AHtestCreaNuovoUtente" classname="demo.SystemTest" time="1.539"/>
+  <testcase name="BAtestLogIn" classname="demo.SystemTest" time="1.176"/>
+  <testcase name="BBtestLogIn" classname="demo.SystemTest" time="1.129"/>
+  <testcase name="BCtestLogIn" classname="demo.SystemTest" time="1.167"/>
+  <testcase name="BDtestLogIn" classname="demo.SystemTest" time="1.161"/>
+  <testcase name="DAtestUtente" classname="demo.SystemTest" time="1.298"/>
+  <testcase name="DBtestUtente" classname="demo.SystemTest" time="1.263"/>
+  <testcase name="DCtestUtente" classname="demo.SystemTest" time="1.242"/>
+  <testcase name="EAtestProfilo" classname="demo.SystemTest" time="1.45"/>
+  <testcase name="EBtestProfilo" classname="demo.SystemTest" time="1.472"/>
+  <testcase name="ECtestProfilo" classname="demo.SystemTest" time="1.492"/>
+  <testcase name="EDtestProfilo" classname="demo.SystemTest" time="1.489"/>
+  <testcase name="EEtestProfilo" classname="demo.SystemTest" time="1.468"/>
+  <testcase name="EFtestProfilo" classname="demo.SystemTest" time="1.48"/>
+  <testcase name="EGtestProfilo" classname="demo.SystemTest" time="1.489"/>
+  <testcase name="EHtestProfilo" classname="demo.SystemTest" time="1.505"/>
+  <testcase name="EItestIndietro" classname="demo.SystemTest" time="1.464"/>
+  <testcase name="FAtestPompaInsulinica" classname="demo.SystemTest" time="1.66"/>
+  <testcase name="FBtestPompaInsulinica" classname="demo.SystemTest" time="1.643"/>
+  <testcase name="FCtestPompaInsulinica" classname="demo.SystemTest" time="1.712"/>
+  <testcase name="FDtestPompaInsulinica" classname="demo.SystemTest" time="1.794"/>
+  <testcase name="FEtestPompaInsulinica" classname="demo.SystemTest" time="1.804"/>
+  <testcase name="FFtestPompaInsulinica" classname="demo.SystemTest" time="1.667"/>
+  <testcase name="FGtestPompaInsulinica" classname="demo.SystemTest" time="1.663"/>
+  <testcase name="FHtestPompaInsulinica" classname="demo.SystemTest" time="1.67"/>
+  <testcase name="FItestIndietro" classname="demo.SystemTest" time="1.406"/>
+  <testcase name="GAtestCronologia" classname="demo.SystemTest" time="1.495"/>
+  <testcase name="GBtestCronologia" classname="demo.SystemTest" time="2.166"/>
+  <testcase name="GCtestIndietro" classname="demo.SystemTest" time="2.1"/>
+  <testcase name="HAtestLogOut" classname="demo.SystemTest" time="1.291"/>
+  <testcase name="IAtestDelete" classname="demo.SystemTest" time="1.515"/>
+  <testcase name="JAtestChangeIdPerson" classname="demo.SystemTest" time="0.809"/>
+  <system-out><![CDATA[11:10:53.961 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class demo.SystemTest]
+11:10:53.992 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:10:54.027 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:10:54.133 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [demo.SystemTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+11:10:54.177 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [demo.SystemTest], using SpringBootContextLoader
+11:10:54.195 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTest-context.xml] does not exist
+11:10:54.195 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTestContext.groovy] does not exist
+11:10:54.196 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [demo.SystemTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:10:54.199 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [demo.SystemTest]: SystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:10:54.304 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [demo.SystemTest]
+11:10:54.469 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/aletane/IdeaProjects/PompaInsulinica/PompaInsulinica/build/classes/java/main/demo/ServingWebContentApplication.class]
+11:10:54.471 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration demo.ServingWebContentApplication for test class demo.SystemTest
+11:10:54.754 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [demo.SystemTest]: using defaults.
+11:10:54.755 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+11:10:54.810 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4569b69f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ef21bd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7f760b1b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@134fb256, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1b1a33ee, org.springframework.test.context.transaction.TransactionalTestExecutionListener@63801bf9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2c61ea41, org.springframework.test.context.event.EventPublishingTestExecutionListener@42522099, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@81dee7e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6b217357, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@48b1bf90, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1b3408f7, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7c3d6bf1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1c6604ea]
+11:10:54.821 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+11:10:54.822 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+11:10:54.831 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+11:10:54.831 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+11:10:54.833 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+11:10:54.833 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+11:10:54.841 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@599cfe1e testClass = SystemTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@36d17656 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@341b632f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5e9dfba9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4379cabc, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a7e6053, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+11:10:54.844 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+11:10:54.844 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+11:10:54.853 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@599cfe1e testClass = SystemTest, testInstance = demo.SystemTest@2ad0e84b, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@36d17656 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@341b632f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5e9dfba9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4379cabc, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a7e6053, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
+11:10:54.909 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -75,266 +75,227 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.2.RELEASE)
 
-2023-01-13 11:10:17.205  INFO 41971 --- [    Test worker] demo.SystemTest                          : Starting SystemTest on AirdiAlessia3.lan with PID 41971 (started by cinnalemon in /Users/cinnalemon/Desktop/uni vr/ING. SOFTWARE/PompaInsulinica1/PompaInsulinica)
-2023-01-13 11:10:17.209  INFO 41971 --- [    Test worker] demo.SystemTest                          : No active profile set, falling back to default profiles: default
-2023-01-13 11:10:19.847  INFO 41971 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2023-01-13 11:10:20.109  INFO 41971 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 223ms. Found 2 JPA repository interfaces.
-2023-01-13 11:10:22.713  INFO 41971 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-01-13 11:10:22.765  INFO 41971 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 11:10:22.767  INFO 41971 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2023-01-13 11:10:23.187  INFO 41971 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 11:10:23.187  INFO 41971 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5855 ms
-2023-01-13 11:10:24.137  INFO 41971 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2023-01-13 11:10:24.198  INFO 41971 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 11:10:25.093  INFO 41971 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 11:10:25.509  INFO 41971 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 11:10:25.858  WARN 41971 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 11:10:25.896  INFO 41971 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2023-01-13 11:10:26.946  INFO 41971 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2023-01-13 11:10:27.769  INFO 41971 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-13 11:10:30.185  INFO 41971 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-01-13 11:10:30.189  INFO 41971 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2023-01-13 11:10:30.501  INFO 41971 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 11:10:30.520  INFO 41971 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 11:10:31.130  INFO 41971 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2023-01-13 11:10:31.143  INFO 41971 --- [    Test worker] demo.SystemTest                          : Started SystemTest in 15.53 seconds (JVM running for 22.078)
-2023-01-13 11:10:48.630  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:10:52.063  INFO 41971 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 11:10:52.063  INFO 41971 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 11:10:52.105  INFO 41971 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 41 ms
-2023-01-13 11:10:55.926  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:10:58.684  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:00.850  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:03.063  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:05.254  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:07.531  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:09.850  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:11.978  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:13.636  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:15.235  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:16.891  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:18.695  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:20.652  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:23.063  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:25.396  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:27.549  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:29.720  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:31.835  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:33.855  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:36.097  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:38.140  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:40.401  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:42.794  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:45.001  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:47.323  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:49.812  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:52.913  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:55.520  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:11:57.831  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:00.561  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:03.164  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:05.761  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:07.657  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:10.014  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:13.206  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:16.140  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:17.951  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-01-13 11:12:20.096  INFO 41971 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:10:55.650  INFO 14264 --- [    Test worker] demo.SystemTest                          : Starting SystemTest on MacBook-Pro-di-Alessio-2.local with PID 14264 (started by aletane in /Users/aletane/IdeaProjects/PompaInsulinica/PompaInsulinica)
+2023-01-14 11:10:55.652  INFO 14264 --- [    Test worker] demo.SystemTest                          : No active profile set, falling back to default profiles: default
+2023-01-14 11:10:56.902  INFO 14264 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2023-01-14 11:10:57.030  INFO 14264 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108ms. Found 2 JPA repository interfaces.
+2023-01-14 11:10:58.327  INFO 14264 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-14 11:10:58.357  INFO 14264 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-14 11:10:58.358  INFO 14264 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2023-01-14 11:10:58.570  INFO 14264 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-14 11:10:58.570  INFO 14264 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2866 ms
+2023-01-14 11:10:59.063  INFO 14264 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-01-14 11:10:59.094  INFO 14264 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-14 11:10:59.778  INFO 14264 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-14 11:10:59.958  INFO 14264 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-14 11:11:00.035  WARN 14264 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-14 11:11:00.179  INFO 14264 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2023-01-14 11:11:00.633  INFO 14264 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2023-01-14 11:11:01.121  INFO 14264 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-14 11:11:02.212  INFO 14264 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-14 11:11:02.215  INFO 14264 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2023-01-14 11:11:02.934  INFO 14264 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-14 11:11:02.955  INFO 14264 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 11:11:03.458  INFO 14264 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2023-01-14 11:11:03.473  INFO 14264 --- [    Test worker] demo.SystemTest                          : Started SystemTest in 8.558 seconds (JVM running for 10.79)
+2023-01-14 11:11:05.830  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:06.070  INFO 14264 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-14 11:11:06.070  INFO 14264 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-14 11:11:06.104  INFO 14264 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 34 ms
+2023-01-14 11:11:09.016  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:10.562  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:12.113  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:13.667  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:15.207  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:16.836  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:18.363  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:19.936  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:21.074  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:22.236  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:23.394  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:24.563  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:25.865  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:27.110  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:28.312  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:29.802  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:31.265  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:32.752  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:34.249  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:35.754  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:37.209  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:38.707  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:40.258  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:41.712  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:43.366  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:45.068  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:46.775  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:48.595  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:50.309  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:51.993  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:53.635  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:55.367  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:56.740  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:11:58.215  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:12:00.404  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:12:02.507  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:12:03.761  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-01-14 11:12:05.328  INFO 14264 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 ]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 44615
+  <system-err><![CDATA[Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 42623
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604646.301][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 25174
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 47338
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604655.269][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 1372
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 6910
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604657.956][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 27859
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16518
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604660.271][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 1642
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32735
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604662.484][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 45785
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 45467
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604664.672][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 13628
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 48730
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604666.918][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 1600
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 4774
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604669.274][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32096
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 4564
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604671.395][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 28640
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 34059
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604673.075][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 1982
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 4101
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604674.654][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 24219
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 13727
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604676.274][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 25424
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 19780
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604677.986][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 48335
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 22589
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604679.915][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 26615
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 28909
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604682.201][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 5881
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32594
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604684.689][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 33073
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 11958
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604686.887][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 28481
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 36823
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604689.140][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 6340
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 17788
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604691.261][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 45743
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 12438
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604693.275][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 43775
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16095
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604695.410][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 43314
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 45700
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604697.565][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 34227
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 47943
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604699.789][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 37885
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 42044
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604702.002][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 42922
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 18737
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604704.376][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 6437
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 24305
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604706.705][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 26861
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 36887
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604709.069][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 7829
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 3424
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604711.911][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 41132
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 25666
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604714.938][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 17641
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 26028
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604717.194][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 21249
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 11180
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604719.940][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 2236
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 2768
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604722.442][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 30647
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 31964
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604725.127][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16829
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 23592
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604727.037][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32787
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 4909
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604729.333][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 17053
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 31273
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604732.528][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 22516
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 42374
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604735.510][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 27816
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 7097
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604737.358][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 25688
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 14647
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1673604739.474][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
 ]]></system-err>
 </testsuite>
