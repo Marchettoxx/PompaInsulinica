@@ -144,12 +144,6 @@ Le nostre assunzioni sono state:
 Di seguito vengono presentati tutti i documenti creati
 in fase di progettazione e sviluppo.
 
-### USE CASE
-
-#### USE CASE UTENTE
-~~inserire~~
-
-
 ### METODOLOGIA DI SVILUPPO
 Abbiamo utilizzato una metodologia di sviluppo Agile
 di tipo incrementale per poter avere una consegna
@@ -204,16 +198,16 @@ interazioni alle componenti Modello e Vista
 ![Modello MVC](MVC.png)
 
 
-#### CHECKING
+### CHECKING
 Il codice è stato costantemente rivisto, si è cercato
 d'identificare le componenti di codice incorretto o che
 può essere migliorato. Inoltre sono stati fatti molteplici
 controlli sull'indentazione e sulla nomenclatura del codice
 andando eventualmente a eseguire refactoring.
 
-#### PROGRAM TESTING
+### PROGRAM TESTING
 
-##### Test crea utente
+#### Test crea utente
 Andiamo a verificare tutti i possibili errori che un utente può fare nella creazione del suo nuovo account e anche il 
 corretto inserimento di tutti i parametri.
 1. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al nome. 
@@ -233,19 +227,19 @@ Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovament
 8. Viene creato un nuovo utente diverso da quello creato nel test 6. 
 Verifico che l'account venga effettivamente creato.
 
-##### Test Login
+#### Test Login
 1. Eseguo il login inserendo un username errato. Verifico di non aver fatto il login.
 2. Eseguo il login inserendo una password errata. Verifico di non aver fatto il login.
 3. Eseguo il login inserendo sia l'username che la password errati. Verifico di non aver fatto il login. 
 4. Eseguo il login con le credenziali corrette. Verifico che il login sia avvenuto con successo e di essere nella pagina home.
 
-##### Test pagina Home
+#### Test pagina Home
 1. Premo il tasto Profilo e verifico di essere entrato effettivamente nella pagina desiderata.
 2. Premo il tasto Pompa Insulinica e verifico di essere entrato effettivamente nella pagina desiderata.
 3. Premo il tasto Cronologia e verifico di rimanere nella pagina Home, 
 in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
 
-##### Test Profilo
+#### Test Profilo
 1. Modifico il nome in modo errato e verifico che la modifica non sia avvenuta.
 2. Modifico il cognome in modo errato e verifico che la modifica non sia avvenuta.
 3. Modifico il l'email in modo errato e verifico che la modifica non sia avvenuta.
@@ -257,7 +251,7 @@ in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
 9. Premo il tasto indietro presente nella pagina Modifica Credenziali Utente e verifico di essere tornato nella pagina Profilo.
 
 
-##### Test Pompa Insulinica
+#### Test Pompa Insulinica
 1. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300). 
 Verifico che l'iniezione non sia andata a buon fine.
 2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore non numerico.
@@ -276,29 +270,29 @@ Verifico che l'iniezione non sia andata a buon fine.
 Verifico che l'iniezione sia stata fatta correttamente.
 9. Premo il tasto indietro presente nella pagina Pompa Insulinica e verifico di essere tornato alla pagina Home.
 
-##### Test Cronologia
+#### Test Cronologia
 1. Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" 
 questa riga venga eliminata.
 2. Inserisco una misurazione, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto".
 Verifico che non sia più presente nulla nella cronologia.
 3. Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
 
-#### Test Logout
+### Test Logout
 1. Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reindirizzato alla pagina di login.
 
-#### Test Elimina Utente
+### Test Elimina Utente
 1. Controllo che una volta nella pagina Profilo se si preme il tasto "Elimina account" si venga reindirizzati nella pagina di Login.
 Verifico che l'account sia stato effettivamente eliminato provando a eseguire nuovamente il login.
 
-#### Test Change ID
+### Test Change ID
 1. Verifico se il cambio d'ID di un utente funziona.
 
-### Coverage
+## Coverage
 La coverage ottenuta dai precedenti test è la seguente:
 
 ![Coverage](Coverage.png)
 
-#### TESTING DI ACCETTAZIONE
+### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non
 appartengono al mondo dell’informatica, in
 modo da avere l’impressione della persona più vicina
