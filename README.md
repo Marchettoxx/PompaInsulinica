@@ -275,8 +275,10 @@ Verifico che l'iniezione non sia andata a buon fine.
 #### Test indietro
 1. Premendo il tasto indietro l'utente deve andare alla pagina precedente
 
-##### QUALITY ASSURANCE
-~~inserire~~
+### Coverage
+La coverage ottenuta dai seguenti test è la seguente:
+
+![Coverage](Coverage.png)
 
 #### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non
