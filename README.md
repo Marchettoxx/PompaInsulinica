@@ -203,8 +203,6 @@ interazioni alle componenti Modello e Vista
 
 ![Modello MVC](MVC.png)
 
-### VERIFICA E VALIDAZIONE
-~~inserire~~
 
 #### CHECKING
 Il codice è stato costantemente rivisto, si è cercato
@@ -216,80 +214,87 @@ andando eventualmente a eseguire refactoring.
 #### PROGRAM TESTING
 
 ##### Test crea utente
+Andiamo a verificare tutti i possibili errori che un utente può fare nella creazione del suo nuovo account e anche il 
+corretto inserimento di tutti i parametri.
 1. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al nome. 
-Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
+Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
 2. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al cognome.
-Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
+Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
 3. Viene creato un nuovo utente in cui viene inserita una mail non valida.
-   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali. 
-4. Viene creato un nuovo utente in cui viene inserito un username errato.
-   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali. 
+Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali. 
+4. Viene creato un nuovo utente in cui viene inserito un username non valido.
+Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali. 
 5. Viene creato un nuovo utente in cui viene inserita una password che non rispetta i requisiti richiesti.
-   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali. 
-6. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). Verifico che l'account sia stato effettivamente creato. 
+Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali. 
+6. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). 
+Verifico che l'account sia stato effettivamente creato. 
 7. Viene creato un nuovo utente e viene scelto un username già esistente.
-   Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
-8. Viene creato un nuovo utente diverso da quello creato nel test 6. Verifico che l'account venga effettivamente creato.
-
+Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
+8. Viene creato un nuovo utente diverso da quello creato nel test 6. 
+Verifico che l'account venga effettivamente creato.
 
 ##### Test Login
 1. Eseguo il login inserendo un username errato. Verifico di non aver fatto il login.
-2. Eseguo il login inserendo una password errato. Verifico di non aver fatto il login.
+2. Eseguo il login inserendo una password errata. Verifico di non aver fatto il login.
 3. Eseguo il login inserendo sia l'username che la password errati. Verifico di non aver fatto il login. 
-4. Eseguo il login con le credenziali corrette. Verifico che il login è avvenuto con successo e sono nella pagina home.
+4. Eseguo il login con le credenziali corrette. Verifico che il login sia avvenuto con successo e di essere nella pagina home.
 
 ##### Test pagina Home
 1. Premo il tasto Profilo e verifico di essere entrato effettivamente nella pagina desiderata.
 2. Premo il tasto Pompa Insulinica e verifico di essere entrato effettivamente nella pagina desiderata.
-3. Premo il tasto Cronologia e verifico di rimanere nella pagina Home, in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
+3. Premo il tasto Cronologia e verifico di rimanere nella pagina Home, 
+in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
 
 ##### Test Profilo
 1. Modifico il nome in modo errato e verifico che la modifica non sia avvenuta.
 2. Modifico il cognome in modo errato e verifico che la modifica non sia avvenuta.
 3. Modifico il l'email in modo errato e verifico che la modifica non sia avvenuta.
 4. Modifico l'username in modo errato e verifico che la modifica non sia avvenuta.
-5. Modifico l'username utilizzando un username già esistente. Verifico quindi che la modifica non sia avvenuta.
+5. Modifico l'username utilizzandone uno già esistente. Verifico quindi che la modifica non sia avvenuta.
 6. Modifico la password in modo errato e verifico che la modifica non sia avvenuta.
 7. Modifico la mail in modo corretto. Verifico che la modifica sia avvenuta con successo.
 8. Modifico l'username in modo corretto. Verifico che la modifica sia avvenuta con successo.
-9. Premo il tasto indietro presente nella pagina Profilo e verifico di essere tornato alla pagina Home.
+9. Premo il tasto indietro presente nella pagina Modifica Credenziali Utente e verifico di essere tornato nella pagina Profilo.
 
 
 ##### Test Pompa Insulinica
 1. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300). 
 Verifico che l'iniezione non sia andata a buon fine.
-2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore in lettere.
-   Verifico che l'iniezione non sia andata a buon fine.
-3. Inserisco misurazione e verifico che sia stata salvata.
-4. Inserisco una misurazione che non rispetta i requisiti e verifico che la modifica non sia avvenuta.
+2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore non numerico.
+Verifico che l'iniezione non sia andata a buon fine.
+3. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore vuoto.
+Verifico che l'iniezione non sia andata a buon fine.
+4. Inserisco una nuova iniezione. Nel campo insulina si inserisce un valore che non rispetta i requisiti.
+Verifico che l'iniezione non sia andata a buon fine.
 5. Inserisco una nuova iniezione. Nel campo insulina si inserisce un valore in lettere.
-   Verifico che l'iniezione non sia andata a buon fine.
+Verifico che l'iniezione non sia andata a buon fine.
 6. Inserisco una nuova iniezione. Lascio il valore relativo all'insulina vuoto.
-   Verifico che l'iniezione non sia andata a buon fine.
+Verifico che l'iniezione non sia andata a buon fine.
 7. Inserisco una nuova iniezione. Inserisco un commento che non rispetta i requisiti.
-   Verifico che l'iniezione non sia andata a buon fine.
+Verifico che l'iniezione non sia andata a buon fine.
 8. Inserisco una nuova iniezione. Inserisco la glicemia, l'insulina e il commento rispettando i requisiti richiesti.
-   Verifico che l'iniezione sia stata fatta correttamente.
+Verifico che l'iniezione sia stata fatta correttamente.
 9. Premo il tasto indietro presente nella pagina Pompa Insulinica e verifico di essere tornato alla pagina Home.
 
 ##### Test Cronologia
-1. Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" questa riga venga eliminata.
+1. Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" 
+questa riga venga eliminata.
 2. Inserisco una misurazione, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto".
-   Verifico che non sia più presente nulla nella cronologia.
+Verifico che non sia più presente nulla nella cronologia.
 3. Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
 
 #### Test Logout
-1. Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reinderizzato alla pagina di login.
+1. Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reindirizzato alla pagina di login.
 
 #### Test Elimina Utente
-1. Controllo che una volta nella pagina Profilo se si preme il tasto "Elimina account" si verrà reindirizzati nella pagina di Login.
-   Verifico che l'account sia stato effettivamente eliminato provando ad eseguire nuovamente il login.
+1. Controllo che una volta nella pagina Profilo se si preme il tasto "Elimina account" si venga reindirizzati nella pagina di Login.
+Verifico che l'account sia stato effettivamente eliminato provando a eseguire nuovamente il login.
 
 #### Test Change ID
-1. Verifico se il cambio di ID di un utente funziona.
+1. Verifico se il cambio d'ID di un utente funziona.
 
 ### Coverage
-La coverage ottenuta dai seguenti test è la seguente:
+La coverage ottenuta dai precedenti test è la seguente:
 
 ![Coverage](Coverage.png)
 
