@@ -231,6 +231,7 @@ Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovament
    Verifico che l'account non sia stato creato e venga chiesti d'inserire nuovamente le credenziali.
 8. Viene creato un nuovo utente diverso da quello creato nel test 6. Verifico che l'account venga effettivamente creato.
 
+CIAO
 
 ##### Test Login
 1. Eseguo il login inserendo un username errato. Verifico di non aver fatto il login.
