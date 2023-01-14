@@ -262,18 +262,37 @@ Verifico che l'account non sia stato creato e venga chiesti di inserire nuovamen
 Verifico che l'iniezione non sia andata a buon fine.
 2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore in lettere.
    Verifico che l'iniezione non sia andata a buon fine.
-1. Inserisco misurazione e verifico che sia stata salvata.
-2. inserisco una misurazione che non rispetta i requisiti e verifico che la modifica non sia avvenuta.
+3. Inserisco una nuova iniezione. Lascio il valore relativo alla glicemia vuoto.
+   Verifico che l'iniezione non sia andata a buon fine.
+4. Inserisco una nuova iniezione. Nel campo insulina si inserisce un valore sbagliato (non compreso tra 2 e 10).
+   Verifico che l'iniezione non sia andata a buon fine.
+5. Inserisco una nuova iniezione. Nel campo insulina si inserisce un valore in lettere.
+   Verifico che l'iniezione non sia andata a buon fine.
+6. Inserisco una nuova iniezione. Lascio il valore relativo all'insulina vuoto.
+   Verifico che l'iniezione non sia andata a buon fine.
+7. Inserisco una nuova iniezione. Inserisco un commento che non rispetta i requisiti.
+   Verifico che l'iniezione non sia andata a buon fine.
+8. Inserisco una nuova iniezione. Inserisco la glicemia, l'insulina e il commento rispettando i requisiti richiesti.
+   Verifico che l'iniezione sia stata fatta correttamente.
+9. Premo il tasto indietro presente nella pagina Pompa Insulinica e verifico di essere tornato alla pagina Home.
+
 
 ##### Test Cronologia
-1. Se elimino una riga questa viene eliminata.
-2. Se elimino tutta la cronologia verifico che venga effettivamente elimiata e torno nella home.
+1. Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" questa riga venga eliminata.
+2. Inserisco una misurazione, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto". 
+Verifico che non sia più presente nulla nella cronologia.
+3. Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
+
 
 #### Test Logout
-1. Premendo logout l'utente viene reinderizzato alla pagina di login
+1. Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reinderizzato alla pagina di login.
 
-#### Test indietro
-1. Premendo il tasto indietro l'utente deve andare alla pagina precedente
+#### Test Elimina Utente
+1. Controllo che una volta nella pagina Profilo se si preme il tasto "Elimina account" si verrà reindirizzati nella pagina di Login.
+Verifico che l'account sia stato effettivamente eliminato provando ad eseguire nuovamente il login.
+
+#### Test Change ID
+1. Verifico se il cambio di ID di un utente funziona.
 
 ##### QUALITY ASSURANCE
 ~~inserire~~
