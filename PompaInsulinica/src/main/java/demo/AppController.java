@@ -479,7 +479,6 @@ public class AppController {
                 return "cronologia";
             }
             else {
-                model.addAttribute("errore", "misurazione non presente");
                 return "notfound";
             }
         }

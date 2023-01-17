@@ -745,6 +745,28 @@ public class SystemTest {
         assertEquals("LOGIN POMPA INSULINICA", homePO1.getTitle());
     }
 
+    // test per eliminare l'utente per verificare l'username
+    @Test
+    public void IBtestDelete(){
+        driver.get("http://localhost:8080");
+        LoginPO loginPO = new LoginPO(driver);
+        assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
+        loginPO.inserCredential("unbelnome", "123luca.");
+        HomePO homePO = loginPO.clickLogin();
+
+        assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
+        ProfiloPO profiloPO = homePO.clickProfilo();
+
+        assertEquals("PROFILO", profiloPO.getTitle());
+        LoginPO loginPO1 = profiloPO.clickDeleteAccount();
+
+        assertEquals("LOGIN POMPA INSULINICA", loginPO1.getTitle());
+        loginPO1.inserCredential("unbelnome", "123luca.");
+        HomePO homePO1 = loginPO1.clickLogin();
+
+        assertEquals("LOGIN POMPA INSULINICA", homePO1.getTitle());
+    }
+
     // test se change id funziona
     @Test
     public void JAtestChangeIdPerson() {

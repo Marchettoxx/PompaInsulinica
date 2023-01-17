@@ -166,38 +166,6 @@ sempre lavorato contemporaneamente al codice
 garantendo una comprensione totale da parte dei partecipanti
 di ogni modifica che è stata fatta sul codice.
 
-### PATTERN ARCHITETTURALE
-Per l’architettura del software abbiamo utilizzato
-il pattern MVC (Model View Control) suddividendo così la
-parte grafica da quella di gestione delle informazioni
-e da quella di controllo.
-La motivazione principale per cui è stato utilizzato
-questo pattern è la possibilità di realizzare sequenzialmente
-le componenti, questa indipendenza tra le componenti
-ha garantito la flessibilità nella realizzazione
-dell’interfaccia d’’accesso del sistema
-dell’utente. In una fase iniziale infatti la grafica
-dei dati era molto scarna, sufficiente
-per verificare che la componente di gestione dei dati
-fosse funzionante, poi in una
-fase finale il layout della componente View è stato
-raffinato e reso semplice e chiaro.
-
-I package solitamente sono:
-*Modello: sottoparte del sistema che si occupa di
-gestire i dati del sistema e le
-operazioni associate ai dati
-*Vista: sottoparte del sistema che definisce e
-gestisce come i dati sono
-rappresentati all’utente
-*Controllore: sottoparte del sistema che si
-occupa di gestire le interazioni tra
-l’utente e i dati del sistema, notificando tali
-interazioni alle componenti Modello e Vista
-
-![Modello MVC](MVC.png)
-
-
 ### CHECKING
 Il codice è stato costantemente rivisto, si è cercato
 d'identificare le componenti di codice incorretto o che
@@ -286,6 +254,11 @@ Verifico che l'account sia stato effettivamente eliminato provando a eseguire nu
 
 ### Test Change ID
 1. Verifico se il cambio d'ID di un utente funziona.
+
+### Test ToString
+1. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
+2. Vorrei anche verificare lo stesso metodo della classe PompaInsulinica ma essendo che abbiamo come variabile il tempo
+reale in cui viene effettuata un'iniezione non riesco a fare ciò.
 
 ## Coverage
 La coverage ottenuta dai precedenti test è la seguente:
