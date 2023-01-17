@@ -251,6 +251,8 @@ Verifico che non sia più presente nulla nella cronologia.
 ### Test Elimina Utente
 1. Controllo che una volta nella pagina Profilo se si preme il tasto "Elimina account" si venga reindirizzati nella pagina di Login.
 Verifico che l'account sia stato effettivamente eliminato provando a eseguire nuovamente il login.
+2. Lo faccio anche con l'altro account che mi ero creato e in cui nel corso dei test ho modificato l'username, in modo da non 
+avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
 
 ### Test Change ID
 1. Verifico se il cambio d'ID di un utente funziona.
