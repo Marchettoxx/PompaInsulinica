@@ -752,4 +752,10 @@ public class SystemTest {
         pompaInsulinica.setIdUtente(2L);
         assertEquals(Long.valueOf(2), pompaInsulinica.getIdUtente());
     }
+
+    @Test
+    public void KAtestToStringPersona() {
+        Person person = new Person("Luca", "Piccolo", "piccolo@gmail.com", "piccololu", "luca123.");
+        assertEquals("Customer[id=null, nome= 'Luca', cognome='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
+    }
 }
