@@ -780,4 +780,10 @@ public class SystemTest {
         Person person = new Person("Luca", "Piccolo", "piccolo@gmail.com", "piccololu", "luca123.");
         assertEquals("Customer[id=null, nome= 'Luca', cognome='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
     }
+
+    @Test
+    public void KBtestToStringMisurazione() {
+        Misurazione misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
+        assertEquals("Misurazione[id=null, idUtente='1', glicemia= '200', insulina='3', commento='pizza e coca', time='00:00']", misurazione.toString());
+    }
 }

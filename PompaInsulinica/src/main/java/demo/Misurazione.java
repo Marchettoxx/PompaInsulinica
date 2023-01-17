@@ -36,8 +36,8 @@ public class Misurazione {
     @Override
     public String toString() {
         return String.format(
-                "Iniezione[id=%d, idUtente='%d', glicemia= '%d', insulina='%d', commento='%s', time='%s']",
-                id, idUtente, glicemia, insulina, commento, time);
+                "Misurazione[id=%d, idUtente='%d', glicemia= '%d', insulina='%d', commento='%s', time='00:00']",
+                id, idUtente, glicemia, insulina, commento);
     }
 
     public Long getId() {return id;}
