@@ -243,9 +243,9 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
     }
 
     // test sul bottone della cronologia senza aver fatto delle iniezioni
@@ -472,14 +472,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("500", "3", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("500", "3", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco glicemia errata con valore in lettere
@@ -492,14 +492,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("glicemia", "3", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("glicemia", "3", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco glicemia errata con valore vuoto
@@ -512,14 +512,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("", "3", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("", "3", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco insulina errata
@@ -532,14 +532,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("200", "15", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("200", "15", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco insulina errata con valore in lettera
@@ -552,14 +552,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("200", "insulina", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("200", "insulina", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco insulina errata con valore vuoto
@@ -572,14 +572,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("200", "", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("200", "", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco commento errato
@@ -592,14 +592,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("200", "3", "ho pranzato con una pizza ma non mi è piaciuta troppo perchè non era buona");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("200", "3", "ho pranzato con una pizza ma non mi è piaciuta troppo perchè non era buona");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("INSERISCI VALORI VALIDI", insulinaPO1.getErrore());
-        assertEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
+        assertEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // inserisco misurazione corretta
@@ -612,14 +612,14 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        insulinaPO.insertMisurazione("200", "3", "ho pranzato con una pizza");
-        InsulinaPO insulinaPO1 = insulinaPO.saveMisurazione();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        inserisciMisurazionePO.insertMisurazione("200", "3", "ho pranzato con una pizza");
+        InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
-        assertEquals("", insulinaPO1.getErrore());
-        assertNotEquals("", insulinaPO1.getLastMisurazione());
+        assertEquals("", inserisciMisurazionePO1.getErrore());
+        assertNotEquals("", inserisciMisurazionePO1.getLastMisurazione());
     }
 
     // test da pompa insulinica vado indietro a home
@@ -632,10 +632,10 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsulinaPO insulinaPO = homePO.clickPompaInsulinica();
+        InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
-        assertEquals("POMPA INSULINICA", insulinaPO.getTitle());
-        HomePO homePO1 = insulinaPO.clickBack();
+        assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
+        HomePO homePO1 = inserisciMisurazionePO.clickBack();
 
         assertEquals("BENVENUTO NELLA HOME", homePO1.getTitle());
     }
@@ -748,9 +748,9 @@ public class SystemTest {
     // test se change id funziona
     @Test
     public void JAtestChangeIdPerson() {
-        PompaInsulinica pompaInsulinica = new PompaInsulinica(1L, 200, 3, "pizza e coca");
-        pompaInsulinica.setIdUtente(2L);
-        assertEquals(Long.valueOf(2), pompaInsulinica.getIdUtente());
+        Misurazione misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
+        misurazione.setIdUtente(2L);
+        assertEquals(Long.valueOf(2), misurazione.getIdUtente());
     }
 
     @Test

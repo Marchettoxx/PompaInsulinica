@@ -34,9 +34,9 @@ public class HomePO extends PageObject {
         return new ProfiloPO(driver);
     }
 
-    public InsulinaPO clickPompaInsulinica() {
+    public InserisciMisurazionePO clickPompaInsulinica() {
         this.buttonPompainsulinica.click();
-        return new InsulinaPO(driver);
+        return new InserisciMisurazionePO(driver);
     }
 
     public CronologiaPO clickCronologia() {

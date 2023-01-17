@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class InsulinaPO extends PageObject {
+public class InserisciMisurazionePO extends PageObject {
 
     @FindBy(tagName = "h1")
     private WebElement title;
@@ -30,7 +30,7 @@ public class InsulinaPO extends PageObject {
     @FindBy(className = "btnBack")
     private WebElement btnBack;
 
-    public InsulinaPO(WebDriver driver) {
+    public InserisciMisurazionePO(WebDriver driver) {
         super(driver);
     }
 
@@ -55,9 +55,9 @@ public class InsulinaPO extends PageObject {
         this.commento.sendKeys(commento);
     }
 
-    public InsulinaPO saveMisurazione() {
+    public InserisciMisurazionePO saveMisurazione() {
         this.btnSave.click();
-        return new InsulinaPO(driver);
+        return new InserisciMisurazionePO(driver);
     }
 
     public HomePO clickBack() {

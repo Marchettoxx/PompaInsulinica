@@ -16,7 +16,7 @@ public class AppController {
     private PersonRepository repository;
 
     @Autowired
-    private PompaInsulinicaRepository repositoryInsulina;
+    private MisurazioneRepository repositoryMisurazioni;
 
     Integer MIN_USERNAME = 6;
     Integer MAX_USERNAME = 15;
@@ -41,7 +41,7 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             model.addAttribute("person", person.get());
-            return "utente";
+            return "homePage";
         }
         else
             return "notfound";
@@ -74,7 +74,7 @@ public class AppController {
         if (person.isPresent()) {
             if (person.get().getUsername().equals(username) && person.get().getPassword().equals(password)) {
                 model.addAttribute("person", person.get());
-                return "utente";
+                return "homePage";
             }
             else {
                 model.addAttribute("errore", "CREDENZIALI ERRATE");
@@ -94,7 +94,7 @@ public class AppController {
         model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
         model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
         model.addAttribute("errpassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.- e numero");
-        return "create";
+        return "createNewUtente";
     }
 
     @RequestMapping("/nuovoutente")
@@ -167,7 +167,7 @@ public class AppController {
         }
         else {
             model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
-            return "create";
+            return "createNewUtente";
         }
     }
 
@@ -220,7 +220,7 @@ public class AppController {
             model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
             model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
             model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
-            return "edit";
+            return "editUtente";
         }
         else
             return "notfound";
@@ -296,18 +296,18 @@ public class AppController {
                 repository.delete(oldPerson.get());
                 Person newPerson = new Person(nome, cognome, email, username, password);
                 repository.save(newPerson);
-                List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
-                for (PompaInsulinica p : cronologia) {
-                    repositoryInsulina.delete(p);
+                List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
+                for (Misurazione p : cronologia) {
+                    repositoryMisurazioni.delete(p);
                 }
                 cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
-                repositoryInsulina.saveAll(cronologia);
+                repositoryMisurazioni.saveAll(cronologia);
                 model.addAttribute("person", newPerson);
                 return "profilo";
             } else {
                 model.addAttribute("person", temp);
                 model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
-                return "edit";
+                return "editUtente";
             }
         }
         else
@@ -321,16 +321,16 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             // metto a schermo ultima iniezione fatta
-            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+            List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
             if (!cronologia.isEmpty()) {
-                PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
+                Misurazione misurazione = cronologia.get(cronologia.size() - 1);
                 model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
             }
             model.addAttribute("person", person.get());
             model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
             model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
             model.addAttribute("errcommento", "lunghezza max 120");
-            return "insulina";
+            return "inserisciMisurazione";
         }
         else
             return "notfound";
@@ -402,8 +402,8 @@ public class AppController {
             }
 
             if (flag) {
-                PompaInsulinica pompaInsulinica = new PompaInsulinica(id, Integer.parseInt(glicemia), Integer.parseInt(insulina), commento);
-                repositoryInsulina.save(pompaInsulinica);
+                Misurazione misurazione = new Misurazione(id, Integer.parseInt(glicemia), Integer.parseInt(insulina), commento);
+                repositoryMisurazioni.save(misurazione);
                 model.addAttribute("glicemia", "");
                 model.addAttribute("insulina", "");
                 model.addAttribute("commento", "");
@@ -411,15 +411,15 @@ public class AppController {
             else
                 model.addAttribute("errore", "INSERISCI VALORI VALIDI");
 
-            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+            List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
             if (!cronologia.isEmpty()) {
-                PompaInsulinica misurazione = cronologia.get(cronologia.size() - 1);
+                Misurazione misurazione = cronologia.get(cronologia.size() - 1);
                 model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
             }
             model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
             model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
             model.addAttribute("errcommento", "lunghezza max 120");
-            return "insulina";
+            return "inserisciMisurazione";
         }
         else
             return "notfound";
@@ -431,7 +431,7 @@ public class AppController {
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+            List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
             if (!cronologia.isEmpty()) {
                 model.addAttribute("person", person.get());
                 model.addAttribute("cronologia", cronologia);
@@ -440,7 +440,7 @@ public class AppController {
             else {
                 model.addAttribute("person", person.get());
                 model.addAttribute("notifica", "cronologia vuota crea nuova misurazione");
-                return "utente";
+                return "homePage";
             }
         }
         else
@@ -453,8 +453,8 @@ public class AppController {
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            for (PompaInsulinica p: repositoryInsulina.findByIdUtente(id)) {
-                repositoryInsulina.delete(p);
+            for (Misurazione p: repositoryMisurazioni.findByIdUtente(id)) {
+                repositoryMisurazioni.delete(p);
             }
             model.addAttribute("person", person.get());
             return "cronologia";
@@ -470,10 +470,10 @@ public class AppController {
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            Optional<PompaInsulinica> misurazione = repositoryInsulina.findById(idMisurazione);
+            Optional<Misurazione> misurazione = repositoryMisurazioni.findById(idMisurazione);
             if (misurazione.isPresent()) {
-                repositoryInsulina.delete(misurazione.get());
-                List<PompaInsulinica> cronologia = repositoryInsulina.findByIdUtente(id);
+                repositoryMisurazioni.delete(misurazione.get());
+                List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
                 model.addAttribute("person", person.get());
                 model.addAttribute("cronologia", cronologia);
                 return "cronologia";

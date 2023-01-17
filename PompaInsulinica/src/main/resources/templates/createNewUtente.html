@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>MVC Web application</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <script>
+    function myFunction() {
+          var x = document.getElementById("myInput");
+          if (x.type === "password") {
+             x.type = "text";
+          } else {
+            x.type = "password";
+           }
+        }
+  </script>
+</head>
+
+<body>
+
+<div class="box">
+  <h1> CREAZIONE DI UN NUOVO UTENTE </h1>
+  <h3 class="errore" th:text = "${errore}" > </h3>
+
+  <form action="nuovoutente" method="post">
+    <table style="background-color:#8fbc8f">
+      <tbody>
+        <tr>
+          <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
+          <td class="errore" th:text="${errnome}"> </td>
+        </tr>
+        <tr>
+          <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
+          <td class="errore" th:text="${errcognome}"> </td>
+        </tr>
+        <tr>
+          <td> <input type="email" name="email" th:value="${email}" placeholder="email"> </td>
+          <td class="errore" th:text="${erremail}"> </td>
+        </tr>
+        <tr>
+          <td> <input type="text" name="username" th:value="${username}" placeholder="username"> </td>
+          <td class="errore" th:text="${errusername}"> </td>
+        </tr>
+        <tr>
+          <td> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput"> </td>
+          <td class="errore" th:text="${errpassword}"> </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" onclick="myFunction()"> Mostra password </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"> <input class="btn" type="submit" value="Iscriviti"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  <form action="logout" method="post">
+    <br> <input class="btnBack" type="submit" value="Indietro"/>
+  </form>
+
+</div>
+
+</body>
+</html>

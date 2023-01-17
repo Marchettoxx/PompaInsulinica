@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-public class PompaInsulinica {
+public class Misurazione {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -19,9 +19,9 @@ public class PompaInsulinica {
     private String commento;
     private String time;
 
-    public PompaInsulinica() {}
+    public Misurazione() {}
 
-    public PompaInsulinica(Long idUtente, Integer glicemia, Integer insulina, String commento) {
+    public Misurazione(Long idUtente, Integer glicemia, Integer insulina, String commento) {
         this.idUtente = idUtente;
         this.glicemia = glicemia;
         this.insulina = insulina;
@@ -43,7 +43,7 @@ public class PompaInsulinica {
     public Long getId() {return id;}
 
     public Long getIdUtente() {return idUtente;}
-    public PompaInsulinica setIdUtente(Long idUtente) {
+    public Misurazione setIdUtente(Long idUtente) {
         this.idUtente = idUtente;
         return this;
     }
