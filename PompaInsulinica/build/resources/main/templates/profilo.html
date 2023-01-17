@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>MVC Web application</title>
+    <title>Profilo Utente</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
     <script>
     function myFunction() {
           var x = document.getElementById("myInput");
@@ -25,19 +25,19 @@
     <table style="background-color:#8fbc8f">
         <tbody>
         <tr>
-            <td> Nome: </td> <td> <input type="text" th:value="${person.nome}" readonly><br> </td>
+            <td> Nome: </td> <td> <input type="text" th:value="${person.nome}" value="Luca" readonly><br> </td>
         </tr>
         <tr>
-            <td> Cognome: </td> <td> <input type="text" th:value="${person.cognome}" readonly><br> </td>
+            <td> Cognome: </td> <td> <input type="text" th:value="${person.cognome}" value="Piccolo" readonly><br> </td>
         </tr>
         <tr>
-            <td> Email: </td> <td> <input type="email" th:value="${person.email}" readonly><br> </td>
+            <td> Email: </td> <td> <input type="email" th:value="${person.email}" value="luca@gmail.com" readonly><br> </td>
         </tr>
         <tr>
-            <td> Username: </td> <td> <input type="text" th:value="${person.username}" readonly><br> </td>
+            <td> Username: </td> <td> <input type="text" th:value="${person.username}" value="123luca" readonly><br> </td>
         </tr>
         <tr>
-            <td> Password: </td> <td><input type="password" th:value="${person.password}" id="myInput" readonly><br> </td>
+            <td> Password: </td> <td><input type="password" th:value="${person.password}" value="123luca." id="myInput" readonly><br> </td>
         </tr>
         <tr>
             <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
