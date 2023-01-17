@@ -745,7 +745,7 @@ public class SystemTest {
         assertEquals("LOGIN POMPA INSULINICA", homePO1.getTitle());
     }
 
-    // testo se change id funziona
+    // test se change id funziona
     @Test
     public void JAtestChangeIdPerson() {
         PompaInsulinica pompaInsulinica = new PompaInsulinica(1L, 200, 3, "pizza e coca");
