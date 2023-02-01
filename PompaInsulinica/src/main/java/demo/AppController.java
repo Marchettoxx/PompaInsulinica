@@ -40,7 +40,7 @@ public class AppController {
      * Funzione che fa ritornare l'utente alla pagina precedente
      * @param id id dell'utente
      * @param model modello
-     * @return pagina homePage se esecuzione va a buon fine altrimenti notfound
+     * @return pagina homePage se esecuzione va a buon fine altrimenti notFound
      */
     @RequestMapping("/back")
     public String back(
@@ -52,16 +52,16 @@ public class AppController {
             return "homePage";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
      * Funzione che fa ritornare l'utente alla pagina precedente
      * @param id id dell'utente
      * @param model modello
-     * @return pagina profilo se esecuzione va a buon fine altrimenti notfound
+     * @return pagina profilo se esecuzione va a buon fine altrimenti notFound
      */
-    @RequestMapping("/backprofile")
+    @RequestMapping("/backProfile")
     public String backProfile(
             @RequestParam(name="id") Long id,
             Model model) {
@@ -71,7 +71,7 @@ public class AppController {
             return "profilo";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
@@ -118,11 +118,11 @@ public class AppController {
      */
     @RequestMapping("/create")
     public String createUtente(Model model){
-        model.addAttribute("errnome", "obbligatorio");
-        model.addAttribute("errcognome", "obbligatorio");
-        model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
-        model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
-        model.addAttribute("errpassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.- e numero");
+        model.addAttribute("errNome", "obbligatorio");
+        model.addAttribute("errCognome", "obbligatorio");
+        model.addAttribute("errEmail", "valide (@gmail.com, @yahoo.it)");
+        model.addAttribute("errUsername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+        model.addAttribute("errPassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.- e numero");
         return "createNewUtente";
     }
 
@@ -136,7 +136,7 @@ public class AppController {
      * @param model modello
      * @return login se esecuzione va a buon vine altrimenti ritorna la pagina createNewUtente
      */
-    @RequestMapping("/nuovoutente")
+    @RequestMapping("/nuovoUtente")
     public String creaUtente(
             @RequestParam(name="nome") String nome,
             @RequestParam(name="cognome") String cognome,
@@ -148,53 +148,53 @@ public class AppController {
 
         if (!nome.isEmpty()) {
             model.addAttribute("nome", nome);
-            model.addAttribute("errnome", "");
+            model.addAttribute("errNome", "");
         }
         else {
-            model.addAttribute("errnome", "obbligatorio");
+            model.addAttribute("errNome", "obbligatorio");
             flag = false;
         }
 
         if (!cognome.isEmpty()) {
             model.addAttribute("cognome", cognome);
-            model.addAttribute("errcognome", "");
+            model.addAttribute("errCognome", "");
         }
         else {
-            model.addAttribute("errcognome", "obbligatorio");
+            model.addAttribute("errCognome", "obbligatorio");
             flag = false;
         }
 
         if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
             model.addAttribute("email", email);
-            model.addAttribute("erremail", "");
+            model.addAttribute("errEmail", "");
         }
         else {
-            model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
+            model.addAttribute("errEmail", "valide (@gmail.com, @yahoo.it)");
             flag = false;
         }
 
         if (username.length() >= MIN_USERNAME && username.length() <= MAX_USERNAME) {
             Optional<Person> person = repository.findByUsername(username);
             if (person.isPresent()) {
-                model.addAttribute("errusername", "username già utilizzato");
+                model.addAttribute("errUsername", "username già utilizzato");
                 flag = false;
             }
             else {
                 model.addAttribute("username", username);
-                model.addAttribute("errusername", "");
+                model.addAttribute("errUsername", "");
             }
         }
         else {
-            model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+            model.addAttribute("errUsername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
             flag = false;
         }
 
         if (valid(password)) {
             model.addAttribute("password", password);
-            model.addAttribute("errpassword", "");
+            model.addAttribute("errPassword", "");
         }
         else {
-            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
+            model.addAttribute("errPassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
             flag = false;
         }
 
@@ -233,7 +233,7 @@ public class AppController {
      * Funzione che mostra le credenziali utente
      * @param id id utente
      * @param model modello
-     * @return pagina profilo se esecuzione va a buon fine altrimenti ritorna pagina notfound
+     * @return pagina profilo se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
     @RequestMapping("/profilo")
     public String showDatiUtente(
@@ -245,15 +245,15 @@ public class AppController {
             return "profilo";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
      * Funzione che elimina account utente
      * @param id utente
-     * @return pagina login se esecuzione va a buon fine altrimenti ritorna pagina notfound
+     * @return pagina login se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
-    @RequestMapping("/deleteaccount")
+    @RequestMapping("/deleteAccount")
     public String deleteAccount(
             @RequestParam(name="id") Long id) {
         Optional<Person> person = repository.findById(id);
@@ -262,13 +262,13 @@ public class AppController {
             return "login";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
      * @param id id utente
      * @param model modello
-     * @return pagina editUtente se esecuzione va a buon fine altrimenti ritorna pagina notfound
+     * @return pagina editUtente se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
     @RequestMapping("/modifica")
     public String modifica(
@@ -277,13 +277,13 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             model.addAttribute("person", person.get());
-            model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
-            model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
-            model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
+            model.addAttribute("errEmail", "valide (@gmail.com, @yahoo.it)");
+            model.addAttribute("errUsername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+            model.addAttribute("errPassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
             return "editUtente";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
@@ -295,9 +295,9 @@ public class AppController {
      * @param username username utente
      * @param password password utente
      * @param model modello
-     * @return pagina profilo se esecuzione va a buon fine altrimenti se ci sono errori pagina editUtente altrimenti pagina notfound
+     * @return pagina profilo se esecuzione va a buon fine altrimenti se ci sono errori pagina editUtente altrimenti pagina notFound
      */
-    @RequestMapping("/salvamodifica")
+    @RequestMapping("/salvaModifica")
     public String editDatiUtente(
             @RequestParam(name="id") Long id,
             @RequestParam(name="nome") String nome,
@@ -313,25 +313,25 @@ public class AppController {
 
             if (!nome.isEmpty()) {
                 temp.setNome(nome);
-                model.addAttribute("errnome", "");
+                model.addAttribute("errNome", "");
             } else {
-                model.addAttribute("errnome", "obbligatorio");
+                model.addAttribute("errNome", "obbligatorio");
                 flag = false;
             }
 
             if (!cognome.isEmpty()) {
                 temp.setCognome(cognome);
-                model.addAttribute("errcognome", "");
+                model.addAttribute("errCognome", "");
             } else {
-                model.addAttribute("errcognome", "obbligatorio");
+                model.addAttribute("errCognome", "obbligatorio");
                 flag = false;
             }
 
             if (email.contains("@gmail.com") || email.contains("@yahoo.it")) {
                 temp.setEmail(email);
-                model.addAttribute("erremail", "");
+                model.addAttribute("errEmail", "");
             } else {
-                model.addAttribute("erremail", "valide (@gmail.com, @yahoo.it)");
+                model.addAttribute("errEmail", "valide (@gmail.com, @yahoo.it)");
                 flag = false;
             }
 
@@ -339,27 +339,27 @@ public class AppController {
                 Optional<Person> personaWithSameUsername = repository.findByUsername(username);
                 if (personaWithSameUsername.isPresent()) {
                     if (!personaWithSameUsername.get().getId().equals(id)) {
-                        model.addAttribute("errusername", "username già utilizzato");
+                        model.addAttribute("errUsername", "username già utilizzato");
                         flag = false;
                     }
                     else {
-                        model.addAttribute("errusername", "");
+                        model.addAttribute("errUsername", "");
                     }
                 }
                 else {
                     temp.setUsername(username);
-                    model.addAttribute("errusername", "");
+                    model.addAttribute("errUsername", "");
                 }
             } else {
-                model.addAttribute("errusername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
+                model.addAttribute("errUsername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
                 flag = false;
             }
 
             if (valid(password)) {
                 temp.setPassword(password);
-                model.addAttribute("errpassword", "");
+                model.addAttribute("errPassword", "");
             } else {
-                model.addAttribute("errpassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
+                model.addAttribute("errPassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
                 flag = false;
             }
 
@@ -382,15 +382,15 @@ public class AppController {
             }
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
      * @param id id utente
      * @param model modello
-     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti notfound
+     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti notFound
      */
-    @RequestMapping("/pompainsulinica")
+    @RequestMapping("/pompaInsulinica")
     public String pompaInsulinica(
             @RequestParam(name="id") Long id,
             Model model) {
@@ -400,16 +400,16 @@ public class AppController {
             List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
             if (!cronologia.isEmpty()) {
                 Misurazione misurazione = cronologia.get(cronologia.size() - 1);
-                model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+                model.addAttribute("lastMisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
             }
             model.addAttribute("person", person.get());
-            model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
-            model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
-            model.addAttribute("errcommento", "lunghezza max 120");
+            model.addAttribute("errGlicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
+            model.addAttribute("errInsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
+            model.addAttribute("errCommento", "lunghezza max 120");
             return "inserisciMisurazione";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
@@ -419,7 +419,7 @@ public class AppController {
      * @param insulina insulina misurazione
      * @param commento commento misurazione
      * @param model modello
-     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti pagina notfound
+     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti pagina notFound
      */
     @RequestMapping("/salva")
     public String saveMisurazione(
@@ -438,20 +438,20 @@ public class AppController {
                     int int_glicemia = Integer.parseInt(glicemia);
                     if (int_glicemia >= MIN_GLICEMIA && int_glicemia <= MAX_GLICEMIA) {
                         model.addAttribute("glicemia", glicemia);
-                        model.addAttribute("errglicemia", "");
+                        model.addAttribute("errGlicemia", "");
                     }
                     else {
-                        model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
+                        model.addAttribute("errGlicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
                         flag = false;
                     }
                 }
                 catch (NumberFormatException ex){
-                    model.addAttribute("errglicemia", "inserisci numero intero");
+                    model.addAttribute("errGlicemia", "inserisci numero intero");
                     flag = false;
                 }
             }
             else {
-                model.addAttribute("errglicemia", "obbligatorio");
+                model.addAttribute("errGlicemia", "obbligatorio");
                 flag = false;
             }
 
@@ -460,29 +460,29 @@ public class AppController {
                     int int_insulina = Integer.parseInt(insulina);
                     if (int_insulina >= MIN_INSULINA && int_insulina <= MAX_INSULINA) {
                         model.addAttribute("insulina", insulina);
-                        model.addAttribute("errinsulina", "");
+                        model.addAttribute("errInsulina", "");
                     }
                     else {
-                        model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
+                        model.addAttribute("errInsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
                         flag = false;
                     }
                 }
                 catch (NumberFormatException ex){
-                    model.addAttribute("errinsulina", "inserisci numero intero");
+                    model.addAttribute("errInsulina", "inserisci numero intero");
                     flag = false;
                 }
             }
             else {
-                model.addAttribute("errinsulina", "obbligatorio");
+                model.addAttribute("errInsulina", "obbligatorio");
                 flag = false;
             }
 
             if (commento.length() < MAX_COMMENTO) {
                 model.addAttribute("commento", commento);
-                model.addAttribute("errcommento", "");
+                model.addAttribute("errCommento", "");
             }
             else {
-                model.addAttribute("errcommento", "lunghezza max 120");
+                model.addAttribute("errCommento", "lunghezza max 120");
                 flag = false;
             }
 
@@ -499,21 +499,21 @@ public class AppController {
             List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
             if (!cronologia.isEmpty()) {
                 Misurazione misurazione = cronologia.get(cronologia.size() - 1);
-                model.addAttribute("lastmisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+                model.addAttribute("lastMisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
             }
-            model.addAttribute("errglicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
-            model.addAttribute("errinsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
-            model.addAttribute("errcommento", "lunghezza max 120");
+            model.addAttribute("errGlicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
+            model.addAttribute("errInsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
+            model.addAttribute("errCommento", "lunghezza max 120");
             return "inserisciMisurazione";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
      * @param id id utente
      * @param model modello
-     * @return pagina cronologia se esistono misurazioni in cronologia altrimenti pagina homePage altrimenti notfound
+     * @return pagina cronologia se esistono misurazioni in cronologia altrimenti pagina homePage altrimenti notFound
      */
     @RequestMapping("/cronologia")
     public String getCronologia(
@@ -534,16 +534,16 @@ public class AppController {
             }
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
      * Funzione che elimina la cronologia totale di misurazioni
      * @param id id utente
      * @param model modello
-     * @return pagina cronologia senza nessuna misurazione altrimenti notfound
+     * @return pagina cronologia senza nessuna misurazione altrimenti notFound
      */
-    @RequestMapping("/cancellacronologia")
+    @RequestMapping("/cancellaCronologia")
     public String dropCronologia(
             @RequestParam(name="id") Long id,
             Model model) {
@@ -556,7 +556,7 @@ public class AppController {
             return "cronologia";
         }
         else
-            return "notfound";
+            return "notFound";
     }
 
     /**
@@ -564,9 +564,9 @@ public class AppController {
      * @param id id utente
      * @param idMisurazione id Misurazione
      * @param model modello
-     * @return pagina cronologia senza misurazione eliminata altrimenti pagina notfound
+     * @return pagina cronologia senza misurazione eliminata altrimenti pagina notFound
      */
-    @RequestMapping("/cancellamisurazione")
+    @RequestMapping("/cancellaMisurazione")
     public String dropMisurazione(
             @RequestParam(name="id") Long id,
             @RequestParam(name="idMisurazione") Long idMisurazione,
@@ -582,10 +582,10 @@ public class AppController {
                 return "cronologia";
             }
             else {
-                return "notfound";
+                return "notFound";
             }
         }
         else
-            return "notfound";
+            return "notFound";
     }
 }

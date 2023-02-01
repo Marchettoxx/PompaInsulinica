@@ -35,7 +35,7 @@ table, th, td {
     color: #a31a2c;
     font-size: 16px;
 }
-.btnpretty{
+.btnPretty{
     display:inline-block;
     padding:0.7em 1.4em;
     margin:0 0.3em 0.3em 0;
@@ -53,10 +53,10 @@ table, th, td {
     position:relative;
     cursor:pointer;
 }
-.btnpretty:hover{
+.btnPretty:hover{
     background:#90EE90;
 }
-.btnpretty:active{
+.btnPretty:active{
     background:#90EE90;
     top:0.15em;
     color:#000000;

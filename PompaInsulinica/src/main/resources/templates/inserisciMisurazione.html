@@ -18,15 +18,15 @@
             <tbody>
             <tr>
                 <td> <input type="text" name="glicemia" th:value="${glicemia}" placeholder="inserisci glicemia"><br> </td>
-                <td class="errore" th:text="${errglicemia}"> </td>
+                <td class="errore" th:text="${errGlicemia}"> </td>
             </tr>
             <tr>
                 <td> <input type="text" name="insulina" th:value="${insulina}" placeholder="inserisci insulina"><br> </td>
-                <td class="errore" th:text="${errinsulina}"> </td>
+                <td class="errore" th:text="${errInsulina}"> </td>
             </tr>
             <tr>
                 <td> <input type="text" name="commento" th:value="${commento}" placeholder="inserisci un commento"><br> </td>
-                <td class="errore" th:text="${errcommento}"> </td>
+                <td class="errore" th:text="${errCommento}"> </td>
             </tr>
             <tr>
                 <td colspan="2"> <input class="btn" type = "submit" value="salva"/> <br> </td>
@@ -35,7 +35,7 @@
         </table>
     </form>
 
-    <p th:text = "${lastmisurazione}"> </p> <br>
+    <p th:text = "${lastMisurazione}"> </p> <br>
 
     <form action="back" method="post">
         <input type="hidden" name="id" value="10" th:value="${person.id}">

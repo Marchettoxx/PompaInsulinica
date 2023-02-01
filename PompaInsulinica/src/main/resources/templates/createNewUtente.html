@@ -22,28 +22,28 @@
   <h1> CREAZIONE DI UN NUOVO UTENTE </h1>
   <h3 class="errore" th:text = "${errore}" > </h3>
 
-  <form action="nuovoutente" method="post">
+  <form action="nuovoUtente" method="post">
     <table style="background-color:#8fbc8f">
       <tbody>
         <tr>
           <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
-          <td class="errore" th:text="${errnome}"> </td>
+          <td class="errore" th:text="${errNome}"> </td>
         </tr>
         <tr>
           <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
-          <td class="errore" th:text="${errcognome}"> </td>
+          <td class="errore" th:text="${errCognome}"> </td>
         </tr>
         <tr>
           <td> <input type="email" name="email" th:value="${email}" placeholder="email"> </td>
-          <td class="errore" th:text="${erremail}"> </td>
+          <td class="errore" th:text="${errEmail}"> </td>
         </tr>
         <tr>
           <td> <input type="text" name="username" th:value="${username}" placeholder="username"> </td>
-          <td class="errore" th:text="${errusername}"> </td>
+          <td class="errore" th:text="${errUsername}"> </td>
         </tr>
         <tr>
           <td> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput"> </td>
-          <td class="errore" th:text="${errpassword}"> </td>
+          <td class="errore" th:text="${errPassword}"> </td>
         </tr>
         <tr>
           <td><input type="checkbox" onclick="myFunction()"> Mostra password </td>

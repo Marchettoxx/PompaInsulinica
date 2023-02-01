@@ -22,29 +22,29 @@
     <h1> MODIFICA CREDENZIALI UTENTE </h1>
     <h3 class="errore" th:text = "${errore}" > </h3>
 
-    <form action="salvamodifica" method="post">
+    <form action="salvaModifica" method="post">
         <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
         <table style="background-color:#8fbc8f">
             <tbody>
             <tr>
                 <td> Nome: </td> <td>  <input type="text" name="nome" value="John" th:value="${person.nome}" placeholder="inserisci nome"><br> </td>
-                <td class="errore" th:text="${errnome}"> </td>
+                <td class="errore" th:text="${errNome}"> </td>
             </tr>
             <tr>
                 <td> Cognome: </td> <td> <input type="text" name="cognome" value="Smith" th:value="${person.cognome}" placeholder="inserisci cognome"><br> </td>
-                <td class="errore" th:text="${errcognome}"> </td>
+                <td class="errore" th:text="${errCognome}"> </td>
             </tr>
             <tr>
                 <td> Email: </td> <td> <input type="email" name="email" value="John.Smith@gmail.com" th:value="${person.email}" placeholder="inserisci email"><br> </td>
-                <td class="errore" th:text="${erremail}"> </td>
+                <td class="errore" th:text="${errEmail}"> </td>
             </tr>
             <tr>
                 <td> Username: </td> <td> <input type="text" name="username" value="JohnEma" th:value="${person.username}" placeholder="inserisci username"><br> </td>
-                <td class="errore" th:text="${errusername}"> </td>
+                <td class="errore" th:text="${errUsername}"> </td>
             </tr>
             <tr>
                 <td> Password: </td> <td> <input type="password" name="password" value="IngSoft" th:value="${person.password}" placeholder="inserisci password" id="myInput"><br> </td>
-                <td class="errore" th:text="${errpassword}"> </td>
+                <td class="errore" th:text="${errPassword}"> </td>
             </tr>
             <tr>
                 <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Show Password </td>
@@ -56,7 +56,7 @@
         </table>
     </form>
 
-    <form action="backprofile" method="post">
+    <form action="backProfile" method="post">
         <input type="hidden" name="id" value="10" th:value="${person.id}">
         <br> <input class="btnBack" type="submit" value="Indietro">
     </form>

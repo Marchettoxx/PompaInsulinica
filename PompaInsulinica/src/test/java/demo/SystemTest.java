@@ -58,7 +58,7 @@ public class SystemTest {
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
-    public void AAtestCreaNuovoUtente() {
+    public void AATestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -77,7 +77,7 @@ public class SystemTest {
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
-    public void ABtestCreaNuovoUtente() {
+    public void ABTestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -96,7 +96,7 @@ public class SystemTest {
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
-    public void ACtestCreaNuovoUtente() {
+    public void ACTestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -115,7 +115,7 @@ public class SystemTest {
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
-    public void ADtestCreaNuovoUtente() {
+    public void ADTestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -134,7 +134,7 @@ public class SystemTest {
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
-    public void AEtestCreaNuovoUtente() {
+    public void AETestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -153,7 +153,7 @@ public class SystemTest {
      * Verifico che l'account sia stato effettivamente creato.
      */
     @Test
-    public void AFtestCreaNuovoUtente() {
+    public void AFTestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -172,7 +172,7 @@ public class SystemTest {
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
-    public void AGtestCreaNuovoUtente() {
+    public void AGTestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -191,7 +191,7 @@ public class SystemTest {
      * Verifico che l'account venga effettivamente creato.
      */
     @Test
-    public void AHtestCreaNuovoUtente() {
+    public void AHTestCreaNuovoUtente() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -212,7 +212,7 @@ public class SystemTest {
      * Verifico di non aver fatto il login.
      */
     @Test
-    public void BAtestLogIn() {
+    public void BATestLogIn() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -228,7 +228,7 @@ public class SystemTest {
      * Verifico di non aver fatto il login.
      */
     @Test
-    public void BBtestLogIn() {
+    public void BBTestLogIn() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -244,7 +244,7 @@ public class SystemTest {
      * Verifico di non aver fatto il login.
      */
     @Test
-    public void BCtestLogIn() {
+    public void BCTestLogIn() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -260,7 +260,7 @@ public class SystemTest {
      * Verifico che il login sia avvenuto con successo e di essere nella pagina home.
      */
     @Test
-    public void BDtestLogIn() {
+    public void BDTestLogIn() {
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -277,7 +277,7 @@ public class SystemTest {
      * Premo il tasto Profilo e verifico di essere entrato effettivamente nella pagina desiderata.
      */
     @Test
-    public void DAtestUtente(){
+    public void DATestUtente(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -295,7 +295,7 @@ public class SystemTest {
      * Premo il tasto Pompa Insulinica e verifico di essere entrato effettivamente nella pagina desiderata.
      */
     @Test
-    public void DBtestUtente(){
+    public void DBTestUtente(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -314,7 +314,7 @@ public class SystemTest {
      * in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
      */
     @Test
-    public void DCtestUtente(){
+    public void DCTestUtente(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -336,7 +336,7 @@ public class SystemTest {
      * Modifico il nome in modo errato e verifico che la modifica non sia avvenuta.
      */
     @Test
-    public void EAtestProfilo(){
+    public void EATestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -361,7 +361,7 @@ public class SystemTest {
      * Modifico il cognome in modo errato e verifico che la modifica non sia avvenuta.
      */
     @Test
-    public void EBtestProfilo(){
+    public void EBTestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -386,7 +386,7 @@ public class SystemTest {
      * Modifico il l'email in modo errato e verifico che la modifica non sia avvenuta.
      */
     @Test
-    public void ECtestProfilo(){
+    public void ECTestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -411,7 +411,7 @@ public class SystemTest {
      * Modifico l'username in modo errato e verifico che la modifica non sia avvenuta.
      */
     @Test
-    public void EDtestProfilo(){
+    public void EDTestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -437,7 +437,7 @@ public class SystemTest {
      * Verifico quindi che la modifica non sia avvenuta.
      */
     @Test
-    public void EEtestProfilo(){
+    public void EETestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -462,7 +462,7 @@ public class SystemTest {
      * Modifico la password in modo errato e verifico che la modifica non sia avvenuta.
      */
     @Test
-    public void EFtestProfilo(){
+    public void EFTestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -488,7 +488,7 @@ public class SystemTest {
      * Verifico che la modifica sia avvenuta con successo.
      */
     @Test
-    public void EGtestProfilo(){
+    public void EGTestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -514,7 +514,7 @@ public class SystemTest {
      * Verifico che la modifica sia avvenuta con successo.
      */
     @Test
-    public void EHtestProfilo(){
+    public void EHTestProfilo(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -539,7 +539,7 @@ public class SystemTest {
      * Premo il tasto indietro presente nella pagina Modifica Credenziali Utente e verifico di essere tornato nella pagina Profilo.
      */
     @Test
-    public void EItestIndietro (){
+    public void EITestIndietro (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -567,7 +567,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FAtestPompaInsulinica (){
+    public void FATestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -592,7 +592,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FBtestPompaInsulinica (){
+    public void FBTestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -617,7 +617,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FCtestPompaInsulinica (){
+    public void FCTestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -642,7 +642,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FDtestPompaInsulinica (){
+    public void FDTestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -667,7 +667,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FEtestPompaInsulinica (){
+    public void FETestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -692,7 +692,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FFtestPompaInsulinica (){
+    public void FFTestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -717,7 +717,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FGtestPompaInsulinica (){
+    public void FGTestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -728,7 +728,7 @@ public class SystemTest {
         InserisciMisurazionePO inserisciMisurazionePO = homePO.clickPompaInsulinica();
 
         assertEquals("POMPA INSULINICA", inserisciMisurazionePO.getTitle());
-        inserisciMisurazionePO.insertMisurazione("200", "3", "ho pranzato con una pizza ma non mi è piaciuta troppo perchè non era buona");
+        inserisciMisurazionePO.insertMisurazione("200", "3", "ho pranzato con una pizza ma non mi è piaciuta troppo perché non era buona");
         InserisciMisurazionePO inserisciMisurazionePO1 = inserisciMisurazionePO.saveMisurazione();
 
         assertEquals("INSERISCI VALORI VALIDI", inserisciMisurazionePO1.getErrore());
@@ -742,7 +742,7 @@ public class SystemTest {
      * Verifico che l'iniezione sia stata fatta correttamente.
      */
     @Test
-    public void FHtestPompaInsulinica (){
+    public void FHTestPompaInsulinica (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -765,7 +765,7 @@ public class SystemTest {
      * Premo il tasto indietro presente nella pagina Pompa Insulinica e verifico di essere tornato alla pagina Home.
      */
     @Test
-    public void FItestIndietro (){
+    public void FITestIndietro (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -788,7 +788,7 @@ public class SystemTest {
      * Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" questa riga venga eliminata.
      */
     @Test
-    public void GAtestCronologia (){
+    public void GATestCronologia (){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -816,8 +816,8 @@ public class SystemTest {
      * Verifico che non sia più presente nulla nella cronologia.
      */
     @Test
-    public void GBtestCronologia (){
-        FHtestPompaInsulinica(); //inserisco una misurazione
+    public void GBTestCronologia (){
+        FHTestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -844,8 +844,8 @@ public class SystemTest {
      * Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
      */
     @Test
-    public void GCtestIndietro (){
-        FHtestPompaInsulinica(); //inserisco una misurazione
+    public void GCTestIndietro (){
+        FHTestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -868,7 +868,7 @@ public class SystemTest {
      * Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reindirizzato alla pagina di login.
      */
     @Test
-    public void HAtestLogOut(){
+    public void HATestLogOut(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -889,7 +889,7 @@ public class SystemTest {
      * Verifico che l'account sia stato effettivamente eliminato provando a eseguire nuovamente il login.
      */
     @Test
-    public void IAtestDelete(){
+    public void IATestDelete(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -915,7 +915,7 @@ public class SystemTest {
      * in modo da non avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
      */
     @Test
-    public void IBtestDelete(){
+    public void IBTestDelete(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -942,7 +942,7 @@ public class SystemTest {
      * Verifico se il cambio d'ID di un utente funziona.
      */
     @Test
-    public void JAtestChangeIdPerson() {
+    public void JATestChangeIdPerson() {
         Misurazione misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
         misurazione.setIdUtente(2L);
         assertEquals(Long.valueOf(2), misurazione.getIdUtente());
@@ -955,7 +955,7 @@ public class SystemTest {
      * Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
      */
     @Test
-    public void KAtestToStringPersona() {
+    public void KATestToStringPersona() {
         Person person = new Person("Luca", "Piccolo", "piccolo@gmail.com", "piccololu", "luca123.");
         assertEquals("Customer[id=null, nome= 'Luca', cognome='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
     }
@@ -966,7 +966,7 @@ public class SystemTest {
      * ma essendo che abbiamo come variabile il tempo reale in cui viene effettuata un'iniezione non riesco a fare ciò.
      */
     @Test
-    public void KBtestToStringMisurazione() {
+    public void KBTestToStringMisurazione() {
         Misurazione misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
         assertEquals("Misurazione[id=null, idUtente='1', glicemia= '200', insulina='3', commento='pizza e coca', time='00:00']", misurazione.toString());
     }

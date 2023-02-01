@@ -27,7 +27,7 @@
         <td class="tab" th:text="${misurazione.insulina}"> 2 </td>
         <td class="tab" th:text="${misurazione.time}"> 20:06:17 </td>
         <td class="tab" th:text="${misurazione.commento}"> blank </td>
-        <form action="cancellamisurazione" method="post">
+        <form action="cancellaMisurazione" method="post">
             <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
             <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
             <td> <input class="btn" type="submit" value="cancella"> </td>
@@ -36,7 +36,7 @@
     </tbody>
 </table>
 
-<form action="cancellacronologia" method="post">
+<form action="cancellaCronologia" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
     <input class="btn" type="submit" value="cancella tutto">
 </form>
