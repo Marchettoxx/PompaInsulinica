@@ -28,12 +28,22 @@ public class AppController {
     Integer MAX_INSULINA = 10;
     Integer MAX_COMMENTO = 30;
 
+    /**
+     * @param model modello
+     * @return pagina login
+     */
     @RequestMapping("/")
     public String index(Model model){
         model.addAttribute("person", repository.findAll());
         return "login";
     }
 
+    /**
+     * Funzione che fa ritornare l'utente alla pagina precedente
+     * @param id id dell'utente
+     * @param model modello
+     * @return pagina homePage se esecuzione va a buon fine altrimenti notfound
+     */
     @RequestMapping("/back")
     public String back(
             @RequestParam(name="id", required=true) Long id,
@@ -47,6 +57,12 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * Funzione che fa ritornare l'utente alla pagina precedente
+     * @param id id dell'utente
+     * @param model modello
+     * @return pagina profilo se esecuzione va a buon fine altrimenti notfound
+     */
     @RequestMapping("/backprofile")
     public String backProfile(
             @RequestParam(name="id", required=true) Long id,
@@ -60,11 +76,23 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * @param model modello
+     * @return pagina login
+     */
     @RequestMapping("/logout")
     public String logOut(Model model){
         return "login";
     }
 
+    /**
+     * Funzione che esegue la verifica delle credenziali dell'utente per
+     * concedere l'accesso all'applicazione
+     * @param username username dell'utente
+     * @param password password dell'utente
+     * @param model modello
+     * @return pagina homePage se esecuzione va a buon fine altrimenti login
+     */
     @RequestMapping("/login")
     public String logIn(
             @RequestParam(name="username", required=true) String username,
@@ -87,6 +115,10 @@ public class AppController {
         }
     }
 
+    /**
+     * @param model modello
+     * @return pagina createNewUtente
+     */
     @RequestMapping("/create")
     public String createUtente(Model model){
         model.addAttribute("errnome", "obbligatorio");
@@ -97,6 +129,16 @@ public class AppController {
         return "createNewUtente";
     }
 
+    /**
+     * Funzione che consente di creare un nuovo utente
+     * @param nome nome utente
+     * @param cognome cognome utente
+     * @param email email utente
+     * @param username username utente
+     * @param password password utente
+     * @param model modello
+     * @return login se esecuzione va a buon vine altrimenti ritorna la pagina createNewUtente
+     */
     @RequestMapping("/nuovoutente")
     public String creaUtente(
             @RequestParam(name="nome", required=true) String nome,
@@ -171,6 +213,11 @@ public class AppController {
         }
     }
 
+    /**
+     * Funzione che verifica la validità della password
+     * @param password password che utente inserisce in fase di creazione account
+     * @return un booleano a True se password valida, a False se password non valida
+     */
     private Boolean valid (String password) {
         int digit = 0;
         int special = 0;
@@ -185,6 +232,12 @@ public class AppController {
         return digit >= 1 && special >= 1 && password.length() >= MIN_PASSWORD && password.length() <= MAX_PASSWORD;
     }
 
+    /**
+     * Funzione che mostra le credenziali utente
+     * @param id id utente
+     * @param model modello
+     * @return pagina profilo se esecuzione va a buon fine altrimenti ritorna pagina notfound
+     */
     @RequestMapping("/profilo")
     public String showDatiUtente(
             @RequestParam(name="id", required=true) Long id,
@@ -198,6 +251,11 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * Funzione che elimina account utente
+     * @param id utente
+     * @return pagina login se esecuzione va a buon fine altrimenti ritorna pagina notfound
+     */
     @RequestMapping("/deleteaccount")
     public String deleteAccount(
             @RequestParam(name="id", required=true) Long id) {
@@ -210,6 +268,11 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * @param id id utente
+     * @param model modello
+     * @return pagina editUtente se esecuzione va a buon fine altrimenti ritorna pagina notfound
+     */
     @RequestMapping("/modifica")
     public String modifica(
             @RequestParam(name="id", required=true) Long id,
@@ -226,6 +289,17 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * Funzione che tramite i parametri passati modifica le credenziali dell'utente
+     * @param id id utente
+     * @param nome nome utente
+     * @param cognome cognome utente
+     * @param email email utente
+     * @param username username utente
+     * @param password password utente
+     * @param model modello
+     * @return pagina profilo se esecuzione va a buon fine altrimenti se ci sono errori pagina editUtente altrimenti pagina notfound
+     */
     @RequestMapping("/salvamodifica")
     public String editDatiUtente(
             @RequestParam(name="id", required=true) Long id,
@@ -314,6 +388,11 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * @param id id utente
+     * @param model modello
+     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti notfound
+     */
     @RequestMapping("/pompainsulinica")
     public String pompaInsulinica(
             @RequestParam(name="id", required=true) Long id,
@@ -336,6 +415,15 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * Funzione che permette d'inserire nuova misurazione
+     * @param id id utente
+     * @param glicemia glicemia misurazione
+     * @param insulina insulina misurazione
+     * @param commento commento misurazione
+     * @param model modello
+     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti pagina notfound
+     */
     @RequestMapping("/salva")
     public String saveMisurazione(
             @RequestParam(name="id", required=true) Long id,
@@ -425,6 +513,11 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * @param id id utente
+     * @param model modello
+     * @return pagina cronologia se esistono misurazioni in cronologia altrimenti pagina homePage altrimenti notfound
+     */
     @RequestMapping("/cronologia")
     public String getCronologia(
             @RequestParam(name="id", required=true) Long id,
@@ -447,6 +540,12 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * Funzione che elimina la cronologia totale di misurazioni
+     * @param id id utente
+     * @param model modello
+     * @return pagina cronologia senza nessuna misurazione altrimenti notfound
+     */
     @RequestMapping("/cancellacronologia")
     public String dropCronologia(
             @RequestParam(name="id", required=true) Long id,
@@ -463,6 +562,13 @@ public class AppController {
             return "notfound";
     }
 
+    /**
+     * Funzione che elimina singola misurazione
+     * @param id id utente
+     * @param idMisurazione id Misurazione
+     * @param model modello
+     * @return pagina cronologia senza misurazione eliminata altrimenti pagina notfound
+     */
     @RequestMapping("/cancellamisurazione")
     public String dropMisurazione(
             @RequestParam(name="id", required=true) Long id,

@@ -19,6 +19,14 @@ public class Person {
 
     public Person() {}
 
+    /**
+     *
+     * @param nome nome dell'utente
+     * @param cognome cognome dell'utente
+     * @param email email dell'utente
+     * @param username username dell'utente
+     * @param password password dell'utente
+     */
     public Person(String nome, String cognome, String email, String username, String password) {
         this.nome = nome;
         this.cognome = cognome;
@@ -27,6 +35,10 @@ public class Person {
         this.password = password;
     }
 
+    /**
+     *
+     * @return stringa contenente tutti i parametri dell'utente
+     */
     @Override
     public String toString() {
         return String.format(
@@ -34,22 +46,57 @@ public class Person {
                 id, nome, cognome, email, username, password);
     }
 
+    /**
+     * @return id utente
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * @return nome utente
+     */
     public String getNome() {return nome;}
 
+    /**
+     * @param nome nuovo valore di nome che viene sostituito con il vecchio nome dell'utente
+     */
     public void setNome(String nome) {this.nome = nome;}
 
+    /**
+     * @return cognome utente
+     */
     public String getCognome() {return cognome;}
 
     public void setCognome(String cognome) {this.cognome = cognome;}
 
+    /**
+     * @return email utente
+     */
     public String getEmail() {return email;}
+
+    /**
+     * @param email nuovo valore di email che viene sostituito con la vecchia email dell'utente
+     */
     public void setEmail(String email) {this.email = email;}
+
+    /**
+     * @return username utente
+     */
     public String getUsername() {return username;}
+
+    /**
+     * @param username nuovo valore di username che viene sostituito con il vecchio username dell'utente
+     */
     public void setUsername(String username) {this.username = username;}
+
+    /**
+     * @return password utente
+     */
     public String getPassword() {return password;}
+
+    /**
+     * @param password nuovo valore di password che viene sostituito con la vecchia password dell'utente
+     */
     public void setPassword(String password) {this.password = password;}
 }
