@@ -46,7 +46,7 @@ public class AppController {
      */
     @RequestMapping("/back")
     public String back(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -65,7 +65,7 @@ public class AppController {
      */
     @RequestMapping("/backprofile")
     public String backProfile(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -77,11 +77,10 @@ public class AppController {
     }
 
     /**
-     * @param model modello
      * @return pagina login
      */
     @RequestMapping("/logout")
-    public String logOut(Model model){
+    public String logOut(){
         return "login";
     }
 
@@ -95,8 +94,8 @@ public class AppController {
      */
     @RequestMapping("/login")
     public String logIn(
-            @RequestParam(name="username", required=true) String username,
-            @RequestParam(name="password", required=true) String password,
+            @RequestParam(name="username") String username,
+            @RequestParam(name="password") String password,
             Model model){
         Optional<Person> person = repository.findByUsername(username);
         if (person.isPresent()) {
@@ -141,11 +140,11 @@ public class AppController {
      */
     @RequestMapping("/nuovoutente")
     public String creaUtente(
-            @RequestParam(name="nome", required=true) String nome,
-            @RequestParam(name="cognome", required=true) String cognome,
-            @RequestParam(name="email", required=true) String email,
-            @RequestParam(name="username", required=true) String username,
-            @RequestParam(name="password", required=true) String password,
+            @RequestParam(name="nome") String nome,
+            @RequestParam(name="cognome") String cognome,
+            @RequestParam(name="email") String email,
+            @RequestParam(name="username") String username,
+            @RequestParam(name="password") String password,
             Model model) {
         boolean flag = true;
 
@@ -240,7 +239,7 @@ public class AppController {
      */
     @RequestMapping("/profilo")
     public String showDatiUtente(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -258,7 +257,7 @@ public class AppController {
      */
     @RequestMapping("/deleteaccount")
     public String deleteAccount(
-            @RequestParam(name="id", required=true) Long id) {
+            @RequestParam(name="id") Long id) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             repository.delete(person.get());
@@ -275,7 +274,7 @@ public class AppController {
      */
     @RequestMapping("/modifica")
     public String modifica(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -302,12 +301,12 @@ public class AppController {
      */
     @RequestMapping("/salvamodifica")
     public String editDatiUtente(
-            @RequestParam(name="id", required=true) Long id,
-            @RequestParam(name="nome", required=true) String nome,
-            @RequestParam(name="cognome", required=true) String cognome,
-            @RequestParam(name="email", required=true) String email,
-            @RequestParam(name="username", required=true) String username,
-            @RequestParam(name="password", required=true) String password,
+            @RequestParam(name="id") Long id,
+            @RequestParam(name="nome") String nome,
+            @RequestParam(name="cognome") String cognome,
+            @RequestParam(name="email") String email,
+            @RequestParam(name="username") String username,
+            @RequestParam(name="password") String password,
             Model model) {
         Optional<Person> oldPerson = repository.findById(id);
         if (oldPerson.isPresent()) {
@@ -395,7 +394,7 @@ public class AppController {
      */
     @RequestMapping("/pompainsulinica")
     public String pompaInsulinica(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -426,10 +425,10 @@ public class AppController {
      */
     @RequestMapping("/salva")
     public String saveMisurazione(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             @RequestParam(name="glicemia", required=false) String glicemia,
             @RequestParam(name="insulina", required=false) String insulina,
-            @RequestParam(name="commento", required=true) String commento,
+            @RequestParam(name="commento") String commento,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -520,7 +519,7 @@ public class AppController {
      */
     @RequestMapping("/cronologia")
     public String getCronologia(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -548,7 +547,7 @@ public class AppController {
      */
     @RequestMapping("/cancellacronologia")
     public String dropCronologia(
-            @RequestParam(name="id", required=true) Long id,
+            @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
@@ -571,8 +570,8 @@ public class AppController {
      */
     @RequestMapping("/cancellamisurazione")
     public String dropMisurazione(
-            @RequestParam(name="id", required=true) Long id,
-            @RequestParam(name="idMisurazione", required=true) Long idMisurazione,
+            @RequestParam(name="id") Long id,
+            @RequestParam(name="idMisurazione") Long idMisurazione,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
