@@ -34,7 +34,6 @@ public class AppController {
      */
     @RequestMapping("/")
     public String index(Model model){
-        model.addAttribute("person", repository.findAll());
         return "login";
     }
 
