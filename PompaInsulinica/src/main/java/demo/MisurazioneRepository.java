@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface MisurazioneRepository extends CrudRepository<Misurazione, Long> {
 
-        List<Misurazione> findByIdUtente(Long idUtente);
-
-        Misurazione findById(long id);
-    }
+    /**
+     * @param idUtente id utente
+     * @return Misurazione con id utente uguale a quello passato
+     */
+    List<Misurazione> findByIdUtente(Long idUtente);
+}

@@ -6,7 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
-        Optional<Person> findByUsername(String username);
-
-        Person findById(long id);
-    }
+    /**
+     * @param username username utente
+     * @return Person con username uguale a quello passato
+     */
+    Optional<Person> findByUsername(String username);
+}

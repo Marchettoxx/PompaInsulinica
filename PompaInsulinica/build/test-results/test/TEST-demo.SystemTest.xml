@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.SystemTest" tests="42" skipped="0" failures="0" errors="0" timestamp="2023-02-01T18:14:44" hostname="LAPTOP-95RP200R" time="91.713">
+<testsuite name="demo.SystemTest" tests="42" skipped="0" failures="0" errors="0" timestamp="2023-02-01T18:37:08" hostname="LAPTOP-95RP200R" time="91.209">
   <properties/>
-  <testcase name="AAtestCreaNuovoUtente" classname="demo.SystemTest" time="3.709"/>
-  <testcase name="ABtestCreaNuovoUtente" classname="demo.SystemTest" time="2.3"/>
-  <testcase name="ACtestCreaNuovoUtente" classname="demo.SystemTest" time="2.243"/>
-  <testcase name="ADtestCreaNuovoUtente" classname="demo.SystemTest" time="2.241"/>
-  <testcase name="AEtestCreaNuovoUtente" classname="demo.SystemTest" time="2.255"/>
-  <testcase name="AFtestCreaNuovoUtente" classname="demo.SystemTest" time="2.318"/>
-  <testcase name="AGtestCreaNuovoUtente" classname="demo.SystemTest" time="2.23"/>
-  <testcase name="AHtestCreaNuovoUtente" classname="demo.SystemTest" time="2.215"/>
-  <testcase name="BAtestLogIn" classname="demo.SystemTest" time="1.898"/>
-  <testcase name="BBtestLogIn" classname="demo.SystemTest" time="1.892"/>
-  <testcase name="BCtestLogIn" classname="demo.SystemTest" time="1.902"/>
-  <testcase name="BDtestLogIn" classname="demo.SystemTest" time="1.892"/>
-  <testcase name="DAtestUtente" classname="demo.SystemTest" time="1.976"/>
-  <testcase name="DBtestUtente" classname="demo.SystemTest" time="1.978"/>
-  <testcase name="DCtestUtente" classname="demo.SystemTest" time="1.918"/>
-  <testcase name="EAtestProfilo" classname="demo.SystemTest" time="2.222"/>
-  <testcase name="EBtestProfilo" classname="demo.SystemTest" time="2.175"/>
-  <testcase name="ECtestProfilo" classname="demo.SystemTest" time="2.229"/>
-  <testcase name="EDtestProfilo" classname="demo.SystemTest" time="2.18"/>
-  <testcase name="EEtestProfilo" classname="demo.SystemTest" time="2.224"/>
-  <testcase name="EFtestProfilo" classname="demo.SystemTest" time="2.197"/>
-  <testcase name="EGtestProfilo" classname="demo.SystemTest" time="2.205"/>
-  <testcase name="EHtestProfilo" classname="demo.SystemTest" time="2.157"/>
-  <testcase name="EItestIndietro" classname="demo.SystemTest" time="2.099"/>
-  <testcase name="FAtestPompaInsulinica" classname="demo.SystemTest" time="2.267"/>
-  <testcase name="FBtestPompaInsulinica" classname="demo.SystemTest" time="2.265"/>
-  <testcase name="FCtestPompaInsulinica" classname="demo.SystemTest" time="2.276"/>
-  <testcase name="FDtestPompaInsulinica" classname="demo.SystemTest" time="2.353"/>
-  <testcase name="FEtestPompaInsulinica" classname="demo.SystemTest" time="2.286"/>
-  <testcase name="FFtestPompaInsulinica" classname="demo.SystemTest" time="2.246"/>
-  <testcase name="FGtestPompaInsulinica" classname="demo.SystemTest" time="2.273"/>
-  <testcase name="FHtestPompaInsulinica" classname="demo.SystemTest" time="2.265"/>
-  <testcase name="FItestIndietro" classname="demo.SystemTest" time="2.008"/>
-  <testcase name="GAtestCronologia" classname="demo.SystemTest" time="2.154"/>
-  <testcase name="GBtestCronologia" classname="demo.SystemTest" time="2.715"/>
-  <testcase name="GCtestIndietro" classname="demo.SystemTest" time="2.67"/>
-  <testcase name="HAtestLogOut" classname="demo.SystemTest" time="1.956"/>
-  <testcase name="IAtestDelete" classname="demo.SystemTest" time="2.205"/>
-  <testcase name="IBtestDelete" classname="demo.SystemTest" time="2.172"/>
-  <testcase name="JAtestChangeIdPerson" classname="demo.SystemTest" time="1.652"/>
-  <testcase name="KAtestToStringPersona" classname="demo.SystemTest" time="1.639"/>
-  <testcase name="KBtestToStringMisurazione" classname="demo.SystemTest" time="1.609"/>
-  <system-out><![CDATA[19:14:37.765 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class demo.SystemTest]
-19:14:37.779 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-19:14:37.800 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-19:14:37.874 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [demo.SystemTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-19:14:37.907 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [demo.SystemTest], using SpringBootContextLoader
-19:14:37.920 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTest-context.xml] does not exist
-19:14:37.921 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTestContext.groovy] does not exist
-19:14:37.921 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [demo.SystemTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-19:14:37.923 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [demo.SystemTest]: SystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:14:37.994 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [demo.SystemTest]
-19:14:38.132 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\massa\Documents\Università\FondamentiDiIngegneriaDelSW\provaProgetto\PompaInsulinica\PompaInsulinica\build\classes\java\main\demo\ServingWebContentApplication.class]
-19:14:38.133 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration demo.ServingWebContentApplication for test class demo.SystemTest
-19:14:38.310 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [demo.SystemTest]: using defaults.
-19:14:38.311 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-19:14:38.347 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2c6019a6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@136a7236, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@458c4638, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6a5781f5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46d60830, org.springframework.test.context.transaction.TransactionalTestExecutionListener@66d391e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2177026d, org.springframework.test.context.event.EventPublishingTestExecutionListener@77f9679f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@19876d8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6e520a3c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@772f19f1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b565d14, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@93acc10, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@774724e1]
-19:14:38.355 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-19:14:38.355 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-19:14:38.362 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-19:14:38.362 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-19:14:38.363 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-19:14:38.363 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-19:14:38.369 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@2898b771 testClass = SystemTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@663c5060 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4f2aae88, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5f59747, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5f98fce1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3b86c6d8, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
-19:14:38.372 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
-19:14:38.372 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
-19:14:38.380 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@2898b771 testClass = SystemTest, testInstance = demo.SystemTest@1e91f064, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@663c5060 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4f2aae88, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5f59747, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5f98fce1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3b86c6d8, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
-19:14:38.420 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+  <testcase name="AAtestCreaNuovoUtente" classname="demo.SystemTest" time="3.746"/>
+  <testcase name="ABtestCreaNuovoUtente" classname="demo.SystemTest" time="2.258"/>
+  <testcase name="ACtestCreaNuovoUtente" classname="demo.SystemTest" time="2.253"/>
+  <testcase name="ADtestCreaNuovoUtente" classname="demo.SystemTest" time="2.248"/>
+  <testcase name="AEtestCreaNuovoUtente" classname="demo.SystemTest" time="2.229"/>
+  <testcase name="AFtestCreaNuovoUtente" classname="demo.SystemTest" time="2.332"/>
+  <testcase name="AGtestCreaNuovoUtente" classname="demo.SystemTest" time="2.271"/>
+  <testcase name="AHtestCreaNuovoUtente" classname="demo.SystemTest" time="2.222"/>
+  <testcase name="BAtestLogIn" classname="demo.SystemTest" time="1.874"/>
+  <testcase name="BBtestLogIn" classname="demo.SystemTest" time="1.891"/>
+  <testcase name="BCtestLogIn" classname="demo.SystemTest" time="1.901"/>
+  <testcase name="BDtestLogIn" classname="demo.SystemTest" time="1.914"/>
+  <testcase name="DAtestUtente" classname="demo.SystemTest" time="1.949"/>
+  <testcase name="DBtestUtente" classname="demo.SystemTest" time="1.95"/>
+  <testcase name="DCtestUtente" classname="demo.SystemTest" time="1.968"/>
+  <testcase name="EAtestProfilo" classname="demo.SystemTest" time="2.185"/>
+  <testcase name="EBtestProfilo" classname="demo.SystemTest" time="2.193"/>
+  <testcase name="ECtestProfilo" classname="demo.SystemTest" time="2.177"/>
+  <testcase name="EDtestProfilo" classname="demo.SystemTest" time="2.155"/>
+  <testcase name="EEtestProfilo" classname="demo.SystemTest" time="2.159"/>
+  <testcase name="EFtestProfilo" classname="demo.SystemTest" time="2.149"/>
+  <testcase name="EGtestProfilo" classname="demo.SystemTest" time="2.182"/>
+  <testcase name="EHtestProfilo" classname="demo.SystemTest" time="2.143"/>
+  <testcase name="EItestIndietro" classname="demo.SystemTest" time="2.117"/>
+  <testcase name="FAtestPompaInsulinica" classname="demo.SystemTest" time="2.256"/>
+  <testcase name="FBtestPompaInsulinica" classname="demo.SystemTest" time="2.294"/>
+  <testcase name="FCtestPompaInsulinica" classname="demo.SystemTest" time="2.247"/>
+  <testcase name="FDtestPompaInsulinica" classname="demo.SystemTest" time="2.257"/>
+  <testcase name="FEtestPompaInsulinica" classname="demo.SystemTest" time="2.28"/>
+  <testcase name="FFtestPompaInsulinica" classname="demo.SystemTest" time="2.248"/>
+  <testcase name="FGtestPompaInsulinica" classname="demo.SystemTest" time="2.262"/>
+  <testcase name="FHtestPompaInsulinica" classname="demo.SystemTest" time="2.25"/>
+  <testcase name="FItestIndietro" classname="demo.SystemTest" time="2.042"/>
+  <testcase name="GAtestCronologia" classname="demo.SystemTest" time="2.161"/>
+  <testcase name="GBtestCronologia" classname="demo.SystemTest" time="2.652"/>
+  <testcase name="GCtestIndietro" classname="demo.SystemTest" time="2.593"/>
+  <testcase name="HAtestLogOut" classname="demo.SystemTest" time="1.959"/>
+  <testcase name="IAtestDelete" classname="demo.SystemTest" time="2.186"/>
+  <testcase name="IBtestDelete" classname="demo.SystemTest" time="2.181"/>
+  <testcase name="JAtestChangeIdPerson" classname="demo.SystemTest" time="1.62"/>
+  <testcase name="KAtestToStringPersona" classname="demo.SystemTest" time="1.608"/>
+  <testcase name="KBtestToStringMisurazione" classname="demo.SystemTest" time="1.602"/>
+  <system-out><![CDATA[19:37:01.197 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class demo.SystemTest]
+19:37:01.210 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:37:01.230 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:37:01.286 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [demo.SystemTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+19:37:01.321 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [demo.SystemTest], using SpringBootContextLoader
+19:37:01.329 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTest-context.xml] does not exist
+19:37:01.330 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [demo.SystemTest]: class path resource [demo/SystemTestContext.groovy] does not exist
+19:37:01.331 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [demo.SystemTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:37:01.331 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [demo.SystemTest]: SystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:37:01.396 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [demo.SystemTest]
+19:37:01.529 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\massa\Documents\Università\FondamentiDiIngegneriaDelSW\provaProgetto\PompaInsulinica\PompaInsulinica\build\classes\java\main\demo\ServingWebContentApplication.class]
+19:37:01.530 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration demo.ServingWebContentApplication for test class demo.SystemTest
+19:37:01.700 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [demo.SystemTest]: using defaults.
+19:37:01.701 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+19:37:01.731 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d4e714a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29d48007, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1d39db0e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@69e1e3c3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@17db1b94, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1a8275d0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@49302c25, org.springframework.test.context.event.EventPublishingTestExecutionListener@2f29313b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@60e188f1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@69444dc8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@215d15c1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@479b5838, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2bd1f63a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@60b0c485]
+19:37:01.739 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+19:37:01.740 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+19:37:01.746 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+19:37:01.747 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+19:37:01.748 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+19:37:01.748 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+19:37:01.754 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1fe0ecde testClass = SystemTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@46903904 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@14e61917, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a187e61, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@707e851b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@156b54ed, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+19:37:01.758 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [demo.SystemTest]
+19:37:01.758 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [demo.SystemTest]
+19:37:01.767 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@1fe0ecde testClass = SystemTest, testInstance = demo.SystemTest@181261bb, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@46903904 testClass = SystemTest, locations = '{}', classes = '{class demo.ServingWebContentApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@14e61917, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a187e61, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@707e851b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@156b54ed, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
+19:37:01.808 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -78,106 +78,106 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.2.RELEASE)
 
-2023-02-01 19:14:38.966  INFO 10892 --- [    Test worker] demo.SystemTest                          : Starting SystemTest on LAPTOP-95RP200R with PID 10892 (started by massa in C:\Users\massa\Documents\Università\FondamentiDiIngegneriaDelSW\provaProgetto\PompaInsulinica\PompaInsulinica)
-2023-02-01 19:14:38.968  INFO 10892 --- [    Test worker] demo.SystemTest                          : No active profile set, falling back to default profiles: default
-2023-02-01 19:14:39.942  INFO 10892 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2023-02-01 19:14:40.052  INFO 10892 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94ms. Found 2 JPA repository interfaces.
-2023-02-01 19:14:41.078  INFO 10892 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-02-01 19:14:41.105  INFO 10892 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-02-01 19:14:41.106  INFO 10892 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2023-02-01 19:14:41.315  INFO 10892 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-02-01 19:14:41.315  INFO 10892 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2307 ms
-2023-02-01 19:14:41.411  INFO 10892 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-02-01 19:14:41.873  INFO 10892 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-02-01 19:14:41.888  INFO 10892 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2console'. Database available at 'jdbc:h2:~/insulinaDb'
-2023-02-01 19:14:42.241  INFO 10892 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2023-02-01 19:14:42.348  INFO 10892 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-02-01 19:14:42.495  INFO 10892 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
-2023-02-01 19:14:42.809  INFO 10892 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2023-02-01 19:14:43.108  INFO 10892 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-02-01 19:14:43.912  INFO 10892 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-02-01 19:14:43.915  INFO 10892 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2023-02-01 19:14:44.530  INFO 10892 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-02-01 19:14:44.542  INFO 10892 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-02-01 19:14:44.906  INFO 10892 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2023-02-01 19:14:44.915  INFO 10892 --- [    Test worker] demo.SystemTest                          : Started SystemTest in 6.492 seconds (JVM running for 8.321)
-2023-02-01 19:14:46.582  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-02-01 19:14:46.717  INFO 10892 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-02-01 19:14:46.717  INFO 10892 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-02-01 19:14:46.739  INFO 10892 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2023-02-01 19:37:02.395  INFO 22036 --- [    Test worker] demo.SystemTest                          : Starting SystemTest on LAPTOP-95RP200R with PID 22036 (started by massa in C:\Users\massa\Documents\Università\FondamentiDiIngegneriaDelSW\provaProgetto\PompaInsulinica\PompaInsulinica)
+2023-02-01 19:37:02.397  INFO 22036 --- [    Test worker] demo.SystemTest                          : No active profile set, falling back to default profiles: default
+2023-02-01 19:37:03.362  INFO 22036 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2023-02-01 19:37:03.471  INFO 22036 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94ms. Found 2 JPA repository interfaces.
+2023-02-01 19:37:04.500  INFO 22036 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-01 19:37:04.524  INFO 22036 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-01 19:37:04.524  INFO 22036 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2023-02-01 19:37:04.724  INFO 22036 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-01 19:37:04.724  INFO 22036 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2287 ms
+2023-02-01 19:37:04.808  INFO 22036 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-01 19:37:05.276  INFO 22036 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-01 19:37:05.294  INFO 22036 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2console'. Database available at 'jdbc:h2:~/insulinaDb'
+2023-02-01 19:37:05.616  INFO 22036 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-01 19:37:05.735  INFO 22036 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-01 19:37:05.853  INFO 22036 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.18.Final
+2023-02-01 19:37:06.178  INFO 22036 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2023-02-01 19:37:06.450  INFO 22036 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-02-01 19:37:07.285  INFO 22036 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-01 19:37:07.288  INFO 22036 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2023-02-01 19:37:07.834  INFO 22036 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-01 19:37:07.850  INFO 22036 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-01 19:37:08.231  INFO 22036 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2023-02-01 19:37:08.246  INFO 22036 --- [    Test worker] demo.SystemTest                          : Started SystemTest in 6.434 seconds (JVM running for 8.24)
+2023-02-01 19:37:09.941  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:10.073  INFO 22036 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-01 19:37:10.074  INFO 22036 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-01 19:37:10.093  INFO 22036 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:14:49.698  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:13.071  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:14:51.993  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:15.319  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:14:54.242  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-02-01 19:14:56.485  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:17.579  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:19.810  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:14:58.755  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-Hibernate: call next value for hibernate_sequence
-Hibernate: insert into person (cognome, email, nome, password, username, id) values (?, ?, ?, ?, ?, ?)
-2023-02-01 19:15:01.046  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:03.281  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:22.077  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: call next value for hibernate_sequence
 Hibernate: insert into person (cognome, email, nome, password, username, id) values (?, ?, ?, ?, ?, ?)
-2023-02-01 19:15:05.490  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:24.415  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:07.405  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:26.644  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:09.304  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into person (cognome, email, nome, password, username, id) values (?, ?, ?, ?, ?, ?)
+2023-02-01 19:37:28.870  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:11.185  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:30.763  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:13.076  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:32.670  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+2023-02-01 19:37:34.555  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+2023-02-01 19:37:36.438  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-2023-02-01 19:15:15.067  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:38.398  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:17.005  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:40.362  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:19.005  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:42.343  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:21.201  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:44.543  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:23.393  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:46.715  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:25.609  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:48.894  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-2023-02-01 19:15:27.791  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:30.006  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:51.057  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:15:32.191  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:53.196  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+2023-02-01 19:37:55.361  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
@@ -187,7 +187,7 @@ Hibernate: delete from person where id=?
 Hibernate: call next value for hibernate_sequence
 Hibernate: insert into person (cognome, email, nome, password, username, id) values (?, ?, ?, ?, ?, ?)
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:34.392  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:57.501  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
@@ -197,54 +197,54 @@ Hibernate: delete from person where id=?
 Hibernate: call next value for hibernate_sequence
 Hibernate: insert into person (cognome, email, nome, password, username, id) values (?, ?, ?, ?, ?, ?)
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:36.548  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:37:59.697  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-2023-02-01 19:15:38.660  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:40.923  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:01.800  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:43.179  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:04.083  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:45.450  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:06.348  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:47.823  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:08.606  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:50.095  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:10.862  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:52.355  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:13.130  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:54.632  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:15.389  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
+2023-02-01 19:38:17.641  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
@@ -252,12 +252,12 @@ Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, pe
 Hibernate: call next value for hibernate_sequence
 Hibernate: insert into misurazione (commento, glicemia, id_utente, insulina, time, id) values (?, ?, ?, ?, ?, ?)
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:15:56.877  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:19.910  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-2023-02-01 19:15:58.934  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:21.974  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
@@ -265,7 +265,7 @@ Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, pe
 Hibernate: select misurazion0_.id as id1_0_0_, misurazion0_.commento as commento2_0_0_, misurazion0_.glicemia as glicemia3_0_0_, misurazion0_.id_utente as id_utent4_0_0_, misurazion0_.insulina as insulina5_0_0_, misurazion0_.time as time6_0_0_ from misurazione misurazion0_ where misurazion0_.id=?
 Hibernate: delete from misurazione where id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
-2023-02-01 19:16:01.081  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:24.114  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
@@ -279,7 +279,7 @@ Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: delete from misurazione where id=?
-2023-02-01 19:16:03.792  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:26.764  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
@@ -291,233 +291,233 @@ Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select misurazion0_.id as id1_0_, misurazion0_.commento as commento2_0_, misurazion0_.glicemia as glicemia3_0_, misurazion0_.id_utente as id_utent4_0_, misurazion0_.insulina as insulina5_0_, misurazion0_.time as time6_0_ from misurazione misurazion0_ where misurazion0_.id_utente=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-2023-02-01 19:16:06.457  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:29.364  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:16:08.436  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
-Hibernate: delete from person where id=?
-Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:16:10.615  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:31.330  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
 Hibernate: delete from person where id=?
 Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
-2023-02-01 19:16:12.806  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-02-01 19:16:14.450  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
-2023-02-01 19:16:16.085  INFO 10892 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:33.500  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: select person0_.id as id1_1_0_, person0_.cognome as cognome2_1_0_, person0_.email as email3_1_0_, person0_.nome as nome4_1_0_, person0_.password as password5_1_0_, person0_.username as username6_1_0_ from person person0_ where person0_.id=?
+Hibernate: delete from person where id=?
+Hibernate: select person0_.id as id1_1_, person0_.cognome as cognome2_1_, person0_.email as email3_1_, person0_.nome as nome4_1_, person0_.password as password5_1_, person0_.username as username6_1_ from person person0_ where person0_.username=?
+2023-02-01 19:38:35.686  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:37.287  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2023-02-01 19:38:38.912  INFO 22036 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
 ]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 10424
+  <system-err><![CDATA[Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 14203
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275286.527][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 30378
+[1675276629.888][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 39013
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275289.662][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 18714
+[1675276633.031][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 21063
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275291.965][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 38773
+[1675276635.288][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 40385
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275294.211][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 13561
+[1675276637.545][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 49052
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275296.454][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 13563
+[1675276639.781][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 17174
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275298.718][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 44363
+[1675276642.038][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 42703
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275301.014][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 47047
+[1675276644.370][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16441
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275303.244][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 5033
+[1675276646.613][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 30818
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275305.454][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 15970
+[1675276648.839][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 38229
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275307.372][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 31315
+[1675276650.719][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 25114
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275309.263][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 13641
+[1675276652.637][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 23796
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275311.152][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 36437
+[1675276654.524][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 5877
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275313.041][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 6769
+[1675276656.409][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 23068
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275315.032][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 22530
+[1675276658.354][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 17541
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275316.983][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16192
+[1675276660.336][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 30457
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275318.964][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 33331
+[1675276662.310][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 38267
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275321.160][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 11506
+[1675276664.501][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 27585
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275323.344][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 18927
+[1675276666.674][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 30743
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275325.568][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 9561
+[1675276668.858][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 5150
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275327.749][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32293
+[1675276671.022][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 10090
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275329.978][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 17477
+[1675276673.182][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 21798
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275332.158][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 21462
+[1675276675.321][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 9014
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275334.361][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32829
+[1675276677.472][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 2027
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275336.524][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 3307
+[1675276679.666][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 35866
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275338.638][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 48681
+[1675276681.766][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 27643
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275340.887][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 23674
+[1675276684.044][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 11855
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275343.148][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 47328
+[1675276686.319][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 36307
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275345.440][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 18701
+[1675276688.575][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 36075
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275347.806][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 31370
+[1675276690.825][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 43825
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275350.071][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 39811
+[1675276693.120][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 22643
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275352.321][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 33287
+[1675276695.358][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 45204
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275354.610][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 44813
+[1675276697.607][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 6252
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275356.862][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 15560
+[1675276699.880][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 11241
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275358.902][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 5107
+[1675276701.940][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 14669
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275361.049][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 46470
+[1675276704.073][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32495
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275363.753][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 42182
+[1675276706.722][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 8286
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275366.417][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 15818
+[1675276709.330][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16492
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275368.402][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 39105
+[1675276711.296][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 12114
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275370.582][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 16717
+[1675276713.462][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 3703
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275372.766][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 29277
+[1675276715.644][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 32358
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275374.419][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
-Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 43251
+[1675276717.254][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 29323
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1675275376.044][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
+[1675276718.874][WARNING]: This version of ChromeDriver has not been tested with Chrome version 109.
 ]]></system-err>
 </testsuite>

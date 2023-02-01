@@ -29,11 +29,10 @@ public class AppController {
     Integer MAX_COMMENTO = 30;
 
     /**
-     * @param model modello
      * @return pagina login
      */
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(){
         return "login";
     }
 

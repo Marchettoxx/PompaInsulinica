@@ -30,11 +30,13 @@
                 <input type="hidden" name="id" value="10" th:value="${person.id}">
                 <td> <input class="btnpretty" type="submit" value="Cronologia"/> <br> </td>
             </form>
-            <td class="errore" th:text="${notifica}"> </td>
         </tr>
         </tbody>
     </table>
 
+    <p class="errore" th:text="${notifica}"> </p>
+
+    <br><br><br>
     <form action="logout" method="post">
         <br><input class="btnLogOut" type="submit" value="Logout"/>
     </form>

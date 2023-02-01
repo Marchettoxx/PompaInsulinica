@@ -13,8 +13,9 @@
     <br>
     <h3 class="errore" th:text = "${errore}" > </h3>
 
-    <form>
-        <input class="btnBack" type="button" value="Indietro" onclick="history.back()">
+    <form action="back" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+        <input class="btnBack" type="submit" value="Indietro">
     </form>
 </div>
 
