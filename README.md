@@ -245,19 +245,19 @@ questa riga venga eliminata.
 Verifico che non sia più presente nulla nella cronologia.
 3. Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
 
-### Test Logout
+#### Test Logout
 1. Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reindirizzato alla pagina di login.
 
-### Test Elimina Utente
+#### Test Elimina Utente
 1. Controllo che una volta nella pagina Profilo se si preme il tasto "Elimina account" si venga reindirizzati nella pagina di Login.
 Verifico che l'account sia stato effettivamente eliminato provando a eseguire nuovamente il login.
 2. Lo faccio anche con l'altro account che mi ero creato e in cui nel corso dei test ho modificato l'username, in modo da non 
 avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
 
-### Test Change ID
+#### Test Change ID
 1. Verifico se il cambio d'ID di un utente funziona.
 
-### Test ToString
+#### Test ToString
 1. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
 2. Vorrei anche verificare lo stesso metodo della classe PompaInsulinica ma essendo che abbiamo come variabile il tempo
 reale in cui viene effettuata un'iniezione non riesco a fare ciò.
@@ -265,7 +265,7 @@ reale in cui viene effettuata un'iniezione non riesco a fare ciò.
 ## Coverage
 La coverage ottenuta dai precedenti test è la seguente:
 
-![Coverage](Coverage.png)
+![Coverage](Coverage.png) da modifica in quanto test migliorati
 
 ### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non
