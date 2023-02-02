@@ -54,7 +54,7 @@ pagina login e potrà reinserire nuovamente le proprie credenziali (non c'è un 
 - Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
 A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio la sua condizione salutare.
 
-### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
+### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PUÒ MODIFICARE 
 - L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
 pagina sarà possibile anche modificare i propri dati.
 - L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
@@ -67,7 +67,7 @@ visualizzati dei messaggi di errore.
 - Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
 le modifiche appena fatte.
 
-### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
+### 4 L'UTENTE SI FA UN'INIEZIONE D'INSULINA
 - Nel momento in cui l'utente ha il bisogno di fare un iniezione d'insulina si aspetta di poter inserire nel sistema: 
   - la sua attuale glicemia 
   - l'insulina fatta 
@@ -265,7 +265,7 @@ reale in cui viene effettuata un'iniezione non riesco a fare ciò.
 ## Coverage
 La coverage ottenuta dai precedenti test è la seguente:
 
-![Coverage](Coverage.png) da modifica in quanto test migliorati
+![Coverage](coverage.png)
 
 ### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non
