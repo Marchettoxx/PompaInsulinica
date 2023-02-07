@@ -33,11 +33,11 @@ Il sistema memorizza:
 
 ### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
 - Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni d'insulina,
-essendo che è il primo suo accesso dovrà crearsi un nuovo account.
+  essendo che è il primo suo accesso dovrà crearsi un nuovo account.
 - L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
-verrà indirizzato su una pagina in cui gli verrà richiesto d'inserire il suo nome, cognome, email, username e password.
-Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
-correttamente.
+  verrà indirizzato su una pagina in cui gli verrà richiesto d'inserire il suo nome, cognome, email, username e password.
+  Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
+  correttamente.
 - Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
 non sarà possibile creare l'account e verranno visualizzati dei messaggi di errore.
 - Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato alla pagina di login.
@@ -45,55 +45,56 @@ non sarà possibile creare l'account e verranno visualizzati dei messaggi di err
 ### 2 L'UTENTE EFFETTUA IL LOGIN AL SUO ACCOUNT
 - L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
 - Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
-vengono richiesti username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
-alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
-spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
+  vengono richiesti username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
+  alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
+  spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
 - Nel caso in cui l'utente si sia dimenticato le sue credenziali, o semplicemente le inserisce in modo sbagliato, verrà visualizzato 
-un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
-pagina login e potrà reinserire nuovamente le proprie credenziali (non c'è un limite massimo di errori che l'utente può fare). 
+  un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
+  pagina login e potrà reinserire nuovamente le proprie credenziali (non c'è un limite massimo di errori che l'utente può fare). 
 - Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
-A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio la sua condizione salutare.
+  A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio le sue condizioni di salute.
 
 ### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
 - L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
-pagina sarà possibile anche modificare i propri dati.
+  pagina sarà possibile anche modificare i propri dati.
 - L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
-schiacciare il bottone "Profilo" e verrà indirizzato in una pagina contente tutte le credenziali in modalità solo lettura.
-Schiacciando sul tasto "Modifica", l'utente avrà la possibilità di modificare tutti i campi presenti nella pagina, sempre
-rispettando gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
-sul bottone "Salva".
+  schiacciare il bottone "Profilo" e verrà indirizzato in una pagina contente tutte le credenziali in modalità solo lettura.
+  Schiacciando sul tasto "Modifica", l'utente avrà la possibilità di modificare tutti i campi presenti nella pagina, sempre
+  rispettando gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
+  sul bottone "Salva".
 - Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verranno
-visualizzati dei messaggi di errore.
+  visualizzati dei messaggi di errore.
 - Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
-le modifiche appena fatte.
+  le modifiche appena fatte.
 
 ### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
 - Nel momento in cui l'utente ha il bisogno di fare un iniezione d'insulina si aspetta di poter inserire nel sistema: 
   - la sua attuale glicemia 
   - l'insulina fatta 
   - un eventuale commento
-e che successivamente questi dati vengano salvati in modo da poter essere consultati in seguito
-assieme a un medico in caso di necessità.
+  
+  e che successivamente questi dati vengano salvati in modo da poter essere consultati in seguito
+  assieme a un medico in caso di necessità.
 - Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
-il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
-il quale salverà i dati appena inseriti nella cronologia.
+  il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
+  il quale salverà i dati appena inseriti nella cronologia.
 - Nel momento in cui l'utente va a inserire la sua glicemia attuale e la quantità d'insulina, queste devono rientrare in un determinato range di valori.
-Nel caso in cui non fosse così verranno visualizzati degli errori e l'iniezione non verrà salvata in cronologia.
+  Nel caso in cui non fosse così verranno visualizzati degli errori e l'iniezione non verrà salvata in cronologia.
 - Una volta che i valori sono stati scritti correttamente, saranno presenti all'interno della cronologia.
 
 ### 5 L'UTENTE DOPO AVER INSERITO IN CRONOLOGIA UN'INIEZIONE SBAGLIATA VUOLE CANCELLARLA
 - Nel caso in cui l'utente in precedenza abbia sbagliato a inserire un'iniezione, ha la necessita di poter eliminare quest'ultima in modo
-da non salvare informazioni sbagliate.
+  da non salvare informazioni sbagliate.
 - Quando dalla pagina Home si seleziona il tasto “Cronologia” appare la lista di tutte le iniezioni che sono state
-fatte con relativo giorno, orario, glicemia, commento e quantità d'insulina che è stata fatta. Selezionando il tasto "Cancella",
-vicino alla riga desiderata, l'utente ha la possibilità di cancellarla.
+  fatte con relativo giorno, orario, glicemia, commento e quantità d'insulina che è stata fatta. Selezionando il tasto "Cancella",
+  vicino alla riga desiderata, l'utente ha la possibilità di cancellarla.
 - Nel caso in cui l'utente erroneamente cancelli una riga, per ripristinarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
 - Una volta premuto il tasto, l'utente visualizzerà tutta la cronologia meno la riga da lui appena cancellata.
 
 ### 6 L'UTENTE ELIMINA TUTTA LA CRONOLOGIA
 - Dopo aver fatto un controllo dal medico l'utente vuole cancellare tutta la cronologia per liberare spazio.
 - L'utente ha la possibilità di eliminare l'intera cronologia, per fare questo dovrà premere il tasto "cancella tutto",
-dopo di ciò verranno cancellate tutte le righe contenti i dati d'insulina, glicemia e commenti vari.
+  dopo di ciò verranno cancellate tutte le righe contenti i dati d'insulina, glicemia e commenti vari.
 - Nel caso in cui l'utente dovesse eliminare erroneamente tutta la cronologia non sarà possibile ripristinarla, l'operazione è irreversibile.
 - L'utente dopo aver premuto il pulsante visualizzerà la cronologia vuota
 
@@ -103,18 +104,18 @@ dopo di ciò verranno cancellate tutte le righe contenti i dati d'insulina, glic
 - Quando l'utente si trova nella pagina Home ha la possibilità di selezionare il pulsante "Logout" e di uscire quindi dal
   proprio account, venendo indirizzato alla pagina di login.
 - Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovamente l'accesso con le sue credenziali 
-attraverso la pagina di login.
+  attraverso la pagina di login.
 - Una volta che è stato effettuato il logout l'utente si trova nuovamente alla pagina di login in cui potrà accedere 
 nuovamente al proprio account nel caso lo volesse.
 
 ### 8 L'UTENTE VUOLE RITORNARE ALLA PAGINA PRECEDENTE
 - L'utente quando si trova un tasto "Indietro", può tornare alla schermata precedente.
 - Nelle schermate "Profilo", "Pompa Insulinica", "Cronologia" è presente un tasto "Indietro" che se viene premuto
-reindirizza l'utente alla schermata principale del suo account.
-Nella schermata di modifica del profilo, l'utente può non salvare le modifiche e tornare indietro alla pagina profilo,
-in questo caso si può verificare il fatto che ogni tipo di modifica che si stava facendo non viene salvata.
+  reindirizza l'utente alla schermata principale del suo account.
+  Nella schermata di modifica del profilo, l'utente può non salvare le modifiche e tornare indietro alla pagina profilo,
+  in questo caso si può verificare il fatto che ogni tipo di modifica che si stava facendo non viene salvata.
 - Nel caso in cui l'utente selezioni per sbaglio il tasto "Indietro" potrà tornare alla pagina in cui si trovava 
-ripercorrendo gli stessi passi fatti in precedenza.
+  ripercorrendo gli stessi passi fatti in precedenza.
 - Dopo aver schiacciato il tasto "Indietro", l'utente ritornerà alla pagina precedente.
 
 ### 9 L'UTENTE ELIMINA IL PROPRIO ACCOUNT
@@ -123,9 +124,9 @@ ripercorrendo gli stessi passi fatti in precedenza.
 - Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà
   eliminare l'account e tutti i dati presenti in esso definitivamente.
 - Nel caso in cui l'utente eliminasse l'account e poi volesse ripristinarlo non sarebbe possibile. 
-Per poter riavere l'account l'utente dovrà crearne uno nuovo.
+  Per poter riavere l'account l'utente dovrà crearne uno nuovo.
 - Dopo aver eliminato l'account l'utente viene indirizzato alla pagina di login. A questo punto l'account non esiste più e
-non è più possibile accedervi.
+  non è più possibile accedervi.
 
 ## ASSUNZIONI
 Per poter svolgere l’elaborato abbiamo dovuto effettuare
@@ -192,7 +193,7 @@ Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovament
 Verifico che l'account sia stato effettivamente creato. 
 7. Viene creato un nuovo utente e viene scelto un username già esistente.
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
-8. Viene creato un nuovo utente diverso da quello creato nel test 6. 
+8. Viene creato un nuovo utente diverso da quello creato nel test numero sei. 
 Verifico che l'account venga effettivamente creato.
 
 #### Test Login
@@ -262,10 +263,10 @@ avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
 2. Vorrei anche verificare lo stesso metodo della classe PompaInsulinica ma essendo che abbiamo come variabile il tempo
 reale in cui viene effettuata un'iniezione non riesco a fare ciò.
 
-## Coverage
+### COVERAGE
 La coverage ottenuta dai precedenti test è la seguente:
 
-![Coverage](Coverage.png) da modifica in quanto test migliorati
+![Coverage](Coverage.png)
 
 ### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non
