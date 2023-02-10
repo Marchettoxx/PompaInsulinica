@@ -266,7 +266,7 @@ reale in cui viene effettuata un'iniezione non riesco a fare ciò.
 ### COVERAGE
 La coverage ottenuta dai precedenti test è la seguente:
 
-![Coverage](Coverage.png)
+![Coverage](coverage.png)
 
 ### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+
+<body>
+
+<div class="box">
+    <h1> BENVENUTO NELLA HOME </h1>
+
+    <table style="background-color:#8fbc8f">
+        <tbody>
+        <tr>
+            <form action="profilo" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td> <input class="btnPretty" type="submit" value="Profilo"/> <br> </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="pompaInsulinica" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td>  <input class="btnPretty" type="submit" value="Pompa insulinica"/> <br> </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="cronologia" method="post">
+                <input type="hidden" name="id" value="10" th:value="${person.id}">
+                <td> <input class="btnPretty" type="submit" value="Cronologia"/> <br> </td>
+            </form>
+        </tr>
+        </tbody>
+    </table>
+
+    <p class="errore" th:text="${notifica}"> </p>
+
+    <br><br><br>
+    <form action="logout" method="post">
+        <br><input class="btnLogOut" type="submit" value="Logout"/>
+    </form>
+</div>
+
+</body>
+</html>
