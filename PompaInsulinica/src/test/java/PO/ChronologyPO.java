@@ -60,6 +60,7 @@ public class ChronologyPO extends PageObject {
     public int getCell4() {
         return this.cell4.size();
     }
+
     public ChronologyPO clickDeleteMeasurement() {
         this.buttonDeleteMeasurement.click();
         return new ChronologyPO(driver);

@@ -29,9 +29,9 @@ public class LogInPO extends PageObject{
         return this.title.getText();
     }
 
-    public CreateAccountPO clickNewAccount() {
+    public CreatePersonPO clickNewAccount() {
         this.buttonNewAccount.click();
-        return new CreateAccountPO(driver);
+        return new CreatePersonPO(driver);
     }
 
     public void insertCredential(String username, String password) {

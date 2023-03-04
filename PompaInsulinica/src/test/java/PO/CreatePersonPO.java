@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CreateAccountPO extends PageObject {
+public class CreatePersonPO extends PageObject {
 
     @FindBy(tagName = "h1")
     private WebElement title;
@@ -27,7 +27,7 @@ public class CreateAccountPO extends PageObject {
     @FindBy(className = "btn")
     private WebElement buttonSave;
 
-    public CreateAccountPO(WebDriver driver) {
+    public CreatePersonPO(WebDriver driver) {
         super(driver);
     }
 

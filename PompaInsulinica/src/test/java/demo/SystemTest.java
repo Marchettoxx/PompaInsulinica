@@ -62,11 +62,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO logInPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", logInPO.getTitle());
-        CreateAccountPO createAccountPO = logInPO.clickNewAccount();
+        CreatePersonPO createPersonPO = logInPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("", "Massagrande", "marco@gmail.com", "123marco", "123marco.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("", "Massagrande", "marco@gmail.com", "123marco", "123marco.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", logInPO1.getTitle());
     }
@@ -81,11 +81,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "", "marco@gmail.com", "123marco", "123marco.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Marco", "", "marco@gmail.com", "123marco", "123marco.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", logInPO1.getTitle());
     }
@@ -100,11 +100,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "Massagrande", "la@hotmal.com", "123marco", "123marco.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Marco", "Massagrande", "la@hotmal.com", "123marco", "123marco.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", logInPO1.getTitle());
     }
@@ -119,11 +119,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "Massagrande", "marco@gmail.com", "12", "123marco.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Marco", "Massagrande", "marco@gmail.com", "12", "123marco.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", logInPO1.getTitle());
     }
@@ -138,11 +138,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "Massagrande", "marco@gmail.com", "123marco", "123mar");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Marco", "Massagrande", "marco@gmail.com", "123marco", "123mar");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", logInPO1.getTitle());
     }
@@ -157,11 +157,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "Massagrande", "marco@gmail.com", "123marco", "123marco.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Marco", "Massagrande", "marco@gmail.com", "123marco", "123marco.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("LOGIN POMPA INSULINICA", logInPO1.getTitle());
     }
@@ -176,11 +176,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Marco", "Piccoli", "marco@gmail.com", "123marco", "123marco.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Marco", "Piccoli", "marco@gmail.com", "123marco", "123marco.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("CREAZIONE DI UN NUOVO UTENTE", logInPO1.getTitle());
     }
@@ -195,11 +195,11 @@ public class SystemTest {
         driver.get("http://localhost:8080");
         LogInPO loginPO = new LogInPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
-        CreateAccountPO createAccountPO = loginPO.clickNewAccount();
+        CreatePersonPO createPersonPO = loginPO.clickNewAccount();
 
-        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createAccountPO.getTitle());
-        createAccountPO.insertCredential("Luca", "Peppino", "luca@gmail.com", "123luca", "123luca.");
-        LogInPO logInPO1 = createAccountPO.saveAccount();
+        assertEquals("CREAZIONE DI UN NUOVO UTENTE", createPersonPO.getTitle());
+        createPersonPO.insertCredential("Luca", "Peppino", "luca@gmail.com", "123luca", "123luca.");
+        LogInPO logInPO1 = createPersonPO.saveAccount();
 
         assertEquals("LOGIN POMPA INSULINICA", logInPO1.getTitle());
     }
