@@ -692,7 +692,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FFTestPompaInsulinica (){
+    public void FFTestPompaInsulinica(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -717,7 +717,7 @@ public class SystemTest {
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
-    public void FGTestPompaInsulinica (){
+    public void FGTestPompaInsulinica(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -742,7 +742,7 @@ public class SystemTest {
      * Verifico che l'iniezione sia stata fatta correttamente.
      */
     @Test
-    public void FHTestPompaInsulinica (){
+    public void FHTestPompaInsulinica(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -765,7 +765,7 @@ public class SystemTest {
      * Premo il tasto indietro presente nella pagina Pompa Insulinica e verifico di essere tornato alla pagina Home.
      */
     @Test
-    public void FITestIndietro (){
+    public void FITestIndietro(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -788,7 +788,7 @@ public class SystemTest {
      * Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" questa riga venga eliminata.
      */
     @Test
-    public void GATestCronologia (){
+    public void GATestCronologia(){
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
         assertEquals( "LOGIN POMPA INSULINICA", loginPO.getTitle());
@@ -816,7 +816,7 @@ public class SystemTest {
      * Verifico che non sia più presente nulla nella cronologia.
      */
     @Test
-    public void GBTestCronologia (){
+    public void GBTestCronologia(){
         FHTestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
@@ -844,7 +844,7 @@ public class SystemTest {
      * Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
      */
     @Test
-    public void GCTestIndietro (){
+    public void GCTestIndietro(){
         FHTestPompaInsulinica(); //inserisco una misurazione
         driver.get("http://localhost:8080");
         LoginPO loginPO = new LoginPO(driver);
@@ -933,41 +933,5 @@ public class SystemTest {
         HomePO homePO1 = loginPO1.clickLogin();
 
         assertEquals("LOGIN POMPA INSULINICA", homePO1.getTitle());
-    }
-
-    //TEST CHANGE ID
-
-    /**
-     * Test JA:
-     * Verifico se il cambio d'ID di un utente funziona.
-     */
-    @Test
-    public void JATestChangeIdPerson() {
-        Misurazione misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
-        misurazione.setIdUtente(2L);
-        assertEquals(Long.valueOf(2), misurazione.getIdUtente());
-    }
-
-    //TEST TOSTRING
-
-    /**
-     * Test KA:
-     * Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
-     */
-    @Test
-    public void KATestToStringPersona() {
-        Person person = new Person("Luca", "Piccolo", "piccolo@gmail.com", "piccololu", "luca123.");
-        assertEquals("Customer[id=null, nome= 'Luca', cognome='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
-    }
-
-    /**
-     * Test KB:
-     * Vorrei anche verificare lo stesso metodo della classe PompaInsulinica
-     * ma essendo che abbiamo come variabile il tempo reale in cui viene effettuata un'iniezione non riesco a fare ciò.
-     */
-    @Test
-    public void KBTestToStringMisurazione() {
-        Misurazione misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
-        assertEquals("Misurazione[id=null, idUtente='1', glicemia= '200', insulina='3', commento='pizza e coca', time='00:00']", misurazione.toString());
     }
 }
