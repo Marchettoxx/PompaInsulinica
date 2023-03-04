@@ -10,23 +10,23 @@
 
 <div class="box">
     <h1> POMPA INSULINICA </h1>
-    <h3 class="errore" th:text = "${errore}" > </h3>
+    <h3 class="error" th:text = "${error}" > </h3>
 
-    <form action="salva" method="post">
+    <form action="save" method="post">
         <input type="hidden" name="id" value="10" th:value="${person.id}">
         <table style="background-color:#8fbc8f">
             <tbody>
             <tr>
-                <td> <input type="text" name="glicemia" th:value="${glicemia}" placeholder="inserisci glicemia"><br> </td>
-                <td class="errore" th:text="${errGlicemia}"> </td>
+                <td> <input type="text" name="glycemia" th:value="${glycemia}" placeholder="inserisci glicemia"><br> </td>
+                <td class="error" th:text="${errGlycemia}"> </td>
             </tr>
             <tr>
-                <td> <input type="text" name="insulina" th:value="${insulina}" placeholder="inserisci insulina"><br> </td>
-                <td class="errore" th:text="${errInsulina}"> </td>
+                <td> <input type="text" name="insulin" th:value="${insulin}" placeholder="inserisci insulina"><br> </td>
+                <td class="error" th:text="${errInsulin}"> </td>
             </tr>
             <tr>
-                <td> <input type="text" name="commento" th:value="${commento}" placeholder="inserisci un commento"><br> </td>
-                <td class="errore" th:text="${errCommento}"> </td>
+                <td> <input type="text" name="comment" th:value="${comment}" placeholder="inserisci un commento"><br> </td>
+                <td class="error" th:text="${errComment}"> </td>
             </tr>
             <tr>
                 <td colspan="2"> <input class="btn" type = "submit" value="salva"/> <br> </td>
@@ -35,7 +35,7 @@
         </table>
     </form>
 
-    <p th:text = "${lastMisurazione}"> </p> <br>
+    <p th:text = "${lastMeasurement}"> </p> <br>
 
     <form action="back" method="post">
         <input type="hidden" name="id" value="10" th:value="${person.id}">

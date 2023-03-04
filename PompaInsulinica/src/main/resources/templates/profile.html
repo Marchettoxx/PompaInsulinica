@@ -20,15 +20,15 @@
 
 <div class="box">
     <h1> PROFILO </h1>
-    <h3 class="errore" th:text = "${errore}" > </h3>
+    <h3 class="error" th:text = "${error}" > </h3>
 
     <table style="background-color:#8fbc8f">
         <tbody>
         <tr>
-            <td> Nome: </td> <td> <input type="text" th:value="${person.nome}" value="Luca" readonly><br> </td>
+            <td> Nome: </td> <td> <input type="text" th:value="${person.name}" value="Luca" readonly><br> </td>
         </tr>
         <tr>
-            <td> Cognome: </td> <td> <input type="text" th:value="${person.cognome}" value="Piccolo" readonly><br> </td>
+            <td> Cognome: </td> <td> <input type="text" th:value="${person.surname}" value="Piccolo" readonly><br> </td>
         </tr>
         <tr>
             <td> Email: </td> <td> <input type="email" th:value="${person.email}" value="luca@gmail.com" readonly><br> </td>
@@ -43,7 +43,7 @@
             <td> </td> <td> <input type="checkbox" onclick="myFunction()"> Mostra password </td>
         </tr>
         <tr>
-            <form action="modifica" method="post">
+            <form action="edit" method="post">
                 <input type="hidden" name="id" value="10" th:value="${person.id}">
                 <td colspan="2"> <input class="btn" type="submit" value="modifica" /> </td>
             </form>

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPO extends PageObject{
+public class LogInPO extends PageObject{
 
     @FindBy(tagName = "h1")
     private WebElement title;
@@ -21,7 +21,7 @@ public class LoginPO extends PageObject{
     @FindBy(className = "btn")
     private WebElement buttonLogin;
 
-    public LoginPO(WebDriver driver) {
+    public LogInPO(WebDriver driver) {
         super(driver);
     }
 
@@ -34,7 +34,7 @@ public class LoginPO extends PageObject{
         return new CreateAccountPO(driver);
     }
 
-    public void inserCredential(String username, String password) {
+    public void insertCredential(String username, String password) {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
     }

@@ -4,11 +4,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface MisurazioneRepository extends CrudRepository<Misurazione, Long> {
+public interface MisurazioneRepository extends CrudRepository<Measurement, Long> {
 
     /**
-     * @param idUtente id utente
-     * @return Misurazione con id utente uguale a quello passato
+     * @param idPerson id utente
+     * @return Lista di Measurement con id utente uguale a quello passato
      */
-    List<Misurazione> findByIdUtente(Long idUtente);
+    List<Measurement> findByIdPerson(Long idPerson);
 }

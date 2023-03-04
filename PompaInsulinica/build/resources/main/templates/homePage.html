@@ -14,19 +14,19 @@
     <table style="background-color:#8fbc8f">
         <tbody>
         <tr>
-            <form action="profilo" method="post">
+            <form action="profile" method="post">
                 <input type="hidden" name="id" value="10" th:value="${person.id}">
                 <td> <input class="btnPretty" type="submit" value="Profilo"/> <br> </td>
             </form>
         </tr>
         <tr>
-            <form action="pompaInsulinica" method="post">
+            <form action="registration" method="post">
                 <input type="hidden" name="id" value="10" th:value="${person.id}">
                 <td>  <input class="btnPretty" type="submit" value="Pompa insulinica"/> <br> </td>
             </form>
         </tr>
         <tr>
-            <form action="cronologia" method="post">
+            <form action="chronology" method="post">
                 <input type="hidden" name="id" value="10" th:value="${person.id}">
                 <td> <input class="btnPretty" type="submit" value="Cronologia"/> <br> </td>
             </form>
@@ -34,10 +34,10 @@
         </tbody>
     </table>
 
-    <p class="errore" th:text="${notifica}"> </p>
+    <p class="error" th:text="${notification}"> </p>
 
     <br><br><br>
-    <form action="logout" method="post">
+    <form action="logOut" method="post">
         <br><input class="btnLogOut" type="submit" value="Logout"/>
     </form>
 </div>

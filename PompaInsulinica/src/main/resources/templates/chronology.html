@@ -9,7 +9,7 @@
 <body>
 <h1> CRONOLOGIA INIEZIONI </h1>
 
-<h3 class="errore" th:text = "${errore}" > </h3>
+<h3 class="error" th:text = "${error}" > </h3>
 
 <table class="tab">
     <thead>
@@ -22,21 +22,21 @@
     </tr>
     </thead>
     <tbody>
-    <tr class="tab" th:each="misurazione: ${cronologia}">
-        <td class="tab" th:text="${misurazione.glicemia}"> 120 </td>
-        <td class="tab" th:text="${misurazione.insulina}"> 2 </td>
-        <td class="tab" th:text="${misurazione.time}"> 20:06:17 </td>
-        <td class="tab" th:text="${misurazione.commento}"> blank </td>
-        <form action="cancellaMisurazione" method="post">
+    <tr class="tab" th:each="measurement: ${chronology}">
+        <td class="tab" th:text="${measurement.glycemia}"> 120 </td>
+        <td class="tab" th:text="${measurement.insulin}"> 2 </td>
+        <td class="tab" th:text="${measurement.time}"> 20:06:17 </td>
+        <td class="tab" th:text="${measurement.comment}"> blank </td>
+        <form action="deleteMeasurement" method="post">
             <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
-            <input type="hidden" name="idMisurazione" value="10" th:value="${misurazione.id}"> <br>
+            <input type="hidden" name="idMeasurement" value="10" th:value="${measurement.id}"> <br>
             <td> <input class="btn" type="submit" value="cancella"> </td>
         </form>
     </tr>
     </tbody>
 </table>
 
-<form action="cancellaCronologia" method="post">
+<form action="deleteChronology" method="post">
     <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
     <input class="btn" type="submit" value="cancella tutto">
 </form>

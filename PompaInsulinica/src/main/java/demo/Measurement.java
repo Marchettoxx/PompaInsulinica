@@ -8,30 +8,30 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-public class Misurazione {
+public class Measurement {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private Long idUtente;
-    private Integer glicemia;
-    private Integer insulina;
-    private String commento;
+    private Long idPerson;
+    private Integer glycemia;
+    private Integer insulin;
+    private String comment;
     private String time;
 
-    public Misurazione() {}
+    public Measurement() {}
 
     /**
      * Costruttore di Misurazione
-     * @param idUtente id dell'utente che identifica la misurazione dell'utente
-     * @param glicemia valore della glicemia della misurazione
-     * @param insulina valore della insulina della misurazione
-     * @param commento stringa contenente il commento dell'utente relativo alla misurazione
+     * @param idPerson id dell'utente che identifica la misurazione dell'utente
+     * @param glycemia valore della glicemia della misurazione
+     * @param insulin valore della insulina della misurazione
+     * @param comment stringa contenente il commento dell'utente relativo alla misurazione
      */
-    public Misurazione(Long idUtente, Integer glicemia, Integer insulina, String commento) {
-        this.idUtente = idUtente;
-        this.glicemia = glicemia;
-        this.insulina = insulina;
-        this.commento = commento;
+    public Measurement(Long idPerson, Integer glycemia, Integer insulin, String comment) {
+        this.idPerson = idPerson;
+        this.glycemia = glycemia;
+        this.insulin = insulin;
+        this.comment = comment;
 
         long ms = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -45,8 +45,8 @@ public class Misurazione {
     @Override
     public String toString() {
         return String.format(
-                "Misurazione[id=%d, idUtente='%d', glicemia= '%d', insulina='%d', commento='%s', time='00:00']",
-                id, idUtente, glicemia, insulina, commento);
+                "Measurement[id=%d, idPerson='%d', glycemia= '%d', insulin='%d', comment='%s', time='00:00']",
+                id, idPerson, glycemia, insulin, comment);
     }
 
     /**
@@ -57,31 +57,31 @@ public class Misurazione {
     /**
      * @return id dell'utente della relativa misurazione
      */
-    public Long getIdUtente() {return idUtente;}
+    public Long getIdPerson() {return idPerson;}
 
     /**
-     * @param idUtente id utente con cui si sostituisce l'id attuale
+     * @param idPerson id utente con cui si sostituisce l'id attuale
      * @return l'oggetto Misurazione con id utente modificato
      */
-    public Misurazione setIdUtente(Long idUtente) {
-        this.idUtente = idUtente;
+    public Measurement setIdPerson(Long idPerson) {
+        this.idPerson = idPerson;
         return this;
     }
 
     /**
      * @return glicemia della misurazione
      */
-    public Integer getGlicemia() {return glicemia;}
+    public Integer getGlycemia() {return glycemia;}
 
     /**
      * @return insulina della misurazione
      */
-    public double getInsulina() {return insulina;}
+    public double getInsulin() {return insulin;}
 
     /**
      * @return commento della misurazione
      */
-    public String getCommento() {return commento;}
+    public String getComment() {return comment;}
 
     /**
      * @return time della misurazione

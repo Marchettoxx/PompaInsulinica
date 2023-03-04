@@ -4,16 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ModificaUtentePO extends PageObject {
+public class EditPersonPO extends PageObject {
 
     @FindBy(tagName = "h1")
     private WebElement title;
 
-    @FindBy(name = "nome")
-    private WebElement nome;
+    @FindBy(name = "name")
+    private WebElement name;
 
-    @FindBy(name = "cognome")
-    private WebElement cognome;
+    @FindBy(name = "surname")
+    private WebElement surname;
 
     @FindBy(name = "email")
     private WebElement email;
@@ -30,7 +30,7 @@ public class ModificaUtentePO extends PageObject {
     @FindBy(className = "btnBack")
     private WebElement btnBack;
 
-    public ModificaUtentePO(WebDriver driver) {
+    public EditPersonPO(WebDriver driver) {
         super(driver);
     }
 
@@ -38,14 +38,14 @@ public class ModificaUtentePO extends PageObject {
         return this.title.getText();
     }
 
-    public void insertNome(String nome) {
-        this.nome.clear();
-        this.nome.sendKeys(nome);
+    public void insertName(String name) {
+        this.name.clear();
+        this.name.sendKeys(name);
     }
 
-    public void insertCognome(String cognome) {
-        this.cognome.clear();
-        this.cognome.sendKeys(cognome);
+    public void insertSurname(String surname) {
+        this.surname.clear();
+        this.surname.sendKeys(surname);
     }
 
     public void insertEmail(String email) {
@@ -63,13 +63,13 @@ public class ModificaUtentePO extends PageObject {
         this.password.sendKeys(password);
     }
 
-    public ProfiloPO clickSaveModifica() {
+    public ProfilePO clickSaveEdit() {
         this.buttonSave.click();
-        return new ProfiloPO(driver);
+        return new ProfilePO(driver);
     }
 
-    public ProfiloPO clickBack() {
+    public ProfilePO clickBack() {
         this.btnBack.click();
-        return new ProfiloPO(driver);
+        return new ProfilePO(driver);
     }
 }

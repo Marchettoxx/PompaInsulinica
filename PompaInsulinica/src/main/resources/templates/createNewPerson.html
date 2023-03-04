@@ -20,30 +20,30 @@
 
 <div class="box">
   <h1> CREAZIONE DI UN NUOVO UTENTE </h1>
-  <h3 class="errore" th:text = "${errore}" > </h3>
+  <h3 class="error" th:text = "${error}" > </h3>
 
-  <form action="nuovoUtente" method="post">
+  <form action="newPerson" method="post">
     <table style="background-color:#8fbc8f">
       <tbody>
         <tr>
-          <td> <input type="text" name="nome" th:value="${nome}" placeholder="nome"> </td>
-          <td class="errore" th:text="${errNome}"> </td>
+          <td> <input type="text" name="name" th:value="${name}" placeholder="nome"> </td>
+          <td class="error" th:text="${errName}"> </td>
         </tr>
         <tr>
-          <td> <input type="text" name="cognome" th:value="${cognome}" placeholder="cognome"></td>
-          <td class="errore" th:text="${errCognome}"> </td>
+          <td> <input type="text" name="surname" th:value="${surname}" placeholder="cognome"></td>
+          <td class="error" th:text="${errSurname}"> </td>
         </tr>
         <tr>
           <td> <input type="email" name="email" th:value="${email}" placeholder="email"> </td>
-          <td class="errore" th:text="${errEmail}"> </td>
+          <td class="error" th:text="${errEmail}"> </td>
         </tr>
         <tr>
           <td> <input type="text" name="username" th:value="${username}" placeholder="username"> </td>
-          <td class="errore" th:text="${errUsername}"> </td>
+          <td class="error" th:text="${errUsername}"> </td>
         </tr>
         <tr>
           <td> <input type="password" name="password" th:value="${password}" placeholder="password" id="myInput"> </td>
-          <td class="errore" th:text="${errPassword}"> </td>
+          <td class="error" th:text="${errPassword}"> </td>
         </tr>
         <tr>
           <td><input type="checkbox" onclick="myFunction()"> Mostra password </td>
@@ -55,7 +55,7 @@
     </table>
   </form>
 
-  <form action="logout" method="post">
+  <form action="logOut" method="post">
     <br> <input class="btnBack" type="submit" value="Indietro"/>
   </form>
 

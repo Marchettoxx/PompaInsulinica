@@ -4,18 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProfiloPO extends PageObject{
+public class ProfilePO extends PageObject{
 
     @FindBy(tagName = "h1")
     private WebElement title;
 
     @FindBy(className = "btn")
-    private WebElement buttonModificaUtente;
+    private WebElement buttonEditProfile;
 
     @FindBy(className = "btnLogOut")
     private WebElement buttonDeleteAccount;
 
-    public ProfiloPO(WebDriver driver) {
+    public ProfilePO(WebDriver driver) {
         super(driver);
     }
 
@@ -23,13 +23,13 @@ public class ProfiloPO extends PageObject{
         return this.title.getText();
     }
 
-    public ModificaUtentePO clickModificaUtente() {
-        this.buttonModificaUtente.click();
-        return new ModificaUtentePO(driver);
+    public EditPersonPO clickModificaUtente() {
+        this.buttonEditProfile.click();
+        return new EditPersonPO(driver);
     }
 
-    public LoginPO clickDeleteAccount() {
+    public LogInPO clickDeleteAccount() {
         this.buttonDeleteAccount.click();
-        return new LoginPO(driver);
+        return new LogInPO(driver);
     }
 }

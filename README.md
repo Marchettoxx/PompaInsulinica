@@ -12,7 +12,7 @@ sotto forma di applicazione Web.
 Bisogna considerare che la pompa insulinica di
 base è un sistema embedded, per cui sono stati fatti dei
 trade-off sulle funzionalità che la pompa dovesse avere
-ed è stato scelto di ricreare la misurazione della
+ed è stato scelto di ricreare la measurement della
 glicemia e la eventuale memorizzazione su di una cronologia.
 
 ## REQUISITI
@@ -23,11 +23,11 @@ Per ogni utente si registra: un nome, un cognome,
 un'email, un username e una password.
 Il sistema memorizza: 
 - le misurazioni della pompa insulinica;
-- l'id dell'utente che effettua la misurazione;
+- l'id dell'utente che effettua la measurement;
 - il valore di glicemia;
 - il valore d'insulina iniettata;
 - un commento che l'utente può inserire;
-- l'orario e la data dell'avvenuta misurazione.
+- l'orario e la data dell'avvenuta measurement.
 
 ## ASSUNZIONI DI DOCUMENTAZIONE
 Nella descrizione degli scenari sottostanti non abbiamo inserito 
@@ -144,7 +144,7 @@ Le nostre assunzioni sono state:
 * Un utente non può accedere al sistema senza avere un
   account.
 * È possibile visualizzare la cronologia delle misurazioni
-  solo se si ha effettuato almeno una misurazione.
+  solo se si ha effettuato almeno una measurement.
 
 ## DOCUMENTAZIONE
 Di seguito vengono presentati tutti i documenti creati
@@ -201,7 +201,7 @@ parametri, verifico che si sia creato.
 1. Verifico se il cambio d'ID di un utente funziona.
 2. Utilizzo il costruttore Misurazione() per creare un oggetto senza
 parametri, verifico che si sia creato.
-3. Utilizzo il metodo getId() per prendere l'id della misurazione.
+3. Utilizzo il metodo getId() per prendere l'id della measurement.
 4. Verifico con il metodo getGlicemia il valore di glicemia da me inserito.
 5. Verifico con il metodo getInsulina il valore d'insulina da me inserito.
 6. Verifico con il metodo getComment il commento da me inserito.
@@ -276,7 +276,7 @@ Verifico che l'iniezione sia stata fatta correttamente.
 #### Test Cronologia
 1. Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" 
 questa riga venga eliminata.
-2. Inserisco una misurazione, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto".
+2. Inserisco una measurement, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto".
 Verifico che non sia più presente nulla nella cronologia.
 3. Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
 

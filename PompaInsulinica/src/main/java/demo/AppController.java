@@ -16,17 +16,17 @@ public class AppController {
     private PersonRepository repository;
 
     @Autowired
-    private MisurazioneRepository repositoryMisurazioni;
+    private MisurazioneRepository repositoryMeasurement;
 
     Integer MIN_USERNAME = 6;
     Integer MAX_USERNAME = 15;
     Integer MIN_PASSWORD = 8;
     Integer MAX_PASSWORD = 12;
-    Integer MIN_GLICEMIA = 100;
-    Integer MAX_GLICEMIA = 300;
-    Integer MIN_INSULINA = 2;
-    Integer MAX_INSULINA = 10;
-    Integer MAX_COMMENTO = 30;
+    Integer MIN_GLYCEMIA = 100;
+    Integer MAX_GLYCEMIA = 300;
+    Integer MIN_INSULIN = 2;
+    Integer MAX_INSULIN = 10;
+    Integer MAX_COMMENT = 30;
 
     /**
      * @return pagina login
@@ -68,7 +68,7 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             model.addAttribute("person", person.get());
-            return "profilo";
+            return "profile";
         }
         else
             return "notFound";
@@ -77,9 +77,9 @@ public class AppController {
     /**
      * @return pagina login
      */
-    @RequestMapping("/logout")
+    @RequestMapping("/logOut")
     public String logOut(){
-        return "login";
+        return "logIn";
     }
 
     /**
@@ -90,7 +90,7 @@ public class AppController {
      * @param model modello
      * @return pagina homePage se esecuzione va a buon fine altrimenti login
      */
-    @RequestMapping("/login")
+    @RequestMapping("/logIn")
     public String logIn(
             @RequestParam(name="username") String username,
             @RequestParam(name="password") String password,
@@ -102,13 +102,13 @@ public class AppController {
                 return "homePage";
             }
             else {
-                model.addAttribute("errore", "CREDENZIALI ERRATE");
-                return "login";
+                model.addAttribute("error", "CREDENZIALI ERRATE");
+                return "logIn";
             }
         }
         else {
-            model.addAttribute("errore", "UTENTE NON ESISTENTE");
-            return "login";
+            model.addAttribute("error", "UTENTE NON ESISTENTE");
+            return "logIn";
         }
     }
 
@@ -117,50 +117,50 @@ public class AppController {
      * @return pagina createNewUtente
      */
     @RequestMapping("/create")
-    public String createUtente(Model model){
-        model.addAttribute("errNome", "obbligatorio");
-        model.addAttribute("errCognome", "obbligatorio");
+    public String createPerson(Model model){
+        model.addAttribute("errName", "obbligatorio");
+        model.addAttribute("errSurname", "obbligatorio");
         model.addAttribute("errEmail", "valide (@gmail.com, @yahoo.it)");
         model.addAttribute("errUsername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
         model.addAttribute("errPassword", " min: " + MIN_PASSWORD + " max: " + MAX_PASSWORD + " e almeno !?.- e numero");
-        return "createNewUtente";
+        return "createNewPerson";
     }
 
     /**
      * Funzione che consente di creare un nuovo utente
-     * @param nome nome utente
-     * @param cognome cognome utente
+     * @param name nome utente
+     * @param surname cognome utente
      * @param email email utente
      * @param username username utente
      * @param password password utente
      * @param model modello
      * @return login se esecuzione va a buon vine altrimenti ritorna la pagina createNewUtente
      */
-    @RequestMapping("/nuovoUtente")
-    public String creaUtente(
-            @RequestParam(name="nome") String nome,
-            @RequestParam(name="cognome") String cognome,
+    @RequestMapping("/newPerson")
+    public String createPerson(
+            @RequestParam(name="name") String name,
+            @RequestParam(name="surname") String surname,
             @RequestParam(name="email") String email,
             @RequestParam(name="username") String username,
             @RequestParam(name="password") String password,
             Model model) {
         boolean flag = true;
 
-        if (!nome.isEmpty()) {
-            model.addAttribute("nome", nome);
-            model.addAttribute("errNome", "");
+        if (!name.isEmpty()) {
+            model.addAttribute("name", name);
+            model.addAttribute("errName", "");
         }
         else {
-            model.addAttribute("errNome", "obbligatorio");
+            model.addAttribute("errName", "obbligatorio");
             flag = false;
         }
 
-        if (!cognome.isEmpty()) {
-            model.addAttribute("cognome", cognome);
-            model.addAttribute("errCognome", "");
+        if (!surname.isEmpty()) {
+            model.addAttribute("surname", surname);
+            model.addAttribute("errSurname", "");
         }
         else {
-            model.addAttribute("errCognome", "obbligatorio");
+            model.addAttribute("errSurname", "obbligatorio");
             flag = false;
         }
 
@@ -199,14 +199,14 @@ public class AppController {
         }
 
         if (flag) {
-            Person newPerson = new Person(nome, cognome, email, username, password);
+            Person newPerson = new Person(name, surname, email, username, password);
             repository.save(newPerson);
             model.addAttribute("person", newPerson);
             return "login";
         }
         else {
-            model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
-            return "createNewUtente";
+            model.addAttribute("error", "INSERISCI CREDENZIALI VALIDE");
+            return "createNewPerson";
         }
     }
 
@@ -235,14 +235,14 @@ public class AppController {
      * @param model modello
      * @return pagina profilo se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
-    @RequestMapping("/profilo")
-    public String showDatiUtente(
+    @RequestMapping("/profile")
+    public String showDataPerson(
             @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             model.addAttribute("person", person.get());
-            return "profilo";
+            return "profile";
         }
         else
             return "notFound";
@@ -259,7 +259,7 @@ public class AppController {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             repository.delete(person.get());
-            return "login";
+            return "logIn";
         }
         else
             return "notFound";
@@ -270,8 +270,8 @@ public class AppController {
      * @param model modello
      * @return pagina editUtente se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
-    @RequestMapping("/modifica")
-    public String modifica(
+    @RequestMapping("/edit")
+    public String editPerson(
             @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
@@ -280,7 +280,7 @@ public class AppController {
             model.addAttribute("errEmail", "valide (@gmail.com, @yahoo.it)");
             model.addAttribute("errUsername", " min: " + MIN_USERNAME + " max: " + MAX_USERNAME);
             model.addAttribute("errPassword", "min: " + MIN_PASSWORD + "max: " + MAX_PASSWORD + " e almeno !?.- e numero");
-            return "editUtente";
+            return "editPerson";
         }
         else
             return "notFound";
@@ -289,19 +289,19 @@ public class AppController {
     /**
      * Funzione che tramite i parametri passati modifica le credenziali dell'utente
      * @param id id utente
-     * @param nome nome utente
-     * @param cognome cognome utente
+     * @param name nome utente
+     * @param surname cognome utente
      * @param email email utente
      * @param username username utente
      * @param password password utente
      * @param model modello
      * @return pagina profilo se esecuzione va a buon fine altrimenti se ci sono errori pagina editUtente altrimenti pagina notFound
      */
-    @RequestMapping("/salvaModifica")
-    public String editDatiUtente(
+    @RequestMapping("/saveEdit")
+    public String editDataPerson(
             @RequestParam(name="id") Long id,
-            @RequestParam(name="nome") String nome,
-            @RequestParam(name="cognome") String cognome,
+            @RequestParam(name="name") String name,
+            @RequestParam(name="surname") String surname,
             @RequestParam(name="email") String email,
             @RequestParam(name="username") String username,
             @RequestParam(name="password") String password,
@@ -311,19 +311,19 @@ public class AppController {
             Person temp = oldPerson.get();
             boolean flag = true;
 
-            if (!nome.isEmpty()) {
-                temp.setNome(nome);
-                model.addAttribute("errNome", "");
+            if (!name.isEmpty()) {
+                temp.setName(name);
+                model.addAttribute("errName", "");
             } else {
-                model.addAttribute("errNome", "obbligatorio");
+                model.addAttribute("errName", "obbligatorio");
                 flag = false;
             }
 
-            if (!cognome.isEmpty()) {
-                temp.setCognome(cognome);
-                model.addAttribute("errCognome", "");
+            if (!surname.isEmpty()) {
+                temp.setSurname(surname);
+                model.addAttribute("errSurname", "");
             } else {
-                model.addAttribute("errCognome", "obbligatorio");
+                model.addAttribute("errSurname", "obbligatorio");
                 flag = false;
             }
 
@@ -365,20 +365,20 @@ public class AppController {
 
             if (flag) {
                 repository.delete(oldPerson.get());
-                Person newPerson = new Person(nome, cognome, email, username, password);
+                Person newPerson = new Person(name, surname, email, username, password);
                 repository.save(newPerson);
-                List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
-                for (Misurazione p : cronologia) {
-                    repositoryMisurazioni.delete(p);
+                List<Measurement> chronology = repositoryMeasurement.findByIdPerson(id);
+                for (Measurement p : chronology) {
+                    repositoryMeasurement.delete(p);
                 }
-                cronologia.replaceAll(x -> x.setIdUtente(newPerson.getId()));
-                repositoryMisurazioni.saveAll(cronologia);
+                chronology.replaceAll(x -> x.setIdPerson(newPerson.getId()));
+                repositoryMeasurement.saveAll(chronology);
                 model.addAttribute("person", newPerson);
-                return "profilo";
+                return "profile";
             } else {
                 model.addAttribute("person", temp);
-                model.addAttribute("errore", "INSERISCI CREDENZIALI VALIDE");
-                return "editUtente";
+                model.addAttribute("error", "INSERISCI CREDENZIALI VALIDE");
+                return "editPerson";
             }
         }
         else
@@ -390,23 +390,23 @@ public class AppController {
      * @param model modello
      * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti notFound
      */
-    @RequestMapping("/pompaInsulinica")
-    public String pompaInsulinica(
+    @RequestMapping("/registration")
+    public String registration(
             @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             // metto a schermo ultima iniezione fatta
-            List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
-            if (!cronologia.isEmpty()) {
-                Misurazione misurazione = cronologia.get(cronologia.size() - 1);
-                model.addAttribute("lastMisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+            List<Measurement> chronology = repositoryMeasurement.findByIdPerson(id);
+            if (!chronology.isEmpty()) {
+                Measurement measurement = chronology.get(chronology.size() - 1);
+                model.addAttribute("lastMeasurement", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", measurement.getGlycemia(), measurement.getInsulin(), measurement.getTime(), measurement.getComment()));
             }
             model.addAttribute("person", person.get());
-            model.addAttribute("errGlicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
-            model.addAttribute("errInsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
-            model.addAttribute("errCommento", "lunghezza max 120");
-            return "inserisciMisurazione";
+            model.addAttribute("errGlycemia", "valore min: " + MIN_GLYCEMIA + " max: " + MAX_GLYCEMIA);
+            model.addAttribute("errInsulin", "valore min: " + MIN_INSULIN + " max: " + MAX_INSULIN);
+            model.addAttribute("errComment", "lunghezza max 120");
+            return "insertMeasurement";
         }
         else
             return "notFound";
@@ -415,96 +415,96 @@ public class AppController {
     /**
      * Funzione che permette d'inserire nuova misurazione
      * @param id id utente
-     * @param glicemia glicemia misurazione
-     * @param insulina insulina misurazione
-     * @param commento commento misurazione
+     * @param glycemia glicemia misurazione
+     * @param insulin insulina misurazione
+     * @param comment commento misurazione
      * @param model modello
      * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti pagina notFound
      */
-    @RequestMapping("/salva")
-    public String saveMisurazione(
+    @RequestMapping("/save")
+    public String saveMeasurement(
             @RequestParam(name="id") Long id,
-            @RequestParam(name="glicemia", required=false) String glicemia,
-            @RequestParam(name="insulina", required=false) String insulina,
-            @RequestParam(name="commento") String commento,
+            @RequestParam(name="glycemia", required=false) String glycemia,
+            @RequestParam(name="insulin", required=false) String insulin,
+            @RequestParam(name="comment") String comment,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
             model.addAttribute("person", person.get());
             boolean flag = true;
 
-            if (!glicemia.isEmpty()) {
+            if (!glycemia.isEmpty()) {
                 try {
-                    int int_glicemia = Integer.parseInt(glicemia);
-                    if (int_glicemia >= MIN_GLICEMIA && int_glicemia <= MAX_GLICEMIA) {
-                        model.addAttribute("glicemia", glicemia);
-                        model.addAttribute("errGlicemia", "");
+                    int int_glycemia = Integer.parseInt(glycemia);
+                    if (int_glycemia >= MIN_GLYCEMIA && int_glycemia <= MAX_GLYCEMIA) {
+                        model.addAttribute("glicemia", glycemia);
+                        model.addAttribute("errGlycemia", "");
                     }
                     else {
-                        model.addAttribute("errGlicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
+                        model.addAttribute("errGlycemia", "valore min: " + MIN_GLYCEMIA + " max: " + MAX_GLYCEMIA);
                         flag = false;
                     }
                 }
                 catch (NumberFormatException ex){
-                    model.addAttribute("errGlicemia", "inserisci numero intero");
+                    model.addAttribute("errGlycemia", "inserisci numero intero");
                     flag = false;
                 }
             }
             else {
-                model.addAttribute("errGlicemia", "obbligatorio");
+                model.addAttribute("errGlycemia", "obbligatorio");
                 flag = false;
             }
 
-            if (!insulina.isEmpty()) {
+            if (!insulin.isEmpty()) {
                 try {
-                    int int_insulina = Integer.parseInt(insulina);
-                    if (int_insulina >= MIN_INSULINA && int_insulina <= MAX_INSULINA) {
-                        model.addAttribute("insulina", insulina);
-                        model.addAttribute("errInsulina", "");
+                    int int_insulin = Integer.parseInt(insulin);
+                    if (int_insulin >= MIN_INSULIN && int_insulin <= MAX_INSULIN) {
+                        model.addAttribute("insulin", insulin);
+                        model.addAttribute("errInsulin", "");
                     }
                     else {
-                        model.addAttribute("errInsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
+                        model.addAttribute("errInsulin", "valore min: " + MIN_INSULIN + " max: " + MAX_INSULIN);
                         flag = false;
                     }
                 }
                 catch (NumberFormatException ex){
-                    model.addAttribute("errInsulina", "inserisci numero intero");
+                    model.addAttribute("errInsulin", "inserisci numero intero");
                     flag = false;
                 }
             }
             else {
-                model.addAttribute("errInsulina", "obbligatorio");
+                model.addAttribute("errInsulin", "obbligatorio");
                 flag = false;
             }
 
-            if (commento.length() < MAX_COMMENTO) {
-                model.addAttribute("commento", commento);
-                model.addAttribute("errCommento", "");
+            if (comment.length() < MAX_COMMENT) {
+                model.addAttribute("comment", comment);
+                model.addAttribute("errComment", "");
             }
             else {
-                model.addAttribute("errCommento", "lunghezza max 120");
+                model.addAttribute("errComment", "lunghezza max 120");
                 flag = false;
             }
 
             if (flag) {
-                Misurazione misurazione = new Misurazione(id, Integer.parseInt(glicemia), Integer.parseInt(insulina), commento);
-                repositoryMisurazioni.save(misurazione);
-                model.addAttribute("glicemia", "");
-                model.addAttribute("insulina", "");
-                model.addAttribute("commento", "");
+                Measurement measurement = new Measurement(id, Integer.parseInt(glycemia), Integer.parseInt(insulin), comment);
+                repositoryMeasurement.save(measurement);
+                model.addAttribute("glycemia", "");
+                model.addAttribute("insulin", "");
+                model.addAttribute("comment", "");
             }
             else
-                model.addAttribute("errore", "INSERISCI VALORI VALIDI");
+                model.addAttribute("error", "INSERISCI VALORI VALIDI");
 
-            List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
+            List<Measurement> cronologia = repositoryMeasurement.findByIdPerson(id);
             if (!cronologia.isEmpty()) {
-                Misurazione misurazione = cronologia.get(cronologia.size() - 1);
-                model.addAttribute("lastMisurazione", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", misurazione.getGlicemia(), misurazione.getInsulina(), misurazione.getTime(), misurazione.getCommento()));
+                Measurement measurement = cronologia.get(cronologia.size() - 1);
+                model.addAttribute("lastMeasurement", String.format("ULTIMA MISURAZIONE:  %d %.1f %s %s", measurement.getGlycemia(), measurement.getInsulin(), measurement.getTime(), measurement.getComment()));
             }
-            model.addAttribute("errGlicemia", "valore min: " + MIN_GLICEMIA + " max: " + MAX_GLICEMIA);
-            model.addAttribute("errInsulina", "valore min: " + MIN_INSULINA + " max: " + MAX_INSULINA);
-            model.addAttribute("errCommento", "lunghezza max 120");
-            return "inserisciMisurazione";
+            model.addAttribute("errGlycemia", "valore min: " + MIN_GLYCEMIA + " max: " + MAX_GLYCEMIA);
+            model.addAttribute("errInsulin", "valore min: " + MIN_INSULIN + " max: " + MAX_INSULIN);
+            model.addAttribute("errComment", "lunghezza max 120");
+            return "insertMeasurement";
         }
         else
             return "notFound";
@@ -515,21 +515,21 @@ public class AppController {
      * @param model modello
      * @return pagina cronologia se esistono misurazioni in cronologia altrimenti pagina homePage altrimenti notFound
      */
-    @RequestMapping("/cronologia")
-    public String getCronologia(
+    @RequestMapping("/chronology")
+    public String getChronology(
             @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
-            if (!cronologia.isEmpty()) {
+            List<Measurement> chronology = repositoryMeasurement.findByIdPerson(id);
+            if (!chronology.isEmpty()) {
                 model.addAttribute("person", person.get());
-                model.addAttribute("cronologia", cronologia);
-                return "cronologia";
+                model.addAttribute("chronology", chronology);
+                return "chronology";
             }
             else {
                 model.addAttribute("person", person.get());
-                model.addAttribute("notifica", "cronologia vuota crea nuova misurazione");
+                model.addAttribute("notification", "cronologia vuota crea nuova misurazione");
                 return "homePage";
             }
         }
@@ -543,17 +543,17 @@ public class AppController {
      * @param model modello
      * @return pagina cronologia senza nessuna misurazione altrimenti notFound
      */
-    @RequestMapping("/cancellaCronologia")
-    public String dropCronologia(
+    @RequestMapping("/deleteChronology")
+    public String dropChronology(
             @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            for (Misurazione p: repositoryMisurazioni.findByIdUtente(id)) {
-                repositoryMisurazioni.delete(p);
+            for (Measurement p: repositoryMeasurement.findByIdPerson(id)) {
+                repositoryMeasurement.delete(p);
             }
             model.addAttribute("person", person.get());
-            return "cronologia";
+            return "chronology";
         }
         else
             return "notFound";
@@ -562,24 +562,24 @@ public class AppController {
     /**
      * Funzione che elimina singola misurazione
      * @param id id utente
-     * @param idMisurazione id Misurazione
+     * @param idMeasurement id Misurazione
      * @param model modello
      * @return pagina cronologia senza misurazione eliminata altrimenti pagina notFound
      */
-    @RequestMapping("/cancellaMisurazione")
-    public String dropMisurazione(
+    @RequestMapping("/deleteMeasurement")
+    public String dropMeasurement(
             @RequestParam(name="id") Long id,
-            @RequestParam(name="idMisurazione") Long idMisurazione,
+            @RequestParam(name="idMeasurement") Long idMeasurement,
             Model model) {
         Optional<Person> person = repository.findById(id);
         if (person.isPresent()) {
-            Optional<Misurazione> misurazione = repositoryMisurazioni.findById(idMisurazione);
-            if (misurazione.isPresent()) {
-                repositoryMisurazioni.delete(misurazione.get());
-                List<Misurazione> cronologia = repositoryMisurazioni.findByIdUtente(id);
+            Optional<Measurement> measurement = repositoryMeasurement.findById(idMeasurement);
+            if (measurement.isPresent()) {
+                repositoryMeasurement.delete(measurement.get());
+                List<Measurement> cronologia = repositoryMeasurement.findByIdPerson(id);
                 model.addAttribute("person", person.get());
-                model.addAttribute("cronologia", cronologia);
-                return "cronologia";
+                model.addAttribute("chronology", cronologia);
+                return "chronology";
             }
             else {
                 return "notFound";

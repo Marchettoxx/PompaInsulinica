@@ -14,38 +14,38 @@ public class HomePO extends PageObject {
     }
 
     @FindBy(xpath = "//input[@value='Profilo']")
-    private WebElement buttonProfilo;
+    private WebElement buttonProfile;
 
     @FindBy(xpath = "//input[@value='Pompa insulinica']")
-    private WebElement buttonPompainsulinica;
+    private WebElement buttonRegistration;
 
     @FindBy(xpath = "//input[@value='Cronologia']")
-    private WebElement buttonCronologia;
+    private WebElement buttonChronology;
 
     @FindBy(className = "btnLogOut")
-    private WebElement buttonLogout;
+    private WebElement buttonLogOut;
 
     public String getTitle() {
         return this.title.getText();
     }
 
-    public ProfiloPO clickProfilo() {
-        this.buttonProfilo.click();
-        return new ProfiloPO(driver);
+    public ProfilePO clickProfile() {
+        this.buttonProfile.click();
+        return new ProfilePO(driver);
     }
 
-    public InserisciMisurazionePO clickPompaInsulinica() {
-        this.buttonPompainsulinica.click();
-        return new InserisciMisurazionePO(driver);
+    public InsertMeasurementPO clickPompaInsulinica() {
+        this.buttonRegistration.click();
+        return new InsertMeasurementPO(driver);
     }
 
-    public CronologiaPO clickCronologia() {
-        this.buttonCronologia.click();
-        return new CronologiaPO(driver);
+    public ChronologyPO clickCronologia() {
+        this.buttonChronology.click();
+        return new ChronologyPO(driver);
     }
 
-    public LoginPO clickLogout() {
-        this.buttonLogout.click();
-        return new LoginPO(driver);
+    public LogInPO clickLogout() {
+        this.buttonLogOut.click();
+        return new LogInPO(driver);
     }
 }

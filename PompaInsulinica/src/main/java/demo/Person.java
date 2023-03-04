@@ -11,8 +11,8 @@ public class Person {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String nome;
-    private String cognome;
+    private String name;
+    private String surname;
     private String email;
     private String username;
     private String password;
@@ -21,15 +21,15 @@ public class Person {
 
     /**
      *
-     * @param nome nome dell'utente
-     * @param cognome cognome dell'utente
+     * @param name nome dell'utente
+     * @param surname cognome dell'utente
      * @param email email dell'utente
      * @param username username dell'utente
      * @param password password dell'utente
      */
-    public Person(String nome, String cognome, String email, String username, String password) {
-        this.nome = nome;
-        this.cognome = cognome;
+    public Person(String name, String surname, String email, String username, String password) {
+        this.name = name;
+        this.surname = surname;
         this.email = email;
         this.username = username;
         this.password = password;
@@ -42,8 +42,8 @@ public class Person {
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%d, nome= '%s', cognome='%s', email='%s', username='%s', password='%s']",
-                id, nome, cognome, email, username, password);
+                "Person[id=%d, name= '%s', surname='%s', email='%s', username='%s', password='%s']",
+                id, name, surname, email, username, password);
     }
 
     /**
@@ -56,19 +56,19 @@ public class Person {
     /**
      * @return nome utente
      */
-    public String getNome() {return nome;}
+    public String getName() {return name;}
 
     /**
-     * @param nome nuovo valore di nome che viene sostituito con il vecchio nome dell'utente
+     * @param name nuovo valore di nome che viene sostituito con il vecchio nome dell'utente
      */
-    public void setNome(String nome) {this.nome = nome;}
+    public void setName(String name) {this.name = name;}
 
     /**
      * @return cognome utente
      */
-    public String getCognome() {return cognome;}
+    public String getSurname() {return surname;}
 
-    public void setCognome(String cognome) {this.cognome = cognome;}
+    public void setSurname(String surname) {this.surname = surname;}
 
     /**
      * @return email utente

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class CronologiaPO extends PageObject {
+public class ChronologyPO extends PageObject {
 
     @FindBy(tagName = "h1")
     private WebElement title;
@@ -21,15 +21,15 @@ public class CronologiaPO extends PageObject {
     private List<WebElement> cell4;
 
     @FindBy(xpath = "//input[@value='cancella']")
-    private WebElement buttonCancellaMisurazione;
+    private WebElement buttonDeleteMeasurement;
 
     @FindBy(xpath = "//input[@value='cancella tutto']")
-    private WebElement buttonCancellaCronologia;
+    private WebElement buttonDeleteChronology;
 
     @FindBy(className = "btnBack")
     private WebElement btnBack;
 
-    public CronologiaPO(WebDriver driver) {
+    public ChronologyPO(WebDriver driver) {
         super(driver);
     }
 
@@ -60,14 +60,14 @@ public class CronologiaPO extends PageObject {
     public int getCell4() {
         return this.cell4.size();
     }
-    public CronologiaPO clickCancellaMisurazione() {
-        this.buttonCancellaMisurazione.click();
-        return new CronologiaPO(driver);
+    public ChronologyPO clickDeleteMeasurement() {
+        this.buttonDeleteMeasurement.click();
+        return new ChronologyPO(driver);
     }
 
-    public CronologiaPO clickCancellaCronologia() {
-        this.buttonCancellaCronologia.click();
-        return new CronologiaPO(driver);
+    public ChronologyPO clickDeleteChronology() {
+        this.buttonDeleteChronology.click();
+        return new ChronologyPO(driver);
     }
 
     public HomePO clickBack() {

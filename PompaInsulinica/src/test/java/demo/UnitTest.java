@@ -8,24 +8,24 @@ import static org.junit.Assert.*;
 public class UnitTest {
 
     private Person person;
-    private Misurazione misurazione;
+    private Measurement measurement;
 
     @Before
     public void setUp() {
         person = new Person("Luca", "Piccolo", "piccolo@gmail.com", "piccololu", "luca123.");
-        misurazione = new Misurazione(1L, 200, 3, "pizza e coca");
+        measurement = new Measurement(1L, 200, 3, "pizza e coca");
     }
 
     @Test
     public void AATestPersonName() {
-        person.setNome("Pietro");
-        assertEquals("Pietro", person.getNome());
+        person.setName("Pietro");
+        assertEquals("Pietro", person.getName());
     }
 
     @Test
     public void ABTestPersonSurname() {
-        person.setCognome("DiLuca");
-        assertEquals("DiLuca", person.getCognome());
+        person.setSurname("DiLuca");
+        assertEquals("DiLuca", person.getSurname());
     }
 
     @Test
@@ -64,7 +64,7 @@ public class UnitTest {
      */
     @Test
     public void AHTestPersonToString() {
-        assertEquals("Customer[id=null, nome= 'Luca', cognome='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
+        assertEquals("Person[id=null, name= 'Luca', surname='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
     }
 
     /**
@@ -72,36 +72,36 @@ public class UnitTest {
      * Verifico se il cambio d'ID di un utente funziona.
      */
     @Test
-    public void BATestMisurazioneChangeIdUtente() {
-        misurazione.setIdUtente(2L);
-        assertEquals(Long.valueOf(2), misurazione.getIdUtente());
+    public void BATestMeasurementChangeIdUPerson() {
+        measurement.setIdPerson(2L);
+        assertEquals(Long.valueOf(2), measurement.getIdPerson());
     }
 
     @Test
-    public void BBTestMisurazioneBlankConstructor() {
-        Misurazione misurazione1 = new Misurazione();
-        assertNull(misurazione1.getId());
+    public void BBTestMeasurementBlankConstructor() {
+        Measurement measurement1 = new Measurement();
+        assertNull(measurement1.getId());
     }
 
     @Test
-    public void BCTestMisurazioneId() {
-        Long id = misurazione.getId();
+    public void BCTestMeasurementId() {
+        Long id = measurement.getId();
         assertNotEquals(Long.valueOf(0), id);
     }
 
     @Test
-    public void BDTestMisurazioneGlicemia() {
-        assertEquals(Integer.valueOf(200), misurazione.getGlicemia());
+    public void BDTestMeasurementGlycemia() {
+        assertEquals(Integer.valueOf(200), measurement.getGlycemia());
     }
 
     @Test
-    public void BETestMisurazioneInsulina() {
-        assertEquals(Double.parseDouble("3"), misurazione.getInsulina(), Double.parseDouble("3"));
+    public void BETestMeasurementInsulin() {
+        assertEquals(Double.parseDouble("3"), measurement.getInsulin(), Double.parseDouble("3"));
     }
 
     @Test
-    public void BFTestMisurazioneComment() {
-        assertEquals("pizza e coca", misurazione.getCommento());
+    public void BFTestMeasurementComment() {
+        assertEquals("pizza e coca", measurement.getComment());
     }
 
     /**
@@ -110,13 +110,13 @@ public class UnitTest {
      * ma essendo che abbiamo come variabile il tempo reale in cui viene effettuata un'iniezione non riesco a fare ciò.
      */
     @Test
-    public void BGTestToStringMisurazione() {
-        assertEquals("Misurazione[id=null, idUtente='1', glicemia= '200', insulina='3', commento='pizza e coca', time='00:00']", misurazione.toString());
+    public void BGTestMeasurementToString() {
+        assertEquals("Measurement[id=null, idPerson='1', glycemia= '200', insulin='3', comment='pizza e coca', time='00:00']", measurement.toString());
     }
 
     @Test
-    public void BHTestMisurazioneTime() {
-        String time = misurazione.getTime();
+    public void BHTestMeasurementTime() {
+        String time = measurement.getTime();
         assertFalse(time.isEmpty());
     }
 }

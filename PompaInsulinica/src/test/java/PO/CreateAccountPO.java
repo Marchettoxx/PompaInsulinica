@@ -9,11 +9,11 @@ public class CreateAccountPO extends PageObject {
     @FindBy(tagName = "h1")
     private WebElement title;
 
-    @FindBy(name = "nome")
-    private WebElement nome;
+    @FindBy(name = "name")
+    private WebElement name;
 
-    @FindBy(name = "cognome")
-    private WebElement cognome;
+    @FindBy(name = "surname")
+    private WebElement surname;
 
     @FindBy(name = "email")
     private WebElement email;
@@ -26,6 +26,7 @@ public class CreateAccountPO extends PageObject {
 
     @FindBy(className = "btn")
     private WebElement buttonSave;
+
     public CreateAccountPO(WebDriver driver) {
         super(driver);
     }
@@ -34,16 +35,16 @@ public class CreateAccountPO extends PageObject {
         return this.title.getText();
     }
 
-    public LoginPO saveAccount() {
+    public LogInPO saveAccount() {
         this.buttonSave.click();
-        return new LoginPO(driver);
+        return new LogInPO(driver);
     }
 
-    public void insertCredential(String nome, String cognome, String email, String username, String password) {
-        this.nome.clear();
-        this.nome.sendKeys(nome);
-        this.cognome.clear();
-        this.cognome.sendKeys(cognome);
+    public void insertCredential(String name, String surname, String email, String username, String password) {
+        this.name.clear();
+        this.name.sendKeys(name);
+        this.surname.clear();
+        this.surname.sendKeys(surname);
         this.email.clear();
         this.email.sendKeys(email);
         this.username.clear();
