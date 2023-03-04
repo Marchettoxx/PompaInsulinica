@@ -29,106 +29,111 @@ Il sistema memorizza:
 - un commento che l'utente può inserire;
 - l'orario e la data dell'avvenuta misurazione.
 
+## ASSUNZIONI DI DOCUMENTAZIONE
+Nella descrizione degli scenari sottostanti non abbiamo inserito 
+la seguente dicitura: "informazioni su altre attività condotte in 
+contemporanea", in quanto non ci sono attività concorrenti.
+
 ## SCENARI
 
 ### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
-- Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni d'insulina,
+- **Assunzione iniziale**: Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni d'insulina,
   essendo che è il primo suo accesso dovrà crearsi un nuovo account.
-- L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
+- **Descrizione del flow normale**: L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
   verrà indirizzato su una pagina in cui gli verrà richiesto d'inserire il suo nome, cognome, email, username e password.
   Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
   correttamente.
-- Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
+- **Descrizione dei problemi possibili**: Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
 non sarà possibile creare l'account e verranno visualizzati dei messaggi di errore.
-- Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato alla pagina di login.
+- **Stato del sistema al completamento**: Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato alla pagina di login.
 
 ### 2 L'UTENTE EFFETTUA IL LOGIN AL SUO ACCOUNT
-- L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
-- Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
+- **Assunzione iniziale**: L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
+- **Descrizione del flow normale**: Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
   vengono richiesti username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
   alla pagina utente. A questo punto una volta che l'utente ha inserito le proprie credenziali in modo corretto e negli appositi 
   spazi schiacciando sul pulsante "Accedi" riuscirà ad accedere alla home.
-- Nel caso in cui l'utente si sia dimenticato le sue credenziali, o semplicemente le inserisce in modo sbagliato, verrà visualizzato 
+- **Descrizione dei problemi possibili**: Nel caso in cui l'utente si sia dimenticato le sue credenziali, o semplicemente le inserisce in modo sbagliato, verrà visualizzato 
   un messaggio di errore a seconda che sia stato sbagliato il nome utente o la password. L'utente a questo punto rimarrà sulla
   pagina login e potrà reinserire nuovamente le proprie credenziali (non c'è un limite massimo di errori che l'utente può fare). 
-- Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
+- **Stato del sistema al completamento**: Una volta inserite le credenziali corrette l'utente verrà indirizzato alla pagina home all'interno del proprio account. 
   A questo punto potrà eseguire tutte le azioni necessarie per monitorare al meglio le sue condizioni di salute.
 
 ### 3 L'UTENTE VISUALIZZA LE SUE CREDENZIALI E LE PU0' MODIFICARE 
-- L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
+- **Assunzione iniziale**: L'utente vuole visualizzare le sue credenziali create la prima volta in cui ha avuto accesso alla pagina, in questa
   pagina sarà possibile anche modificare i propri dati.
-- L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
+- **Descrizione del flow normale**: L'utente vuole modificare le proprie credenziali, per fare questo, una volta all'interno della sua pagina home, dovrà 
   schiacciare il bottone "Profilo" e verrà indirizzato in una pagina contente tutte le credenziali in modalità solo lettura.
   Schiacciando sul tasto "Modifica", l'utente avrà la possibilità di modificare tutti i campi presenti nella pagina, sempre
   rispettando gli stessi requisiti della creazione di un nuovo utente. Per salvare le modifiche l'utente dovrà schiacciare
   sul bottone "Salva".
-- Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verranno
+- **Descrizione dei problemi possibili**: Se i dati che vengono modificati non rispettano i vincoli stabiliti non sarà possibile effettuare la modifica e verranno
   visualizzati dei messaggi di errore.
-- Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
+- **Stato del sistema al completamento**: Dopo aver premuto il pulsante "Salva" l'utente verrà indirizzato sulla pagina del suo profilo in cui si potranno vedere
   le modifiche appena fatte.
 
 ### 4 L'UTENTE SI DEVE FARE UN INIEZIONE DI INSULINA
-- Nel momento in cui l'utente ha il bisogno di fare un iniezione d'insulina si aspetta di poter inserire nel sistema: 
+- **Assunzione iniziale**: Nel momento in cui l'utente ha il bisogno di fare un iniezione d'insulina si aspetta di poter inserire nel sistema: 
   - la sua attuale glicemia 
   - l'insulina fatta 
   - un eventuale commento
   
   e che successivamente questi dati vengano salvati in modo da poter essere consultati in seguito
   assieme a un medico in caso di necessità.
-- Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
+- **Descrizione del flow normale**: Quando dalla pagina utente si seleziona il tasto “Pompa insulinica” si apre una pagina in cui l'utente può inserire
   il suo valore attuale della glicemia e l'insulina da fare. Inoltre sarà possibile inserire un commento prima di premere il tasto "Salva",
   il quale salverà i dati appena inseriti nella cronologia.
-- Nel momento in cui l'utente va a inserire la sua glicemia attuale e la quantità d'insulina, queste devono rientrare in un determinato range di valori.
+- **Descrizione dei problemi possibili**: Nel momento in cui l'utente va a inserire la sua glicemia attuale e la quantità d'insulina, queste devono rientrare in un determinato range di valori.
   Nel caso in cui non fosse così verranno visualizzati degli errori e l'iniezione non verrà salvata in cronologia.
-- Una volta che i valori sono stati scritti correttamente, saranno presenti all'interno della cronologia.
+- **Stato del sistema al completamento**: Una volta che i valori sono stati scritti correttamente, saranno presenti all'interno della cronologia.
 
 ### 5 L'UTENTE DOPO AVER INSERITO IN CRONOLOGIA UN'INIEZIONE SBAGLIATA VUOLE CANCELLARLA
-- Nel caso in cui l'utente in precedenza abbia sbagliato a inserire un'iniezione, ha la necessita di poter eliminare quest'ultima in modo
+- **Assunzione iniziale**: Nel caso in cui l'utente in precedenza abbia sbagliato a inserire un'iniezione, ha la necessita di poter eliminare quest'ultima in modo
   da non salvare informazioni sbagliate.
-- Quando dalla pagina Home si seleziona il tasto “Cronologia” appare la lista di tutte le iniezioni che sono state
+- **Descrizione del flow normale**: Quando dalla pagina Home si seleziona il tasto “Cronologia” appare la lista di tutte le iniezioni che sono state
   fatte con relativo giorno, orario, glicemia, commento e quantità d'insulina che è stata fatta. Selezionando il tasto "Cancella",
   vicino alla riga desiderata, l'utente ha la possibilità di cancellarla.
-- Nel caso in cui l'utente erroneamente cancelli una riga, per ripristinarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
-- Una volta premuto il tasto, l'utente visualizzerà tutta la cronologia meno la riga da lui appena cancellata.
+- **Descrizione dei problemi possibili**: Nel caso in cui l'utente erroneamente cancelli una riga, per ripristinarla dovrà reinserirla manualmente accedendo alla sezione "Pompa Insulinica"
+- **Stato del sistema al completamento**: Una volta premuto il tasto, l'utente visualizzerà tutta la cronologia meno la riga da lui appena cancellata.
 
 ### 6 L'UTENTE ELIMINA TUTTA LA CRONOLOGIA
-- Dopo aver fatto un controllo dal medico l'utente vuole cancellare tutta la cronologia per liberare spazio.
-- L'utente ha la possibilità di eliminare l'intera cronologia, per fare questo dovrà premere il tasto "cancella tutto",
+- **Assunzione iniziale**: Dopo aver fatto un controllo dal medico l'utente vuole cancellare tutta la cronologia per liberare spazio.
+- **Descrizione del flow normale**: L'utente ha la possibilità di eliminare l'intera cronologia, per fare questo dovrà premere il tasto "cancella tutto",
   dopo di ciò verranno cancellate tutte le righe contenti i dati d'insulina, glicemia e commenti vari.
-- Nel caso in cui l'utente dovesse eliminare erroneamente tutta la cronologia non sarà possibile ripristinarla, l'operazione è irreversibile.
-- L'utente dopo aver premuto il pulsante visualizzerà la cronologia vuota
+- **Descrizione dei problemi possibili**: Nel caso in cui l'utente dovesse eliminare erroneamente tutta la cronologia non sarà possibile ripristinarla, l'operazione è irreversibile.
+- **Stato del sistema al completamento**: L'utente dopo aver premuto il pulsante visualizzerà la cronologia vuota
 
 ### 7 L'UTENTE DOPO AVER EFFETTUATO LE OPERAZINI NECESSARIE DESIDERA USCIRE DAL PROPRIO PROFILO
-- L'utente dopo aver fatto le operazioni di cui aveva bisogno, desidera effettuare il logout dal proprio profilo
+- **Assunzione iniziale**: L'utente dopo aver fatto le operazioni di cui aveva bisogno, desidera effettuare il logout dal proprio profilo
   in modo che nessun altro possa vedere le sue informazioni personali.
-- Quando l'utente si trova nella pagina Home ha la possibilità di selezionare il pulsante "Logout" e di uscire quindi dal
+- **Descrizione del flow normale**: Quando l'utente si trova nella pagina Home ha la possibilità di selezionare il pulsante "Logout" e di uscire quindi dal
   proprio account, venendo indirizzato alla pagina di login.
-- Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovamente l'accesso con le sue credenziali 
+- **Descrizione dei problemi possibili**: Nel caso in cui l'utente effettua per sbaglio il logout potrà effettuare nuovamente l'accesso con le sue credenziali 
   attraverso la pagina di login.
-- Una volta che è stato effettuato il logout l'utente si trova nuovamente alla pagina di login in cui potrà accedere 
+- **Stato del sistema al completamento**: Una volta che è stato effettuato il logout l'utente si trova nuovamente alla pagina di login in cui potrà accedere 
 nuovamente al proprio account nel caso lo volesse.
 
 ### 8 L'UTENTE VUOLE RITORNARE ALLA PAGINA PRECEDENTE
-- L'utente quando si trova un tasto "Indietro", può tornare alla schermata precedente.
-- Nelle schermate "Profilo", "Pompa Insulinica", "Cronologia" è presente un tasto "Indietro" che se viene premuto
+- **Assunzione iniziale**: L'utente quando si trova un tasto "Indietro", può tornare alla schermata precedente.
+- **Descrizione del flow normale**: Nelle schermate "Profilo", "Pompa Insulinica", "Cronologia" è presente un tasto "Indietro" che se viene premuto
   reindirizza l'utente alla schermata principale del suo account.
   Nella schermata di modifica del profilo, l'utente può non salvare le modifiche e tornare indietro alla pagina profilo,
   in questo caso si può verificare il fatto che ogni tipo di modifica che si stava facendo non viene salvata.
-- Nel caso in cui l'utente selezioni per sbaglio il tasto "Indietro" potrà tornare alla pagina in cui si trovava 
+- **Descrizione dei problemi possibili**: Nel caso in cui l'utente selezioni per sbaglio il tasto "Indietro" potrà tornare alla pagina in cui si trovava 
   ripercorrendo gli stessi passi fatti in precedenza.
-- Dopo aver schiacciato il tasto "Indietro", l'utente ritornerà alla pagina precedente.
+- **Stato del sistema al completamento**: Dopo aver schiacciato il tasto "Indietro", l'utente ritornerà alla pagina precedente.
 
 ### 9 L'UTENTE ELIMINA IL PROPRIO ACCOUNT
-- Nel caso in cui il paziente decida di non utilizzare più questo sito per monitorare il suo diabete, vuole avere
+- **Assunzione iniziale**: Nel caso in cui il paziente decida di non utilizzare più questo sito per monitorare il suo diabete, vuole avere
   la possibilità di eliminare il proprio account con i relativi dati in esso contenuti.
-- Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà
+- **Descrizione del flow normale**: Quando l'utente si trova nella schermata Home potrà selezionare il tasto "Elimina account" tramite il quale potrà
   eliminare l'account e tutti i dati presenti in esso definitivamente.
-- Nel caso in cui l'utente eliminasse l'account e poi volesse ripristinarlo non sarebbe possibile. 
+- **Descrizione dei problemi possibili**: Nel caso in cui l'utente eliminasse l'account e poi volesse ripristinarlo non sarebbe possibile. 
   Per poter riavere l'account l'utente dovrà crearne uno nuovo.
-- Dopo aver eliminato l'account l'utente viene indirizzato alla pagina di login. A questo punto l'account non esiste più e
+- **Stato del sistema al completamento**: Dopo aver eliminato l'account l'utente viene indirizzato alla pagina di login. A questo punto l'account non esiste più e
   non è più possibile accedervi.
 
-## ASSUNZIONI
+## ASSUNZIONI DI PROGETTAZIONE
 Per poter svolgere l’elaborato abbiamo dovuto effettuare
 delle scelte progettuali necessarie per chiarire i
 diversi flussi di esecuzione.
@@ -174,7 +179,36 @@ può essere migliorato. Inoltre sono stati fatti molteplici
 controlli sull'indentazione e sulla nomenclatura del codice
 andando eventualmente a eseguire refactoring.
 
-### PROGRAM TESTING
+### UNIT TESTING
+
+#### Test Person
+1. Utilizzo il metodo setName per inserire un nome, 
+verifico con il metodo getName ciò che ho appena inserito.
+2. Utilizzo il metodo setSurname per inserire un cognome,
+verifico con il metodo getSurname ciò che ho appena inserito.
+3. Utilizzo il metodo setEmail per inserire una mail,
+verifico con il metodo getEmail ciò che ho appena inserito.
+4. Utilizzo il metodo setUsername per inserire un username,
+verifico con il metodo getUsername ciò che ho appena inserito.
+5. Utilizzo il metodo setPassword per inserire una password, 
+verifico con il metodo getPassword ciò che ho appena inserito.
+6. Utilizzo il costruttore Person() per creare un oggetto senza 
+parametri, verifico che si sia creato.
+7. Utilizzo il metodo getId() per prendere l'id della persona.
+8. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
+
+#### Test Misurazione
+1. Verifico se il cambio d'ID di un utente funziona.
+2. Utilizzo il costruttore Misurazione() per creare un oggetto senza
+parametri, verifico che si sia creato.
+3. Utilizzo il metodo getId() per prendere l'id della misurazione.
+4. Verifico con il metodo getGlicemia il valore di glicemia da me inserito.
+5. Verifico con il metodo getInsulina il valore d'insulina da me inserito.
+6. Verifico con il metodo getComment il commento da me inserito.
+7. Verifico che il metodo toString della classe Misurazione mi ritorni la stringa da me desiderata.
+8. Verifico con il metodo getTime di non avere una stringa vuota.
+
+### SYSTEM TESTING
 
 #### Test crea utente
 Andiamo a verificare tutti i possibili errori che un utente può fare nella creazione del suo nuovo account e anche il 
@@ -254,14 +288,6 @@ Verifico che non sia più presente nulla nella cronologia.
 Verifico che l'account sia stato effettivamente eliminato provando a eseguire nuovamente il login.
 2. Lo faccio anche con l'altro account che mi ero creato e in cui nel corso dei test ho modificato l'username, in modo da non 
 avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
-
-#### Test Change ID
-1. Verifico se il cambio d'ID di un utente funziona.
-
-#### Test ToString
-1. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
-2. Vorrei anche verificare lo stesso metodo della classe PompaInsulinica ma essendo che abbiamo come variabile il tempo
-reale in cui viene effettuata un'iniezione non riesco a fare ciò.
 
 ### COVERAGE
 La coverage ottenuta dai precedenti test è la seguente:
