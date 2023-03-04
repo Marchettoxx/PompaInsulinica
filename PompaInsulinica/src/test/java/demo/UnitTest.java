@@ -3,8 +3,7 @@ package demo;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class UnitTest {
 
@@ -50,16 +49,14 @@ public class UnitTest {
     @Test
     public void AFTTestPersonBlankConstructor() {
         Person person1 = new Person();
-        assertTrue(true);
+        assertNull(person1.getId());
     }
 
     @Test
     public void AGTestPersonId() {
         Long id = person.getId();
-        assertTrue(true);
+        assertNotEquals(Long.valueOf(0), id);
     }
-
-    //TEST TOSTRING
 
     /**
      * Test AH:
@@ -69,8 +66,6 @@ public class UnitTest {
     public void AHTestPersonToString() {
         assertEquals("Customer[id=null, nome= 'Luca', cognome='Piccolo', email='piccolo@gmail.com', username='piccololu', password='luca123.']", person.toString());
     }
-
-    //TEST CHANGE ID
 
     /**
      * Test BA:
@@ -85,13 +80,13 @@ public class UnitTest {
     @Test
     public void BBTestMisurazioneBlankConstructor() {
         Misurazione misurazione1 = new Misurazione();
-        assertTrue(true);
+        assertNull(misurazione1.getId());
     }
 
     @Test
     public void BCTestMisurazioneId() {
         Long id = misurazione.getId();
-        assertTrue(true);
+        assertNotEquals(Long.valueOf(0), id);
     }
 
     @Test
@@ -122,6 +117,6 @@ public class UnitTest {
     @Test
     public void BHTestMisurazioneTime() {
         String time = misurazione.getTime();
-        assertTrue(true);
+        assertFalse(time.isEmpty());
     }
 }
