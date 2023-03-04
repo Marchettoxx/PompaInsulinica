@@ -77,7 +77,7 @@ public class UnitTest {
      * Verifico se il cambio d'ID di un utente funziona.
      */
     @Test
-    public void BATestMisurazioneChangeId() {
+    public void BATestMisurazioneChangeIdUtente() {
         misurazione.setIdUtente(2L);
         assertEquals(Long.valueOf(2), misurazione.getIdUtente());
     }
