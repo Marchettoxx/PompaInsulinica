@@ -16,7 +16,7 @@ public class AppController {
     private PersonRepository repository;
 
     @Autowired
-    private MisurazioneRepository repositoryMeasurement;
+    private MeasuramentRepository repositoryMeasurement;
 
     Integer MIN_USERNAME = 6;
     Integer MAX_USERNAME = 15;

@@ -15,13 +15,13 @@ public class InsertMeasurementPO extends PageObject {
     @FindBy(tagName = "p")
     private WebElement lastMeasurement;
 
-    @FindBy(name = "glicemia")
+    @FindBy(name = "glycemia")
     private WebElement glycemia;
 
-    @FindBy(name = "insulina")
+    @FindBy(name = "insulin")
     private WebElement insulin;
 
-    @FindBy(name = "commento")
+    @FindBy(name = "comment")
     private WebElement comment;
 
     @FindBy(className = "btn")
@@ -46,7 +46,7 @@ public class InsertMeasurementPO extends PageObject {
         return this.lastMeasurement.getText();
     }
 
-    public void insertMisurazione(String glicemia, String insulina, String commento) {
+    public void insertMeasurement(String glicemia, String insulina, String commento) {
         this.glycemia.clear();
         this.glycemia.sendKeys(glicemia);
         this.insulin.clear();
@@ -55,7 +55,7 @@ public class InsertMeasurementPO extends PageObject {
         this.comment.sendKeys(commento);
     }
 
-    public InsertMeasurementPO saveMisurazione() {
+    public InsertMeasurementPO saveMeasurement() {
         this.btnSave.click();
         return new InsertMeasurementPO(driver);
     }

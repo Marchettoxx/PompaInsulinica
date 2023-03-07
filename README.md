@@ -10,10 +10,10 @@ L'obbiettivo dell'elaborato è quello di creare
 un sistema che simula l'utilizzo di una pompa insulinica
 sotto forma di applicazione Web.
 Bisogna considerare che la pompa insulinica di
-base è un sistema embedded, per cui sono stati fatti dei
-trade-off sulle funzionalità che la pompa dovesse avere
-ed è stato scelto di ricreare la measurement della
-glicemia e la eventuale memorizzazione su di una cronologia.
+base è un sistema integrato, per cui sono stati fatti dei
+compromessi sulle funzionalità che la pompa dovesse avere
+ed è stato scelto di ricreare la misurazione della
+glicemia e l'eventuale memorizzazione all'interno di una cronologia.
 
 ## REQUISITI
 Si vuole progettare un sistema informatico per gestire
@@ -23,11 +23,11 @@ Per ogni utente si registra: un nome, un cognome,
 un'email, un username e una password.
 Il sistema memorizza: 
 - le misurazioni della pompa insulinica;
-- l'id dell'utente che effettua la measurement;
+- l'id dell'utente che effettua la misurazione;
 - il valore di glicemia;
 - il valore d'insulina iniettata;
 - un commento che l'utente può inserire;
-- l'orario e la data dell'avvenuta measurement.
+- l'orario e la data dell'avvenuta misurazione.
 
 ## ASSUNZIONI DI DOCUMENTAZIONE
 Nella descrizione degli scenari sottostanti non abbiamo inserito 
@@ -37,17 +37,17 @@ contemporanea", in quanto non ci sono attività concorrenti.
 ## SCENARI
 
 ### 1 L'UTENTE CREA UN NUOVO ACCOUNT 
-- **Assunzione iniziale**: Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorato le sue iniezioni d'insulina,
+- **Assunzione iniziale**: Un nuovo utente che soffre di diabete vuole accedere alla pagina per tenere monitorate le sue iniezioni d'insulina,
   essendo che è il primo suo accesso dovrà crearsi un nuovo account.
 - **Descrizione del flow normale**: L'utente per crearsi il suo account personale dovrà schiacciare sul bottone "crea nuovo account", una volta fatto ciò
   verrà indirizzato su una pagina in cui gli verrà richiesto d'inserire il suo nome, cognome, email, username e password.
   Ognuna di queste credenziali avrà delle specifiche condizioni che devono essere rispettate per far si che l'account venga creato
   correttamente.
 - **Descrizione dei problemi possibili**: Se, durante la creazione dell'account, non vengono soddisfatti i requisiti necessari delle varie credenziali
-non sarà possibile creare l'account e verranno visualizzati dei messaggi di errore.
+  non sarà possibile creare l'account e verranno visualizzati dei messaggi di errore.
 - **Stato del sistema al completamento**: Una volta che la creazione dell'account è avvenuta correttamente, l'utente verrà indirizzato alla pagina di login.
 
-### 2 L'UTENTE EFFETTUA IL LOGIN AL SUO ACCOUNT
+### 2 L'UTENTE EFFETTUA L'ACCESSO AL SUO ACCOUNT
 - **Assunzione iniziale**: L'utente dopo aver creato l'account si aspetta che utilizzando le credenziali scelte in precedenza riesca ad accedere al suo account personale.
 - **Descrizione del flow normale**: Una volta che l'account è stato creato verrà visualizzata la pagina login. In questa pagina è presente un form, in cui
   vengono richiesti username e password. Sono inoltre presenti due pulsanti, uno per creare un nuovo account e uno per accedere
@@ -144,7 +144,7 @@ Le nostre assunzioni sono state:
 * Un utente non può accedere al sistema senza avere un
   account.
 * È possibile visualizzare la cronologia delle misurazioni
-  solo se si ha effettuato almeno una measurement.
+  solo se si ha effettuato almeno una misurazione.
 
 ## DOCUMENTAZIONE
 Di seguito vengono presentati tutti i documenti creati
@@ -166,7 +166,7 @@ e non presenta ogni versione del codice che è stata realizzata.
 Ci siamo comunque quotidianamente confrontati sulle
 attività svolte e sulle attività in elaborazione oltre
 che su vari problemi di sviluppo.
-Abbiamo usato Git come sistema di versioning e GitHb come piattaforma
+Abbiamo usato Git come sistema di versioning e GitHub come piattaforma
 per la condivisione del codice, di fatto il nostro gruppo ha
 sempre lavorato contemporaneamente al codice
 garantendo una comprensione totale da parte dei partecipanti
@@ -177,7 +177,7 @@ Il codice è stato costantemente rivisto, si è cercato
 d'identificare le componenti di codice incorretto o che
 può essere migliorato. Inoltre sono stati fatti molteplici
 controlli sull'indentazione e sulla nomenclatura del codice
-andando eventualmente a eseguire refactoring.
+andando ad eseguire refactoring.
 
 ### UNIT TESTING
 
@@ -193,19 +193,19 @@ verifico con il metodo getUsername ciò che ho appena inserito.
 5. Utilizzo il metodo setPassword per inserire una password, 
 verifico con il metodo getPassword ciò che ho appena inserito.
 6. Utilizzo il costruttore Person() per creare un oggetto senza 
-parametri, verifico che si sia creato.
-7. Utilizzo il metodo getId() per prendere l'id della persona.
+parametri, verifico che l'id dell'utente sia vuoto.
+7. Utilizzo il metodo getId() per prendere l'id della persona, controllo che non sia nullo.
 8. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
 
-#### Test Misurazione
-1. Verifico se il cambio d'ID di un utente funziona.
-2. Utilizzo il costruttore Misurazione() per creare un oggetto senza
-parametri, verifico che si sia creato.
-3. Utilizzo il metodo getId() per prendere l'id della measurement.
-4. Verifico con il metodo getGlicemia il valore di glicemia da me inserito.
-5. Verifico con il metodo getInsulina il valore d'insulina da me inserito.
+#### Test Measurement
+1. Verifico se il cambio d'id di un utente funziona.
+2. Utilizzo il costruttore Measurement() per creare un oggetto senza
+parametri, verifico che l'id della misurazione sia vuoto.
+3. Utilizzo il metodo getId() per prendere l'id della misurazione.
+4. Verifico con il metodo getGlycemia il valore di glicemia da me inserito.
+5. Verifico con il metodo getInsulin il valore d'insulina da me inserito.
 6. Verifico con il metodo getComment il commento da me inserito.
-7. Verifico che il metodo toString della classe Misurazione mi ritorni la stringa da me desiderata.
+7. Verifico che il metodo toString della classe Measurement mi ritorni la stringa da me desiderata.
 8. Verifico con il metodo getTime di non avere una stringa vuota.
 
 ### SYSTEM TESTING
@@ -292,7 +292,7 @@ avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
 ### COVERAGE
 La coverage ottenuta dai precedenti test è la seguente:
 
-![Coverage](coverage.png)
+![Coverage](Coverage.png)
 
 ### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non

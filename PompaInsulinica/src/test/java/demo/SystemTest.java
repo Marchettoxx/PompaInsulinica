@@ -303,7 +303,7 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
     }
@@ -322,7 +322,7 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        ChronologyPO chronologyPO = homePO.clickCronologia();
+        ChronologyPO chronologyPO = homePO.clickChronology();
 
         // essendo che non sono ancora state fatte misurazioni
         // non è possibile visualizzare la cronologia
@@ -347,7 +347,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertName("");
@@ -372,7 +372,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertSurname("");
@@ -397,7 +397,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertEmail("la@hotmal.com");
@@ -422,7 +422,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertUsername("user");
@@ -448,7 +448,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertUsername("123marco");
@@ -473,7 +473,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertPassword("passw1");
@@ -499,7 +499,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertEmail("marcomassa@gmail.com");
@@ -525,7 +525,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         editPersonPO.insertUsername("unbelnome");
@@ -550,7 +550,7 @@ public class SystemTest {
         ProfilePO profilePO = homePO.clickProfile();
 
         assertEquals("PROFILO", profilePO.getTitle());
-        EditPersonPO editPersonPO = profilePO.clickModificaUtente();
+        EditPersonPO editPersonPO = profilePO.clickModifyUser();
 
         assertEquals("MODIFICA CREDENZIALI UTENTE", editPersonPO.getTitle());
         ProfilePO profilePO1 = editPersonPO.clickBack();
@@ -575,11 +575,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("500", "3", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("500", "3", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -600,11 +600,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("glicemia", "3", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("glicemia", "3", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -625,11 +625,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("", "3", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("", "3", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -650,11 +650,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("200", "15", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("200", "15", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -675,11 +675,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("200", "insulina", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("200", "insulina", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -700,11 +700,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("200", "", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("200", "", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -725,11 +725,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("200", "3", "ho pranzato con una pizza ma non mi è piaciuta troppo perché non era buona");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("200", "3", "ho pranzato con una pizza ma non mi è piaciuta troppo perché non era buona");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("INSERISCI VALORI VALIDI", insertMeasurementPO1.getError());
         assertEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -750,11 +750,11 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
-        insertMeasurementPO.insertMisurazione("200", "3", "ho pranzato con una pizza");
-        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMisurazione();
+        insertMeasurementPO.insertMeasurement("200", "3", "ho pranzato con una pizza");
+        InsertMeasurementPO insertMeasurementPO1 = insertMeasurementPO.saveMeasurement();
 
         assertEquals("", insertMeasurementPO1.getError());
         assertNotEquals("", insertMeasurementPO1.getLastMeasurement());
@@ -773,7 +773,7 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        InsertMeasurementPO insertMeasurementPO = homePO.clickPompaInsulinica();
+        InsertMeasurementPO insertMeasurementPO = homePO.clickInsulinPump();
 
         assertEquals("POMPA INSULINICA", insertMeasurementPO.getTitle());
         HomePO homePO1 = insertMeasurementPO.clickBack();
@@ -796,7 +796,7 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        ChronologyPO chronologyPO = homePO.clickCronologia();
+        ChronologyPO chronologyPO = homePO.clickChronology();
 
         assertEquals("CRONOLOGIA INIEZIONI", chronologyPO.getTitle());
         assertEquals("200", chronologyPO.getCell1String());
@@ -825,7 +825,7 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        ChronologyPO chronologyPO = homePO.clickCronologia();
+        ChronologyPO chronologyPO = homePO.clickChronology();
 
         assertEquals("CRONOLOGIA INIEZIONI", chronologyPO.getTitle());
         assertEquals("200", chronologyPO.getCell1String());
@@ -853,7 +853,7 @@ public class SystemTest {
         HomePO homePO = loginPO.clickLogin();
 
         assertEquals("BENVENUTO NELLA HOME", homePO.getTitle());
-        ChronologyPO chronologyPO = homePO.clickCronologia();
+        ChronologyPO chronologyPO = homePO.clickChronology();
 
         assertEquals("CRONOLOGIA INIEZIONI", chronologyPO.getTitle());
         HomePO homePO1 = chronologyPO.clickBack();

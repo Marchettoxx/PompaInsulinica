@@ -23,7 +23,7 @@ public class ProfilePO extends PageObject{
         return this.title.getText();
     }
 
-    public EditPersonPO clickModificaUtente() {
+    public EditPersonPO clickModifyUser() {
         this.buttonEditProfile.click();
         return new EditPersonPO(driver);
     }

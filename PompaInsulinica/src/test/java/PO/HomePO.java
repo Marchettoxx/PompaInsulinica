@@ -34,12 +34,12 @@ public class HomePO extends PageObject {
         return new ProfilePO(driver);
     }
 
-    public InsertMeasurementPO clickPompaInsulinica() {
+    public InsertMeasurementPO clickInsulinPump() {
         this.buttonRegistration.click();
         return new InsertMeasurementPO(driver);
     }
 
-    public ChronologyPO clickCronologia() {
+    public ChronologyPO clickChronology() {
         this.buttonChronology.click();
         return new ChronologyPO(driver);
     }
