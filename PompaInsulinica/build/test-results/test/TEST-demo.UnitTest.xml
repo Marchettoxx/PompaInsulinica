@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="demo.UnitTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2023-03-07T18:35:46" hostname="MacBook-Pro-di-Alessio-2.local" time="0.013">
+  <properties/>
+  <testcase name="AFTTestPersonBlankConstructor" classname="demo.UnitTest" time="0.002"/>
+  <testcase name="AETestPersonPassword" classname="demo.UnitTest" time="0.001"/>
+  <testcase name="BBTestMeasurementBlankConstructor" classname="demo.UnitTest" time="0.001"/>
+  <testcase name="ABTestPersonSurname" classname="demo.UnitTest" time="0.001"/>
+  <testcase name="AGTestPersonId" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="BGTestMeasurementToString" classname="demo.UnitTest" time="0.001"/>
+  <testcase name="AATestPersonName" classname="demo.UnitTest" time="0.001"/>
+  <testcase name="BETestMeasurementInsulin" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="ACTestPersonEmail" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="BHTestMeasurementTime" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="BFTestMeasurementComment" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="BCTestMeasurementId" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="BDTestMeasurementGlycemia" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="AHTestPersonToString" classname="demo.UnitTest" time="0.001"/>
+  <testcase name="BATestMeasurementChangeIdUPerson" classname="demo.UnitTest" time="0.0"/>
+  <testcase name="ADTestPersonUsername" classname="demo.UnitTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

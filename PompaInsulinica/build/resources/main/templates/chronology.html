@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cronologia Misurazioni</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+
+<body>
+<h1> CRONOLOGIA INIEZIONI </h1>
+
+<h3 class="error" th:text = "${error}" > </h3>
+
+<table class="tab">
+    <thead>
+    <tr>
+        <th class="tab"> GLICEMIA </th>
+        <th class="tab"> INSULINA </th>
+        <th class="tab"> ORA </th>
+        <th class="tab"> COMMENTO </th>
+        <th class="tab"> DELETE </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tab" th:each="measurement: ${chronology}">
+        <td class="tab" th:text="${measurement.glycemia}"> 120 </td>
+        <td class="tab" th:text="${measurement.insulin}"> 2 </td>
+        <td class="tab" th:text="${measurement.time}"> 20:06:17 </td>
+        <td class="tab" th:text="${measurement.comment}"> blank </td>
+        <form action="deleteMeasurement" method="post">
+            <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+            <input type="hidden" name="idMeasurement" value="10" th:value="${measurement.id}"> <br>
+            <td> <input class="btn" type="submit" value="cancella"> </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+
+<form action="deleteChronology" method="post">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input class="btn" type="submit" value="cancella tutto">
+</form>
+
+<form action="back" method="post">
+    <input type="hidden" name="id" value="10" th:value="${person.id}"> <br>
+    <input class="btnBack" type="submit" value="Indietro">
+</form>
+
+</body>
+</html>

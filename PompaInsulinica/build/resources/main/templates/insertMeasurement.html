@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inserimento Misurazione</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+
+<body>
+
+<div class="box">
+    <h1> POMPA INSULINICA </h1>
+    <h3 class="error" th:text = "${error}" > </h3>
+
+    <form action="save" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <table style="background-color:#8fbc8f">
+            <tbody>
+            <tr>
+                <td> <input type="text" name="glycemia" th:value="${glycemia}" placeholder="inserisci glicemia"><br> </td>
+                <td class="error" th:text="${errGlycemia}"> </td>
+            </tr>
+            <tr>
+                <td> <input type="text" name="insulin" th:value="${insulin}" placeholder="inserisci insulina"><br> </td>
+                <td class="error" th:text="${errInsulin}"> </td>
+            </tr>
+            <tr>
+                <td> <input type="text" name="comment" th:value="${comment}" placeholder="inserisci un commento"><br> </td>
+                <td class="error" th:text="${errComment}"> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input class="btn" type = "submit" value="salva"/> <br> </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <p th:text = "${lastMeasurement}"> </p> <br>
+
+    <form action="back" method="post">
+        <input type="hidden" name="id" value="10" th:value="${person.id}">
+        <br> <input class="btnBack" type="submit" value="Indietro">
+    </form>
+
+</div>
+
+</body>
+</html>
