@@ -200,7 +200,7 @@ parametri, verifico che l'id dell'utente sia vuoto.
 #### Test Measurement
 1. Verifico se il cambio d'id di un utente funziona.
 2. Utilizzo il costruttore Measurement() per creare un oggetto senza
-parametri, verifico che l'id della misurazione sia vuoto.
+   parametri, verifico che l'id della misurazione sia nullo.
 3. Utilizzo il metodo getId() per prendere l'id della misurazione.
 4. Verifico con il metodo getGlycemia il valore di glicemia da me inserito.
 5. Verifico con il metodo getInsulin il valore d'insulina da me inserito.
