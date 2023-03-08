@@ -16,7 +16,7 @@ public class AppController {
     private PersonRepository repository;
 
     @Autowired
-    private MeasuramentRepository repositoryMeasurement;
+    private MeasurementRepository repositoryMeasurement;
 
     Integer MIN_USERNAME = 6;
     Integer MAX_USERNAME = 15;
@@ -33,7 +33,7 @@ public class AppController {
      */
     @RequestMapping("/")
     public String index(){
-        return "login";
+        return "logIn";
     }
 
     /**
@@ -90,8 +90,8 @@ public class AppController {
      * @param model modello
      * @return pagina homePage se esecuzione va a buon fine altrimenti login
      */
-    @RequestMapping("/logIn")
-    public String logIn(
+    @RequestMapping("/tryLogIn")
+    public String logInAccess(
             @RequestParam(name="username") String username,
             @RequestParam(name="password") String password,
             Model model){
@@ -391,7 +391,7 @@ public class AppController {
      * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti notFound
      */
     @RequestMapping("/registration")
-    public String registration(
+    public String registrationMeasurement(
             @RequestParam(name="id") Long id,
             Model model) {
         Optional<Person> person = repository.findById(id);

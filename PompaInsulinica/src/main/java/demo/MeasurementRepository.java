@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface MeasuramentRepository extends CrudRepository<Measurement, Long> {
+public interface MeasurementRepository extends CrudRepository<Measurement, Long> {
 
     /**
      * @param idPerson id utente
