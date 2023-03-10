@@ -46,13 +46,13 @@ public class InsertMeasurementPO extends PageObject {
         return this.lastMeasurement.getText();
     }
 
-    public void insertMeasurement(String glicemia, String insulina, String commento) {
+    public void insertMeasurement(String glycemia, String insulin, String comment) {
         this.glycemia.clear();
-        this.glycemia.sendKeys(glicemia);
+        this.glycemia.sendKeys(glycemia);
         this.insulin.clear();
-        this.insulin.sendKeys(insulina);
+        this.insulin.sendKeys(insulin);
         this.comment.clear();
-        this.comment.sendKeys(commento);
+        this.comment.sendKeys(comment);
     }
 
     public InsertMeasurementPO saveMeasurement() {

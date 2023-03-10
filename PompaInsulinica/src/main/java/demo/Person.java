@@ -21,11 +21,11 @@ public class Person {
 
     /**
      *
-     * @param name nome dell'utente
-     * @param surname cognome dell'utente
-     * @param email email dell'utente
-     * @param username username dell'utente
-     * @param password password dell'utente
+     * @param name nome della persona
+     * @param surname cognome della persona
+     * @param email email della persona
+     * @param username username della persona
+     * @param password password della persona
      */
     public Person(String name, String surname, String email, String username, String password) {
         this.name = name;
@@ -47,56 +47,60 @@ public class Person {
     }
 
     /**
-     * @return id utente
+     * @return id persona
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * @return nome utente
+     * @return nome persona
      */
     public String getName() {return name;}
 
     /**
-     * @param name nuovo valore di nome che viene sostituito con il vecchio nome dell'utente
+     * @param name nuovo valore di name che viene sostituito con il vecchio nome della persona
      */
     public void setName(String name) {this.name = name;}
 
     /**
-     * @return cognome utente
+     * @return cognome persona
      */
     public String getSurname() {return surname;}
 
+    /**
+     *
+     * @param surname cognome persona
+     */
     public void setSurname(String surname) {this.surname = surname;}
 
     /**
-     * @return email utente
+     * @return email persona
      */
     public String getEmail() {return email;}
 
     /**
-     * @param email nuovo valore di email che viene sostituito con la vecchia email dell'utente
+     * @param email nuovo valore di email che viene sostituito con la vecchia email della persona
      */
     public void setEmail(String email) {this.email = email;}
 
     /**
-     * @return username utente
+     * @return username persona
      */
     public String getUsername() {return username;}
 
     /**
-     * @param username nuovo valore di username che viene sostituito con il vecchio username dell'utente
+     * @param username nuovo valore di username che viene sostituito con il vecchio username della persona
      */
     public void setUsername(String username) {this.username = username;}
 
     /**
-     * @return password utente
+     * @return password persona
      */
     public String getPassword() {return password;}
 
     /**
-     * @param password nuovo valore di password che viene sostituito con la vecchia password dell'utente
+     * @param password nuovo valore di password che viene sostituito con la vecchia password della persona
      */
     public void setPassword(String password) {this.password = password;}
 }

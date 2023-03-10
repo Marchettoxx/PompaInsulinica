@@ -132,11 +132,12 @@ public class UnitTest {
      * Test BC:
      * Utilizzo il metodo getId()
      * per prendere l'id della misurazione.
+     * Verifico che l'id della misurazione sia nullo.
      */
     @Test
     public void BCTestMeasurementId() {
         Long id = measurement.getId();
-        assertNotEquals(Long.valueOf(0), id);
+        assertNull(id);
     }
 
     /**

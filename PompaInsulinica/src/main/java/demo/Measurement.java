@@ -22,10 +22,10 @@ public class Measurement {
 
     /**
      * Costruttore di Misurazione
-     * @param idPerson id dell'utente che identifica la misurazione dell'utente
+     * @param idPerson id dell'utente che identifica la misurazione della persona
      * @param glycemia valore della glicemia della misurazione
      * @param insulin valore della insulina della misurazione
-     * @param comment stringa contenente il commento dell'utente relativo alla misurazione
+     * @param comment stringa contenente il commento della persona relativo alla misurazione
      */
     public Measurement(Long idPerson, Integer glycemia, Integer insulin, String comment) {
         this.idPerson = idPerson;
@@ -60,8 +60,8 @@ public class Measurement {
     public Long getIdPerson() {return idPerson;}
 
     /**
-     * @param idPerson id utente con cui si sostituisce l'id attuale
-     * @return l'oggetto Misurazione con id utente modificato
+     * @param idPerson id persona con cui si sostituisce l'id attuale
+     * @return l'oggetto Misurazione con id persona modificato
      */
     public Measurement setIdPerson(Long idPerson) {
         this.idPerson = idPerson;

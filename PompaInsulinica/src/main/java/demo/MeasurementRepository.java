@@ -7,8 +7,8 @@ import java.util.List;
 public interface MeasurementRepository extends CrudRepository<Measurement, Long> {
 
     /**
-     * @param idPerson id utente
-     * @return Lista di Measurement con id utente uguale a quello passato
+     * @param idPerson id persona
+     * @return Lista di Measurement con id persona uguale a quello passato
      */
     List<Measurement> findByIdPerson(Long idPerson);
 }

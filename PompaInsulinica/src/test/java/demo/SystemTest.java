@@ -54,7 +54,7 @@ public class SystemTest {
 
     /**
      * Test AA:
-     * Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al nome.
+     * Viene creata una nuova persona in cui viene lasciato in bianco il campo relativo al nome.
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
@@ -73,7 +73,7 @@ public class SystemTest {
 
     /**
      * Test AB:
-     * Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al cognome.
+     * Viene creata una nuova persona in cui viene lasciato in bianco il campo relativo al cognome.
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
@@ -92,7 +92,7 @@ public class SystemTest {
 
     /**
      * Test AC:
-     * Viene creato un nuovo utente in cui viene inserita una mail non valida.
+     * Viene creata una nuova persona in cui viene inserita una mail non valida.
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
@@ -111,7 +111,7 @@ public class SystemTest {
 
     /**
      * Test AD:
-     * Viene creato un nuovo utente in cui viene inserito un username non valido.
+     * Viene creata una nuova persona in cui viene inserito un username non valido.
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
@@ -130,7 +130,7 @@ public class SystemTest {
 
     /**
      * Test AE:
-     * Viene creato un nuovo utente in cui viene inserita una password che non rispetta i requisiti richiesti.
+     * Viene creata una nuova persona in cui viene inserita una password che non rispetta i requisiti richiesti.
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
@@ -168,7 +168,7 @@ public class SystemTest {
 
     /**
      * Test AG:
-     * Viene creato un nuovo utente e viene scelto un username già esistente.
+     * Viene creata una nuova persona e viene scelto un username già esistente.
      * Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
      */
     @Test
@@ -187,7 +187,7 @@ public class SystemTest {
 
     /**
      * Test AH:
-     * Viene creato un nuovo utente diverso da quello creato nel test AF.
+     * Viene creata una nuova persona diverso da quello creato nel test AF.
      * Verifico che l'account venga effettivamente creato.
      */
     @Test
@@ -484,7 +484,7 @@ public class SystemTest {
 
     /**
      * Test EG:
-     * Modifico la mail in modo corretto.
+     * Modifico la email in modo corretto.
      * Verifico che la modifica sia avvenuta con successo.
      */
     @Test
@@ -562,9 +562,9 @@ public class SystemTest {
 
     /**
      * Test FA:
-     * Inserisco una nuova iniezione.
-     * Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300).
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Inserisco una nuova misurazione.
+     * Nel campo glycemia si inserisce un valore sbagliato (non compreso tra 100 e 300).
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FATestRegistration(){
@@ -587,9 +587,9 @@ public class SystemTest {
 
     /**
      * Test FB:
-     * Inserisco una nuova iniezione.
-     * Nel campo glicemia si inserisce un valore non numerico.
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Inserisco una nuova misurazione.
+     * Nel campo glycemia si inserisce un valore non numerico.
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FBTestRegistration(){
@@ -612,9 +612,9 @@ public class SystemTest {
 
     /**
      * Test FC:
-     * Inserisco una nuova iniezione.
-     * Nel campo glicemia si inserisce un valore vuoto.
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Inserisco una nuova misurazione.
+     * Nel campo glycemia si inserisce un valore vuoto.
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FCTestRegistration(){
@@ -637,9 +637,9 @@ public class SystemTest {
 
     /**
      * Test FD:
-     * Inserisco una nuova iniezione.
-     * Nel campo insulina si inserisce un valore che non rispetta i requisiti.
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Inserisco una nuova misurazione.
+     * Nel campo insulin si inserisce un valore che non rispetta i requisiti.
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FDTestRegistration(){
@@ -662,9 +662,9 @@ public class SystemTest {
 
     /**
      * Test FE:
-     * Inserisco una nuova iniezione.
-     * Nel campo insulina si inserisce un valore in lettere.
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Inserisco una nuova misurazione.
+     * Nel campo insulin si inserisce un valore in lettere.
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FETestRegistration(){
@@ -687,9 +687,9 @@ public class SystemTest {
 
     /**
      * Test FF:
-     * Inserisco una nuova iniezione.
+     * Inserisco una nuova misurazione.
      * Lascio il valore relativo all'insulina vuoto.
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FFTestRegistration(){
@@ -712,9 +712,9 @@ public class SystemTest {
 
     /**
      * Test FG:
-     * Inserisco una nuova iniezione.
+     * Inserisco una nuova misurazione.
      * Inserisco un commento che non rispetta i requisiti.
-     * Verifico che l'iniezione non sia andata a buon fine.
+     * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
     public void FGTestRegistration(){
@@ -737,9 +737,9 @@ public class SystemTest {
 
     /**
      * Test FH:
-     * Inserisco una nuova iniezione.
+     * Inserisco una nuova misurazione.
      * Inserisco la glicemia, l'insulina e il commento rispettando i requisiti richiesti.
-     * Verifico che l'iniezione sia stata fatta correttamente.
+     * Verifico che la registrazione sia stata fatta correttamente.
      */
     @Test
     public void FHTestRegistration(){
@@ -785,7 +785,7 @@ public class SystemTest {
 
     /**
      * Test GA:
-     * Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" questa riga venga eliminata.
+     * Controllo che la misurazione appena registrata sia presente in cronologia e verifico che usando il tasto "Cancella" questa riga venga eliminata.
      */
     @Test
     public void GATestChronology(){
