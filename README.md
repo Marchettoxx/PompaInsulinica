@@ -177,7 +177,7 @@ Il codice è stato costantemente rivisto, si è cercato
 d'identificare le componenti di codice incorretto o che
 può essere migliorato. Inoltre sono stati fatti molteplici
 controlli sull'indentazione e sulla nomenclatura del codice
-andando ad eseguire refactoring.
+andando a eseguire refactoring.
 
 ### UNIT TESTING
 
@@ -192,16 +192,16 @@ verifico con il metodo getEmail ciò che ho appena inserito.
 verifico con il metodo getUsername ciò che ho appena inserito.
 5. Utilizzo il metodo setPassword per inserire una password, 
 verifico con il metodo getPassword ciò che ho appena inserito.
-6. Utilizzo il costruttore Person() per creare un oggetto senza 
+6. Utilizzo il costruttore Person per creare un oggetto senza 
 parametri, verifico che l'id dell'utente sia vuoto.
-7. Utilizzo il metodo getId() per prendere l'id della persona, controllo che sia nullo.
+7. Utilizzo il metodo getId per prendere l'id della persona, controllo che sia nullo.
 8. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
 
 #### Test Measurement
 1. Verifico se il cambio d'id di un utente funziona.
-2. Utilizzo il costruttore Measurement() per creare un oggetto senza
+2. Utilizzo il costruttore Measurement per creare un oggetto senza
    parametri, verifico che l'id della misurazione sia nullo.
-3. Utilizzo il metodo getId() per prendere l'id della misurazione.
+3. Utilizzo il metodo getId per prendere l'id della misurazione.
 4. Verifico con il metodo getGlycemia il valore di glicemia da me inserito.
 5. Verifico con il metodo getInsulin il valore d'insulina da me inserito.
 6. Verifico con il metodo getComment il commento da me inserito.
@@ -213,21 +213,21 @@ parametri, verifico che l'id dell'utente sia vuoto.
 #### Test crea utente
 Andiamo a verificare tutti i possibili errori che un utente può fare nella creazione del suo nuovo account e anche il 
 corretto inserimento di tutti i parametri.
-1. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al nome. 
+1. Viene creata nuova persona in cui viene lasciato in bianco il campo relativo al nome. 
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
-2. Viene creato un nuovo utente in cui viene lasciato in bianco il campo relativo al cognome.
+2. Viene creata nuova persona in cui viene lasciato in bianco il campo relativo al cognome.
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
-3. Viene creato un nuovo utente in cui viene inserita una mail non valida.
+3. Viene creata nuova persona in cui viene inserita una mail non valida.
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali. 
-4. Viene creato un nuovo utente in cui viene inserito un username non valido.
+4. Viene creata nuova persona in cui viene inserito un username non valido.
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali. 
-5. Viene creato un nuovo utente in cui viene inserita una password che non rispetta i requisiti richiesti.
+5. Viene creata nuova persona in cui viene inserita una password che non rispetta i requisiti richiesti.
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali. 
-6. Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti). 
+6. Viene creata nuova persona con le credenziali corrette (i valori rispettano i requisiti stabiliti). 
 Verifico che l'account sia stato effettivamente creato. 
-7. Viene creato un nuovo utente e viene scelto un username già esistente.
+7. Viene creata nuova persona e viene scelto un username già esistente.
 Verifico che l'account non sia stato creato e venga chiesto d'inserire nuovamente le credenziali.
-8. Viene creato un nuovo utente diverso da quello creato nel test numero sei. 
+8. Viene creata nuova persona diverso da quello creato nel test numero sei. 
 Verifico che l'account venga effettivamente creato.
 
 #### Test Login
@@ -255,28 +255,28 @@ in quanto non avendo ancora fatto nessuna iniezione la cronologia sarà vuota.
 
 
 #### Test Pompa Insulinica
-1. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300). 
-Verifico che l'iniezione non sia andata a buon fine.
-2. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore non numerico.
-Verifico che l'iniezione non sia andata a buon fine.
-3. Inserisco una nuova iniezione. Nel campo glicemia si inserisce un valore vuoto.
-Verifico che l'iniezione non sia andata a buon fine.
-4. Inserisco una nuova iniezione. Nel campo insulina si inserisce un valore che non rispetta i requisiti.
-Verifico che l'iniezione non sia andata a buon fine.
-5. Inserisco una nuova iniezione. Nel campo insulina si inserisce un valore in lettere.
-Verifico che l'iniezione non sia andata a buon fine.
-6. Inserisco una nuova iniezione. Lascio il valore relativo all'insulina vuoto.
-Verifico che l'iniezione non sia andata a buon fine.
-7. Inserisco una nuova iniezione. Inserisco un commento che non rispetta i requisiti.
-Verifico che l'iniezione non sia andata a buon fine.
-8. Inserisco una nuova iniezione. Inserisco la glicemia, l'insulina e il commento rispettando i requisiti richiesti.
-Verifico che l'iniezione sia stata fatta correttamente.
+1. Inserisco una nuova misurazione. Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300). 
+Verifico che la registrazione non sia andata a buon fine.
+2. Inserisco una nuova misurazione. Nel campo glicemia si inserisce un valore non numerico.
+Verifico che la registrazione non sia andata a buon fine.
+3. Inserisco una nuova misurazione. Nel campo glicemia si inserisce un valore vuoto.
+Verifico che la registrazione non sia andata a buon fine.
+4. Inserisco una nuova misurazione. Nel campo insulina si inserisce un valore che non rispetta i requisiti.
+Verifico che la registrazione non sia andata a buon fine.
+5. Inserisco una nuova misurazione. Nel campo insulina si inserisce un valore in lettere.
+Verifico che la registrazione non sia andata a buon fine.
+6. Inserisco una nuova misurazione. Lascio il valore relativo all'insulina vuoto.
+Verifico che la registrazione non sia andata a buon fine.
+7. Inserisco una nuova misurazione. Inserisco un commento che non rispetta i requisiti.
+Verifico che la registrazione non sia andata a buon fine.
+8. Inserisco una nuova misurazione. Inserisco la glicemia, l'insulina e il commento rispettando i requisiti richiesti.
+Verifico che la registrazione sia stata fatta correttamente.
 9. Premo il tasto indietro presente nella pagina Pompa Insulinica e verifico di essere tornato alla pagina Home.
 
 #### Test Cronologia
-1. Controllo che l'iniezione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" 
+1. Controllo che la misurazione appena fatta sia presente in cronologia e verifico che usando il tasto "Cancella" 
 questa riga venga eliminata.
-2. Inserisco una measurement, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto".
+2. Inserisco una misurazione, controllo che questa sia presente in cronologia e premo il tasto "Cancella tutto".
 Verifico che non sia più presente nulla nella cronologia.
 3. Premo il tasto indietro presente nella pagina Cronologia e verifico di essere tornato alla pagina Home.
 
