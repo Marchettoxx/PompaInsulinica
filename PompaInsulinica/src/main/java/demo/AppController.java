@@ -37,8 +37,8 @@ public class AppController {
     }
 
     /**
-     * Funzione che fa ritornare l'utente alla pagina precedente
-     * @param id id dell'utente
+     * Funzione che fa ritornare la persona alla pagina precedente
+     * @param id id della persona
      * @param model modello
      * @return pagina homePage se esecuzione va a buon fine altrimenti notFound
      */
@@ -56,10 +56,10 @@ public class AppController {
     }
 
     /**
-     * Funzione che fa ritornare l'utente alla pagina precedente
-     * @param id id dell'utente
+     * Funzione che fa ritornare la persona alla pagina precedente
+     * @param id id della persona
      * @param model modello
-     * @return pagina profilo se esecuzione va a buon fine altrimenti notFound
+     * @return pagina profile se esecuzione va a buon fine altrimenti notFound
      */
     @RequestMapping("/backProfile")
     public String backProfile(
@@ -83,10 +83,10 @@ public class AppController {
     }
 
     /**
-     * Funzione che esegue la verifica delle credenziali dell'utente per
+     * Funzione che esegue la verifica delle credenziali della persona per
      * concedere l'accesso all'applicazione
-     * @param username username dell'utente
-     * @param password password dell'utente
+     * @param username username della persona
+     * @param password password della persona
      * @param model modello
      * @return pagina homePage se esecuzione va a buon fine altrimenti login
      */
@@ -114,7 +114,7 @@ public class AppController {
 
     /**
      * @param model modello
-     * @return pagina createNewUtente
+     * @return pagina createNewPerson
      */
     @RequestMapping("/create")
     public String createPerson(Model model){
@@ -128,13 +128,13 @@ public class AppController {
 
     /**
      * Funzione che consente di creare un nuovo utente
-     * @param name nome utente
-     * @param surname cognome utente
-     * @param email email utente
-     * @param username username utente
-     * @param password password utente
-     * @param model modello
-     * @return login se esecuzione va a buon vine altrimenti ritorna la pagina createNewUtente
+     * @param name nome persona
+     * @param surname cognome persona
+     * @param email email persona
+     * @param username username persona
+     * @param password password persona
+     * @param model persona
+     * @return login se esecuzione va a buon vine altrimenti ritorna la pagina createNewPerson
      */
     @RequestMapping("/newPerson")
     public String createPerson(
@@ -212,7 +212,7 @@ public class AppController {
 
     /**
      * Funzione che verifica la validità della password
-     * @param password password che utente inserisce in fase di creazione account
+     * @param password password che la persona inserisce in fase di creazione account
      * @return un booleano a True se password valida, a False se password non valida
      */
     private Boolean valid (String password) {
@@ -230,10 +230,10 @@ public class AppController {
     }
 
     /**
-     * Funzione che mostra le credenziali utente
-     * @param id id utente
+     * Funzione che mostra le credenziali persona
+     * @param id id persona
      * @param model modello
-     * @return pagina profilo se esecuzione va a buon fine altrimenti ritorna pagina notFound
+     * @return pagina profile se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
     @RequestMapping("/profile")
     public String showDataPerson(
@@ -249,8 +249,8 @@ public class AppController {
     }
 
     /**
-     * Funzione che elimina account utente
-     * @param id utente
+     * Funzione che elimina account della persona
+     * @param id persona
      * @return pagina login se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
     @RequestMapping("/deleteAccount")
@@ -266,9 +266,9 @@ public class AppController {
     }
 
     /**
-     * @param id id utente
+     * @param id id persona
      * @param model modello
-     * @return pagina editUtente se esecuzione va a buon fine altrimenti ritorna pagina notFound
+     * @return pagina editPerson se esecuzione va a buon fine altrimenti ritorna pagina notFound
      */
     @RequestMapping("/edit")
     public String editPerson(
@@ -287,15 +287,15 @@ public class AppController {
     }
 
     /**
-     * Funzione che tramite i parametri passati modifica le credenziali dell'utente
-     * @param id id utente
-     * @param name nome utente
-     * @param surname cognome utente
-     * @param email email utente
-     * @param username username utente
-     * @param password password utente
+     * Funzione che tramite i parametri passati modifica le credenziali della persona
+     * @param id id persona
+     * @param name nome persona
+     * @param surname cognome persona
+     * @param email email persona
+     * @param username username persona
+     * @param password password persona
      * @param model modello
-     * @return pagina profilo se esecuzione va a buon fine altrimenti se ci sono errori pagina editUtente altrimenti pagina notFound
+     * @return pagina profile se esecuzione va a buon fine altrimenti se ci sono errori pagina editPerson altrimenti pagina notFound
      */
     @RequestMapping("/saveEdit")
     public String editDataPerson(
@@ -386,9 +386,9 @@ public class AppController {
     }
 
     /**
-     * @param id id utente
+     * @param id id persona
      * @param model modello
-     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti notFound
+     * @return pagina insertMeasurement se esecuzione va a buon fine altrimenti notFound
      */
     @RequestMapping("/registration")
     public String registrationMeasurement(
@@ -414,12 +414,12 @@ public class AppController {
 
     /**
      * Funzione che permette d'inserire nuova misurazione
-     * @param id id utente
+     * @param id id persona
      * @param glycemia glicemia misurazione
      * @param insulin insulina misurazione
      * @param comment commento misurazione
      * @param model modello
-     * @return pagina inserisciMisurazione se esecuzione va a buon fine altrimenti pagina notFound
+     * @return pagina insertMeasurement se esecuzione va a buon fine altrimenti pagina notFound
      */
     @RequestMapping("/save")
     public String saveMeasurement(
@@ -511,9 +511,9 @@ public class AppController {
     }
 
     /**
-     * @param id id utente
+     * @param id id persona
      * @param model modello
-     * @return pagina cronologia se esistono misurazioni in cronologia altrimenti pagina homePage altrimenti notFound
+     * @return pagina chronology se esistono misurazioni in cronologia altrimenti pagina homePage altrimenti notFound
      */
     @RequestMapping("/chronology")
     public String getChronology(
@@ -539,9 +539,9 @@ public class AppController {
 
     /**
      * Funzione che elimina la cronologia totale di misurazioni
-     * @param id id utente
+     * @param id id persona
      * @param model modello
-     * @return pagina cronologia senza nessuna misurazione altrimenti notFound
+     * @return pagina chronology senza nessuna misurazione altrimenti notFound
      */
     @RequestMapping("/deleteChronology")
     public String dropChronology(
@@ -561,10 +561,10 @@ public class AppController {
 
     /**
      * Funzione che elimina singola misurazione
-     * @param id id utente
+     * @param id id persona
      * @param idMeasurement id Misurazione
      * @param model modello
-     * @return pagina cronologia senza misurazione eliminata altrimenti pagina notFound
+     * @return pagina chronology senza la misurazione eliminata altrimenti pagina notFound
      */
     @RequestMapping("/deleteMeasurement")
     public String dropMeasurement(

@@ -194,7 +194,7 @@ verifico con il metodo getUsername ciò che ho appena inserito.
 verifico con il metodo getPassword ciò che ho appena inserito.
 6. Utilizzo il costruttore Person() per creare un oggetto senza 
 parametri, verifico che l'id dell'utente sia vuoto.
-7. Utilizzo il metodo getId() per prendere l'id della persona, controllo che non sia nullo.
+7. Utilizzo il metodo getId() per prendere l'id della persona, controllo che sia nullo.
 8. Verifico che il metodo toString della classe Person mi ritorni la stringa da me desiderata.
 
 #### Test Measurement
