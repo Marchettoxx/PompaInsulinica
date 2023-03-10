@@ -663,7 +663,7 @@ public class SystemTest {
     /**
      * Test FE:
      * Inserisco una nuova iniezione.
-     * Nel campo insulina si inserisce un valore in lettere.
+     * Nel campo insulina inserisco un valore in lettere.
      * Verifico che l'iniezione non sia andata a buon fine.
      */
     @Test
@@ -865,7 +865,7 @@ public class SystemTest {
 
     /**
      * Test HA:
-     * Controllo che dalla pagina home se schiaccio il pulsante "Logout" l'utente viene reindirizzato alla pagina di login.
+     * Controllo che dalla pagina home se schiaccio il pulsante "Logout" la persona viene reindirizzato alla pagina di login.
      */
     @Test
     public void HATestLogOut(){
