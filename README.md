@@ -292,7 +292,7 @@ avere un errore (username già utilizzato) se dovessi rifare i test in futuro.
 ### COVERAGE
 La coverage ottenuta dai precedenti test è la seguente:
 
-![Coverage](coverage.png)
+![Coverage](coverage.png) 
 
 ### TESTING DI ACCETTAZIONE
 Il progetto è stato testato da individui che non
