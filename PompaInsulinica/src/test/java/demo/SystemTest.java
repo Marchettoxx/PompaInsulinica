@@ -149,7 +149,7 @@ public class SystemTest {
 
     /**
      * Test AF:
-     * Viene creato un utente con le credenziali corrette (i valori rispettano i requisiti stabiliti).
+     * Viene creato una persona con le credenziali corrette (i valori rispettano i requisiti stabiliti).
      * Verifico che l'account sia stato effettivamente creato.
      */
     @Test
