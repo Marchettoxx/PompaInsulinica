@@ -563,7 +563,7 @@ public class SystemTest {
     /**
      * Test FA:
      * Inserisco una nuova misurazione.
-     * Nel campo glycemia si inserisce un valore sbagliato (non compreso tra 100 e 300).
+     * Nel campo glicemia si inserisce un valore sbagliato (non compreso tra 100 e 300).
      * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
@@ -588,7 +588,7 @@ public class SystemTest {
     /**
      * Test FB:
      * Inserisco una nuova misurazione.
-     * Nel campo glycemia si inserisce un valore non numerico.
+     * Nel campo glicemia si inserisce un valore non numerico.
      * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
@@ -613,7 +613,7 @@ public class SystemTest {
     /**
      * Test FC:
      * Inserisco una nuova misurazione.
-     * Nel campo glycemia si inserisce un valore vuoto.
+     * Nel campo glicemia si inserisce un valore vuoto.
      * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
@@ -638,7 +638,7 @@ public class SystemTest {
     /**
      * Test FD:
      * Inserisco una nuova misurazione.
-     * Nel campo insulin si inserisce un valore che non rispetta i requisiti.
+     * Nel campo insulina si inserisce un valore che non rispetta i requisiti.
      * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
@@ -663,7 +663,7 @@ public class SystemTest {
     /**
      * Test FE:
      * Inserisco una nuova misurazione.
-     * Nel campo insulin si inserisce un valore in lettere.
+     * Nel campo insulina si inserisce un valore in lettere.
      * Verifico che la registrazione non sia andata a buon fine.
      */
     @Test
