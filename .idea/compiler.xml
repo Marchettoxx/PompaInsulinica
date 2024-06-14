@@ -2,6 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="it.univr.PompaInsulinica" target="1.8" />
+      <module name="it.univr.PompaInsulinica.main" target="1.8" />
+      <module name="it.univr.PompaInsulinica.test" target="1.8" />
       <module name="selenium-test" target="1.8" />
       <module name="selenium-test.main" target="1.8" />
       <module name="selenium-test.test" target="1.8" />
